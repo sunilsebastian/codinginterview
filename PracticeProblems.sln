@@ -3,9 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArrayProblems", "ArrayProblems", "{C259AA07-B124-4A62-B227-B39DAC674F6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graph", "Graph", "{6824057E-0F5C-4FC2-B12B-50270C3AB53D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkedLists", "LinkedLists", "{7964D743-FBB4-4C18-B162-8070337652BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sorting", "Sorting", "{5B900DF8-AA78-4513-B58E-2BF24FE831E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Search", "Search", "{AD27D7E6-2186-4896-8E4F-008FCAE3B89B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tree", "Tree", "{304306D3-B21F-4D0D-BAFB-851C3DD72C01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DP", "DP", "{4CBB5B1C-8339-4626-B1F2-0AB3ED36B570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{F37CB2ED-738E-4CF7-A9F1-36FBAB1FC358}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F37CB2ED-738E-4CF7-A9F1-36FBAB1FC358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37CB2ED-738E-4CF7-A9F1-36FBAB1FC358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37CB2ED-738E-4CF7-A9F1-36FBAB1FC358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37CB2ED-738E-4CF7-A9F1-36FBAB1FC358}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F37CB2ED-738E-4CF7-A9F1-36FBAB1FC358} = {7964D743-FBB4-4C18-B162-8070337652BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BB8526D9-54BD-4C3C-95BC-915B51238ADD}
