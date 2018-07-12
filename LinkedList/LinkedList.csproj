@@ -42,11 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckListIsCircular.cs" />
     <Compile Include="Common\LQueue.cs" />
     <Compile Include="Common\LStack.cs" />
     <Compile Include="Common\Node.cs" />
+    <Compile Include="ConvertListToDecimal.cs" />
+    <Compile Include="CountNodes.cs" />
+    <Compile Include="DeleteNodeInTheMiddle.cs" />
+    <Compile Include="MergeKSortedLists.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\QueueHelper.cs" />
+    <Compile Include="ReverseList.cs" />
+    <Compile Include="ReverseRecursively.cs" />
+    <Compile Include="SortBasedOnAbsoluteValue.cs" />
+    <Compile Include="AlternativeKNodes.cs" />
+    <Compile Include="Common\StackHelper.cs" />
+    <Compile Include="SwapPairs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

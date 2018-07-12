@@ -9,7 +9,7 @@ namespace LinkedList.Common
     public class LQueue
     {
         public Node Head = null;
-        public Node Temp = null;
+        public Node temp = null;
 
         public Node CreateNode(int val)
         {
@@ -18,7 +18,6 @@ namespace LinkedList.Common
 
         public void Enqueue(int val)
         {
-            Node temp = null;
             if(Head==null)
             {
                 Head = Head = CreateNode(val);
