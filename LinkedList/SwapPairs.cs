@@ -10,7 +10,7 @@ namespace LinkedList
     public class SwapPairs
     {
 
-        public Node SwapNodes(Node head)
+        public static Node SwapNodes(Node head)
         {
 
             if (head == null)

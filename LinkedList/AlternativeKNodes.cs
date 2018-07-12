@@ -9,7 +9,7 @@ namespace LinkedList
 {
    public  class AlternativeKNodes
     {
-        public Node ReverseAlterNativeKNodes(Node head, int k)
+        public static Node ReverseAlterNativeKNodes(Node head, int k)
         {
             Node prev = null;
             Node current = head;
