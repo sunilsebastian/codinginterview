@@ -50,11 +50,16 @@ namespace LinkedList
             var altRevList = AlternativeKNodes.ReverseAlterNativeKNodes(q.Head,k);
             Console.Write("Reversed Alternative K Nodes:");
             QueueHelper.PrintAll(altRevList);
+            Console.WriteLine();
+
+            //Reverse List
+            q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
+            var reversedRecurQ = ReverseRecursively.Reverse(q.Head);
+            Console.Write("Reverse Queue Values Recursively:");
+            QueueHelper.PrintAll(reversedRecurQ);
             Console.ReadLine();
 
-
         }
-
-      
+     
     }
 }
