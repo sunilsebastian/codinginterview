@@ -57,6 +57,13 @@ namespace LinkedList
             var reversedRecurQ = ReverseRecursively.Reverse(q.Head);
             Console.Write("Reverse Queue Values Recursively:");
             QueueHelper.PrintAll(reversedRecurQ);
+            Console.WriteLine();
+
+            var q1 = QueueHelper.Create(new int[] { 1,5 });
+            var q2 = QueueHelper.Create(new int[] { 2,3,4 });
+            var mergedList = MergeKSortedLists.MergeRecursive(q1.Head,q2.Head);
+            Console.Write("Merged List:");
+            QueueHelper.PrintAll(mergedList);
             Console.ReadLine();
 
         }
