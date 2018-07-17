@@ -59,12 +59,23 @@ namespace LinkedList
             QueueHelper.PrintAll(reversedRecurQ);
             Console.WriteLine();
 
+            //Merge Two Sorted Queues
             var q1 = QueueHelper.Create(new int[] { 1,5 });
             var q2 = QueueHelper.Create(new int[] { 2,3,4 });
             var mergedList = MergeKSortedLists.MergeRecursive(q1.Head,q2.Head);
             Console.Write("Merged List:");
             QueueHelper.PrintAll(mergedList);
+            Console.WriteLine();
+
+            //List Iterator
+            var listIterator = new ListIterator();
+            Console.Write("Write List in Order:");
+            while(listIterator.HasAny())
+            {
+                Console.Write(listIterator.Next() +" ");
+            }
             Console.ReadLine();
+
 
         }
      
