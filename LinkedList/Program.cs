@@ -74,7 +74,18 @@ namespace LinkedList
             {
                 Console.Write(listIterator.Next() +" ");
             }
+            Console.WriteLine();
+
+            //
+            q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
+            var updatedList = DeleteNodeInTheMiddle.DeleteMiddleNode(q.Head);
+            Console.Write("List after deleting the middle node:");
+            QueueHelper.PrintAll(updatedList);
+           
+
             Console.ReadLine();
+
+
 
 
         }

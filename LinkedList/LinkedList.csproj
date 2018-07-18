@@ -47,7 +47,6 @@
     <Compile Include="Common\LStack.cs" />
     <Compile Include="Common\Node.cs" />
     <Compile Include="ConvertListToDecimal.cs" />
-    <Compile Include="CountNodes.cs" />
     <Compile Include="DeleteNodeInTheMiddle.cs" />
     <Compile Include="ListIterator.cs" />
     <Compile Include="MergeKSortedLists.cs" />
