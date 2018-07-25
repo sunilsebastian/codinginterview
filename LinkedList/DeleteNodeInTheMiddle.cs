@@ -17,7 +17,7 @@ namespace LinkedList
             Node slow = head;
             Node prev = null;
 
-            while (slow!=null && fast.Next!=null)
+            while (fast!=null && fast.Next!=null)
             {
                 prev = slow;
                 slow = slow.Next;

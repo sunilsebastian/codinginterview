@@ -50,6 +50,7 @@
     <Compile Include="DeleteNodeInTheMiddle.cs" />
     <Compile Include="ListIterator.cs" />
     <Compile Include="MergeKSortedLists.cs" />
+    <Compile Include="NthElementFromLast.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\QueueHelper.cs" />

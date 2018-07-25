@@ -76,12 +76,19 @@ namespace LinkedList
             }
             Console.WriteLine();
 
-            //
+            //deleting the middle node
             q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
             var updatedList = DeleteNodeInTheMiddle.DeleteMiddleNode(q.Head);
             Console.Write("List after deleting the middle node:");
             QueueHelper.PrintAll(updatedList);
-           
+            Console.WriteLine();
+
+            q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
+            int n = 5;
+            var nthNode= NthElementFromLast.FindNthElementFromLast(q.Head,n);
+            Console.Write(n+"th element from Last:" + nthNode.Val);
+            Console.WriteLine();
+
 
             Console.ReadLine();
 
