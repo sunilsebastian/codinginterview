@@ -43,11 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckListIsCircular.cs" />
+    <Compile Include="CircularList.cs" />
+    <Compile Include="Common\DoubleNode.cs" />
     <Compile Include="Common\LQueue.cs" />
     <Compile Include="Common\LStack.cs" />
     <Compile Include="Common\Node.cs" />
     <Compile Include="ConvertListToDecimal.cs" />
     <Compile Include="DeleteNodeInTheMiddle.cs" />
+    <Compile Include="DoubleList.cs" />
     <Compile Include="ListIterator.cs" />
     <Compile Include="MergeKSortedLists.cs" />
     <Compile Include="NthElementFromLast.cs" />
