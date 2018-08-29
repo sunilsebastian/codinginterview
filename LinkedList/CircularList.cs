@@ -34,7 +34,7 @@ namespace LinkedList
         {
             if (Head == null)
             {
-                Head = Head = CreateNode(val);
+                Head  = CreateNode(val);
                 temp = Head;
                 if(Head.Val==loopBackValue)
                 {
@@ -52,6 +52,66 @@ namespace LinkedList
 
             }
 
+        }
+
+        public bool IsCircularListHasCollition()
+        {
+            bool isCollition = false;
+
+            Node start = Head;
+
+            Node fast = Head;
+            Node slow = Head;
+            
+
+            while(slow!=null && fast!=null &&  fast.Next!=null)
+            {
+                slow = slow.Next;
+                fast = fast.Next.Next;
+
+                if (slow == fast)
+                {
+                    isCollition = true;
+                    break;
+                }
+
+            }
+            return isCollition;
+        }
+
+
+        public Node GetCollitionNode()
+        {
+            bool isCollition = false;
+
+            Node start = Head;
+
+            Node fast = Head;
+            Node slow = Head;
+
+
+            while (slow != null && fast != null && fast.Next != null)
+            {
+                slow = slow.Next;
+                fast = fast.Next.Next;
+
+                if (slow == fast)
+                {
+                    isCollition = true;
+                    break;
+                }
+
+            }
+            if (isCollition == true)
+            {
+                while (start!=slow)
+                {
+                    start = start.Next;
+                    slow = slow.Next;
+                }
+            }
+
+            return start;
         }
     }
 }

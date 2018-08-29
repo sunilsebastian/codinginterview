@@ -83,11 +83,37 @@ namespace LinkedList
             QueueHelper.PrintAll(updatedList);
             Console.WriteLine();
 
+            //NtheElement from the Last
             q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
             int n = 5;
             var nthNode= NthElementFromLast.FindNthElementFromLast(q.Head,n);
             Console.Write(n+"th element from Last:" + nthNode.Val);
             Console.WriteLine();
+
+            //Double linkedlist
+            var doubleList = new DoubleList();
+            doubleList.InsertNode(10);
+            doubleList.InsertNode(11);
+            doubleList.InsertNode(12);
+            doubleList.InsertNode(13);
+            doubleList.InsertNode(14);
+            doubleList.PrintList();
+
+            //Circular linkedlist
+
+            var circularList = new CircularList();
+
+            circularList.SetLoopBackVal(20);
+
+            circularList.Insert(10);
+            circularList.Insert(20);
+            circularList.Insert(30);
+            circularList.Insert(40);
+            circularList.Insert(50);
+            circularList.SetLoopBack();
+
+            Node collitionNode=circularList.GetCollitionNode();
+
 
 
             Console.ReadLine();
