@@ -112,14 +112,25 @@ namespace LinkedList
             circularList.Insert(50);
             circularList.SetLoopBack();
 
+            //collition node
             Node collitionNode=circularList.GetCollitionNode();
+            Console.Write("Colliding Node in a circular list:" + collitionNode.Val);
+            Console.WriteLine();
+
+            //check a string is palindrum 
+            Palindrum palindrum = new Palindrum();
+            bool result = palindrum.Check("MALAYALAM");
+
+            //TBD
+            //partition based on a pivot
+            //3
+            //5 3 2 1 6 4 7 8
+
+            //number addition
 
 
 
             Console.ReadLine();
-
-
-
 
         }
      
