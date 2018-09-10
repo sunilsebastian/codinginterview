@@ -123,11 +123,18 @@ namespace LinkedList
 
             //TBD
             //partition based on a pivot
-            //3
-            //5 3 2 1 6 4 7 8
+            q = QueueHelper.Create(new int[] { 1,3,2,9,4,7,11,5 });
+            var partitionList = PartitionBasedOnPivot.Partition(q.Head, 4);
+            QueueHelper.PrintAll(partitionList);
+            Console.WriteLine();
 
-            //number addition
 
+            //Number addition
+           LQueue num1 = QueueHelper.Create(new int[] {8,7});
+           LQueue num2 = QueueHelper.Create(new int[] {8,9 });
+            var sum = NumberListAddition.AddNumList(num1.Head, num2.Head);
+           QueueHelper.PrintAll(sum);
+           Console.WriteLine();
 
 
             Console.ReadLine();
