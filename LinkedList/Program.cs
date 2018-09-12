@@ -98,6 +98,7 @@ namespace LinkedList
             doubleList.InsertNode(13);
             doubleList.InsertNode(14);
             doubleList.PrintList();
+            Console.WriteLine();
 
             //Circular linkedlist
 
@@ -132,10 +133,15 @@ namespace LinkedList
             //Number addition
            LQueue num1 = QueueHelper.Create(new int[] {8,7});
            LQueue num2 = QueueHelper.Create(new int[] {8,9 });
-            var sum = NumberListAddition.AddNumList(num1.Head, num2.Head);
+           var sum = NumberListAddition.AddNumList(num1.Head, num2.Head);
+           Console.Write("List Addition:");
            QueueHelper.PrintAll(sum);
            Console.WriteLine();
 
+            var sum1 = NumberListAddition.AddNumListRecursion(num1.Head, num2.Head);
+            Console.Write("List Addition Recursively:");
+            QueueHelper.PrintAll(sum);
+            Console.WriteLine();
 
             Console.ReadLine();
 
