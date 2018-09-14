@@ -1,9 +1,4 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -37,14 +32,12 @@ namespace LinkedList
                 {
                     Result = new Node(digit);
                     Start = Result;
-
                 }
                 else
                 {
                     Result.Next = new Node(digit);
                     Result = Result.Next;
                 }
-
             }
 
             if (carry > 0)
@@ -57,7 +50,7 @@ namespace LinkedList
 
         public static Node AddNumListRecursion(Node num1, Node num2)
         {
-            return AddNumListRecursionHelper(num1, num2,0);
+            return AddNumListRecursionHelper(num1, num2, 0);
         }
 
         public static Node AddNumListRecursionHelper(Node num1, Node num2, int carry)
@@ -90,10 +83,10 @@ namespace LinkedList
             return Result;
         }
 
-        private static  int GetLength(Node n)
+        private static int GetLength(Node n)
         {
             int count = 0;
-            while(n!=null)
+            while (n != null)
             {
                 count++;
             }
@@ -103,14 +96,12 @@ namespace LinkedList
         private static Node PadZero(Node n, int padLength)
         {
             Node newNode = new Node(0);
-            for(int i=0;i<padLength-2;i++)
+            for (int i = 0; i < padLength - 2; i++)
             {
                 newNode.Next = new Node(0);
             }
-             newNode.Next=n;
+            newNode.Next = n;
             return newNode;
         }
-
-        
     }
 }

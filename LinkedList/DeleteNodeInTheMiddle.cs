@@ -1,23 +1,16 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
     public class DeleteNodeInTheMiddle
     {
-
-        public static Node  DeleteMiddleNode(Node head)
+        public static Node DeleteMiddleNode(Node head)
         {
-      
             Node fast = head;
             Node slow = head;
             Node prev = null;
 
-            while (fast!=null && fast.Next!=null)
+            while (fast != null && fast.Next != null)
             {
                 prev = slow;
                 slow = slow.Next;
@@ -25,9 +18,7 @@ namespace LinkedList
             }
             prev.Next = slow.Next;
 
-
             return head;
-
         }
     }
 }

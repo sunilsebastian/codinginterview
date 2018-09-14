@@ -1,26 +1,20 @@
-﻿using LinkedList.Common;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
-  
     //Program an Iterator for a Linked List which may include nodes  whih are nested within other nodes.
 
-   /*1-->2-->3-->4
-     |
-     6-->7-->10
-        |     |
-        8-->9 11-->12  */
-  
+    /*1-->2-->3-->4
+      |
+      6-->7-->10
+         |     |
+         8-->9 11-->12  */
+
     public class ListIterator
     {
-        MyNode head;
-        Stack<MyNode> stack = new Stack<MyNode>();
+        private MyNode head;
+        private Stack<MyNode> stack = new Stack<MyNode>();
 
         public ListIterator()
         {
@@ -41,7 +35,6 @@ namespace LinkedList
             stack.Push(head);
         }
 
-
         public bool HasAny()
         {
             if (stack.Any())
@@ -51,10 +44,10 @@ namespace LinkedList
             return false;
         }
 
-        public int  Next()
+        public int Next()
         {
             var n = stack.Pop();
-            if(n.Next!=null)
+            if (n.Next != null)
             {
                 stack.Push(n.Next);
             }
@@ -64,12 +57,11 @@ namespace LinkedList
             }
             return n.Val;
         }
-
     }
 
     public class MyNode
     {
-        public int Val { get; set;}
+        public int Val { get; set; }
         public MyNode Next { get; set; }
         public MyNode Down { get; set; }
 
@@ -77,8 +69,5 @@ namespace LinkedList
         {
             this.Val = val;
         }
-
     }
-
-
 }

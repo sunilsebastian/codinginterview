@@ -1,13 +1,8 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
-   public  class CircularList
+    public class CircularList
     {
         public Node Head = null;
         public Node temp = null;
@@ -22,7 +17,6 @@ namespace LinkedList
         public void SetLoopBack()
         {
             temp.Next = LoopBackNode;
-
         }
 
         public void SetLoopBackVal(int loopBackVal)
@@ -34,9 +28,9 @@ namespace LinkedList
         {
             if (Head == null)
             {
-                Head  = CreateNode(val);
+                Head = CreateNode(val);
                 temp = Head;
-                if(Head.Val==loopBackValue)
+                if (Head.Val == loopBackValue)
                 {
                     LoopBackNode = Head;
                 }
@@ -49,9 +43,7 @@ namespace LinkedList
                 {
                     LoopBackNode = temp;
                 }
-
             }
-
         }
 
         public bool IsCircularListHasCollition()
@@ -62,33 +54,6 @@ namespace LinkedList
 
             Node fast = Head;
             Node slow = Head;
-            
-
-            while(slow!=null && fast!=null &&  fast.Next!=null)
-            {
-                slow = slow.Next;
-                fast = fast.Next.Next;
-
-                if (slow == fast)
-                {
-                    isCollition = true;
-                    break;
-                }
-
-            }
-            return isCollition;
-        }
-
-
-        public Node GetCollitionNode()
-        {
-            bool isCollition = false;
-
-            Node start = Head;
-
-            Node fast = Head;
-            Node slow = Head;
-
 
             while (slow != null && fast != null && fast.Next != null)
             {
@@ -100,11 +65,33 @@ namespace LinkedList
                     isCollition = true;
                     break;
                 }
+            }
+            return isCollition;
+        }
 
+        public Node GetCollitionNode()
+        {
+            bool isCollition = false;
+
+            Node start = Head;
+
+            Node fast = Head;
+            Node slow = Head;
+
+            while (slow != null && fast != null && fast.Next != null)
+            {
+                slow = slow.Next;
+                fast = fast.Next.Next;
+
+                if (slow == fast)
+                {
+                    isCollition = true;
+                    break;
+                }
             }
             if (isCollition == true)
             {
-                while (start!=slow)
+                while (start != slow)
                 {
                     start = start.Next;
                     slow = slow.Next;

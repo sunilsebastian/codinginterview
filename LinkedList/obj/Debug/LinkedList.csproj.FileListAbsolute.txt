@@ -1,7 +1,7 @@
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\bin\Debug\LinkedList.exe.config
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\bin\Debug\LinkedList.exe
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\bin\Debug\LinkedList.pdb
+C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList.csprojResolveAssemblyReference.cache
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList.csproj.CoreCompileInputs.cache
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList.exe
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList.pdb
-C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList.csprojResolveAssemblyReference.cache

@@ -1,9 +1,4 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -14,7 +9,7 @@ namespace LinkedList
         {
             bool isCircular = false;
             Node current = head;
-            while(current!=null)
+            while (current != null)
             {
                 current = current.Next;
                 if (current == head)

@@ -1,9 +1,4 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -41,12 +36,12 @@ namespace LinkedList
             if (n1 == null) return n2;
             if (n2 == null) return n1;
 
-            if (n1.Val<=n2.Val)
+            if (n1.Val <= n2.Val)
             {
-                 prev = n1;
+                prev = n1;
                 prev.Next = MergeRecursive(n1.Next, n2);
             }
-            if (n1.Val >n2.Val)
+            if (n1.Val > n2.Val)
             {
                 prev = n2;
                 prev.Next = MergeRecursive(n1, n2.Next);

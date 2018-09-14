@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -44,17 +41,15 @@ namespace LinkedList
 
     public class Palindrum
     {
-        public  CNode Create(string s)
+        public CNode Create(string s)
         {
             CStack stk = new CStack();
 
-            foreach(char c in s)
+            foreach (char c in s)
             {
                 stk.Push(c);
-
             }
             return stk.Head;
-
         }
 
         public bool Check(string s)
@@ -66,21 +61,21 @@ namespace LinkedList
             CNode slow = start;
             CNode fast = start;
 
-            while(fast!=null && fast.Next!=null)
+            while (fast != null && fast.Next != null)
             {
                 stk.Push(slow.Val);
                 slow = slow.Next;
                 fast = fast.Next.Next;
             }
-            if(fast!=null)
+            if (fast != null)
             {
                 slow = slow.Next;
             }
 
-            while(slow!=null)
+            while (slow != null)
             {
-                char c=stk.Pop();
-                if(!char.Equals(c,slow.Val))
+                char c = stk.Pop();
+                if (!char.Equals(c, slow.Val))
                 {
                     isPalindrum = false;
                     break;

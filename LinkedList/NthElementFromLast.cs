@@ -1,41 +1,34 @@
 ﻿using LinkedList.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
-   public  class NthElementFromLast
+    public class NthElementFromLast
     {
-        public static  Node FindNthElementFromLast(Node head,int n)
+        public static Node FindNthElementFromLast(Node head, int n)
         {
             Node current = head;
             Node start = head;
 
-            for(int i=0;i<n;i++)
+            for (int i = 0; i < n; i++)
             {
-               if(current!=null)
+                if (current != null)
                 {
                     current = current.Next;
                 }
             }
-            if(current==null)
+            if (current == null)
             {
-               throw new Exception("Nummber of elements are less than N");
-               
+                throw new Exception("Nummber of elements are less than N");
             }
 
-            while(current!=null)
+            while (current != null)
             {
                 start = start.Next;
                 current = current.Next;
             }
 
             return start;
-
-           
         }
     }
 }

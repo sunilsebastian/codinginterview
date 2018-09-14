@@ -1,18 +1,11 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
     public class SwapPairs
     {
-
         public static Node SwapNodes(Node head)
         {
-
             if (head == null)
                 return null;
 
@@ -22,7 +15,6 @@ namespace LinkedList
 
             while (current != null && runner != null)
             {
-
                 current.Next = runner.Next;
                 runner.Next = current;
 
@@ -35,7 +27,6 @@ namespace LinkedList
                 {
                     Prev.Next = runner;
                     Prev = Prev.Next.Next;
-
                 }
 
                 current = current.Next;

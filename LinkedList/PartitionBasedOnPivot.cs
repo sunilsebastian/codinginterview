@@ -1,22 +1,17 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
     public class PartitionBasedOnPivot
     {
         // 1->3->2->9->4-7-11-5
-      //  4> right 
-       // <=4 left.
+        //  4> right
+        // <=4 left.
 
-        public static  Node Partition(Node head,int pivot)
+        public static Node Partition(Node head, int pivot)
         {
             Node Start = head;
-            Node FirstNodeStart=null;
+            Node FirstNodeStart = null;
             Node FirstNodeEnd = null;
             Node SecondNodeStart = null;
             Node SecondNodeEnd = null;
@@ -24,11 +19,11 @@ namespace LinkedList
             if (Start == null)
                 return null;
 
-            while(Start!=null)
+            while (Start != null)
             {
-                if(Start.Val<=4)
+                if (Start.Val <= 4)
                 {
-                    if(FirstNodeStart==null)
+                    if (FirstNodeStart == null)
                     {
                         FirstNodeStart = Start;
                     }
@@ -38,7 +33,7 @@ namespace LinkedList
                     }
                     FirstNodeEnd = Start;
                 }
-                if (Start.Val> 4)
+                if (Start.Val > 4)
                 {
                     if (SecondNodeStart == null)
                     {
@@ -48,14 +43,13 @@ namespace LinkedList
                     {
                         SecondNodeEnd.Next = Start;
                     }
-                    SecondNodeEnd= Start;
+                    SecondNodeEnd = Start;
                 }
 
                 Start = Start.Next;
             }
 
-         
-            if(FirstNodeEnd!=null)
+            if (FirstNodeEnd != null)
             {
                 FirstNodeEnd.Next = SecondNodeStart;
                 return FirstNodeStart;
@@ -63,9 +57,7 @@ namespace LinkedList
             else
             {
                 return SecondNodeStart;
-
             }
-
         }
     }
 }

@@ -1,13 +1,8 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
-   public  class AlternativeKNodes
+    public class AlternativeKNodes
     {
         public static Node ReverseAlterNativeKNodes(Node head, int k)
         {
@@ -15,7 +10,6 @@ namespace LinkedList
             Node current = head;
             Node NextPtr;
             int count = 0;
-
 
             while (current != null && count < k)
             {
@@ -26,14 +20,10 @@ namespace LinkedList
                 count++;
             }
 
-
             if (head != null)
             {
-
                 head.Next = current;
             }
-
-
 
             int cnt = 0;
             while (cnt < k - 1 && current != null)

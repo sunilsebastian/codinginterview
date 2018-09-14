@@ -1,15 +1,10 @@
 ﻿using LinkedList.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
     public class StackHelper
     {
-
         public static LStack Create(int[] values)
         {
             var stk = new LStack();
@@ -24,12 +19,11 @@ namespace LinkedList
         public static void PrintAll(LStack stk)
         {
             var node = stk.Head;
-            while (node!=null)
+            while (node != null)
             {
-                Console.Write(node.Val +" ");
+                Console.Write(node.Val + " ");
                 node = node.Next;
             }
-
         }
 
         public static void PrintAll(Node n)
@@ -40,9 +34,7 @@ namespace LinkedList
                 Console.Write(node.Val + " ");
                 node = node.Next;
             }
-
         }
-
 
         public static void PopAll(LStack stk)
         {
@@ -51,9 +43,7 @@ namespace LinkedList
             {
                 Console.Write(num + " ");
                 num = stk.Pop();
-
             }
         }
-
     }
 }

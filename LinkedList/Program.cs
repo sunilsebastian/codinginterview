@@ -1,94 +1,89 @@
 ﻿using LinkedList.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
             //create Stack
-            var stk=  StackHelper.Create(new int[] { 10, 11, 12, 13, 14, 15 });
-            Console.Write("Stack Values:");
+            var stk = StackHelper.Create(new int[] { 10, 11, 12, 13, 14, 15 });
+            Console.Write("Create list(10, 11, 12, 13, 14, 15) as Stack :");
             StackHelper.PrintAll(stk);
-            Console.WriteLine();
-         
+            Console.WriteLine("\n");
+
             //Create Queue
-            var q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15,16 });
-            Console.Write("Queue Values:");
+            var q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
+            Console.Write("Create list( 10, 11, 12, 13, 14, 15, 16 ) as Queue :");
             QueueHelper.PrintAll(q);
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //Reverse List
-            var reversedQ= ReverseList.Reverse(q.Head);
-            Console.Write("Reversed Queue Values:");
+            var reversedQ = ReverseList.Reverse(q.Head);
+            Console.Write("Reversed List( 10->11->12->13->14-> 15->16) Values:");
             QueueHelper.PrintAll(reversedQ);
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //SwapNode
             q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
-            var swapedList= SwapPairs.SwapNodes(q.Head);
-            Console.Write("Swaped Queue Values:");
+            var swapedList = SwapPairs.SwapNodes(q.Head);
+            Console.Write("Swaped List( 10->11->12->13->14->15->16 ) Values in Pairs:");
             QueueHelper.PrintAll(swapedList);
-            Console.WriteLine();
-
+            Console.WriteLine("\n");
 
             //Sort Based on actual Value
-            q = QueueHelper.Create(new int[] { 1,2,3,-4,-5,-6,-10 });
+            q = QueueHelper.Create(new int[] { 1, 2, 3, -4, -5, -6, -10 });
             var actualValueSorted = SortBasedOnAbsoluteValue.Sort1(q.Head);
-            Console.Write("Sort Based on Actual values:");
+            Console.Write("Sort Based on Actual values in List(1-> 2->3->-4->-5-> -6-> -10):");
             QueueHelper.PrintAll(actualValueSorted);
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //Sort Based on actual Value
-            q = QueueHelper.Create(new int[] { 1,2,3,4,5,6,7,8,9,10});
+            q = QueueHelper.Create(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
             int k = 3;
-            var altRevList = AlternativeKNodes.ReverseAlterNativeKNodes(q.Head,k);
-            Console.Write("Reversed Alternative K Nodes:");
+            var altRevList = AlternativeKNodes.ReverseAlterNativeKNodes(q.Head, k);
+            Console.Write($"Reversed Alternative {k} Nodes in list(1->2->3->4->5->6->7->8->9->10 ):");
             QueueHelper.PrintAll(altRevList);
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //Reverse List
             q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
             var reversedRecurQ = ReverseRecursively.Reverse(q.Head);
-            Console.Write("Reverse Queue Values Recursively:");
+            Console.Write("Reverse List(10->11->12->13->14->15->16) Values Recursively:");
             QueueHelper.PrintAll(reversedRecurQ);
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //Merge Two Sorted Queues
-            var q1 = QueueHelper.Create(new int[] { 1,5 });
-            var q2 = QueueHelper.Create(new int[] { 2,3,4 });
-            var mergedList = MergeKSortedLists.MergeRecursive(q1.Head,q2.Head);
-            Console.Write("Merged List:");
+            var q1 = QueueHelper.Create(new int[] { 1, 5 });
+            var q2 = QueueHelper.Create(new int[] { 2, 3, 4 });
+            var mergedList = MergeKSortedLists.MergeRecursive(q1.Head, q2.Head);
+            Console.Write("Merge list1(1-> 5)  and list2( 2->3->4) :");
             QueueHelper.PrintAll(mergedList);
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //List Iterator
             var listIterator = new ListIterator();
             Console.Write("Write List in Order:");
-            while(listIterator.HasAny())
+            while (listIterator.HasAny())
             {
-                Console.Write(listIterator.Next() +" ");
+                Console.Write(listIterator.Next() + " ");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //deleting the middle node
             q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
             var updatedList = DeleteNodeInTheMiddle.DeleteMiddleNode(q.Head);
-            Console.Write("List after deleting the middle node:");
+            Console.Write("List(10-> 11->12->13->14->15->16) after deleting the middle node:");
             QueueHelper.PrintAll(updatedList);
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //NtheElement from the Last
             q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
             int n = 5;
-            var nthNode= NthElementFromLast.FindNthElementFromLast(q.Head,n);
-            Console.Write(n+"th element from Last:" + nthNode.Val);
-            Console.WriteLine();
+            var nthNode = NthElementFromLast.FindNthElementFromLast(q.Head, n);
+            Console.Write(n + "th element from Last(10->11->12->13->14->15->16):" + nthNode.Val);
+            Console.WriteLine("\n");
 
             //Double linkedlist
             var doubleList = new DoubleList();
@@ -98,7 +93,7 @@ namespace LinkedList
             doubleList.InsertNode(13);
             doubleList.InsertNode(14);
             doubleList.PrintList();
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             //Circular linkedlist
 
@@ -114,38 +109,39 @@ namespace LinkedList
             circularList.SetLoopBack();
 
             //collition node
-            Node collitionNode=circularList.GetCollitionNode();
-            Console.Write("Colliding Node in a circular list:" + collitionNode.Val);
-            Console.WriteLine();
+            Node collitionNode = circularList.GetCollitionNode();
+            Console.Write("Colliding Node in a circular list(10->20->30->40->50->20):" + collitionNode.Val);
+            Console.WriteLine("\n");
 
-            //check a string is palindrum 
+            //check a string is palindrum
             Palindrum palindrum = new Palindrum();
             bool result = palindrum.Check("MALAYALAM");
+            Console.Write("Is 'MALAYALAM' a Palindrum word:" + result.ToString());
+            Console.WriteLine("\n");
 
             //TBD
             //partition based on a pivot
-            q = QueueHelper.Create(new int[] { 1,3,2,9,4,7,11,5 });
-            var partitionList = PartitionBasedOnPivot.Partition(q.Head, 4);
+            q = QueueHelper.Create(new int[] { 1, 3, 2, 9, 4, 7, 11, 5 });
+            int pivot = 4;
+            var partitionList = PartitionBasedOnPivot.Partition(q.Head, pivot);
+            Console.Write($"Partition  List( 1->3->2->9->4->7->11->5 ) based on Pivot({pivot}) :");
             QueueHelper.PrintAll(partitionList);
-            Console.WriteLine();
-
+            Console.WriteLine("\n");
 
             //Number addition
-           LQueue num1 = QueueHelper.Create(new int[] {8,7});
-           LQueue num2 = QueueHelper.Create(new int[] {8,9 });
-           var sum = NumberListAddition.AddNumList(num1.Head, num2.Head);
-           Console.Write("List Addition:");
-           QueueHelper.PrintAll(sum);
-           Console.WriteLine();
+            LQueue num1 = QueueHelper.Create(new int[] { 8, 7 });
+            LQueue num2 = QueueHelper.Create(new int[] { 8, 9 });
+            var sum = NumberListAddition.AddNumList(num1.Head, num2.Head);
+            Console.Write("List Addition List1(8->7) and List2(8->9):");
+            QueueHelper.PrintAll(sum);
+            Console.WriteLine("\n");
 
             var sum1 = NumberListAddition.AddNumListRecursion(num1.Head, num2.Head);
-            Console.Write("List Addition Recursively:");
+            Console.Write("List Addition List1(8->7) and List2(8->9) Recursively:");
             QueueHelper.PrintAll(sum);
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
             Console.ReadLine();
-
         }
-     
     }
 }

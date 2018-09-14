@@ -1,9 +1,4 @@
 ﻿using LinkedList.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -45,7 +40,6 @@ namespace LinkedList
             Node Prev = head;
             while (Current != null)
             {
-
                 if (Current.Val < Prev.Val)
                 {
                     Prev.Next = Current.Next;
@@ -56,7 +50,6 @@ namespace LinkedList
 
                 Prev = Current;
                 Current = Current.Next;
-
             }
             return head;
         }

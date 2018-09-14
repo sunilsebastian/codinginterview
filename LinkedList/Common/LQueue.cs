@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LinkedList.Common
+﻿namespace LinkedList.Common
 {
     public class LQueue
     {
@@ -18,7 +12,7 @@ namespace LinkedList.Common
 
         public void Enqueue(int val)
         {
-            if(Head==null)
+            if (Head == null)
             {
                 Head = Head = CreateNode(val);
                 temp = Head;
@@ -27,9 +21,7 @@ namespace LinkedList.Common
             {
                 temp.Next = CreateNode(val);
                 temp = temp.Next;
-
             }
-
         }
 
         public int Dequeue()

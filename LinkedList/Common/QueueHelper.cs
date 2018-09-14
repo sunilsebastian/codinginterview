@@ -1,9 +1,5 @@
 ﻿using LinkedList.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -28,7 +24,6 @@ namespace LinkedList
                 Console.Write(node.Val + " ");
                 node = node.Next;
             }
-
         }
 
         public static void PrintAll(Node n)
@@ -39,7 +34,6 @@ namespace LinkedList
                 Console.Write(node.Val + " ");
                 node = node.Next;
             }
-
         }
 
         public static void PopAll(LQueue q)
@@ -49,9 +43,7 @@ namespace LinkedList
             {
                 Console.Write(num + " ");
                 num = q.Dequeue();
-
             }
         }
-
     }
 }
