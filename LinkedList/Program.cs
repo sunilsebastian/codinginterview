@@ -15,8 +15,13 @@ namespace LinkedList
 
             //Create Queue
             var q = QueueHelper.Create(new int[] { 10, 11, 12, 13, 14, 15, 16 });
-            Console.Write("Create list( 10, 11, 12, 13, 14, 15, 16 ) as Queue :");
+            Console.Write("Create list(10, 11, 12, 13, 14, 15, 16 ) as Queue :");
             QueueHelper.PrintAll(q);
+            Console.WriteLine("\n");
+
+            //Check list is circular.
+            bool isCircular = CheckListIsCircular.Check(q.Head);
+            Console.Write("List(10, 11, 12, 13, 14, 15, 16 ) is Circular?:" + isCircular.ToString());
             Console.WriteLine("\n");
 
             //Reverse List
