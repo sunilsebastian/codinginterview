@@ -65,8 +65,18 @@ namespace ArrayProblems
             Permutation.Permute(permuteString);
             Console.WriteLine();
 
-            int val= LargestContinousSum.GetLargestContinousSum(new int[] { 20, -2, 1, -3, 4, -1, 2, 1, -5, 4 });
+            int val = LargestContinousSum.GetLargestContinousSum(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
+            Console.Write($"Largest continous sum of (-2, 1, -3, 4, -1, 2, 1, -5, 4 ): {val}");
             Console.WriteLine();
+
+            string string1 = "abcd";
+            string string2 = "hij";
+            string string3 = "ahbijcd";
+            Console.Write($"Is String  '{string3}' In Order: {StringOrderCheck.IsStringsAreInOrder(string1, string2, string3)}");
+            Console.WriteLine();
+
+            arr = new int[]{ 1, 2, 4, 5, 6 };
+            Console.Write($"MissingElement: {MissingElement.FindMissingElement(arr, 6)}");
 
             Console.ReadLine();
         }
