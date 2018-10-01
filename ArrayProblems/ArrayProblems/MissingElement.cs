@@ -11,6 +11,7 @@ namespace ArrayProblems
 
         public static int FindMissingElement(int[] arr,int n)
         {
+            //n(n+1)/2
             int result = 0;
 
             for(int i=0;i<arr.Length; i++)
