@@ -143,17 +143,19 @@ namespace ArrayProblems
             Console.Write($"number 7 is Odd? :{ BitwiseOddorEven.FindOdd(7)}");
             Console.WriteLine();
 
+            //Addition of two very large number (ie not fit into integer range)
             string num1 = "999";
             string num2 = "888";
             var sum= AddTwoLargeNumber.AddTwoNumbers(num1, num2);
             Console.Write($"{num1} + {num2} = {sum}");
             Console.WriteLine();
 
-            var mulres= MultiplyTwoLargeNumber.MultiplyBigNumbers(num1,num2);
+            //Multiplication of two very large numbers (ie not fit into integer range)
+            var mulres = MultiplyTwoLargeNumber.MultiplyBigNumbers(num1,num2);
             Console.Write($"{num1} * {num2} = {mulres}");
             Console.WriteLine();
-            //Addition of two very large number (ie not fit into integer range)
-
+ 
+            //Queue using 2 stack
             QueueUsingStack.Enqueue(10);
             QueueUsingStack.Enqueue(11);
             QueueUsingStack.Enqueue(12);
