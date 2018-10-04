@@ -18,11 +18,13 @@ namespace ArrayProblems
             {
                var result = n & 1;
                 if (result == 1) count++;
-                n = n >> 1;
+                n = n >> 1; // this is equal to n=n-1;
             }
 
             return count;
         }
+
+      
 
     }
 }

@@ -122,25 +122,47 @@ namespace ArrayProblems
             //Anagram
             string s1 = "twoplusone";
             string s2 = "oneplustwo";
-            Console.Write($" '{s1}' and '{s2} are Anagram? {Anagram.isStringsAnagram(s1, s2)}'");
+            Console.Write($" '{s1}' and '{s2}' are Anagram? {Anagram.isStringsAnagram(s1, s2)}'");
             Console.WriteLine();
 
-
+            //Find duplicates in an array
             RemoveDuplicatesInArray.RemoveDuplicatesUnsortedarray(new int[] { 5, 3, 2, 2, 1 ,6,6,5,5});
             Console.WriteLine();
+
             RemoveDuplicatesInArray.RemoveDuplicatesUnsortedarrayUsingHashSet(new int[] { 5, 3, 2, 2, 1, 6, 6, 5, 5 });
             Console.WriteLine();
+
             RemoveDuplicatesInArray.RemoveDuplicatesInSortedArray(new int[] { 1,2,2,2,3,3,3,4,5,6,6 });
             Console.WriteLine();
 
-            int oneCount=NumberOfOnesInBinary.CountOnesInBinary(10);
-
-            var isOdd = BitwiseOddorEven.FindOdd(7);
-
+            //Number of Is in Binary representation
+            Console.Write($"number of 1s in binary represenation of 10 :{NumberOfOnesInBinary.CountOnesInBinary(10)}");
             Console.WriteLine();
 
+            //Find number is Odd
+            Console.Write($"number 7 is Odd? :{ BitwiseOddorEven.FindOdd(7)}");
+            Console.WriteLine();
 
+            string num1 = "999";
+            string num2 = "888";
+            var sum= AddTwoLargeNumber.AddTwoNumbers(num1, num2);
+            Console.Write($"{num1} + {num2} = {sum}");
+            Console.WriteLine();
 
+            var mulres= MultiplyTwoLargeNumber.MultiplyBigNumbers(num1,num2);
+            Console.Write($"{num1} * {num2} = {mulres}");
+            Console.WriteLine();
+            //Addition of two very large number (ie not fit into integer range)
+
+            QueueUsingStack.Enqueue(10);
+            QueueUsingStack.Enqueue(11);
+            QueueUsingStack.Enqueue(12);
+
+            Console.Write("Enqueue:{10,11,12} Dequeue: ");
+            for (int i = 0; i < 3; i++)
+            {
+               Console.Write(QueueUsingStack.Dequeue() + " ");
+            }
             Console.ReadLine();
         }
     }

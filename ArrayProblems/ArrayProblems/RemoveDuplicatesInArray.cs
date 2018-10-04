@@ -10,33 +10,37 @@ namespace ArrayProblems
     {
         public static void RemoveDuplicatesUnsortedarray(int[] arr)
         {
-            int dupCount = 0;
+         //Just check any element of same value exist from 0 to i (i excluded)
+
+            int[] temp = new int[arr.Length];
+
+
             int count = 0;
-            int i;
-            int[] result = new int[arr.Length];
-            for (i = 0; i < arr.Length; i++)
+
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j <= i; j++)
+                bool dup = false;
+                for (int j = 0; j < i; j++)
                 {
                     if (arr[i] == arr[j])
                     {
-                        dupCount++;
-                        if (dupCount > 1)
-                        {
-                            break;
-                        }
+                        dup = true;
+
+                        break;
                     }
                 }
-                if (dupCount == 1)
+
+                if (dup == false)
                 {
-                    result[count++] = arr[i];
+                    temp[count] = arr[i];
+                    count++;
                 }
-                dupCount = 0;
+
             }
 
             for (int k = 0; k < count; k++)
             {
-                Console.Write(result[k] + " ");
+                Console.Write(temp[k] + " ");
             }
 
         }
