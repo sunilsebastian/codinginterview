@@ -52,6 +52,7 @@
     <Compile Include="LargestContinousSum.cs" />
     <Compile Include="MissingElement.cs" />
     <Compile Include="MultiplyTwoLargeNumber.cs" />
+    <Compile Include="NegativeNumCountSortedMatrix.cs" />
     <Compile Include="NumberOfOnesInBinary.cs" />
     <Compile Include="NumberRepeatingEvenTimes.cs" />
     <Compile Include="ParanthesisInOrder.cs" />

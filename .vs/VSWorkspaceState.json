@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ArrayProblems",
+    "\\ArrayProblems\\ArrayProblems\\bin",
+    "\\ArrayProblems\\ArrayProblems\\obj",
+    "\\ArrayProblems\\ArrayProblems\\obj\\Release",
+    "\\LinkedList"
   ],
   "PreviewInSolutionExplorer": false
 }

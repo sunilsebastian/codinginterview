@@ -42,7 +42,7 @@ namespace ArrayProblems
             Console.WriteLine();
 
             //Print Prime
-            int maxVal =435;
+            int maxVal = 435;
             Console.Write($"Prime numbers below {maxVal}: ");
             PrimeNumbers.Print(maxVal);
             Console.WriteLine();
@@ -84,25 +84,25 @@ namespace ArrayProblems
             Console.WriteLine();
 
             //Find missing element in an array
-            arr = new int[]{ 1, 2, 4, 5, 6 };
+            arr = new int[] { 1, 2, 4, 5, 6 };
             Console.Write($"MissingElement in [ 1,2, 4, 5, 6 ]: {MissingElement.FindMissingElement(arr, 6)}");
 
             //Convert input to required output.
             int[] input = { 2, 3, 1, 4 };
             int[] output = { 12, 8, 24, 6 };
-            var result=TransformArrayValue.Convert(input);
+            var result = TransformArrayValue.Convert(input);
             bool isEqual = output.SequenceEqual(result);
             Console.WriteLine();
 
             //Balanced Paranthesis
-            List<char> paranthesis = new List<char>{ '[', '{', '(' };
+            List<char> paranthesis = new List<char> { '[', '{', '(' };
             Dictionary<char, char> pairs = new Dictionary<char, char>() { { '[', ']' }, { '{', '}' }, { '(', ')' } };
             string inputString = "[{]}"; //[{}]
             bool inorder = ParanthesisInOrder.Check(inputString);
             Console.WriteLine();
 
             //Even Occuring First Element..
-            input = new int[] { 1, 2, 2 ,3,3};
+            input = new int[] { 1, 2, 2, 3, 3 };
             Console.Write("Even Occuring First Element in { 1,2, 2 ,3,3} is :");
             NumberRepeatingEvenTimes.FindNumberRepeatingEvenTimes(input);
             Console.WriteLine();
@@ -126,13 +126,13 @@ namespace ArrayProblems
             Console.WriteLine();
 
             //Find duplicates in an array
-            RemoveDuplicatesInArray.RemoveDuplicatesUnsortedarray(new int[] { 5, 3, 2, 2, 1 ,6,6,5,5});
+            RemoveDuplicatesInArray.RemoveDuplicatesUnsortedarray(new int[] { 5, 3, 2, 2, 1, 6, 6, 5, 5 });
             Console.WriteLine();
 
             RemoveDuplicatesInArray.RemoveDuplicatesUnsortedarrayUsingHashSet(new int[] { 5, 3, 2, 2, 1, 6, 6, 5, 5 });
             Console.WriteLine();
 
-            RemoveDuplicatesInArray.RemoveDuplicatesInSortedArray(new int[] { 1,2,2,2,3,3,3,4,5,6,6 });
+            RemoveDuplicatesInArray.RemoveDuplicatesInSortedArray(new int[] { 1, 2, 2, 2, 3, 3, 3, 4, 5, 6, 6 });
             Console.WriteLine();
 
             //Number of Is in Binary representation
@@ -146,15 +146,15 @@ namespace ArrayProblems
             //Addition of two very large number (ie not fit into integer range)
             string num1 = "999";
             string num2 = "888";
-            var sum= AddTwoLargeNumber.AddTwoNumbers(num1, num2);
+            var sum = AddTwoLargeNumber.AddTwoNumbers(num1, num2);
             Console.Write($"{num1} + {num2} = {sum}");
             Console.WriteLine();
 
             //Multiplication of two very large numbers (ie not fit into integer range)
-            var mulres = MultiplyTwoLargeNumber.MultiplyBigNumbers(num1,num2);
+            var mulres = MultiplyTwoLargeNumber.MultiplyBigNumbers(num1, num2);
             Console.Write($"{num1} * {num2} = {mulres}");
             Console.WriteLine();
- 
+
             //Queue using 2 stack
             QueueUsingStack.Enqueue(10);
             QueueUsingStack.Enqueue(11);
@@ -163,8 +163,22 @@ namespace ArrayProblems
             Console.Write("Enqueue:{10,11,12} Dequeue: ");
             for (int i = 0; i < 3; i++)
             {
-               Console.Write(QueueUsingStack.Dequeue() + " ");
+                Console.Write(QueueUsingStack.Dequeue() + " ");
             }
+            Console.WriteLine();
+
+            input = new int[] { 1, 2, 3, 3, 3, 2, 4, 5, 5, 6 };
+            Console.Write($"Duplicates in array [1,2,3,3,2,4,5,5,6] :");
+            DuplicatesInArray.FindDuplicates(input);
+            Console.WriteLine();
+
+            int[,] sortedArray = new int[,] { { -3,-2,-1,1}, {-2,2,3,4 }, { 4,5,7,8} };
+            int negCount = NegativeNumCountSortedMatrix.GetNegativeNumCountSortedMatrix(sortedArray);
+            Console.Write($"Count of Negative numbers in Sorated 2D Array  [[-3,-2,-1,1], [-2,2,3,4 ], [ 4,5,7,8]] :{negCount}");
+            Console.WriteLine();
+
+            //Max repeating element in an array
+
             Console.ReadLine();
         }
     }
