@@ -10,7 +10,7 @@ namespace ArrayProblems
     {
         public static int GetNegativeNumCountSortedMatrix(int[,] arr)
         {
-            int numberOfRows = arr.GetLength(0); //rows
+            int numberOfRows = arr.GetLength(0);
             int numberOfColumns = arr.GetLength(1);
             int count = 0;
 
