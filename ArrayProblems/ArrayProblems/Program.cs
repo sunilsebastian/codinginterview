@@ -182,7 +182,6 @@ namespace ArrayProblems
             k = 8; //Values in array should be 0 to k
             int maxrepeat = MaxRepeatingElementInArray.FindMaxRepeatingElementInAnArray(input, k);
             Console.WriteLine($"max repeating element in [2,3,3,5,3,4,1,7,7] :{maxrepeat}");
-
             Console.ReadLine();
         }
     }
