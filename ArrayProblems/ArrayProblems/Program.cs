@@ -182,6 +182,21 @@ namespace ArrayProblems
             k = 8; //Values in array should be 0 to k
             int maxrepeat = MaxRepeatingElementInArray.FindMaxRepeatingElementInAnArray(input, k);
             Console.WriteLine($"max repeating element in [2,3,3,5,3,4,1,7,7] :{maxrepeat}");
+          
+            int[,] mat = new int[,] {
+                { 0, 1, 2, 3 },
+                { 4, 5, 6, 7 },
+                { 8, 9, 10,11 },
+                { 12,13,14,15 } };
+            Console.WriteLine("Roated Matrix 90 Degree:");
+            RotateMatrix.RotateMatrix90(mat);
+
+
+            string s = "Iwanttogotopartytomorrow";
+            List<string> lst = new List<string> { "I", "want", "to", "go", "to", "party", "tomorrow" };
+            string res=WordBreak.BreakWorkBasedOnDictionary(s, 0, lst);
+            Console.WriteLine($"Break Word result string:{res}");
+
             Console.ReadLine();
         }
     }

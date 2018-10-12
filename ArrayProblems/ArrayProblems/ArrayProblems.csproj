@@ -64,11 +64,13 @@
     <Compile Include="QueueUsingStack.cs" />
     <Compile Include="RemoveDuplicatesInArray.cs" />
     <Compile Include="ReverseWordsInString.cs" />
+    <Compile Include="RotateMatrix.cs" />
     <Compile Include="StringOrderCheck.cs" />
     <Compile Include="StringToInt.cs" />
     <Compile Include="StringUnique.cs" />
     <Compile Include="SumUptoK.cs" />
     <Compile Include="TransformArrayValue.cs" />
+    <Compile Include="WordBreak.cs" />
     <Compile Include="WordCountInASentence.cs" />
   </ItemGroup>
   <ItemGroup>
