@@ -65,6 +65,7 @@
     <Compile Include="RemoveDuplicatesInArray.cs" />
     <Compile Include="ReverseWordsInString.cs" />
     <Compile Include="RotateMatrix.cs" />
+    <Compile Include="SearchForStringInMatrix.cs" />
     <Compile Include="StringOrderCheck.cs" />
     <Compile Include="StringToInt.cs" />
     <Compile Include="StringUnique.cs" />

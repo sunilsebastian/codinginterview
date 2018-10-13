@@ -197,6 +197,12 @@ namespace ArrayProblems
             string res=WordBreak.BreakWorkBasedOnDictionary(s, 0, lst);
             Console.WriteLine($"Break Word result string:{res}");
 
+            char[,] grid = new char[,]{ {'H','E','L','L','O'},
+                                        { 'E','E','L','I','O'},
+                                        { 'L','E','L','M','O'},
+                                        { 'P','E','L','B','O'}};
+            bool isFound=SearchForStringInMatrix.FindString(grid, "HELP");
+
             Console.ReadLine();
         }
     }
