@@ -202,6 +202,26 @@ namespace ArrayProblems
                                         { 'L','E','L','M','O'},
                                         { 'P','E','L','B','O'}};
             bool isFound=SearchForStringInMatrix.FindString(grid, "HELP");
+            mat = new int[,] {
+                { 0, 1, 2, 3 },
+                { 4, 5, 6, 7 },
+                { 8, 9, 10,11 },
+                { 12,13,14,15 } };
+
+            Console.WriteLine("Print Matrix Diagonally::");
+            MatrixDiagonally.PrintMatrixDiagonally(mat);
+            Console.WriteLine();
+
+            var mat1 = new int[,] {
+                { 11, 12, 13, 14 },
+                { 15, 16, 17, 18 },
+                { 19, 20, 21, 22 }
+                //{ 23, 24, 25, 26 }
+                //{ 27, 28, 29, 30 }
+        };
+
+        MatrixSpirall.PrintMatrixSpiral(mat1);
+            Console.WriteLine();
 
             Console.ReadLine();
         }
