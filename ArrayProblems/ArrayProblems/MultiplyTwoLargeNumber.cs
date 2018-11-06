@@ -16,7 +16,7 @@ namespace ArrayProblems
             //char--> 9 , val --> 57(48+9) 
             //so s[i]-'0' will give val 9 and char as horizontal tab
 
-            char[] result = new char[num1.Length + num2.Length];
+            char[] result = new char[num1.Length + num2.Length]; // Default 0 '/0'  2 ==> 50 '2'
             int carry = 0;
             int offset = 0;
 
@@ -30,7 +30,7 @@ namespace ArrayProblems
                     {
                         resval = result[tail] - '0';
                     }
-                    int sum =  resval+ ((num1[i] - '0') * (num2[j] - '0')) + carry; //remember to add result before taking mode
+                    int sum =  resval+ ((num1[i] - '0') * (num2[j] - '0')) + carry; //remember to add result before taking mode 
                     result[tail] = (char)((sum % 10) + '0');
                     carry = sum / 10;
                     tail--;

@@ -10,6 +10,9 @@ namespace SortProblems
     {
         public static void Main(string[] args)
         {
+            string s = "ab cd e j asd ljffg df";
+            var result=SortBasedOnsize.Sort(s);
+            Console.WriteLine();
             //Quick Sort
             int[] arr = new int[10]
             {

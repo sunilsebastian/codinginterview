@@ -172,17 +172,17 @@ namespace ArrayProblems
             DuplicatesInArray.FindDuplicates(input);
             Console.WriteLine();
 
-            int[,] sortedArray = new int[,] { { -3,-2,-1,1}, {-2,2,3,4 }, { 4,5,7,8} };
+            int[,] sortedArray = new int[,] { { -3, -2, -1, 1 }, { -2, 2, 3, 4 }, { 4, 5, 7, 8 } };
             int negCount = NegativeNumCountSortedMatrix.GetNegativeNumCountSortedMatrix(sortedArray);
             Console.Write($"Count of Negative numbers in Sorated 2D Array  [[-3,-2,-1,1], [-2,2,3,4 ], [ 4,5,7,8]] :{negCount}");
             Console.WriteLine();
 
             //Max repeating element in an array
-            input = new int[] {2,3,3,5,3,4,1,7,7 };//N is the size
+            input = new int[] { 2, 3, 3, 5, 3, 4, 1, 7, 7 };//N is the size
             k = 8; //Values in array should be 0 to k
             int maxrepeat = MaxRepeatingElementInArray.FindMaxRepeatingElementInAnArray(input, k);
             Console.WriteLine($"max repeating element in [2,3,3,5,3,4,1,7,7] :{maxrepeat}");
-          
+
             int[,] mat = new int[,] {
                 { 0, 1, 2, 3 },
                 { 4, 5, 6, 7 },
@@ -194,14 +194,14 @@ namespace ArrayProblems
 
             string s = "Iwanttogotopartytomorrow";
             List<string> lst = new List<string> { "I", "want", "to", "go", "to", "party", "tomorrow" };
-            string res=WordBreak.BreakWorkBasedOnDictionary(s, 0, lst);
+            string res = WordBreak.BreakWorkBasedOnDictionary(s, 0, lst);
             Console.WriteLine($"Break Word result string:{res}");
 
             char[,] grid = new char[,]{ {'H','E','L','L','O'},
                                         { 'E','E','L','I','O'},
                                         { 'L','E','L','M','O'},
                                         { 'P','E','L','B','O'}};
-            bool isFound=SearchForStringInMatrix.FindString(grid, "HELP");
+            bool isFound = SearchForStringInMatrix.FindString(grid, "HELP");
             mat = new int[,] {
                 { 0, 1, 2, 3 },
                 { 4, 5, 6, 7 },
@@ -218,9 +218,20 @@ namespace ArrayProblems
                 { 19, 20, 21, 22 }
                 //{ 23, 24, 25, 26 }
                 //{ 27, 28, 29, 30 }
-        };
+            };
 
-        MatrixSpirall.PrintMatrixSpiral(mat1);
+            MatrixSpirall.PrintMatrixSpiral(mat1);
+            Console.WriteLine();
+
+
+            UnionOfTwoSortedArrays.PrintUnion(new int[] { 1, 2, 3 }, new int[] { 4, 5, 5 });
+            Console.WriteLine();
+
+
+            var median = MedianOfTwoSortedArrays.getMedian(new int[] { 1, 2, 9 }, new int[] { 4, 5, 10 }, 3);
+            Console.WriteLine();
+
+            InterSectionOfSortedArray.PrintIntersection(new int[] { 1, 2, 9 }, new int[] { 2, 4, 9 }, 3, 3);
             Console.WriteLine();
 
             Console.ReadLine();
