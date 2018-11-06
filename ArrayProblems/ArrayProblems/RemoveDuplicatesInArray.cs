@@ -70,6 +70,27 @@ namespace ArrayProblems
 
         }
 
-      
+        public static void RemoveDuplicatesInSortedArray(int[] arr)
+        {
+            int count = 0;
+            int[] result = new int[arr.Length];
+            result[count++] = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] != arr[i - 1])
+                {
+                    result[count++] = arr[i];
+                }
+            }
+
+            for (int k = 0; k < count; k++)
+            {
+                Console.Write(result[k] + " ");
+            }
+
+        }
+
+
     }
 }
