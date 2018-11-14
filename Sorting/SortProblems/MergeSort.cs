@@ -23,17 +23,16 @@ namespace SortProblems
 
         private static void Merge(int[] input, int left, int mid, int right)
         {
-            //Merge procedure takes theta(n) time
+          
             int[] temp = new int[input.Length];
             int i, leftEnd, lengthOfInput, tmpPos;
             leftEnd = mid - 1;
             tmpPos = left;
             lengthOfInput = right - left + 1;
-            //Console.WriteLine(string.Format("{0} {1}",input.Length,lengthOfInput));
-
-            //selecting smaller element from left sorted array or right sorted array and placing them in temp array.
+          
             while ((left <= leftEnd) && (mid <= right))
             {
+                //mid is the first element of the second compartment
                 if (input[left] <= input[mid])
                 {
                     temp[tmpPos++] = input[left++];

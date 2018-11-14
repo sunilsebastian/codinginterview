@@ -28,8 +28,18 @@ namespace SortProblems
 
             Console.WriteLine();
 
-           //Merge Sort
-           arr = new int[7]
+            int k = 5;
+            var largest=KthLargestUnSortedArray.FindKthLargest(arr, 0, arr.Length - 1,arr.Length-k);
+            Console.WriteLine($"{k}th largest element is: {largest}");
+
+
+            var smallest = KthLargestUnSortedArray.FindKthLargest(arr, 0, arr.Length - 1,k-1);
+            Console.WriteLine($"{k}th Smallest element is: {smallest}");
+
+            Console.WriteLine();
+
+            //Merge Sort
+            arr = new int[7]
             {
                 7,4,5,31,8,2,6
             };

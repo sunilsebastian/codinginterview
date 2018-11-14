@@ -17,9 +17,9 @@ namespace TreeProblems.Common
 
         public void Insert(int data)
         {
-            //this.Root = InSertHelper(this.Root, data);
+            this.Root = InSertHelper(this.Root, data);
 
-            this.Root = InsertIterative(this.Root, data);
+           // this.Root = InsertIterative(this.Root, data);
         }
 
         public Node InsertIterative(Node root, int data)
@@ -83,9 +83,58 @@ namespace TreeProblems.Common
             {
                 root.Right = InSertHelper(root.Right, data);
             }
-
+            
             return root;
 
         }
+
+        public static Node RemoveMinIterative(Node root)
+        {
+
+            if (root == null ||(root.Left==null && root.Right==null))
+                return null;
+
+
+            Node temp = root;
+            Node parent = null;
+
+            while(temp.Left!=null)
+            {
+                parent = temp;
+                temp = temp.Left;
+            }
+
+            if (temp.Right != null)
+            {
+                if (parent == null)
+                {
+                    temp = temp.Right;
+                }
+                else
+                {
+
+                    parent.Left = temp.Right;
+                }
+            }
+            return temp;
+        }
+
+        public static Node RemoveMinRecursive(Node root)
+        {
+            if (root.Left != null)
+            {
+              root.Left=  RemoveMinRecursive(root.Left);
+            }
+          
+            else
+            {
+               root = root.Right;
+            }
+            return root;
+        }
     }
 }
+
+   
+
+
