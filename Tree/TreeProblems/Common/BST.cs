@@ -15,12 +15,54 @@ namespace TreeProblems.Common
             this.Root = null;
         }
 
+        public void InsertAll(int[] arr)
+        {
+            for(int i=0;i<arr.Length;i++)
+            {
+                this.Root = InsertHelper(this.Root, arr[i]);
+            }
+
+        }
+
+        public void ClearAll()
+        {
+            this.Root = null;
+        }
         public void Insert(int data)
         {
-            this.Root = InSertHelper(this.Root, data);
+            this.Root = InsertHelper(this.Root, data);
 
            // this.Root = InsertIterative(this.Root, data);
         }
+
+        public void RemoveMin()
+        {
+            //this.Root = RemoveMinRecursive(this.Root);
+            this.Root = RemoveMinIterative(this.Root); 
+        }
+        
+
+        public void Remove(int x)
+        {
+            this.Root = Remove(x, this.Root);
+        }
+
+        public int FindMin()
+        {
+            return FindMin(this.Root).Data;
+        }
+
+        public int FindMax()
+        {
+            return FindMax(this.Root).Data;
+        }
+
+        public int Find(int x)
+        {
+            return Find(x, this.Root).Data;
+        }
+
+
 
         public Node InsertIterative(Node root, int data)
         {
@@ -68,7 +110,7 @@ namespace TreeProblems.Common
             return temp;
         }
 
-        private Node InSertHelper(Node root, int data)
+        private Node InsertHelper(Node root, int data)
         {
             if (root==null)
             {
@@ -77,11 +119,11 @@ namespace TreeProblems.Common
             }
             else if(data < root.Data)
             {
-                root.Left = InSertHelper(root.Left, data);
+                root.Left = InsertHelper(root.Left, data);
             }
             else if (data > root.Data)
             {
-                root.Right = InSertHelper(root.Right, data);
+                root.Right = InsertHelper(root.Right, data);
             }
             
             return root;
@@ -94,7 +136,6 @@ namespace TreeProblems.Common
             if (root == null ||(root.Left==null && root.Right==null))
                 return null;
 
-
             Node temp = root;
             Node parent = null;
 
@@ -104,19 +145,9 @@ namespace TreeProblems.Common
                 temp = temp.Left;
             }
 
-            if (temp.Right != null)
-            {
-                if (parent == null)
-                {
-                    temp = temp.Right;
-                }
-                else
-                {
+             parent.Left = temp.Right;
 
-                    parent.Left = temp.Right;
-                }
-            }
-            return temp;
+             return root;
         }
 
         public static Node RemoveMinRecursive(Node root)
@@ -131,6 +162,79 @@ namespace TreeProblems.Common
                root = root.Right;
             }
             return root;
+        }
+
+        private Node Find(int x, Node t)
+        {
+            while (t != null)
+            {
+                if ((x as IComparable).CompareTo(t.Data) < 0)
+                {
+                    t = t.Left;
+                }
+                else if ((x as IComparable).CompareTo(t.Data) > 0)
+                {
+                    t = t.Right;
+                }
+                else
+                {
+                    return t;
+                }
+            }
+
+            return null;
+        }
+        public  Node Remove(int x, Node t)
+        {
+            if (t == null)
+            {
+                throw new Exception("Item not found");
+            }
+            else if (t.Data< x)  
+            {
+                t.Left = Remove(x, t.Left);
+            }
+            else if (t.Data > x)
+            {
+                t.Right = Remove(x, t.Right);
+            }
+            else if (t.Left != null && t.Right != null)
+            {
+                t.Data = FindMin(t.Right).Data;
+                t.Right = RemoveMinRecursive(t.Right);
+            }
+            else
+            {
+                t = (t.Left != null) ? t.Left : t.Right;
+            }
+
+            return t;
+        }
+
+        private Node FindMin(Node t)
+        {
+            if (t != null)
+            {
+                while (t.Left != null)
+                {
+                    t = t.Left;
+                }
+            }
+
+            return t;
+        }
+
+        private Node FindMax(Node t)
+        {
+            if (t != null)
+            {
+                while (t.Right != null)
+                {
+                    t = t.Right;
+                }
+            }
+
+            return t;
         }
     }
 }

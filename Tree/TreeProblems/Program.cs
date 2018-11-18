@@ -20,6 +20,18 @@ namespace TreeProblems
             bst.Insert(15);
             Console.WriteLine(bst.Root.ToString());
 
+            bst.ClearAll();
+            int[] arr = { 3, 0, 4, 2, 1 };
+            bst.InsertAll(arr);
+            TrimNodesOutisideBoundary.TrimBoundary(bst.Root, 1, 3);
+            Console.WriteLine(bst.Root.ToString());
+
+
+            bst.ClearAll();
+            int[] arr1 = { 3, 0, -1, 4, 2, 1 };
+            bst.InsertAll(arr1);
+            bst.RemoveMin();
+
             //Remove minimum
 
             Console.ReadLine();
