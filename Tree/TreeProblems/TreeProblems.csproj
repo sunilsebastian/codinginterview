@@ -42,15 +42,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayMaxRootTree.cs" />
+    <Compile Include="CheckTreeIsBST.cs" />
     <Compile Include="Common\BST.cs" />
     <Compile Include="Common\Node.cs" />
+    <Compile Include="HeightOfBinaryTree.cs" />
+    <Compile Include="InOrderTraversal.cs" />
+    <Compile Include="LargestBSTInBinaryTree.cs" />
+    <Compile Include="LevelOrderNewLine.cs" />
+    <Compile Include="LevelorderReverse.cs" />
+    <Compile Include="LevelOrderTraversal.cs" />
+    <Compile Include="LowestCommonAncesterBinaryTree.cs" />
+    <Compile Include="LowestCommonAncestorBST.cs" />
+    <Compile Include="MirrorOfBinaryTree.cs" />
+    <Compile Include="MorrisInorderTraversal.cs" />
+    <Compile Include="PerimeterOfBinaryTree.cs" />
+    <Compile Include="PostOrderTraversal.cs" />
+    <Compile Include="PreOrderTraversal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootToLeafSum.cs" />
+    <Compile Include="SameTree.cs" />
+    <Compile Include="SizeOfBinaryTree.cs" />
+    <Compile Include="SpiralOrderTraversal.cs" />
+    <Compile Include="TreeTo2DMatrix.cs" />
     <Compile Include="TrimNodesOutisideBoundary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="TreeDefinitions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,7 +28,7 @@ namespace TreeProblems
 
 
             bst.ClearAll();
-            int[] arr1 = { 3, 0, -1, 4, 2, 1 };
+            int[] arr1 = { 3, 0, 4, 2, 1 };
             bst.InsertAll(arr1);
             bst.RemoveMin();
 

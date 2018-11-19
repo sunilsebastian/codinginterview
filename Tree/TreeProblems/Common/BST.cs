@@ -17,7 +17,7 @@ namespace TreeProblems.Common
 
         public void InsertAll(int[] arr)
         {
-            for(int i=0;i<arr.Length;i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 this.Root = InsertHelper(this.Root, arr[i]);
             }
@@ -32,15 +32,15 @@ namespace TreeProblems.Common
         {
             this.Root = InsertHelper(this.Root, data);
 
-           // this.Root = InsertIterative(this.Root, data);
+            // this.Root = InsertIterative(this.Root, data);
         }
 
         public void RemoveMin()
         {
             //this.Root = RemoveMinRecursive(this.Root);
-            this.Root = RemoveMinIterative(this.Root); 
+            this.Root = RemoveMinIterative(this.Root);
         }
-        
+
 
         public void Remove(int x)
         {
@@ -67,7 +67,7 @@ namespace TreeProblems.Common
         public Node InsertIterative(Node root, int data)
         {
             Node temp = null;
-            
+
 
             if (root == null)
             {
@@ -76,7 +76,7 @@ namespace TreeProblems.Common
             }
             else
             {
-                 temp = root;
+                temp = root;
 
                 while (true)
                 {
@@ -92,7 +92,7 @@ namespace TreeProblems.Common
                             root = root.Left;
                         }
                     }
-                    else if(data > root.Data)
+                    else if (data > root.Data)
                     {
                         if (root.Right == null)
                         {
@@ -112,12 +112,12 @@ namespace TreeProblems.Common
 
         private Node InsertHelper(Node root, int data)
         {
-            if (root==null)
+            if (root == null)
             {
-                root= new Node(data);
-                
+                root = new Node(data);
+
             }
-            else if(data < root.Data)
+            else if (data < root.Data)
             {
                 root.Left = InsertHelper(root.Left, data);
             }
@@ -125,7 +125,7 @@ namespace TreeProblems.Common
             {
                 root.Right = InsertHelper(root.Right, data);
             }
-            
+
             return root;
 
         }
@@ -133,33 +133,33 @@ namespace TreeProblems.Common
         public static Node RemoveMinIterative(Node root)
         {
 
-            if (root == null ||(root.Left==null && root.Right==null))
+            if (root == null || (root.Left == null && root.Right == null))
                 return null;
 
             Node temp = root;
             Node parent = null;
 
-            while(temp.Left!=null)
+            while (temp.Left != null)
             {
                 parent = temp;
                 temp = temp.Left;
             }
 
-             parent.Left = temp.Right;
+            parent.Left = temp.Right;
 
-             return root;
+            return root;
         }
 
         public static Node RemoveMinRecursive(Node root)
         {
             if (root.Left != null)
             {
-              root.Left=  RemoveMinRecursive(root.Left);
+                root.Left = RemoveMinRecursive(root.Left);
             }
-          
+
             else
             {
-               root = root.Right;
+                root = root.Right;
             }
             return root;
         }
@@ -168,11 +168,11 @@ namespace TreeProblems.Common
         {
             while (t != null)
             {
-                if ((x as IComparable).CompareTo(t.Data) < 0)
+                if ((x as IComparable).CompareTo(t.Data) < x)
                 {
                     t = t.Left;
                 }
-                else if ((x as IComparable).CompareTo(t.Data) > 0)
+                else if ((x as IComparable).CompareTo(t.Data) > x)
                 {
                     t = t.Right;
                 }
@@ -184,6 +184,23 @@ namespace TreeProblems.Common
 
             return null;
         }
+
+        private Node FindRecursive(int x, Node t)
+        {
+            if ((x as IComparable).CompareTo(t.Data) < x)
+            {
+                return FindRecursive(x, t.Left);
+            }
+            else if ((x as IComparable).CompareTo(t.Data) > x)
+            {
+                return FindRecursive(x, t.Right);
+            }
+            else
+            {
+                return t;
+            }
+        }
+   
         public  Node Remove(int x, Node t)
         {
             if (t == null)
@@ -220,7 +237,6 @@ namespace TreeProblems.Common
                     t = t.Left;
                 }
             }
-
             return t;
         }
 
