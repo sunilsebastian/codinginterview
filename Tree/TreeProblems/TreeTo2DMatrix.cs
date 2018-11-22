@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TreeProblems
 {
-    class TreeTo2DMatrix
+    public class TreeTo2DMatrix
     {
     }
 }
+ 
