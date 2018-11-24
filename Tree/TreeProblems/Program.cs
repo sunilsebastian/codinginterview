@@ -58,6 +58,44 @@ namespace TreeProblems
             arr = new int[] { 10, 5,2,7,20};
             bst.InsertAll(arr);
             bool isBst = CheckTreeIsBST.IsBsT(bst.Root,Int32.MinValue,Int32.MaxValue);
+            Console.WriteLine($"check  [ 10,5,2,7,20]  is BST:{isBst}");
+
+            bst.ClearAll();
+            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
+            bst.InsertAll(arr);
+            Console.Write("InOredr Traversal Iterative:");
+            InOrderTraversal.Traverse(bst.Root);
+            Console.WriteLine();
+
+            //Level order traversdal  or Breadth First Traversal
+            bst.ClearAll();
+            arr = new int[] { 30,20,40,10,25};
+            bst.InsertAll(arr);
+            Console.Write("LevelOrder Traversal Iterative:");
+            LevelOrderTraversal.Traverse(bst.Root);
+            Console.WriteLine();
+
+            //level order insert
+            NonBST nonBst = new NonBST();
+            arr = new int[] { 30,20,40,10,25,7,8,11,12};
+            nonBst.InsertAll(arr);
+            Console.Write("Non BST LevelOrder Traversal Iterative:");
+            LevelOrderTraversal.Traverse(nonBst.Root);
+            Console.WriteLine();
+
+            //check Two Trees are equal
+
+            bst = new BST();
+            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
+            bst.InsertAll(arr);
+
+            var bst1 = new BST();
+            var arr11 = new int[] { 30, 40, 50, 22, 10, 8, 15, 25 };
+            bst1.InsertAll(arr11);
+
+            bool isEqual=SameTree.IsSameTree(bst.Root, bst1.Root);
+
+            Console.WriteLine();
 
             Console.ReadLine();
 
