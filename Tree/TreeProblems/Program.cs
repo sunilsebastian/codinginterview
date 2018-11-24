@@ -92,9 +92,13 @@ namespace TreeProblems
             var bst1 = new BST();
             var arr11 = new int[] { 30, 40, 50, 22, 10, 8, 15, 25 };
             bst1.InsertAll(arr11);
-
             bool isEqual=SameTree.IsSameTree(bst.Root, bst1.Root);
 
+
+            nonBst.ClearAll();
+            arr = new int[] { 10,16,5,2,3,6,11};
+            nonBst.InsertAll(arr);
+            RootToLeafSum.FindRootToLeafPath(nonBst.Root, 26);
             Console.WriteLine();
 
             Console.ReadLine();

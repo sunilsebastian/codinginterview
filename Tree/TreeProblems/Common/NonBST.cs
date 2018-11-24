@@ -15,6 +15,11 @@ namespace TreeProblems.Common
             this.Root = null;
         }
 
+        public void ClearAll()
+        {
+            this.Root = null;
+        }
+
         public void InsertAll(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
