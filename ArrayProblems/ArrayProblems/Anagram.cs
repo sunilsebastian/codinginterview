@@ -23,9 +23,9 @@ namespace ArrayProblems
 
                 for (int i = 0; i < str2.Length; i++)
                 {
-                    charArray[str1[i]]--;
+                    charArray[str2[i]]--;
 
-                    if (charArray[str1[i]] < 0)
+                    if (charArray[str2[i]] < 0)
                         return false;
                 }
 

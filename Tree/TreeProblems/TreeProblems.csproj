@@ -60,6 +60,7 @@
     <Compile Include="MorrisInorderTraversal.cs" />
     <Compile Include="PerimeterOfBinaryTree.cs" />
     <Compile Include="PostOrderTraversal.cs" />
+    <Compile Include="PreOrderArrayToTree.cs" />
     <Compile Include="PreOrderTraversal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

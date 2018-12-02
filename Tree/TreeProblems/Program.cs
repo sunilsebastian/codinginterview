@@ -60,11 +60,28 @@ namespace TreeProblems
             bool isBst = CheckTreeIsBST.IsBsT(bst.Root,Int32.MinValue,Int32.MaxValue);
             Console.WriteLine($"check  [ 10,5,2,7,20]  is BST:{isBst}");
 
+            //InOrder
             bst.ClearAll();
             arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
             bst.InsertAll(arr);
             Console.Write("InOredr Traversal Iterative:");
             InOrderTraversal.Traverse(bst.Root);
+            Console.WriteLine();
+            
+            //Post order
+            bst.ClearAll();
+            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
+            bst.InsertAll(arr);
+            Console.Write("PostOrder Traversal Iterative:");
+            PostOrderTraversal.Traverse(bst.Root);
+            Console.WriteLine();
+
+            //Pre order
+            bst.ClearAll();
+            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
+            bst.InsertAll(arr);
+            Console.Write("PreOrder Traversal Iterative:");
+            PreOrderTraversal.Traverse(bst.Root);
             Console.WriteLine();
 
             //Level order traversdal  or Breadth First Traversal
@@ -75,15 +92,39 @@ namespace TreeProblems
             LevelOrderTraversal.Traverse(bst.Root);
             Console.WriteLine();
 
-            //level order insert
+            //Level order traversdal  new line
+            bst.ClearAll();
+            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
+            bst.InsertAll(arr);
+            Console.WriteLine("LevelOrder Traversal Iterative Newline:");
+            LevelOrderNewLine.Traverse(bst.Root);
+            Console.WriteLine();
+
+            //Level order Traversal  Reverse
+            bst.ClearAll();
+            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
+            bst.InsertAll(arr);
+            Console.Write("LevelOrder Traversal Reverse:");
+            LevelorderReverse.Traverse(bst.Root);
+            Console.WriteLine();
+
+            //Spiral order Traversal  Reverse
             NonBST nonBst = new NonBST();
+            arr = new int[] { 10, 16, 5, 2, 3, 6, 11 };
+            nonBst.InsertAll(arr);
+            Console.Write("Spiral Order Traversal Reverse:");
+            SpiralOrderTraversal.Traverse(nonBst.Root);
+            Console.WriteLine();
+
+            //level order insert
+            nonBst = new NonBST();
             arr = new int[] { 30,20,40,10,25,7,8,11,12};
             nonBst.InsertAll(arr);
             Console.Write("Non BST LevelOrder Traversal Iterative:");
             LevelOrderTraversal.Traverse(nonBst.Root);
             Console.WriteLine();
 
-            //check Two Trees are equal
+            //Check Two Trees are equal
 
             bst = new BST();
             arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
@@ -94,14 +135,19 @@ namespace TreeProblems
             bst1.InsertAll(arr11);
             bool isEqual=SameTree.IsSameTree(bst.Root, bst1.Root);
 
-
+            //Root to Leafpath
             nonBst.ClearAll();
             arr = new int[] { 10,16,5,2,3,6,11};
             nonBst.InsertAll(arr);
             RootToLeafSum.FindRootToLeafPath(nonBst.Root, 26);
             Console.WriteLine();
 
+
+            PreOrderArrayToTree b = new PreOrderArrayToTree();
+            b.BuildTree(new int[] { 10, 30, 20, 5, 15 }, new char[] { 'N', 'N', 'L', 'L', 'L' });
+
             Console.ReadLine();
+
 
         }
     }
