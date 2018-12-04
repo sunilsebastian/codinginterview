@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayMaxRootTree.cs" />
+    <Compile Include="BinaryTreeFromPreOrderInOrder.cs" />
     <Compile Include="CheckTreeIsBST.cs" />
     <Compile Include="Common\BST.cs" />
     <Compile Include="Common\Node.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="LowestCommonAncestorBST.cs" />
     <Compile Include="MaxWidthofTree.cs" />
     <Compile Include="MirrorOfBinaryTree.cs" />
+    <Compile Include="MirrorOfItself.cs" />
     <Compile Include="MorrisInorderTraversal.cs" />
     <Compile Include="PerimeterOfBinaryTree.cs" />
     <Compile Include="PostOrderTraversal.cs" />
@@ -66,7 +68,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RootToLeafSum.cs" />
     <Compile Include="SameTree.cs" />
-    <Compile Include="SizeOfBinaryTree.cs" />
     <Compile Include="SpiralOrderTraversal.cs" />
     <Compile Include="TreeTo2DMatrix.cs" />
     <Compile Include="TrimNodesOutisideBoundary.cs" />

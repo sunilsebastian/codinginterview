@@ -34,8 +34,6 @@ namespace TreeProblems
             bst.RemoveMin();
             Console.WriteLine(bst.Root.ToString());
 
-          
-
 
             //Get Max width of binary tree
             bst.ClearAll();
@@ -145,6 +143,48 @@ namespace TreeProblems
 
             PreOrderArrayToTree b = new PreOrderArrayToTree();
             b.BuildTree(new int[] { 10, 30, 20, 5, 15 }, new char[] { 'N', 'N', 'L', 'L', 'L' });
+            Console.Write("BuildTree PreOrder Traversal for [10, 30, 20, 5, 15]:");
+            PreOrderTraversal.Traverse(b.Root);
+            Console.WriteLine();
+
+            BinaryTreeFromPreOrderInOrder bld = new BinaryTreeFromPreOrderInOrder();
+            bld.BuildTree(new int[] { 1, 2, 3, 4, 5 }, new int[] { 2,1,4,3,5});
+
+            nonBst = new NonBST();
+            arr = new int[] { 25,18,50,19,20,35,60 };
+            nonBst.InsertAll(arr);
+            int size=LargestBSTInBinaryTree.FindLargestBinarySearchTreeSize(nonBst.Root);
+            Console.Write($"Max BST size in BT [25,18,50,19,20,35,60] is :{size}");
+            Console.WriteLine();
+
+            nonBst = new NonBST();
+            arr = new int[] {10,5,30,3,7,15,35};
+            nonBst.InsertAll(arr);
+            var miirorTree = MirrorOfBinaryTree.MirrorTree(nonBst.Root);
+            LevelOrderTraversal.Traverse(miirorTree);
+            Console.WriteLine();
+
+            nonBst = new NonBST();
+            arr = new int[] { 10, 5, 30, 3, 7, 15, 35 };
+            nonBst.InsertAll(arr);
+            Node n= LowestCommonAncesterBinaryTree.FindLeastCommonAncester(nonBst.Root, 15, 3);
+            Console.Write($"Lowest Common ancester of [15,3] in BT [25,18,50,19,20,35,60] is :{n.Data}");
+            Console.WriteLine();
+
+            bst.ClearAll();
+            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
+            bst.InsertAll(arr);
+            n=LowestCommonAncestorBST.FindLeastCommonAncester(bst.Root,15,25);
+            Console.Write($"Lowest Common ancester of [15,25] in BST [30, 40, 50, 20, 10, 8, 15, 25] is :{n.Data}");
+            Console.WriteLine();
+
+            bst.ClearAll();
+            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25,11,16 };
+            bst.InsertAll(arr);
+            Console.Write("Perimeter of a Binary Tree { 30, 40, 50, 20, 10, 8, 15, 25,11,16} is : ");
+            PerimeterOfBinaryTree.PrintPerimeterOfaTree(bst.Root);
+            
+            Console.WriteLine();
 
             Console.ReadLine();
 

@@ -64,7 +64,7 @@ namespace TreeProblems
         }
     }
 
-    public class AnnotatedNode
+    class AnnotatedNode
     {
         public Node node;
         public int depth, pos;

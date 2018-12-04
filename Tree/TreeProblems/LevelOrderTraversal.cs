@@ -10,7 +10,7 @@ namespace TreeProblems
     public class LevelOrderTraversal
     {
         public static void Traverse(Node root)
-        {
+        { 
             Queue<Node> q = new Queue<Node>();
             q.Enqueue(root);
             while(q.Count!=0)
