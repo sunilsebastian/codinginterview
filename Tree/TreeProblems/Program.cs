@@ -183,7 +183,18 @@ namespace TreeProblems
             bst.InsertAll(arr);
             Console.Write("Perimeter of a Binary Tree { 30, 40, 50, 20, 10, 8, 15, 25,11,16} is : ");
             PerimeterOfBinaryTree.PrintPerimeterOfaTree(bst.Root);
-            
+            Console.WriteLine();
+
+            nonBst = new NonBST();
+            arr = new int[] { 10, 5, 30, 3, 7, 15, 35 };
+            nonBst.InsertAll(arr);
+            Console.WriteLine("Convrted array of  of a Binary Tree { 10, 5, 30, 3, 7, 15, 35 } is : ");
+            TreeTo2DMatrix.ConvertTreeToMatrix(nonBst.Root);
+            Console.WriteLine();
+
+            n =ArrayMaxRootTree.BuildTree(new int[] { 3, 2,1, 6, 0, 5 });
+            Console.Write("MaxTop BuildTree PreOrder Traversal for  3, 2, 1, 6, 0, 5]:");
+            LevelOrderTraversal.Traverse(n);
             Console.WriteLine();
 
             Console.ReadLine();
