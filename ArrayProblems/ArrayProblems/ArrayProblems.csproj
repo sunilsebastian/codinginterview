@@ -49,6 +49,7 @@
     <Compile Include="Fibonacci.cs" />
     <Compile Include="FirstNonDupChar.cs" />
     <Compile Include="InterSectionOfSortedArray.cs" />
+    <Compile Include="MergeAndMeadian.cs" />
     <Compile Include="UnionOfTwoSortedArrays.cs" />
     <Compile Include="IntToString.cs" />
     <Compile Include="LargestContinousSum.cs" />

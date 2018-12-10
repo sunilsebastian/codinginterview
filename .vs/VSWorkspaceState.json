@@ -2,10 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\ArrayProblems",
-    "\\ArrayProblems\\ArrayProblems\\bin",
+    "\\ArrayProblems\\ArrayProblems",
     "\\ArrayProblems\\ArrayProblems\\obj",
     "\\ArrayProblems\\ArrayProblems\\obj\\Release",
-    "\\LinkedList"
+    "\\Tree",
+    "\\Tree\\TreeProblems"
   ],
+  "SelectedNode": "\\ArrayProblems\\ArrayProblems\\bin",
   "PreviewInSolutionExplorer": false
 }

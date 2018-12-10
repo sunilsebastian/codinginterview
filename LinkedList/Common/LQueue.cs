@@ -14,7 +14,7 @@
         {
             if (Head == null)
             {
-                Head = Head = CreateNode(val);
+                Head= CreateNode(val);
                 temp = Head;
             }
             else

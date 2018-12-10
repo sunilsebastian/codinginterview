@@ -234,7 +234,9 @@ namespace ArrayProblems
             InterSectionOfSortedArray.PrintIntersection(new int[] { 1, 2, 9 }, new int[] { 2, 4, 9 }, 3, 3);
             Console.WriteLine();
 
-            Console.ReadLine();
+           var resultArray= MergeAndMeadian.MergeArrays(new int[] { 1, 5, 8 }, new int[] { 2,4,9 }, new int[] { 3,6,7 });
+
+             Console.ReadLine();
         }
     }
 }

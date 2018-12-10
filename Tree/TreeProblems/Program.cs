@@ -197,6 +197,11 @@ namespace TreeProblems
             LevelOrderTraversal.Traverse(n);
             Console.WriteLine();
 
+            nonBst = new NonBST();
+            arr = new int[] { 50, 6, 2, 10, 13 ,20, 15 };
+            nonBst.InsertAll(arr);
+            MinimumSumLevel.FindMinimumSumLevel(nonBst.Root);
+        
             Console.ReadLine();
 
 

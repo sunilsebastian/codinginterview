@@ -57,6 +57,7 @@
     <Compile Include="LowestCommonAncesterBinaryTree.cs" />
     <Compile Include="LowestCommonAncestorBST.cs" />
     <Compile Include="MaxWidthofTree.cs" />
+    <Compile Include="MinimumSumLevel.cs" />
     <Compile Include="MirrorOfBinaryTree.cs" />
     <Compile Include="MirrorOfItself.cs" />
     <Compile Include="MorrisInorderTraversal.cs" />
