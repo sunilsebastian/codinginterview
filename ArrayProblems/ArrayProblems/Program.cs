@@ -71,10 +71,22 @@ namespace ArrayProblems
             Permutation.Permute(permuteString);
             Console.WriteLine();
 
+
+            var charVal= MaxConsecutiveRepatingChar.FindMaxConsecutiveRepatingChar("aaaaaabbcbbbbbcbbbb");
+            Console.Write($"Max repeating character in aaaaaabbcbbbbbcbbbb is :  {charVal} ");
+            Console.WriteLine();
+
+            Console.Write("Pushing negative numbers { 4, -3, 2, -5, 5, -1, 3 } to the left:");
+            PushNegativeNumbersToLeft.PushNegativeNumbers(new int[] { 4, -3, 2, -5, 5, -1, 3 });
+                     
+            Console.WriteLine();
+
             //Largest contigous number sum
             int val = LargestContinousSum.GetLargestContinousSum(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
             Console.Write($"Largest continous sum of (-2, 1, -3, 4, -1, 2, 1, -5, 4 ): {val}");
             Console.WriteLine();
+
+            DifferenceUptoK.PrintPaiirsDifferenceUpToK(new int[] { 8, 12, 16, 4, 0, 20 }, 4);
 
             //give 3 strings check string 3 order of char are same as of string1 and string 2
             string string1 = "abcd";
