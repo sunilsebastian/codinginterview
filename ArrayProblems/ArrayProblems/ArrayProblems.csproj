@@ -51,6 +51,7 @@
     <Compile Include="FirstNonDupChar.cs" />
     <Compile Include="InterSectionOfSortedArray.cs" />
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
+    <Compile Include="MaxProfitOnSale.cs" />
     <Compile Include="MergeAndMeadian.cs" />
     <Compile Include="PushNegativeNumbersToLeft.cs" />
     <Compile Include="Sumupto3numbers.cs" />

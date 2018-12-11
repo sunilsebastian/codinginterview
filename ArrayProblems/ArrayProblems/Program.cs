@@ -88,12 +88,15 @@ namespace ArrayProblems
 
             Console.Write($"Print Paiirs Difference Up To:");
             DifferenceUptoK.PrintPaiirsDifferenceUpToK(new int[] { 8, 12, 16, 4, 0, 20 }, 4);
+            Console.WriteLine();
 
             Console.Write($"Print Paiirs Difference Up To(Sorted):");
             DifferenceUptoK.PrintPaiirsDifferenceUpToKSorted(new int[] { 8, 12, 16, 4, 0, 20 }, 4);
+            Console.WriteLine();
 
             Console.Write($"Print 3 numbers sum to 22");
             Sumupto3numbers.PrintNumbers(new int[] { 1, 4, 45, 6, 10, 8 }, 22);
+            Console.WriteLine();
 
             //give 3 strings check string 3 order of char are same as of string1 and string 2
             string string1 = "abcd";
@@ -255,7 +258,12 @@ namespace ArrayProblems
 
            var resultArray= MergeAndMeadian.MergeArrays(new int[] { 1, 5, 8 }, new int[] { 2,4,9 }, new int[] { 3,6,7 });
 
-             Console.ReadLine();
+            Console.WriteLine();
+
+            var bestPrice=MaxProfitOnSale.BestPrice(new int[] { 1, 10, 6, 3, 9, 2 });
+           Console.WriteLine($"Max profit on Buy and sell:{bestPrice}");
+
+            Console.ReadLine();
         }
     }
 }
