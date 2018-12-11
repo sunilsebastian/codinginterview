@@ -86,9 +86,14 @@ namespace ArrayProblems
             Console.Write($"Largest continous sum of (-2, 1, -3, 4, -1, 2, 1, -5, 4 ): {val}");
             Console.WriteLine();
 
+            Console.Write($"Print Paiirs Difference Up To:");
             DifferenceUptoK.PrintPaiirsDifferenceUpToK(new int[] { 8, 12, 16, 4, 0, 20 }, 4);
 
+            Console.Write($"Print Paiirs Difference Up To(Sorted):");
             DifferenceUptoK.PrintPaiirsDifferenceUpToKSorted(new int[] { 8, 12, 16, 4, 0, 20 }, 4);
+
+            Console.Write($"Print 3 numbers sum to 22");
+            Sumupto3numbers.PrintNumbers(new int[] { 1, 4, 45, 6, 10, 8 }, 22);
 
             //give 3 strings check string 3 order of char are same as of string1 and string 2
             string string1 = "abcd";

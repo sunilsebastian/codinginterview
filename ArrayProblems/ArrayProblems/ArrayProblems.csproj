@@ -53,6 +53,7 @@
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
     <Compile Include="MergeAndMeadian.cs" />
     <Compile Include="PushNegativeNumbersToLeft.cs" />
+    <Compile Include="Sumupto3numbers.cs" />
     <Compile Include="UnionOfTwoSortedArrays.cs" />
     <Compile Include="IntToString.cs" />
     <Compile Include="LargestContinousSum.cs" />
