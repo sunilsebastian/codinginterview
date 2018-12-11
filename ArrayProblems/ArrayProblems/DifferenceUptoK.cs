@@ -43,7 +43,7 @@ namespace ArrayProblems
                 if (arr[r] - arr[l] == k)
                 {
 
-                    Console.Write($"({arr[r]},{arr[l] }");
+                    Console.Write($"({arr[r]},{arr[l] })");
                     l++;
                     r++;
                 }

@@ -88,6 +88,8 @@ namespace ArrayProblems
 
             DifferenceUptoK.PrintPaiirsDifferenceUpToK(new int[] { 8, 12, 16, 4, 0, 20 }, 4);
 
+            DifferenceUptoK.PrintPaiirsDifferenceUpToKSorted(new int[] { 8, 12, 16, 4, 0, 20 }, 4);
+
             //give 3 strings check string 3 order of char are same as of string1 and string 2
             string string1 = "abcd";
             string string2 = "hij";
