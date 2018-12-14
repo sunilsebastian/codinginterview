@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AncestersOfAGivenNode.cs" />
     <Compile Include="ArrayMaxRootTree.cs" />
     <Compile Include="BinaryTreeFromPreOrderInOrder.cs" />
     <Compile Include="CheckTreeIsBST.cs" />
