@@ -11,12 +11,22 @@ namespace TreeProblems
     {
         public static void PrintPerimeterOfaTree(Node root)
         {
-            if (root != null)
+
+            Node current = root;
+            while (current != null)
             {
+                if (current.Right != null && current.Left != null)
+                {
+                    current = current.Right;
+                    break;
+                }
+                current = current.Left != null ? current.Left : current.Right;
+            }
+      
                 PrintLeftBoundaryNodes(root);
                 PrintLeafNodes(root);
-                PrintRightBoundaryNodes(root);
-            }
+                PrintRightBoundaryNodes(current);
+   
 
         }
         private static void PrintLeftBoundaryNodes(Node root)
@@ -42,13 +52,15 @@ namespace TreeProblems
 
             if (root.Right != null)
             {
+               
+                PrintRightBoundaryNodes(root.Right);
                 Console.Write(root.Data + " ");
-                PrintLeftBoundaryNodes(root.Right);
             }
             else if (root.Left != null)
             {
+               
+                PrintRightBoundaryNodes(root.Left);
                 Console.Write(root.Data + " ");
-                PrintLeftBoundaryNodes(root.Left);
             }
 
         }
