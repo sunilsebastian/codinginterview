@@ -208,11 +208,23 @@ namespace TreeProblems
             arr = new int[] { 50, 6, 2, 10, 13 ,20, 15 };
             nonBst.InsertAll(arr);
             MinimumSumLevel.FindMinimumSumLevel(nonBst.Root);
+            Console.WriteLine();
+
+
+            nonBst = new NonBST();
+            arr = new int[] {10,20,30,40,6 };
+            nonBst.InsertAll(arr);
+            Console.Write("Ancestors of 6 in BT {10,20,30,40,6 }:");
+            AncestersOfAGivenNode.PrintAncestors(nonBst.Root,6);
+            Console.WriteLine();
+
 
             ConstructAllBST.GetBSTList(2);
 
 
             Console.ReadLine();
+
+           
 
 
         }
