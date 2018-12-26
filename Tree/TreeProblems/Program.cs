@@ -98,6 +98,13 @@ namespace TreeProblems
             LevelOrderNewLine.Traverse(bst.Root);
             Console.WriteLine();
 
+            NonBSTN nonBst1 = new NonBSTN();
+            arr = new int[] { 1,2,3,4,5,6,7};
+            nonBst1.InsertAll(arr);
+            Console.WriteLine("LevelOrder with Next pointer:");
+            ConnectNodesAtSameLevel.ConnectNextpointer(nonBst1.Root);
+            Console.WriteLine();
+
             //Level order Traversal  Reverse
             bst.ClearAll();
             arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
@@ -201,7 +208,10 @@ namespace TreeProblems
             arr = new int[] { 50, 6, 2, 10, 13 ,20, 15 };
             nonBst.InsertAll(arr);
             MinimumSumLevel.FindMinimumSumLevel(nonBst.Root);
-        
+
+            ConstructAllBST.GetBSTList(2);
+
+
             Console.ReadLine();
 
 

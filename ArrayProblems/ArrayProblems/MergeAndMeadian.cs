@@ -14,10 +14,10 @@ namespace ArrayProblems
             arrays.Add(arr1);
             arrays.Add(arr2);
             arrays.Add(arr3);
-
+            
             if (arrays == null || arrays.Count == 0)
                 return null;
-            int[] p, q;
+            int[] p;
             if (arrays.Count >= 2)
             {
                 p = arrays[0];

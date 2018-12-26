@@ -47,7 +47,11 @@
     <Compile Include="CheckTreeIsBST.cs" />
     <Compile Include="Common\BST.cs" />
     <Compile Include="Common\Node.cs" />
+    <Compile Include="Common\NodeN.cs" />
     <Compile Include="Common\NonBST.cs" />
+    <Compile Include="Common\NonBSTN.cs" />
+    <Compile Include="ConnectNodesAtSameLevel.cs" />
+    <Compile Include="ConstructAllBST.cs" />
     <Compile Include="HeightOfBinaryTree.cs" />
     <Compile Include="InOrderTraversal.cs" />
     <Compile Include="LargestBSTInBinaryTree.cs" />
