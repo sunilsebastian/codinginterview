@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GraphProblems
 {
-    public class DeapthFirstSearch
+    public class DepthFirstSearch
     {
         public static  void Traverse(DirectedGraph g)
         {

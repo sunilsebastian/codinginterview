@@ -11,7 +11,29 @@ namespace GraphProblems
     {
         public static void Main(string[] args)
         {
-            DirectedGraph graph = new DirectedGraph();
+            DirectedGraph graph = null;
+
+            graph =GetGraph();
+            Console.WriteLine("Depth First Traversal:");
+            DepthFirstSearch.Traverse(graph);
+            Console.WriteLine();
+
+            graph = GetGraph();
+            Console.WriteLine("Breadth First Traversal:");
+            BreadthFirstSearch.Traverse(graph);
+            Console.WriteLine();
+
+            graph = GetGraph();
+            Console.Write("Topological Sort(Khan's Algorithm: ");
+            TopologicalSortKhan.ExceuteTopologicalSort(graph);
+            Console.ReadLine();
+
+        }
+
+        private static DirectedGraph GetGraph(DirectedGraph graph=null)
+        {
+            if (graph == null)
+                graph = new DirectedGraph();
             Vertex v0 = new Vertex(0, "A");
             Vertex v1 = new Vertex(1, "B");
             Vertex v2 = new Vertex(2, "C");
@@ -19,7 +41,7 @@ namespace GraphProblems
             Vertex v4 = new Vertex(4, "E");
             Vertex v5 = new Vertex(5, "E");
 
-            Vertex[] vertices = new Vertex[] {v0, v1, v2, v3, v4, v5 };
+            Vertex[] vertices = new Vertex[] { v0, v1, v2, v3, v4, v5 };
             graph.AddVertices(vertices);
             graph.AddEdge(v5, v2);
             graph.AddEdge(v5, v0);
@@ -28,14 +50,7 @@ namespace GraphProblems
             graph.AddEdge(v2, v3);
             graph.AddEdge(v3, v1);
 
-            Console.WriteLine("Depth First Traversal:");
-            DeapthFirstSearch.Traverse(graph);
-            Console.WriteLine();
-
-            Console.Write("Topological Sort(Khan's Algorithm: ");
-            TopologicalSortKhan.ExceuteTopologicalSort(graph);
-            Console.ReadLine();
-
+            return graph;
 
         }
     }
