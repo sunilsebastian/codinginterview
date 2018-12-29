@@ -17,16 +17,8 @@ namespace GraphProblems.Common
 
         public void AddEdge(Vertex stratVertex, Vertex endVertex, int weight = 0)
         {
-            stratVertex.OutDegree++;
-            stratVertex.InDegree++;
-            endVertex.InDegree++;
-            endVertex.OutDegree++;
-
-            var edge1 = new Edge(stratVertex, endVertex, weight);
-            stratVertex.Edges.Add(edge1);
-
-            var edge2 = new Edge(endVertex, stratVertex,weight);
-            endVertex.Edges.Add(edge2);
+            var edge = new Edge(stratVertex, endVertex, weight);
+            stratVertex.Edges.Add(edge);
         }
     }
 }

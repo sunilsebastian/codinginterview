@@ -44,10 +44,13 @@
   <ItemGroup>
     <Compile Include="BreadthFirstSearch.cs" />
     <Compile Include="Common\DirectedGraph.cs" />
+    <Compile Include="Common\DisJointSets.cs" />
+    <Compile Include="Common\Subset.cs" />
     <Compile Include="Common\UnDirectedGraph.cs" />
     <Compile Include="Common\Vertex.cs" />
     <Compile Include="Common\Edge.cs" />
     <Compile Include="DepthFirstSearch.cs" />
+    <Compile Include="FindCyclesUndirectedGraph.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TopologicalSortDFS.cs" />
