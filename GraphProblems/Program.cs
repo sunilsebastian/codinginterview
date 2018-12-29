@@ -30,8 +30,20 @@ namespace GraphProblems
 
             var graph1 = GetGraph1();
             string  result= FindCyclesUndirectedGraph.IsCycle(graph1)?"Yes":"No";
-            Console.Write($"Check Is there Cycle in Undirected Graph: {result}");
-            
+            Console.Write($"Check Is there Cycle in Undirected Graph DisjointSet: {result}");
+            Console.WriteLine();
+
+
+           
+            result = FindCyclesUndirectedDFS.IsCycle(graph1) ? "Yes" : "No";
+            Console.Write($"Check Is there Cycle in Undirected Graph DFS: {result}");
+            Console.WriteLine();
+
+
+            Console.Write("Minimum spnning tree: ");
+            MinimumSpanningTreeKruskal.FindMinimumSpaningTree(graph1);
+
+
             Console.ReadLine();
 
         }
@@ -71,10 +83,10 @@ namespace GraphProblems
             
             Vertex[] vertices = new Vertex[] { v0, v1, v2, v3};
             graph1.AddVertices(vertices);
-            graph1.AddEdge(v0, v1);
-            graph1.AddEdge(v1, v2);
-            graph1.AddEdge(v2, v3);
-            graph1.AddEdge(v3, v0);
+            graph1.AddEdge(v0, v1,5);
+            graph1.AddEdge(v1, v2,6);
+            graph1.AddEdge(v2, v3,1);
+            //graph1.AddEdge(v3, v0,2);
 
 
             return graph1;
