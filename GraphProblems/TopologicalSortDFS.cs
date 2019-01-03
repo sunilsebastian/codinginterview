@@ -44,7 +44,7 @@ namespace GraphProblems
                     DFS(neighgourVertex,stk);
                 }
             }
-            stk.Push(vertex.Value);
+            stk.Push(vertex.Index);
 
         }
     }

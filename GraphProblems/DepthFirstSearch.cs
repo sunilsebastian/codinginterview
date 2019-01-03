@@ -21,7 +21,7 @@ namespace GraphProblems
         private  static void DFS(Vertex vertex)
         {
           
-            Console.Write($"{vertex.Label}({vertex.Value}) ");
+            Console.Write($"{vertex.Label}({vertex.Index}) ");
             vertex.IsVisited = true;
 
             //var i = vertex.Edges.GetEnumerator();

@@ -30,7 +30,7 @@ namespace GraphProblems
             while (q.Count() != 0)
             {
                 var v = q.Dequeue();
-                Console.Write($"{v.Label}({v.Value}) ");
+                Console.Write($"{v.Label}({v.Index}) ");
 
                 var edges = v.Edges;
                 foreach(var edge in edges)

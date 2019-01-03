@@ -20,7 +20,7 @@ namespace GraphProblems
                 int u = i;
                 foreach(var edge in g.Vertices[i].Edges)
                 {
-                    int v = edge.Destination.Value;
+                    int v = edge.Destination.Index;
 
                     int x = dj.FindSet(subsets, u);
                     int y = dj.FindSet(subsets, v);

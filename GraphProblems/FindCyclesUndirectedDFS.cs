@@ -18,7 +18,7 @@ namespace GraphProblems
         private static bool DFS(Vertex vertex,Vertex parent)
         {
 
-            Console.Write($"{vertex.Label}({vertex.Value}) ");
+            Console.Write($"{vertex.Label}({vertex.Index}) ");
             vertex.IsVisited = true;
 
             //var i = vertex.Edges.GetEnumerator();
@@ -39,7 +39,7 @@ namespace GraphProblems
                         return true;
                     };
                 }
-                else if(destVertex.Value!=parent.Value)
+                else if(destVertex.Index!=parent.Index)
                 {
                     return true;
                 }

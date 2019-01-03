@@ -6,23 +6,13 @@ using System.Threading.Tasks;
 
 namespace GraphProblems.Common
 {
-    public class Vertex
+    public class Vertex:VertexBase
     {
-        public int Value { get; set; }
-
-        public string Label { get; set; }
-
-        public bool IsVisited { get; set; }
-
-        public int InDegree { get; set; }
-
-        public int OutDegree { get; set; }
-
         public List<Edge> Edges { get; set; }
 
-        public Vertex(int value, string label=null)
+        public Vertex(int index, string label=null):base(index,label)
         {
-            this.Value = value;
+            this.Index = index;
             this.Label = label;
             this.IsVisited = false;
             Edges = new List<Edge>();

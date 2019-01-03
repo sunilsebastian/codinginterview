@@ -25,12 +25,12 @@ namespace GraphProblems
 
             foreach (var edge in edgeList)
             {
-                int x = dj.FindSet(subsets,edge.Source.Value);
-                int y = dj.FindSet(subsets, edge.Destination.Value);
+                int x = dj.FindSet(subsets,edge.Source.Index);
+                int y = dj.FindSet(subsets, edge.Destination.Index);
 
                 if(x!=y)
                 {
-                    Console.Write($"({edge.Source.Value},{edge.Destination.Value}) ");
+                    Console.Write($"({edge.Source.Index},{edge.Destination.Index}) ");
                     dj.Union(subsets, x, y);
 
                 }

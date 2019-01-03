@@ -23,7 +23,7 @@ namespace GraphProblems
             while (q.Count() != 0)
             {
                 Vertex vertex = q.Dequeue();
-                Console.Write($"{vertex.Label}({vertex.Value}) ");
+                Console.Write($"{vertex.Label}({vertex.Index}) ");
 
                 var edges = vertex.Edges;
 

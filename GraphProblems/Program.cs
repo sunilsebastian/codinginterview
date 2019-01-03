@@ -40,8 +40,14 @@ namespace GraphProblems
             Console.WriteLine();
 
 
-            Console.Write("Minimum spnning tree: ");
+            Console.Write("Minimum spnning tree Kruskal: ");
             MinimumSpanningTreeKruskal.FindMinimumSpaningTree(graph1);
+            Console.WriteLine();
+
+            Console.Write("Minimum spnning tree Prim's: ");
+            var matUndirectedGraph = GetMatGraph();
+            MinimumSpanningTreePrims.GetMinimumspanningTree(matUndirectedGraph);
+            Console.WriteLine();
 
 
             Console.ReadLine();
@@ -74,7 +80,6 @@ namespace GraphProblems
 
         private static UnDirectedGraph GetGraph1(DirectedGraph graph = null)
         {
-           
             var graph1 = new UnDirectedGraph();
             Vertex v0 = new Vertex(0, "A");
             Vertex v1 = new Vertex(1, "B");
@@ -88,8 +93,33 @@ namespace GraphProblems
             graph1.AddEdge(v2, v3,1);
             //graph1.AddEdge(v3, v0,2);
 
-
             return graph1;
+
+        }
+
+        private static GraphMatrix GetMatGraph(GraphMatrix graph = null)
+        {
+            var matGraph = new GraphMatrix(6);
+            Vertex v0 = new Vertex(0, "A");
+            Vertex v1 = new Vertex(1, "B");
+            Vertex v2 = new Vertex(2, "C");
+            Vertex v3 = new Vertex(3, "D");
+            Vertex v4 = new Vertex(4, "E");
+            Vertex v5 = new Vertex(5, "F");
+
+            Vertex[] vertices = new Vertex[] { v0, v1, v2, v3,v4,v5 };
+            matGraph.AddVertices(vertices);
+            matGraph.AddUnDirectedEdge(v0, v3, 1);
+            matGraph.AddUnDirectedEdge(v0, v1, 3);
+            matGraph.AddUnDirectedEdge(v1, v2, 1);
+            matGraph.AddUnDirectedEdge(v1, v3, 3);
+            matGraph.AddUnDirectedEdge(v2, v3, 1);
+            matGraph.AddUnDirectedEdge(v2, v5, 4);
+            matGraph.AddUnDirectedEdge(v2, v4,1);
+            matGraph.AddUnDirectedEdge(v3, v4, 6);
+            matGraph.AddUnDirectedEdge(v4, v5, 2);
+           
+            return matGraph;
 
         }
     }
