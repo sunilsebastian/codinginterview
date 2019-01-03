@@ -49,6 +49,10 @@ namespace GraphProblems
             MinimumSpanningTreePrims.GetMinimumspanningTree(matUndirectedGraph);
             Console.WriteLine();
 
+            Console.Write("Shortest path: ");
+            var g = GetMatGraph1();
+            DijkstraShortestPath.FindShortestPath(g,0);
+            Console.WriteLine();
 
             Console.ReadLine();
 
@@ -119,6 +123,42 @@ namespace GraphProblems
             matGraph.AddUnDirectedEdge(v3, v4, 6);
             matGraph.AddUnDirectedEdge(v4, v5, 2);
            
+            return matGraph;
+
+        }
+
+        private static GraphMatrix GetMatGraph1(GraphMatrix graph = null)
+        {
+            var matGraph = new GraphMatrix(8);
+            Vertex v0 = new Vertex(0, "A");
+            Vertex v1 = new Vertex(1, "B");
+            Vertex v2 = new Vertex(2, "C");
+            Vertex v3 = new Vertex(3, "D");
+            Vertex v4 = new Vertex(4, "E");
+            Vertex v5 = new Vertex(5, "F");
+            Vertex v6 = new Vertex(6, "G");
+            Vertex v7 = new Vertex(7, "H");
+
+            Vertex[] vertices = new Vertex[] { v0, v1, v2, v3, v4, v5 ,v6,v7};
+            matGraph.AddVertices(vertices);
+            matGraph.AddEdge(v0, v1,20);
+            matGraph.AddEdge(v0, v3, 80);
+            matGraph.AddEdge(v0, v6, 90);
+            matGraph.AddEdge(v1, v5, 10);
+            matGraph.AddEdge(v2, v3, 10);
+            matGraph.AddEdge(v2, v5, 50);
+            matGraph.AddEdge(v2, v7, 20);
+            matGraph.AddEdge(v3, v2, 10);
+            matGraph.AddEdge(v3, v6, 20);
+
+            matGraph.AddEdge(v4, v1, 50);
+            matGraph.AddEdge(v4, v6, 30);
+
+            matGraph.AddEdge(v5, v2, 10);
+            matGraph.AddEdge(v5, v3, 40);
+
+            matGraph.AddEdge(v6, v0, 20);
+
             return matGraph;
 
         }

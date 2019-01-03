@@ -52,6 +52,7 @@
     <Compile Include="Common\Edge.cs" />
     <Compile Include="Common\VertexBase.cs" />
     <Compile Include="DepthFirstSearch.cs" />
+    <Compile Include="DijkstraShortestPath.cs" />
     <Compile Include="FindCyclesUndirectedDFS.cs" />
     <Compile Include="FindCyclesUndirectedGraph.cs" />
     <Compile Include="MinimumSpanningTreeKruskal.cs" />
