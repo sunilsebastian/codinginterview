@@ -14,22 +14,21 @@ namespace GraphProblems
             int[] Dist = new int[g.Vertices.Length];
             int[] Parent = new int[g.Vertices.Length];
 
-
             for (int k = 0; k < Dist.Length; k++)
             {
                 Dist[k] = Int32.MaxValue;
             }
 
             Dist[src] = 0;
-            Parent[0] = -1;
+            Parent[src] = -1;
 
             for(int i=0;i< g.Vertices.Length-1;i++)
             {
                 var u = FindMin(g, Dist);
-
                 g.Vertices[u].IsVisited = true;
 
-                for(int v=0;v < g.Vertices.Length;v++)
+                //Dist[u]!=Int32.MaxValue  because if min index is infinity no need to run the loop
+                for (int v=0;v < g.Vertices.Length;v++)
                 {
                     if(Dist[u]!=Int32.MaxValue 
                         && g.Vertices[v].IsVisited==false 
@@ -44,24 +43,35 @@ namespace GraphProblems
                 }
 
             }
-
-            PrintPath(g, Dist, Parent);
-
+            PrintPath(g, Dist, Parent,src);
         }
 
-        private static void PrintPath(GraphMatrix g, int[] Dist, int[] Parent)
+        private static void PrintPath(GraphMatrix g, int[] Dist, int[] Parent,int src)
         {
             for( int i=0;i<g.Vertices.Length;i++)
             {
-                Console.WriteLine($"shortest path from  0 to {i} is {Dist[i]}");
-                var p = Parent[i];
+                Console.Write($"shortest path from  {src} to {i} is {Dist[i]} ");
 
-                //while (p!=-1 && Parent[p]!=-1)
-                //{
-                //    Console.Write($"{Parent[p]} -> {p}{g.AdjMatrix[Parent[p],p]}");
-                //    p = Parent[p];
-                //}
-
+               int p = Parent[i];
+            
+               if (p!=-1)
+                {
+                    if (g.AdjMatrix[p, i] == Int32.MaxValue)
+                    {
+                        Console.WriteLine();
+                        continue;
+                    }
+                    Console.Write($"{p} -> {i}({g.AdjMatrix[p, i]})");
+                }
+                while (p!=-1)
+                {
+                    if (Parent[p] != -1)
+                    {
+                        Console.Write($"{Parent[p]} -> {p}({g.AdjMatrix[Parent[p], p]})");
+                    }
+                    p = Parent[p];
+                } 
+                Console.WriteLine();
             }
         }
 

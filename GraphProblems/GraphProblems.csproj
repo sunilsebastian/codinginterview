@@ -55,6 +55,7 @@
     <Compile Include="DijkstraShortestPath.cs" />
     <Compile Include="FindCyclesUndirectedDFS.cs" />
     <Compile Include="FindCyclesUndirectedGraph.cs" />
+    <Compile Include="FloydWarshall.cs" />
     <Compile Include="MinimumSpanningTreeKruskal.cs" />
     <Compile Include="MinimumSpanningTreePrims.cs" />
     <Compile Include="Program.cs" />

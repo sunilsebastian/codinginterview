@@ -54,6 +54,9 @@ namespace GraphProblems
             DijkstraShortestPath.FindShortestPath(g,0);
             Console.WriteLine();
 
+            FloydWarshall.FindShortestPathToEveryVertexPair();
+            Console.WriteLine();
+
             Console.ReadLine();
 
         }
