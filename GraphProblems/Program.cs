@@ -11,6 +11,11 @@ namespace GraphProblems
     {
         public static void Main(string[] args)
         {
+
+
+            int[,] T = { { 1, 2, 5 }, { 1, 3, 10 },{1,6,2} };
+
+
             DirectedGraph graph = null;
 
             graph =GetGraph();
@@ -56,6 +61,20 @@ namespace GraphProblems
 
             FloydWarshall.FindShortestPathToEveryVertexPair();
             Console.WriteLine();
+
+            int numTotalAvailableCities = 6;
+            int numTotalAvailableRoads = 3;
+            int[,] roadsAvailable = { { 1, 4 }, { 4, 5 }, { 2, 3 } };
+            int[,] costNewRoadsToConstruct = { { 1, 2,5 }, { 1,3,10 }, {1,6,2} ,{ 5, 6, 5 } };
+            int numNewRoadsConstruct = 4;
+            MinimumCostToConstructNewRoad.getMinimumCostToConstruct(numTotalAvailableCities,
+                numTotalAvailableRoads, roadsAvailable, numNewRoadsConstruct, costNewRoadsToConstruct);
+            Console.WriteLine();
+
+            int[,] golfField= { { 1, 2, 1, 0 }, {0,1,1,5 }, {0,0,1,3 } };
+            LevelGolfCourseField.LevelField(golfField);
+            Console.WriteLine();
+
 
             Console.ReadLine();
 
