@@ -15,11 +15,10 @@ namespace ArrayProblems
             int count;
             int prev = -1, current = -1;
 
-            //if you travel n+1 you will be at n+1 th element
-
+          // go beyond n-1 so that last element become previous
             for (count = 0; count <= n; count++)
             {
-             
+              // if all elements of First arry is lesser than all aelements of second array 
                 if (i == n)
                 {
                     prev = current;
@@ -27,6 +26,7 @@ namespace ArrayProblems
                     break;
                 }
 
+                // if all elements of second arry is lesser than all aelements of first array 
                 else if (j == n)
                 {
                     prev = current;
