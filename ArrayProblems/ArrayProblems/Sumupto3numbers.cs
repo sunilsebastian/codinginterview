@@ -27,7 +27,7 @@ namespace ArrayProblems
         }
 
 
-        public bool find3Numbers(int[] A, int sum)
+        public bool PrintNumbersSorted(int[] A, int sum)
         {
             int l, r;
 
@@ -57,5 +57,5 @@ namespace ArrayProblems
             }
             return false;
         }
-    }|
+    }
 }
