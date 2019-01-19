@@ -48,6 +48,7 @@
     <Compile Include="DifferenceUptoK.cs" />
     <Compile Include="DuplicatesInArray.cs" />
     <Compile Include="Fibonacci.cs" />
+    <Compile Include="FileRead.cs" />
     <Compile Include="FirstNonDupChar.cs" />
     <Compile Include="InterSectionOfSortedArray.cs" />
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
@@ -87,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\Test.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

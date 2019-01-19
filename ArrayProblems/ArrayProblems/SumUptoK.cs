@@ -49,6 +49,24 @@ namespace ArrayProblems
             }
          
         }
+    
+          
+            public static void FindPairIndex(int[] arr, int k)
+            {
+                var dict = new Dictionary<int, int>();
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (dict.ContainsKey(k -arr[i]))
+                    {
+                         Console.Write($"({dict[k - arr[i]]},{i}) ");
+                
+                    }
+                    dict.Add(arr[i], i);
+                }
+            }
+
+        
 
     }
 }

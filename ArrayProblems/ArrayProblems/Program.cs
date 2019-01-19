@@ -263,6 +263,9 @@ namespace ArrayProblems
             var bestPrice=MaxProfitOnSale.BestPrice(new int[] { 1, 10, 6, 3, 9, 2 });
            Console.WriteLine($"Max profit on Buy and sell:{bestPrice}");
 
+            FileRead fileRead = new FileRead();
+            fileRead.ReadFileWithFixedBuffer();
+
             Console.ReadLine();
         }
     }
