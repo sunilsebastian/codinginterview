@@ -44,35 +44,34 @@ namespace TreeProblems
         {
             Queue<AnnotatedNode> queue = new Queue<AnnotatedNode>();
             queue.Enqueue(new AnnotatedNode(root, 0, 0));
-            int curDepth = 0, left = 0, ans = 0;
+            int curLevel = 0, width = 0; 
             while (queue.Count!=0)
             {
                 AnnotatedNode a = queue.Dequeue();
                 if (a.node != null)
                 {
-                    queue.Enqueue(new AnnotatedNode(a.node.Left, a.depth + 1, a.pos * 2));
-                    queue.Enqueue(new AnnotatedNode(a.node.Right, a.depth + 1, a.pos * 2 + 1));
-                    if (curDepth != a.depth)
+                    queue.Enqueue(new AnnotatedNode(a.node.Left, a.level + 1, a.nodeIndex * 2));
+                    queue.Enqueue(new AnnotatedNode(a.node.Right, a.level + 1, a.nodeIndex * 2 + 1));
+                    if (curLevel != a.level)
                     {
-                        curDepth = a.depth;
-                        left = a.pos;
+                        curLevel = a.level;
                     }
-                    ans = Math.Max(ans, a.pos - left + 1);
+                    width = Math.Max(width, a.nodeIndex + 1);
                 }
             }
-            return ans;
+            return width;
         }
     }
 
     class AnnotatedNode
     {
         public Node node;
-        public int depth, pos;
+        public int level, nodeIndex;
         public AnnotatedNode(Node n, int d, int p)
         {
             node = n;
-            depth = d;
-            pos = p;
+            level = d;
+            nodeIndex = p;
         }
     }
  }

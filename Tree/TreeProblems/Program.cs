@@ -45,7 +45,8 @@ namespace TreeProblems
 
             //Get Max width of binary tree including null
             bst.ClearAll();
-            arr = new int[] { 30, 40, 50,10,8};
+            //arr = new int[] { 30, 40, 50,10,8};
+            arr = new int[] { 30, 40, 35,10,12};
             bst.InsertAll(arr);
             maxwidth =MaxWidthofTree.WidthOfBinaryTreewithNull(bst.Root);
             Console.WriteLine($"Max width of Binary tree with null:{maxwidth}");
