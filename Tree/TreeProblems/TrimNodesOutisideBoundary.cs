@@ -17,6 +17,7 @@ namespace TreeProblems
         private static  Node TrimBoundaryHelper(Node root,int L, int R)
         {
             if (root == null) return root;
+            //this is to check node value is out of bound 
             if (root.Data > R) return TrimBoundaryHelper(root.Left, L, R);
             if (root.Data <L) return TrimBoundaryHelper(root.Right, L, R);
 

@@ -43,9 +43,6 @@ namespace TreeProblems
 
         }
 
-
-
-
     }
 
     public class MinMax
@@ -55,6 +52,7 @@ namespace TreeProblems
         public int Max { get; set; }
         public bool isBST { get; set; }
 
+        // Max of Left side node value should be less than the root value.
         public MinMax()
         {
             Size = 0;

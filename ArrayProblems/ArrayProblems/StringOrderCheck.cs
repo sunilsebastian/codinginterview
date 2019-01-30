@@ -21,14 +21,14 @@ namespace ArrayProblems
             while (Count3 < str3.Length)
             {
 
-                if (str1[Count1] == str3[Count3] && Count1 < str1.Length)
+                if ( Count1 < str1.Length && str1[Count1] == str3[Count3])
                 {
 
                     Count1++;
 
                 }
 
-                else if (str2[Count2] == str3[Count3] && Count2 < str2.Length)
+                else if ( Count2 < str2.Length && str2[Count2] == str3[Count3])
                 {
                     Count2++;
 

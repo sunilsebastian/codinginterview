@@ -40,5 +40,37 @@ namespace TreeProblems
 
 
         } 
+
+        public static void PostOrderTraversal_method2(Node root)
+        {
+            Node current = root;
+            Stack<Node> stk = new Stack<Node>();
+            while(current!=null || stk.Count()!=0)
+            {
+                if(current!=null)
+                {
+                    stk.Push(current);
+                    current = current.Left;
+                }
+                else
+                {
+                    Node temp = stk.Peek().Right;
+                    if(temp==null)
+                    {
+                        temp = stk.Pop();
+                        Console.Write(temp.Data);
+                        while(stk.Count!=0 && temp == stk.Peek().Right)
+                        {
+                            temp = stk.Pop();
+                            Console.Write(temp.Data);
+                        }
+                    }
+                    else
+                    {
+                        current = temp;
+                    }
+                }
+            }
+        }
     }
 }

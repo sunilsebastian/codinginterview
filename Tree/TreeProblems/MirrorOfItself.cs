@@ -21,6 +21,9 @@ namespace TreeProblems
                 return false;
             }
 
+            if (oRoot.Data != mRoot.Data)
+                return false;
+
             var left = IsMirrorOfItself(oRoot.Left, mRoot.Right);
             if (left == false) return false;
 

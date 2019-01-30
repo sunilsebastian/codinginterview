@@ -24,6 +24,7 @@ namespace TreeProblems
 
         private static bool PrintAncestors(Node root, int data, List<int> lst)
         {
+            //because it didnt find a match till the leaf node
             if (root == null)
                 return false;
 
