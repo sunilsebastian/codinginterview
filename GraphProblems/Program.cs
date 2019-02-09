@@ -33,6 +33,10 @@ namespace GraphProblems
             TopologicalSortKhan.ExceuteTopologicalSort(graph);
             Console.WriteLine();
 
+            graph = GetGraph();
+            Console.Write("Topological Sort DFS: ");
+            TopologicalSortDFS.ExceuteTopologicalSort(graph);
+
             var graph1 = GetGraph1();
             string  result= FindCyclesUndirectedGraph.IsCycle(graph1)?"Yes":"No";
             Console.Write($"Check Is there Cycle in Undirected Graph DisjointSet: {result}");

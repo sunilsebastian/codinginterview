@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphProblems
 {
@@ -11,6 +9,7 @@ namespace GraphProblems
     {
         public static void ExceuteTopologicalSort(DirectedGraph g)
         {
+            //543210
             Stack<int> stk = new Stack<int>();
             for (int i = 0; i < g.Vertices.Length; i++)
             {
@@ -18,15 +17,14 @@ namespace GraphProblems
                     DFS(g.Vertices[i], stk);
             }
             int count = 0;
-            while(stk.Count()!=0)
+
+            while (stk.Count() != 0)
             {
-                while (stk.Count() != 0)
-                {
-                    Console.Write(stk.Pop() + " ");
-                    count++;
-                }
+                Console.Write(stk.Pop() + " ");
+                count++;
             }
-            if(count!= g.Vertices.Length)
+
+            if (count != g.Vertices.Length)
             {
                 Console.WriteLine("There exist a cycle in graph");
             }
@@ -41,11 +39,10 @@ namespace GraphProblems
                 var neighgourVertex = edge.Destination;
                 if (!neighgourVertex.IsVisited)
                 {
-                    DFS(neighgourVertex,stk);
+                    DFS(neighgourVertex, stk);
                 }
             }
             stk.Push(vertex.Index);
-
         }
     }
 }

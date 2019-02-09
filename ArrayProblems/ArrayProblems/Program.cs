@@ -266,6 +266,19 @@ namespace ArrayProblems
             FileRead fileRead = new FileRead();
             fileRead.ReadFileWithFixedBuffer();
 
+            Console.WriteLine();
+
+            int[,] mat2 = new int[,] {
+                { 16, 1, 2, 3 },
+                { 4, 5, 6, 7 },
+                { 0, 9, 10,11 },
+                { 12,13,14,0 } };
+            Console.WriteLine("Matrix after setting zero:");
+            MakeRowColumnZero.SetColumRowWhenZeroFound(mat2);
+
+            Console.WriteLine();
+
+
             Console.ReadLine();
         }
     }

@@ -51,6 +51,7 @@
     <Compile Include="FileRead.cs" />
     <Compile Include="FirstNonDupChar.cs" />
     <Compile Include="InterSectionOfSortedArray.cs" />
+    <Compile Include="MakeRowColumnZero.cs" />
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
     <Compile Include="MaxProfitOnSale.cs" />
     <Compile Include="MergeAndMeadian.cs" />
