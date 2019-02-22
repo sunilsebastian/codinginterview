@@ -275,7 +275,15 @@ namespace ArrayProblems
                 { 12,13,14,0 } };
             Console.WriteLine("Matrix after setting zero:");
             MakeRowColumnZero.SetColumRowWhenZeroFound(mat2);
+            Console.WriteLine();
 
+            RotateArray.Rotate(new int[] { 1, 2, 3, 4, 5 }, 2);
+
+            Console.WriteLine("After rotation array by 2:");
+            Console.WriteLine();
+
+            DutchNationalFlag.Sort(new int[] { 0, 2, 1, 1, 2,0, 1 });
+            Console.WriteLine("Sort an array of 0 1 2:");
             Console.WriteLine();
 
 

@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphProblems
 {
-    public  class TopologicalKhanAdjlist
+    public class TopologicalKhanAdjlist
     {
-        List<int>[] adjList = null;
-        int[] inDegree = null;
-        int count = 0;
-        int V;
+        private List<int>[] adjList = null;
+        private int[] inDegree = null;
+        private int count = 0;
+        private int V;
+
         public TopologicalKhanAdjlist(int v)
         {
             int V = v;
             adjList = new List<int>[v];
             inDegree = new int[V];
-            for (int i=0;i<V;i++)
+            for (int i = 0; i < V; i++)
             {
                 adjList[i] = new List<int>();
             }
-
         }
 
         public void AddEdge(int u, int v)
@@ -34,35 +31,33 @@ namespace GraphProblems
         {
             Queue<int> q = new Queue<int>();
 
-            for(int i=0;i< inDegree.Length;i++)
+            for (int i = 0; i < inDegree.Length; i++)
             {
-                if(inDegree[i]==0)
+                if (inDegree[i] == 0)
                 {
                     q.Enqueue(i);
                 }
-
             }
 
-            while(q.Count>0)
+            while (q.Count > 0)
             {
-               int v1= q.Dequeue();
+                int v1 = q.Dequeue();
                 Console.Write(v1 + " ");
                 count++;
-                foreach(var neighbour in adjList[v1])
+                foreach (var neighbour in adjList[v1])
                 {
                     inDegree[neighbour]--;
-                    if (inDegree[neighbour]==0)
+                    if (inDegree[neighbour] == 0)
                     {
                         q.Enqueue(neighbour);
                     }
                 }
             }
 
-            if(count!=V)
+            if (count != V)
             {
                 Console.Write("Graph has cycles");
             }
         }
-
     }
 }

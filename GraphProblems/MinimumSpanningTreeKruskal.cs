@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphProblems
 {
@@ -17,25 +15,23 @@ namespace GraphProblems
 
             dj.MakeSet(subsets);
 
-            for(int i=0;i<g.Vertices.Length;i++)
+            for (int i = 0; i < g.Vertices.Length; i++)
             {
                 edgeList.AddRange(g.Vertices[i].Edges);
             }
-            edgeList=edgeList.OrderBy(o => o.Weight).ToList();
+            edgeList = edgeList.OrderBy(o => o.Weight).ToList();
 
             foreach (var edge in edgeList)
             {
-                int x = dj.FindSet(subsets,edge.Source.Index);
+                int x = dj.FindSet(subsets, edge.Source.Index);
                 int y = dj.FindSet(subsets, edge.Destination.Index);
 
-                if(x!=y)
+                if (x != y)
                 {
                     Console.Write($"({edge.Source.Index},{edge.Destination.Index}) ");
                     dj.Union(subsets, x, y);
-
                 }
             }
         }
-
     }
 }
