@@ -286,6 +286,33 @@ namespace ArrayProblems
             Console.WriteLine("Sort an array of 0 1 2:");
             Console.WriteLine();
 
+            Console.WriteLine("After Merging Intervals:");
+            MergeIntervals.Merge(new int[,] { { 1, 4 }, { 2, 4 }, { 5, 7 }, { 6, 8 } });
+            Console.WriteLine();
+
+
+            Console.WriteLine("After Inserting  Intervals:");
+            MergeIntervals.Insert(new int[,] { { 1, 2 }, { 3,5 }, { 6, 7 }, { 8,10},{ 12, 16 } },new int[,] { { 4, 9 } });
+            Console.WriteLine();
+
+            int subStringCount=ValidSubstringCount.FindMaxLen("))()()");
+            Console.WriteLine($"Valid Substring Count:{subStringCount}");
+            Console.WriteLine();
+
+            bool ismatch=KMPSubstring.KMPSubstringExists("blaasunlTest", "sunil");
+            Console.WriteLine($"sunil exists in blaasunilTest : {ismatch}");
+
+            //  int minSetSize= MinMaxSizeSubArray.FindMinumSizeSubarraySumEqualsk(new int[] { 2, 3, 1, 2, 4, 3 }, 7);
+
+
+             int minSetSize= MinMaxSizeSubArray.FindMinumSizeSubarraySumEqualsk(new int[] { -1, 1, 2, 1, 2, 1 }, 4);
+
+            int maxSetSize = MinMaxSizeSubArray.FindMaximumSizeSubarraySumEqualsk(new int[] { 1,-1,5,-2,3}, 3);
+
+            // [1, -1, 5, -2, 3], k = 3,
+
+            //-1, 1, 2, 1, 2, 1
+
 
             Console.ReadLine();
         }
