@@ -54,6 +54,7 @@
     <Compile Include="InterSectionOfSortedArray.cs" />
     <Compile Include="IsoMorphic.cs" />
     <Compile Include="KMPSubstring.cs" />
+    <Compile Include="LongestLengthSubstring.cs" />
     <Compile Include="MakeRowColumnZero.cs" />
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
     <Compile Include="MaxProfitOnSale.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="PushNegativeNumbersToLeft.cs" />
     <Compile Include="RotateArray.cs" />
     <Compile Include="Sumupto3numbers.cs" />
+    <Compile Include="Triangle.cs" />
     <Compile Include="UnionOfTwoSortedArrays.cs" />
     <Compile Include="IntToString.cs" />
     <Compile Include="LargestContinousSum.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="WordBreak.cs" />
     <Compile Include="WordCountInASentence.cs" />
     <Compile Include="WordLadder.cs" />
+    <Compile Include="ZigZagConversion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

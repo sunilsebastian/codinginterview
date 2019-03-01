@@ -303,15 +303,27 @@ namespace ArrayProblems
             Console.WriteLine($"sunil exists in blaasunilTest : {ismatch}");
 
             //  int minSetSize= MinMaxSizeSubArray.FindMinumSizeSubarraySumEqualsk(new int[] { 2, 3, 1, 2, 4, 3 }, 7);
-
-
              int minSetSize= MinMaxSizeSubArray.FindMinumSizeSubarraySumEqualsk(new int[] { -1, 1, 2, 1, 2, 1 }, 4);
 
             int maxSetSize = MinMaxSizeSubArray.FindMaximumSizeSubarraySumEqualsk(new int[] { 1,-1,5,-2,3}, 3);
+            var zigsaz=ZigZagConversion.ZigZagConvert("PAYPALISHIRING", 3);
 
-            // [1, -1, 5, -2, 3], k = 3,
+            //List<List<int>> triangle = new List<List<int>>()
+            //{   new List<int>(){2},
+            //    new List<int>(){3,4},
+            //    new List<int>(){6,5,7},
+            //    new List<int>() {4,1,8,3} };
 
-            //-1, 1, 2, 1, 2, 1
+
+            List<List<int>> triangle = new List<List<int>>()
+            {   new List<int>(){-1},
+                new List<int>(){2,3 },
+                new List<int>(){1,-1,-3} };
+
+            Triangle.MinSum(triangle);
+
+            LongestLengthSubstring.LengthOfLongestSubstring("abcabcb");
+
 
 
             Console.ReadLine();
