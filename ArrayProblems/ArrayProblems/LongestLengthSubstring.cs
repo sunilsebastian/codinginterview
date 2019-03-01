@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace ArrayProblems
 {
+    //logest substring without repeating characters
+    //sliding window
     public class LongestLengthSubstring
     {
         public static int LengthOfLongestSubstring(string s)
