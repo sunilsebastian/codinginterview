@@ -66,48 +66,38 @@ namespace TreeProblems.Common
 
         public Node InsertIterative(Node root, int data)
         {
-            Node temp = null;
-
-
+            Node newNode = new Node(data);
             if (root == null)
             {
-                root = new Node(data);
-                return root;
+                return newNode;
+            }
+            Node parent = null;
+            Node current = root;
+
+
+            while (current != null)
+            {
+                parent = current;
+                if (data < current.Data)
+                {
+                    current = current.Left;
+                }
+                else
+                {
+                    current = current.Right;
+                }
+
+            }
+            if(data<parent.Data)
+            {
+                parent.Left = newNode;
             }
             else
             {
-                temp = root;
+                parent.Right = newNode;
+            }           
 
-                while (true)
-                {
-                    if (data < root.Data)
-                    {
-                        if (root.Left == null)
-                        {
-                            root.Left = new Node(data);
-                            break;
-                        }
-                        else
-                        {
-                            root = root.Left;
-                        }
-                    }
-                    else if (data > root.Data)
-                    {
-                        if (root.Right == null)
-                        {
-                            root.Right = new Node(data);
-                            break;
-                        }
-                        else
-                        {
-                            root = root.Right;
-                        }
-                    }
-                }
-            }
-
-            return temp;
+            return root;
         }
 
         private Node InsertHelper(Node root, int data)
@@ -207,11 +197,11 @@ namespace TreeProblems.Common
             {
                 throw new Exception("Item not found");
             }
-            else if (t.Data< x)  
+            else if (x<t.Data)  
             {
                 t.Left = Remove(x, t.Left);
             }
-            else if (t.Data > x)
+            else if (x>t.Data)
             {
                 t.Right = Remove(x, t.Right);
             }

@@ -20,15 +20,15 @@ namespace LinkedList
 
                 if (Prev == null)
                 {
-                    Prev = current;
+                    //Prev = current;
                     head = runner;
                 }
                 else
                 {
                     Prev.Next = runner;
-                    Prev = Prev.Next.Next;
+                    //Prev = Prev.Next.Next;
                 }
-
+                Prev = current;
                 current = current.Next;
                 if (current == null)
                     break;

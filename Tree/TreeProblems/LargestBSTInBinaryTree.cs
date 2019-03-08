@@ -27,10 +27,13 @@ namespace TreeProblems
 
             var minMax = new MinMax();
 
+            //For a binary tree left letree max itself should be less than root.data
+            //similarly righ tree min itself should be grater than root.data
+            //so check the reverse condition below.
             if(leftMinMax.isBST==false || rightMinMax.isBST==false || leftMinMax.Max>root.Data || rightMinMax.Min<root.Data)
             {
                 minMax.Size = Math.Max(leftMinMax.Size, rightMinMax.Size);
-                minMax.isBST = false; ;
+                minMax.isBST = false; 
                 return minMax;
             }
 

@@ -45,6 +45,7 @@
     <Compile Include="AncestersOfAGivenNode.cs" />
     <Compile Include="ArrayMaxRootTree.cs" />
     <Compile Include="BinaryTreeFromPreOrderInOrder.cs" />
+    <Compile Include="CheckTreeIsASubTree.cs" />
     <Compile Include="CheckTreeIsBST.cs" />
     <Compile Include="Common\BST.cs" />
     <Compile Include="Common\Node.cs" />
