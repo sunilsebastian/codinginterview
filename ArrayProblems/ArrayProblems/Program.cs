@@ -324,7 +324,21 @@ namespace ArrayProblems
 
             LongestLengthSubstring.LengthOfLongestSubstring("abcabcb");
 
+            LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct1(new int[] {0,1,2,2 }, 2);
 
+            FindNumInRotatedArray.FindNum(new int[] { 7, 8, 9, 1, 2, 3, 4, 5, 6 },8);
+
+           //var minwindowStr= MinimumWindowString.findSubString("azjskfzts", "zs");
+
+            var minwindowStr = MinimumWindowString.findSubString("jkzbspq", "zs");
+
+            //element repeated more than n/2 times
+            var majElement=MajorityVote.FindMajorityElement(new int[] { 2, 2, 3, 4, 1});
+            var majElement1 = MajorityVote.FindMajorityElement(new int[] { 1,2,3,2,2});
+
+            MissingPositiveNumber.FindFirstMissingPositiveNumber(new int[] { -1, -2, 1, 2, 4 });
+
+            SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3, 1, 2, 0, 5 }, 3);
 
             Console.ReadLine();
         }

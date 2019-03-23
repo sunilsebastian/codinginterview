@@ -64,6 +64,20 @@ namespace SortProblems
 
             Console.WriteLine();
 
+
+            Console.WriteLine("Priority Queue Values:");
+            var pq = new PriorityQueue();
+            pq.Enqueue(7,7/2);
+            pq.Enqueue(4,4/2);
+            pq.Enqueue(5,5/2);
+            pq.Enqueue(8,8/2);
+            pq.Enqueue(2,2/2);
+            pq.Enqueue(6,6/2);
+
+
+           
+
+
             Console.ReadLine();
         }
     }
