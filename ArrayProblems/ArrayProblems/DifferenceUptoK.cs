@@ -8,29 +8,46 @@ namespace ArrayProblems
 {
     public class DifferenceUptoK
     {
-        public static void  PrintPaiirsDifferenceUpToK(int[] arr,int k)
+        public static int  PrintPaiirsDifferenceUpToK(int[] arr,int k)
         {
-            HashSet<int> hs = new HashSet<int>();
-            for(int i=0;i< arr.Length;i++)
+            if (k < 0 || arr == null || arr.Length == 0)
+                return 0;
+
+            int count = 0;
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            for (int i = 0; i < arr.Length; i++)
             {
-                hs.Add(arr[i]);
+                if (dict.ContainsKey(arr[i]))
+                {
+                    dict[arr[i]]++;
+                }
+                else
+                {
+                    dict.Add(arr[i], 1);
+                }
             }
 
-            for(int i=0;i<arr.Length;i++)
+            foreach (var key in dict.Keys)
             {
-                int sum = arr[i]+k;
-                int diff = arr[i] - k;
-                if(hs.Contains(sum) )
+                if (k == 0)
                 {
-                    Console.Write($"({arr[i]},{sum})");
-                }
+                    //if >=2  menas there is one pair with difference of zero.
+                    if (dict[key] >= 2)
+                    {
+                        count++;
 
-                if (hs.Contains(diff))
-                {
-                    Console.Write($"({arr[i]},{diff})");
+                    }
                 }
-                hs.Remove(arr[i]);
+                else
+                {
+                    int sum = key + k;
+                    if (dict.ContainsKey(sum))
+                    {
+                        count++;
+                    }
+                }
             }
+            return count;
         }
 
         public static void PrintPaiirsDifferenceUpToKSorted(int[] arr, int k)

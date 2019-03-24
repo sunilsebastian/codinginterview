@@ -87,7 +87,7 @@ namespace ArrayProblems
             Console.WriteLine();
 
             Console.Write($"Print Paiirs Difference Up To:");
-            DifferenceUptoK.PrintPaiirsDifferenceUpToK(new int[] { 8, 12, 16, 4, 0, 20 }, 4);
+            DifferenceUptoK.PrintPaiirsDifferenceUpToK(new int[] {3,1, 4,1,5}, 2);
             Console.WriteLine();
 
             Console.Write($"Print Paiirs Difference Up To(Sorted):");
