@@ -347,8 +347,6 @@ namespace ArrayProblems
            int basVersion=    BadVersionFinder.FirstBadVersion(2126753390);
 
             MovingAverage mv = new MovingAverage(3);
-
-            mv.DetectCapitalUse
             var mv1= mv.Next(1);
             var mv2=mv.Next(10);
             var mv3= mv.Next(3);
