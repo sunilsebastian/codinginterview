@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AddTwoLargeNumber.cs" />
     <Compile Include="Anagram.cs" />
+    <Compile Include="BadVersionFinder.cs" />
     <Compile Include="BitwiseOddorEven.cs" />
     <Compile Include="DifferenceUptoK.cs" />
     <Compile Include="DuplicatesInArray.cs" />
@@ -66,8 +67,12 @@
     <Compile Include="MergeIntervals.cs" />
     <Compile Include="MinimumWindowString.cs" />
     <Compile Include="MinMaxSizeSubArray.cs" />
+    <Compile Include="MovingAverage.cs" />
+    <Compile Include="PlusOne.cs" />
     <Compile Include="PosishNotation.cs" />
     <Compile Include="PushNegativeNumbersToLeft.cs" />
+    <Compile Include="BackspaceStringCompare.cs" />
+    <Compile Include="ReverseInteger.cs" />
     <Compile Include="RotateArray.cs" />
     <Compile Include="SlidingWindowMaximum.cs" />
     <Compile Include="Sumupto3numbers.cs" />

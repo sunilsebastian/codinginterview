@@ -340,6 +340,22 @@ namespace ArrayProblems
 
             SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3, 1, 2, 0, 5 }, 3);
 
+            BackspaceStringCompare.BackspaceCompare("ab#c", "ad#c");
+
+            PlusOneTest.PlusOne(new int[] {9,9,9});
+
+           int basVersion=    BadVersionFinder.FirstBadVersion(2126753390);
+
+            MovingAverage mv = new MovingAverage(3);
+
+            mv.DetectCapitalUse
+            var mv1= mv.Next(1);
+            var mv2=mv.Next(10);
+            var mv3= mv.Next(3);
+            var mv4= mv.Next(5);
+            var mv5 = mv.Next(7);
+            var mv6 = mv.Next(3);
+
             Console.ReadLine();
         }
     }
