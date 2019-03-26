@@ -326,9 +326,10 @@ namespace ArrayProblems
 
             LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct1(new int[] {0,1,2,2 }, 2);
 
-            FindNumInRotatedArray.FindNum(new int[] { 7, 8, 9, 1, 2, 3, 4, 5, 6 },8);
+            //FindNumInRotatedArray.FindNum(new int[] { 7, 8, 9, 1, 2, 3, 4, 5, 6 }, 8);
+            FindNumInRotatedArray.FindNum(new int[] { 1, 3 }, 3);
 
-           //var minwindowStr= MinimumWindowString.findSubString("azjskfzts", "zs");
+            //var minwindowStr= MinimumWindowString.findSubString("azjskfzts", "zs");
 
             var minwindowStr = MinimumWindowString.findSubString("jkzbspq", "zs");
 

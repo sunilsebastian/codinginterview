@@ -12,39 +12,81 @@ namespace ArrayProblems
         //3 4 1 2  //assume 1 is the pivot;
 
         //6 7 8 1 2 3 4  //assume 1 is the pivot;
-        public static int  FindNum(int[] arr,int key)
+
+
+        public static int FindNum(int[] arr, int key)
         {
             int keyindex = 0;
-            int pivot = FindPivot(arr);
+            if (arr == null || arr.Length == 0) return -1;
 
-            if (arr[pivot] == key)
+            if (arr.Length == 1 && arr[0] == key) return 0;
+            int pivot = FindPivot(arr, 0, arr.Length - 1);
+
+
+            if (pivot != -1 && arr[pivot] == key)
                 return pivot;
 
-            if( key<= arr[pivot-1]  && key>=arr[0])
+            if (pivot == -1)
             {
-                keyindex= BinarySearch(arr, 0, pivot - 1, key);
+                keyindex = BinarySearch(arr, 0, arr.Length - 1, key);
+            }
+
+            else if (key <= arr[pivot - 1] && key >= arr[0])
+            {
+                keyindex = BinarySearch(arr, 0, pivot - 1, key);
             }
             else
             {
-                keyindex= BinarySearch(arr,pivot, arr.Length-1, key);
+                keyindex = BinarySearch(arr, pivot, arr.Length - 1, key);
             }
             return keyindex;
-
         }
 
-        public static int BinarySearch(int[] arr, int start, int end,int key)
+
+        private static  int FindPivot(int[] arr, int start, int end)
         {
-            while(start<end)
+
+            if (arr[start] < arr[end]) return -1;
+
+            if (start < end)
             {
                 int mid = (start + end) / 2;
 
-                if(key>arr[mid])
+                if (arr[mid + 1] < arr[mid])
+                    return mid + 1;
+                if (arr[mid - 1] > arr[mid])
+                    return mid;
+
+                if (arr[start] <= arr[mid])
                 {
-                    start = mid + 1;
+                    return FindPivot(arr, mid + 1, end);
+
                 }
-                else if(key< arr[mid])
+                else
                 {
-                    end = mid - 1;
+                    return FindPivot(arr, start, mid - 1);
+
+                }
+
+            }
+            return -1;
+        }
+
+
+        public static int BinarySearch(int[] arr, int start, int end, int key)
+        {
+            //Binary serach is less than equal
+            if (start <= end)
+            {
+                int mid = (start + end) / 2;
+
+                if (key > arr[mid])
+                {
+                    return BinarySearch(arr, mid + 1, end, key);
+                }
+                else if (key < arr[mid])
+                {
+                    return BinarySearch(arr, start, mid - 1, key);
                 }
                 else
                 {
@@ -52,36 +94,7 @@ namespace ArrayProblems
                 }
             }
 
-             return -1;
-        }
-
-        public static int FindPivot(int[] arr)
-        {
-            int start = 0;
-            int end = arr.Length - 1;
-
-            if (arr[start] < arr[end]) return -1;
-
-            while(start<end)
-            {
-               int  mid = (start + end) / 2;
-
-                if (arr[mid + 1] < arr[mid])
-                    return mid + 1;
-                if (arr[mid - 1] > arr[mid])
-                    return  mid;
-
-                if(arr[start]<=arr[mid])
-                {
-                    start = mid + 1;
-                }
-                else
-                {
-                    end = mid-1;
-                }
-
-            }
             return -1;
         }
     }
-}
+    }
