@@ -205,13 +205,7 @@ namespace ArrayProblems
             int maxrepeat = MaxRepeatingElementInArray.FindMaxRepeatingElementInAnArray(input, k);
             Console.WriteLine($"max repeating element in [2,3,3,5,3,4,1,7,7] :{maxrepeat}");
 
-            int[,] mat = new int[,] {
-                { 0, 1, 2, 3 },
-                { 4, 5, 6, 7 },
-                { 8, 9, 10,11 },
-                { 12,13,14,15 } };
-            Console.WriteLine("Roated Matrix 90 Degree:");
-            RotateMatrix.RotateMatrix90(mat);
+
 
 
             string s = "Iwanttogotopartytomorrow";
@@ -219,31 +213,9 @@ namespace ArrayProblems
             string res = WordBreak.BreakWorkBasedOnDictionary(s, 0, lst);
             Console.WriteLine($"Break Word result string:{res}");
 
-            char[,] grid = new char[,]{ {'H','E','L','L','O'},
-                                        { 'E','E','L','I','O'},
-                                        { 'L','E','L','M','O'},
-                                        { 'P','E','L','B','O'}};
-            bool isFound = SearchForStringInMatrix.FindString(grid, "HELP");
-            mat = new int[,] {
-                { 0, 1, 2, 3 },
-                { 4, 5, 6, 7 },
-                { 8, 9, 10,11 },
-                { 12,13,14,15 } };
+         
 
-            Console.WriteLine("Print Matrix Diagonally::");
-            MatrixDiagonally.PrintMatrixDiagonally(mat);
-            Console.WriteLine();
-
-            var mat1 = new int[,] {
-                { 11, 12, 13, 14 },
-                { 15, 16, 17, 18 },
-                { 19, 20, 21, 22 }
-                //{ 23, 24, 25, 26 }
-                //{ 27, 28, 29, 30 }
-            };
-
-            MatrixSpirall.PrintMatrixSpiral(mat1);
-            Console.WriteLine();
+         
 
 
             UnionOfTwoSortedArrays.PrintUnion(new int[] { 1, 2, 3 }, new int[] { 4, 5, 5 });
@@ -268,14 +240,7 @@ namespace ArrayProblems
 
             Console.WriteLine();
 
-            int[,] mat2 = new int[,] {
-                { 16, 1, 2, 3 },
-                { 4, 5, 6, 7 },
-                { 0, 9, 10,11 },
-                { 12,13,14,0 } };
-            Console.WriteLine("Matrix after setting zero:");
-            MakeRowColumnZero.SetColumRowWhenZeroFound(mat2);
-            Console.WriteLine();
+          
 
             RotateArray.Rotate(new int[] { 1, 2, 3, 4, 5 }, 2);
 
@@ -299,7 +264,7 @@ namespace ArrayProblems
             Console.WriteLine($"Valid Substring Count:{subStringCount}");
             Console.WriteLine();
 
-            bool ismatch=KMPSubstring.KMPSubstringExists("blaasunlTest", "sunil");
+            bool ismatch=KMPSubstring.KMPSubstringExists("abxabcabcaby", "abcaby");
             Console.WriteLine($"sunil exists in blaasunilTest : {ismatch}");
 
             //  int minSetSize= MinMaxSizeSubArray.FindMinumSizeSubarraySumEqualsk(new int[] { 2, 3, 1, 2, 4, 3 }, 7);
@@ -339,13 +304,15 @@ namespace ArrayProblems
 
             MissingPositiveNumber.FindFirstMissingPositiveNumber(new int[] { -1, -2, 1, 2, 4 });
 
-            SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3, 1, 2, 0, 5 }, 3);
+           var maxValues= SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3, 1, 2, 0, 5,9,10 }, 3);
 
             BackspaceStringCompare.BackspaceCompare("ab#c", "ad#c");
 
             PlusOneTest.PlusOne(new int[] {9,9,9});
 
            int basVersion=    BadVersionFinder.FirstBadVersion(2126753390);
+
+            WordLadder.LadderLength("hit", "cog", new List<string> { "hot","dot","dog","lot","log","cog"});
 
             MovingAverage mv = new MovingAverage(3);
             var mv1= mv.Next(1);

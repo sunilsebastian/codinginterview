@@ -29,16 +29,9 @@ namespace ArrayProblems
                 }
             }
 
-            int cnt = 0;
-            for (int i = 0; i < nums.Length; i++)
-            {
-                if(result==nums[i])
-                {
-                    cnt++;
-                }
-            }
-
-            return (cnt>(nums.Length/2))?result:-1;
+            return result;
         }
+
+       
     }
 }

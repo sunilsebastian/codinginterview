@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ArrayProblems
+namespace MatrixProblems
 {
     public class MakeRowColumnZero
     {

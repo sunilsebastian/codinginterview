@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GraphProblems
+namespace ArrayProblems
 {
     public class WordLadder
     {
-        public int ladderLength(String beginWord, String endWord, List<String> wordDict)
+        //start = "hit"
+        //end = "cog"
+        //dict = ["hot","dot","dog","lot","log"]
+        public static  int LadderLength(String beginWord, String endWord, List<String> wordDict)
         {
             Queue<WordNode> queue = new Queue<WordNode>();
             queue.Enqueue(new WordNode(beginWord, 1));

@@ -11,7 +11,8 @@ namespace ArrayProblems
         public static void RemoveDuplicatesUnsortedarray(int[] arr)
         {
          //Just check any element of same value exist from 0 to i (i excluded)
-
+         //check current element with all elements for it , if not maches 
+        // we can conclude that current element isa duplicate. 
             int[] temp = new int[arr.Length];
 
 

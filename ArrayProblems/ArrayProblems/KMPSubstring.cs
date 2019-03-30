@@ -16,25 +16,25 @@ namespace ArrayProblems
        // O(mn)
         public static bool SubStringExists(string text, string pattern)
         {
-            int i = 0;
             int j = 0;
+            int i = 0;
             int k = 0;
-            while (i<text.Length && j<pattern.Length)
+            while (j<text.Length && i<pattern.Length)
             {
-                if(text[i]==pattern[j])
+                if(text[j]==pattern[i])
                 {
-                    i++;
                     j++;
+                    i++;
                 }
                 else
                 {
-                    j = 0;
+                    i = 0;
                     k++;
-                    i = k;
+                    j = k;
                 }
             }
 
-            if (j == pattern.Length)
+            if (i == pattern.Length)
                 return true;
             return false;
         }
@@ -43,30 +43,33 @@ namespace ArrayProblems
         public static bool KMPSubstringExists(string text, string pattern)
         {
             var tempArr = GetTempArray(pattern);
-            int i = 0;
             int j = 0;
+            int i = 0;
+            
+           //i is the pattern index
+           //j is the work index
 
-            while(i< text.Length && j< pattern.Length)
+            while(j< text.Length && i< pattern.Length)
             {
-                if(text[i]== pattern[j])
+                if(text[j]== pattern[i])
                 {
-                    i++;
                     j++;
+                    i++;
                 }
                 else
                 {
-                    if(j==0)
+                    if(i==0)
                     {
-                        i++;
+                        j++; 
                     }
                     else
                     {
-                        j = tempArr[j - 1];
+                        i = tempArr[i - 1];  //rest the pattern index to  wo
 
                     }
                 }
             }
-            if (j == pattern.Length)
+            if (i == pattern.Length)
                 return true;
             return false;
         }
@@ -74,25 +77,26 @@ namespace ArrayProblems
         // Compute temporary array to maintain size of suffix which is same as prefix
         private static  int[] GetTempArray(string pattern)
         {
-            int j = 0;
+            int i = 0;
+            int j = 1;
             int[] tempArr = new int[pattern.Length];
-            for(int i=1;i<pattern.Length;i++)
+            while(j< pattern.Length)
             {
-                if(pattern[i]==pattern[j])
+                if(pattern[j]==pattern[i])
                 {
-                    tempArr[i] =j + 1;
-                    i++;
+                    tempArr[j] =i + 1;
                     j++;
+                    i++;
                 }
                 else
                 {
-                    if(j==0)
+                    if(i==0)
                     {
-                        i++;
+                        j++;
                     }
                     else
                     {
-                        j = tempArr[j - 1];
+                        i = tempArr[i - 1];
                     }
                 }
             }

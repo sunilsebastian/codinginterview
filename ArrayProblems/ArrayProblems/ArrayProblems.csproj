@@ -46,12 +46,13 @@
     <Compile Include="Anagram.cs" />
     <Compile Include="BadVersionFinder.cs" />
     <Compile Include="BitwiseOddorEven.cs" />
+    <Compile Include="CircularArrayLargestSum.cs" />
     <Compile Include="DifferenceUptoK.cs" />
     <Compile Include="DuplicatesInArray.cs" />
     <Compile Include="DutchNationalFlag.cs" />
     <Compile Include="Fibonacci.cs" />
     <Compile Include="FileRead.cs" />
-    <Compile Include="MissingPositive.Number.cs" />
+    <Compile Include="MissingPositiveNumber.cs" />
     <Compile Include="FindNumInRotatedArray.cs" />
     <Compile Include="FirstNonDupChar.cs" />
     <Compile Include="InterSectionOfSortedArray.cs" />
@@ -60,7 +61,6 @@
     <Compile Include="LengthOfLongestSubstringKDistinct.cs" />
     <Compile Include="LongestLengthSubstring.cs" />
     <Compile Include="MajorityVote.cs" />
-    <Compile Include="MakeRowColumnZero.cs" />
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
     <Compile Include="MaxProfitOnSale.cs" />
     <Compile Include="MergeAndMeadian.cs" />
@@ -80,7 +80,6 @@
     <Compile Include="UnionOfTwoSortedArrays.cs" />
     <Compile Include="IntToString.cs" />
     <Compile Include="LargestContinousSum.cs" />
-    <Compile Include="MatrixSpirall.cs" />
     <Compile Include="MaxRepeatingElementInArray.cs" />
     <Compile Include="MedianOfTwoSortedArrays.cs" />
     <Compile Include="MissingElement.cs" />
@@ -91,14 +90,11 @@
     <Compile Include="ParanthesisInOrder.cs" />
     <Compile Include="Permutation.cs" />
     <Compile Include="PrimeNumbers.cs" />
-    <Compile Include="PrintMatrixDiagonally.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueUsingStack.cs" />
     <Compile Include="RemoveDuplicatesInArray.cs" />
     <Compile Include="ReverseWordsInString.cs" />
-    <Compile Include="RotateMatrix.cs" />
-    <Compile Include="SearchForStringInMatrix.cs" />
     <Compile Include="StringOrderCheck.cs" />
     <Compile Include="StringToInt.cs" />
     <Compile Include="StringUnique.cs" />
