@@ -10,6 +10,8 @@ namespace ArrayProblems
     {
        public static int  FindMaximumSizeSubarraySumEqualsk(int[] arr, int k)
         {
+            //lookup in dict for sum and sum-k
+
             int maxSize = 0;
             int sum = 0;
             Dictionary<int, int> dict = new Dictionary<int, int>();

@@ -12,6 +12,11 @@ namespace ArrayProblems
         {
             char[] num1 = s1.ToCharArray();
             char[] num2 = s2.ToCharArray();
+
+            if (String.IsNullOrEmpty(s1) || String.IsNullOrEmpty(s2))
+            {
+                return "0";
+            }
             //string=99
             //char--> 9 , val --> 57(48+9) 
             //so s[i]-'0' will give val 9 and char as horizontal tab
@@ -45,7 +50,9 @@ namespace ArrayProblems
                 offset++;
             }
 
-            return new string(result);
+            var resString = new String(result).TrimStart('0');
+            return (String.IsNullOrEmpty(resString) && result[result.Length-1] == '0') ? "0" : resString;
+
         }
 
         

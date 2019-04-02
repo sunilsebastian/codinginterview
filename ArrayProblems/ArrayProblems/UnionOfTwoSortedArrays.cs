@@ -10,6 +10,17 @@ namespace ArrayProblems
     {
         public static void PrintUnion(int[] arr1, int[] arr2)
         {
+
+            //Difference between and union and intersecttion
+            //union has to keep the previous element to check for duplicate
+            //always check its not equal to prev befre printing the element
+
+            //When both elements are equal union and intersection  take one and increment both i and j
+            //but while merging arrays it takes both i and j and increment both i and j
+           
+            //median take i or j but incement whichever is taken.
+
+
             int n1 = arr1.Length;
             int n2 = arr2.Length;
             int i = 0;
