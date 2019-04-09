@@ -9,47 +9,44 @@ namespace TreeProblems
 {
     public class ConstructAllBST
     {
-        public static void GetBSTList(int n)
-        {
-            var list = ConstructTrees(1, n);
-        }
-        private static List<Node> ConstructTrees(int start, int end)
-        {
-            List<Node> list = new List<Node>();
 
-           
-            if (start > end)
+        public static List<Node> GetBSTList(int n)
+        {
+            if (n == 0)
             {
-                list.Add(null);
-                return list;
+                return new List<Node>();
             }
 
-            /*  iterating through all values from start to end  for constructing\ 
-            left and right subtree recursively  */
+          var result = helper(1, n);
+            return result;
+        }
+
+        public static List<Node> helper(int start, int end)
+        {
+            List<Node> result = new List<Node>();
+            if (start > end)
+            {
+                result.Add(null);
+                return result;
+            }
+
             for (int i = start; i <= end; i++)
             {
-                /*  constructing left subtree   */
-                List<Node> leftSubtree = ConstructTrees(start, i - 1);
-
-                /*  constructing right subtree  */
-                List<Node> rightSubtree = ConstructTrees(i + 1, end);
-
-                /*  now looping through all left and right subtrees and connecting 
-                    them to ith root  below  */
-                for (int j = 0; j < leftSubtree.Count(); j++)
+                List<Node> ls = helper(start, i - 1);
+                List<Node> rs = helper(i + 1, end);
+                foreach(var lsnode in ls)
                 {
-                    Node left = leftSubtree[j];
-                    for (int k = 0; k < rightSubtree.Count(); k++)
+                    foreach (var rsnode in rs)
                     {
-                        Node right = rightSubtree[k];
-                        Node node = new Node(i);
-                        node.Left = left;   
-                        node.Right = right;
-                        list.Add(node);
+                        Node curr = new Node(i);
+                        curr.Left = lsnode;
+                        curr.Right = rsnode;
+                        result.Add(curr);
                     }
                 }
             }
-            return list;
+
+            return result;
         }
     }
 }

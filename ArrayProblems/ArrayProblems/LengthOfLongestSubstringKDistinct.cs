@@ -8,6 +8,7 @@ namespace ArrayProblems
 {
     public class LengthOfLongestSubstringKDistinct
     {
+
         public static int GetLengthOfLongestSubstringKDistinct1(int[] s, int k)
         {
             int result = 0;
@@ -51,7 +52,8 @@ namespace ArrayProblems
             return result;
         }
 
-
+        //abcbbbbcccbdddadacb
+        //bcbbbbcccb
         public static  int GetLengthOfLongestSubstringKDistinct(String s, int k)
         {
             int result = 0;

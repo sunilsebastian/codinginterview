@@ -56,7 +56,8 @@ namespace ArrayProblems
                     return mid + 1;
                 if (arr[mid - 1] > arr[mid])
                     return mid;
-
+                
+                //this check is important
                 if (arr[start] <= arr[mid])
                 {
                     return FindPivot(arr, mid + 1, end);

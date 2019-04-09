@@ -45,6 +45,7 @@
     <Compile Include="AncestersOfAGivenNode.cs" />
     <Compile Include="ArrayMaxRootTree.cs" />
     <Compile Include="BinaryTreeFromPreOrderInOrder.cs" />
+    <Compile Include="BSTLongestConsecutiveSequence.cs" />
     <Compile Include="CheckTreeIsASubTree.cs" />
     <Compile Include="CheckTreeIsBST.cs" />
     <Compile Include="Common\BST.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="SpiralOrderTraversal.cs" />
     <Compile Include="TreeTo2DMatrix.cs" />
     <Compile Include="TrimNodesOutisideBoundary.cs" />
+    <Compile Include="VerticalOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,6 +10,7 @@ namespace ArrayProblems
     {
         public static void Main(string[] args)
         {
+
             //Fibonacci series
             Console.Write($"Fib(8):");
             int val1 = Fibonacci.FibReCurrsionWithMemoiszation(8);
@@ -288,6 +289,7 @@ namespace ArrayProblems
             Triangle.MinSum(triangle);
 
             LongestLengthSubstring.LengthOfLongestSubstring("abcabcb");
+            LongestLengthSubstring.LengthOfLongestSubstring("abcaxyz");
 
             LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct1(new int[] {0,1,2,2 }, 2);
 

@@ -8,6 +8,7 @@ namespace ArrayProblems
 {
     public class WordLadder
     {
+        //BFS
         //start = "hit"
         //end = "cog"
         //dict = ["hot","dot","dog","lot","log"]

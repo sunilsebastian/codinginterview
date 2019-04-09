@@ -223,6 +223,13 @@ namespace TreeProblems
             ConstructAllBST.GetBSTList(2);
 
 
+            nonBst = new NonBST();
+            arr = new int[] {1,2,4,3,9,5,6};
+            nonBst.InsertAll(arr);
+            var mxCount= BSTLongestConsecutiveSequence.LongestConsecutive(nonBst.Root);
+
+            Console.Write("vertical print of  in BT {1,2,4,3,9,5,6 }:");
+            VerticalOrder.PrintVerticalOrder(nonBst.Root);
             Console.ReadLine();
 
            
