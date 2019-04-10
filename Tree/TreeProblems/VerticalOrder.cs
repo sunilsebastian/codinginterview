@@ -55,7 +55,6 @@ namespace TreeProblems
                 Console.WriteLine(string.Join(", ", lst));
             }
 
-
         }
     }
 }
