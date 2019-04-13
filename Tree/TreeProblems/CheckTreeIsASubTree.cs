@@ -10,24 +10,24 @@ namespace TreeProblems
     public class CheckTreeIsASubTree
     {
 
-        bool isSubtree(Node T, Node S)
+        bool isSubtree(Node root, Node subtree)
         {
             /* base cases */
-            if (S == null)
+            if (subtree == null)
                 return true;
 
-            if (T == null)
+            if (root == null)
                 return false;
 
             /* Check the tree with root as current node */
-            if (SameTree.IsSameTree(T, S))
+            if (SameTree.IsSameTree(root, subtree))
                 return true;
 
             /* If the tree with root as current  
               node doesn't match then try left 
               and right subtrees one by one */
-            return isSubtree(T.Left, S)
-                    || isSubtree(T.Right, S);
+            return isSubtree(root.Left, subtree)
+                    || isSubtree(root.Right,subtree);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace TreeProblems
             int ans = 0;
             if (root.Left != null)
             {
+                //check its a leaf
                 if (root.Left.Left == null && root.Left.Right == null)
                     ans += root.Left.Data;
                 else

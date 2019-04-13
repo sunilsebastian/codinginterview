@@ -13,7 +13,7 @@ namespace TreeProblems
         {
             int h = HeightOfBinaryTree.GetHeight(root);
             int[] levelWidth = new int[h];
-            GetMaxWidth(root,  levelWidth, 0);
+            GetMaxWidth(root, levelWidth, 0);
 
             var max = 0;
             for (int i = 0; i < levelWidth.Length; i++)
@@ -27,7 +27,7 @@ namespace TreeProblems
 
         }
 
-        public static void  GetMaxWidth(Node root, int[] levelWidth,int level)
+        public static void GetMaxWidth(Node root, int[] levelWidth, int level)
         {
             if (root != null)
             {
@@ -37,41 +37,43 @@ namespace TreeProblems
 
 
             }
-           
+
         }
 
         public static int WidthOfBinaryTreewithNull(Node root)
         {
-            Queue<AnnotatedNode> queue = new Queue<AnnotatedNode>();
-            queue.Enqueue(new AnnotatedNode(root, 0, 0));
-            int curLevel = 0, width = 0; 
-            while (queue.Count!=0)
+            if (root == null) { return 0; }
+            int max = 1;
+            Queue<Node> treeList = new Queue<Node>();
+            Queue<int> intList = new Queue<int>();
+            treeList.Enqueue(root);
+            intList.Enqueue(1);
+            while (treeList.Count > 0)
             {
-                AnnotatedNode a = queue.Dequeue();
-                if (a.node != null)
+                int size = treeList.Count;
+                int l = intList.Peek();
+                for (int i = 0; i < size; i++)
                 {
-                    queue.Enqueue(new AnnotatedNode(a.node.Left, a.level + 1, a.nodeIndex * 2));
-                    queue.Enqueue(new AnnotatedNode(a.node.Right, a.level + 1, a.nodeIndex * 2 + 1));
-                    if (curLevel != a.level)
-                    {
-                        curLevel = a.level;
-                    }
-                    width = Math.Max(width, a.nodeIndex + 1);
-                }
-            }
-            return width;
-        }
-    }
 
-    class AnnotatedNode
-    {
-        public Node node;
-        public int level, nodeIndex;
-        public AnnotatedNode(Node n, int d, int p)
-        {
-            node = n;
-            level = d;
-            nodeIndex = p;
+                    Node r = treeList.Dequeue();
+                    int depth = intList.Dequeue();
+                    if (r.Left != null)
+                    {
+                        treeList.Enqueue(r.Left);
+                        intList.Enqueue(2 * depth);
+                    }
+                    if (r.Right != null)
+                    {
+                        treeList.Enqueue(r.Right);
+                        intList.Enqueue(2 * depth + 1);
+                    }
+                    max = Math.Max(max, depth - l + 1);
+                }
+
+            }
+
+
+            return max;
         }
     }
- }
+}

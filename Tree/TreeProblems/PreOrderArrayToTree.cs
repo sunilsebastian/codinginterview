@@ -24,6 +24,7 @@ namespace TreeProblems
 
         }
 
+        //top down
         public Node BuildTree(int[] pre, char[] preLN, int n)
         {
             //if (index == n)

@@ -9,35 +9,29 @@ namespace TreeProblems
 {
     public class RightView
     {
-        public List<int> RightSideView(Node root)
+        public static IList<int> RightSideView(Node root)
         {
-            List<int> res = new List<int>();
-            if (root == null)
-                return res;
 
-            Queue<Node> queue = new Queue<Node>();
-            queue.Enqueue(root);
+            List<int> list = new List<int>();
+            if (root == null) return list;
+            int depth = 1;
+            return findMaxDepthElements(list, root, depth);
+        }
 
-            while (queue.Count>0)
-            {
-                int count = queue.Count;
-                while (count > 0)
-                {
-                    count--;
-                    Node temp = queue.Dequeue();
-                    if (temp.Left != null)
-                        queue.Enqueue(temp.Left);
-                    if (temp.Right != null)
-                        queue.Enqueue(temp.Right);
+        private static  List<int> findMaxDepthElements(List<int> list, Node root, int depth)
+        {
 
-                    if (count == 0)
-                    {
-                        res.Add(temp.Data);
-                    }
-                }
-            }
+            if (list.Count < depth)
+                list.Add(root.Data);
 
-            return res;
+            if (root.Right != null)
+                findMaxDepthElements(list, root.Right, depth + 1);
+
+            if (root.Left != null)
+                findMaxDepthElements(list, root.Left, depth + 1);
+
+          //  depth--;
+            return list;
         }
     }
 }

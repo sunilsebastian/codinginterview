@@ -9,36 +9,18 @@ namespace TreeProblems
 {
     public class FlattenTree
     {
-        public static Node GetFlattenTree(Node root)
+        private static Node prev = null;
+        public static void  Flatten(Node root)
         {
-            Stack<Node> stack = new Stack<Node>();
-            Node p = root;
 
-            while (p != null || stack.Count>0)
-            {
+            if (root == null) return; // base case 
 
-                if (p.Right != null)
-                {
-                    stack.Push(p.Right);
+            Flatten(root.Right);
+            Flatten(root.Left); 
 
-
-                }
-
-                if (p.Left != null)
-                {
-                    p.Right = p.Left;
-                    p.Left = null;
-                }
-                else if (stack.Count>0)
-                {
-                    Node temp = stack.Pop();
-                    p.Right = temp;
-                }
-
-                p = p.Right;
-            }
-
-            return p;
+            root.Right = prev;
+            root.Left = null;
+            prev = root;
         }
     }
 }

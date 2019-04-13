@@ -54,11 +54,15 @@ namespace TreeProblems
                 }
                 else
                 {
+                    //check the node has right
                     Node temp = stk.Peek().Right;
+                    //if right is null its a leaf node
                     if(temp==null)
                     {
+                        //since its a leaf node pop and print
                         temp = stk.Pop();
                         Console.Write(temp.Data);
+                        //check the poped node is right child, if right child pop and print 
                         while(stk.Count!=0 && temp == stk.Peek().Right)
                         {
                             temp = stk.Pop();
