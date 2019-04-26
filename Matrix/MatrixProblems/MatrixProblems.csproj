@@ -46,11 +46,22 @@
   <ItemGroup>
     <Compile Include="MakeRowColumnZero.cs" />
     <Compile Include="MatrixSpirall.cs" />
+    <Compile Include="MaxAreaHistogram.cs" />
+    <Compile Include="MaxAreaOfIsland.cs" />
+    <Compile Include="MaximumSizeSubSquareMatrix .cs" />
+    <Compile Include="MaxRectSubmatrixWithOne.cs" />
+    <Compile Include="MinimumSumPath.cs" />
+    <Compile Include="NumberOfIslandscs.cs" />
     <Compile Include="PrintMatrixDiagonally.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RotateMatrix.cs" />
     <Compile Include="SearchForStringInMatrix.cs" />
+    <Compile Include="SearchSorted2DMatrix.cs" />
+    <Compile Include="SorroundedRegions.cs" />
+    <Compile Include="UniquePathObstacle.cs" />
+    <Compile Include="UniquePaths.cs" />
+    <Compile Include="ValidSudoku.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +9,7 @@ namespace TreeProblems
 {
     public class TrimNodesOutisideBoundary
     {
+        // This should be binary search tree
         public static  void TrimBoundary(Node root,int L, int R)
         {
             root = TrimBoundaryHelper(root, L, R);

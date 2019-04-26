@@ -146,6 +146,38 @@ namespace LinkedList
             QueueHelper.PrintAll(sum);
             Console.WriteLine("\n");
 
+            //RandomNode r1 = new RandomNode();
+            //r1.val = 1;
+            //RandomNode r2 = new RandomNode();
+            //r2.val = 2;
+            //RandomNode r3 = new RandomNode();
+            //r3.val = 3;
+            //RandomNode r4 = new RandomNode();
+            //r4.val = 4;
+            //RandomNode r5 = new RandomNode();
+            //r5.val = 5;
+            //r1.next = r2;
+            //r2.next = r3;
+            //r3.next = r4;
+            //r4.next = r5;
+            //r5.next = null;
+            //r1.random = r4;
+            //r2.random = r1;
+            //r3.random = r5;
+            //r4.random = r2;
+            //r5.random = r3;
+
+            RandomNode r1 = new RandomNode();
+            r1.val = 1;
+            RandomNode r2 = new RandomNode();
+            r2.val = 2;
+            r1.next = r2;
+            r2.next = null;
+            r1.random = r2;
+            r2.random = r2;
+            var clone = CloneListWithRandomPtr.CopyRandomList(r1);
+
+
             Console.ReadLine();
         }
     }

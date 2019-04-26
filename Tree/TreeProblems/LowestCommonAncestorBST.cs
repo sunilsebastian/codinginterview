@@ -11,7 +11,9 @@ namespace TreeProblems
     {
         public static Node FindLeastCommonAncester(Node root, int n1, int n2)
         {
-            if(root.Data<n1 && root.Data<n2)
+            if (root == null) return null;
+
+            if (root.Data<n1 && root.Data<n2)
             {
                return  FindLeastCommonAncester(root.Right, n1, n2);
             }

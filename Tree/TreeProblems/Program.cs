@@ -229,7 +229,18 @@ namespace TreeProblems
             nonBst.InsertAll(arr);
             var mxCount= BSTLongestConsecutiveSequence.LongestConsecutive(nonBst.Root);
 
+           var serializedString =  BinaryTreeSerialization.Serialize(nonBst.Root);
+
             var rviewList=RightView.RightSideView(nonBst.Root);
+
+            LNode ln = new LNode(1);
+            ln.Next = new LNode(2);
+            ln.Next.Next = new LNode(3);
+            ln.Next.Next.Next = new LNode(4);
+            ln.Next.Next.Next.Next = new LNode(5);
+            ln.Next.Next.Next.Next.Next = new LNode(6);
+
+            Node lstTree= SortedListToTree.SortedListToBST(ln);
 
             Console.Write("vertical print of  in BT {1,2,4,3,9,5,6 }:");
             VerticalOrder.PrintVerticalOrder(nonBst.Root);

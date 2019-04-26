@@ -44,6 +44,10 @@
   <ItemGroup>
     <Compile Include="AncestersOfAGivenNode.cs" />
     <Compile Include="ArrayMaxRootTree.cs" />
+    <Compile Include="BinaryTreeSerialization.cs" />
+    <Compile Include="CountNodes.cs" />
+    <Compile Include="InorderSuccessor.cs" />
+    <Compile Include="NearestTargetInBST.cs" />
     <Compile Include="SortedArrayToBST.cs" />
     <Compile Include="BinaryTreeFromPreOrderInOrder.cs" />
     <Compile Include="BSTLongestConsecutiveSequence.cs" />
@@ -82,8 +86,10 @@
     <Compile Include="SameTree.cs" />
     <Compile Include="SortedListToTree.cs" />
     <Compile Include="SpiralOrderTraversal.cs" />
+    <Compile Include="SymmetricTree.cs" />
     <Compile Include="TreeTo2DMatrix.cs" />
     <Compile Include="TrimNodesOutisideBoundary.cs" />
+    <Compile Include="UniqueBSTCount.cs" />
     <Compile Include="VerticalOrder.cs" />
   </ItemGroup>
   <ItemGroup>
