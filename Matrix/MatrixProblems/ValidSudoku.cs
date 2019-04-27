@@ -31,5 +31,34 @@ namespace MatrixProblems
             }
             return true;
         }
+
+        private bool helper(char[,] board)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (board[i,j] != '.')
+                    {
+                        continue;
+                    }
+
+                    for (char k = '1'; k <= '9'; k++)
+                    {
+                        board[i,j] = k;
+                        if (IsValidSudoku(board) && helper(board))
+                        {
+                            return true;
+                        }
+                        //Not valid then keep else revert to balnk
+                        board[i,j] = '.';
+                    }
+
+                    return false;
+                }
+            }
+
+            return true; //return true if all cells are checked
+        }
     }
 }

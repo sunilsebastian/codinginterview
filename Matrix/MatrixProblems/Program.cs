@@ -78,6 +78,13 @@ namespace MatrixProblems
                     };
             bool isValid = ValidSudoku.IsValidSudoku(sudoku);
 
+
+            int[,] meet = new int[,] {
+                { 1, 0, 0, 0,1 },
+                { 0, 0, 0, 0, 0 },
+                { 0, 0, 1, 0, 0 } };
+          var dist=  MeetingPoint.MinTotalDistance(meet);
+
             Console.ReadLine();
         }
     }
