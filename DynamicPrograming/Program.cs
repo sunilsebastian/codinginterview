@@ -11,6 +11,10 @@ namespace DynamicPrograming
         public static void Main(string[] args)
         {
 
+            var distictOccurrenceCount=DistinctSubSequenceCount.FindSubsequenceCount("banana", "ban");
+
+            LongestPalindrumSequence.GetLongestPalindrumSequenceCount("agbdba");
+
         }
     }
 }
