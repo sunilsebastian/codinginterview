@@ -326,6 +326,9 @@ namespace ArrayProblems
             var mv5 = mv.Next(7);
             var mv6 = mv.Next(3);
 
+
+            FrogJump.CanReachLastStone(new int[] { 0, 1, 3, 5, 6, 8, 12, 17 });
+
             Console.ReadLine();
         }
     }

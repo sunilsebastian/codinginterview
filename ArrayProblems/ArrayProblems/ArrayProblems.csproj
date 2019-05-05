@@ -52,6 +52,7 @@
     <Compile Include="DutchNationalFlag.cs" />
     <Compile Include="Fibonacci.cs" />
     <Compile Include="FileRead.cs" />
+    <Compile Include="FrogJump.cs" />
     <Compile Include="MissingPositiveNumber.cs" />
     <Compile Include="FindNumInRotatedArray.cs" />
     <Compile Include="FirstNonDupChar.cs" />
