@@ -1,42 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ArrayProblems
+﻿namespace ArrayProblems
 {
     public class MissingPositiveNumber
     {
-        public static int FindFirstMissingPositiveNumber(int[] arr)
+        public static  int FindFirstMissingPositiveNumber(int[] nums)
         {
-            int n = arr.Length;
-            for (int i = 0; i < n; i++)
+            int[] hash = new int[nums.Length];
+            foreach (int num in nums)
             {
-                // when the ith element is not i
-                while (arr[i] != i)
+                if (num > 0 && num <= nums.Length)
                 {
-                    // no need to swap when ith element is out of range [0,n]
-                    if (arr[i] < 0 || arr[i] >= n)
-                        break;
-
-                    //handle duplicate elements
-                    if (arr[i] == arr[arr[i]])
-                        break;
-                    // swap elements
-                    int temp = arr[i];
-                    arr[i] = arr[temp];
-                    arr[temp] = temp;
+                    hash[num - 1] = num;
                 }
             }
-
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i <= hash.Length - 1; i++)
             {
-                if (arr[i] != i)
-                    return i;
+                if (hash[i] == 0)
+                {
+                    return i + 1;
+                }
             }
+            return nums.Length + 1;
+        }
 
-            return n;
+
+        public static int FirstMissingPositive1(int[] arr)
+        {
+            int i = 0;
+            while (i < arr.Length)
+            {
+                if (arr[i] <= 0 || 
+                    arr[i] > arr.Length ||
+                    arr[arr[i] - 1] == arr[i])
+                {
+                    i++;
+                }
+                else
+                {
+                    swap(arr, i, arr[i] - 1);
+                }
+            }
+            i = 0;
+            while (i < arr.Length && arr[i] == i + 1)
+            {
+                i++;
+            }
+            return i + 1;
+        }
+
+        private static  void swap(int[] arr, int i, int j)
+        {
+            arr[i] = arr[i] ^ arr[j];
+            arr[j] = arr[i] ^ arr[j];
+            arr[i] = arr[i] ^ arr[j];
         }
     }
 }

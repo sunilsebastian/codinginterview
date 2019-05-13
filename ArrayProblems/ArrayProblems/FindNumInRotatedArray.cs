@@ -45,7 +45,7 @@ namespace ArrayProblems
 
         private static  int FindPivot(int[] arr, int start, int end)
         {
-
+            // not a rotated array
             if (arr[start] < arr[end]) return -1;
 
             if (start < end)

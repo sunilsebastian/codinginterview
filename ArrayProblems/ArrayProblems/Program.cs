@@ -10,7 +10,6 @@ namespace ArrayProblems
     {
         public static void Main(string[] args)
         {
-
             //Fibonacci series
             Console.Write($"Fib(8):");
             int val1 = Fibonacci.FibReCurrsionWithMemoiszation(8);
@@ -291,6 +290,7 @@ namespace ArrayProblems
             LongestLengthSubstring.LengthOfLongestSubstring("abcabcb");
             LongestLengthSubstring.LengthOfLongestSubstring("abcaxyz");
 
+            LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct("abcbbbbcccbdddadacb", 2);
             LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct1(new int[] {0,1,2,2 }, 2);
 
             //FindNumInRotatedArray.FindNum(new int[] { 7, 8, 9, 1, 2, 3, 4, 5, 6 }, 8);
@@ -299,14 +299,16 @@ namespace ArrayProblems
             //var minwindowStr= MinimumWindowString.findSubString("azjskfzts", "zs");
 
             var minwindowStr = MinimumWindowString.findSubString("jkzbspq", "zs");
+            minwindowStr = MinimumWindowString.findSubString("aaaaabz", "ab");
 
             //element repeated more than n/2 times
             var majElement=MajorityVote.FindMajorityElement(new int[] { 2, 2, 3, 4, 1});
             var majElement1 = MajorityVote.FindMajorityElement(new int[] { 1,2,3,2,2});
 
-            MissingPositiveNumber.FindFirstMissingPositiveNumber(new int[] { -1, -2, 1, 2, 4 });
+            MissingPositiveNumber.FindFirstMissingPositiveNumber(new int[] { 3,4,-1,1 });
 
-           var maxValues= SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3, 1, 2, 0, 5,9,10 }, 3);
+            var maxValues= SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3, 1, 2, 0, 5,9,10 }, 3);
+            maxValues = SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3 }, 5);
 
             BackspaceStringCompare.BackspaceCompare("ab#c", "ad#c");
 

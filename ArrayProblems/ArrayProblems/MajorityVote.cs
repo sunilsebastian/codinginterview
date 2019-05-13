@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArrayProblems
 {
+    //Boyer-Moore's algorithm
     public class MajorityVote
     {
         public static int FindMajorityElement(int[] nums)

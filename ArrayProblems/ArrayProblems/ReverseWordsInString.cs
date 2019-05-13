@@ -11,25 +11,32 @@ namespace ArrayProblems
 
         public static string GetReversedWordsInsentence(string sentence)
         {
+            if (string.IsNullOrWhiteSpace(sentence)) return string.Empty;
+            if (sentence.Length == 1) return sentence;
+
             int count = 0;
             int i;
-            string resultString = string.Empty;
+            StringBuilder resultString = new StringBuilder();
+
             for (i= sentence.Length-1; i>=1;i--)
             {
             
                 if(sentence[i]!=' ' && sentence[i-1] == ' ')
                 {
-                    resultString = resultString + sentence.Substring(i, count + 1) + " ";
+                    resultString.Append(sentence.Substring(i, count + 1) + " ");                   
                     count = 0;
                 }
                 else
                 {
-                    count++;
+                    if (sentence[i] != ' ')
+                    {
+                        count++;
+                    }
                 }
             }
 
-            resultString = resultString + sentence.Substring(i, count + 1);
-            return resultString;
+            resultString.Append(sentence.Substring(i, count + 1));
+            return resultString.ToString().Trim();
 
         }
     }

@@ -22,7 +22,7 @@ namespace ArrayProblems
 
             int lastpostion = stones.Length - 1;
             positions.Push(0);
-            jumps.Push(stones[0]);
+            jumps.Push(0);
             while(positions.Count>0)
             {
                 var pos = positions.Pop();
@@ -38,7 +38,7 @@ namespace ArrayProblems
                     if(hs.Contains(newPos))
                     {
                         positions.Push(newPos);
-                        jumps.Push(k);
+                         jumps.Push(k);
                     }
 
                 }
