@@ -15,24 +15,24 @@ namespace LinkedList
                 return head;
 
             Node result = head;
-            Node p1 = head;
-            Node p2 = head.Next;
+            Node current = head;
+            Node nextPtr = head.Next;
             Node connectNode = head.Next;
 
-            while (p1 != null && p2 != null)
+            while (current != null && nextPtr != null)
             {
-                Node t = p2.Next;
+                Node t = nextPtr.Next;
                 if (t == null)
                     break;
 
-                p1.Next = p2.Next;
-                p1 = p1.Next;
+                current.Next = nextPtr.Next;
+                current = current.Next;
 
-                p2.Next = p1.Next;
-                p2 = p2.Next;
+                nextPtr.Next = current.Next;
+                nextPtr = nextPtr.Next;
             }
 
-            p1.Next = connectNode;
+            current.Next = connectNode;
 
             return result;
         }

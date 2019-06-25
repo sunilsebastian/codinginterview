@@ -177,6 +177,9 @@ namespace LinkedList
             r2.random = r2;
             var clone = CloneListWithRandomPtr.CopyRandomList(r1);
 
+            q = QueueHelper.Create(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
+           var oddEvenList= OddEvenLinkedList.GetOddEvenList(q.Head);
+
 
             Console.ReadLine();
         }

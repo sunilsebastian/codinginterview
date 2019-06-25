@@ -20,7 +20,7 @@ namespace MatrixProblems
 
     public class WallandGate
     {
-        public void GetWallsAndGates(int[,] rooms)
+        public static  void GetWallsAndGates(int[,] rooms)
         {
             if (rooms == null || rooms.GetLength(0) == 0 || rooms.GetLength(1) == 0)
                 return;
@@ -40,7 +40,7 @@ namespace MatrixProblems
             }
         }
 
-        public void fill(int[,] rooms, int i, int j, int distance)
+        public static void fill(int[,] rooms, int i, int j, int distance)
         {
             int m = rooms.GetLength(0);
             int n = rooms.GetLength(1);

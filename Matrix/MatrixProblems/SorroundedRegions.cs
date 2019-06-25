@@ -67,8 +67,8 @@ namespace MatrixProblems
         {
 
             if (i< 0 || i > board.GetLength(0)-1
-                 || j < 0 && j > board.GetLength(1)-1
-                 && board[i, j] == 'X')
+                 || j < 0 || j > board.GetLength(1)-1
+                 || board[i, j] == 'X' || board[i, j] == '#')
                 return;
 
 

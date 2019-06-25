@@ -8,7 +8,7 @@ namespace MatrixProblems
 {
     public class MinimumSumPath
     {
-        public int MinPathSum(int[,] grid)
+        public static  int MinPathSum(int[,] grid)
         {
             if (grid == null || grid.Length == 0)
                 return 0;

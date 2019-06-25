@@ -15,33 +15,33 @@ namespace TreeProblems
                 return null;
 
             Node next = null;
-            Node c = root;
-            while (c != null && c.Data != p.Data)
+            Node current = root;
+            while (current != null && current.Data != p.Data)
             {
                 
-                if (c.Data > p.Data)
+                if (current.Data > p.Data)
                 {
                     //next node will be the last node we take left turn
-                    next = c;
-                    c = c.Left;
+                    next = current;
+                    current = current.Left;
                 }
                 else
                 {
-                    c = c.Right;
+                    current = current.Right;
                 }
             }
 
-            if (c == null)
+            if (current == null)
                 return null;
 
-            if (c.Right == null)
+            if (current.Right == null)
                 return next;
             //when the node has a right subtree, should take the minimum of the subtree which is the left most.
-            c = c.Right;
-            while (c.Left != null)
-                c = c.Left;
+            current = current.Right;
+            while (current.Left != null)
+                current = current.Left;
 
-            return c;
+            return current;
         }
-    }
+    } 
 }

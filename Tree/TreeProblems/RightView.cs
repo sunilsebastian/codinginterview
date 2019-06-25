@@ -15,10 +15,11 @@ namespace TreeProblems
             List<int> list = new List<int>();
             if (root == null) return list;
             int depth = 1;
-            return findMaxDepthElements(list, root, depth);
+            findMaxDepthElements(list, root, depth);
+            return list;
         }
 
-        private static  List<int> findMaxDepthElements(List<int> list, Node root, int depth)
+        private static void findMaxDepthElements(List<int> list, Node root, int depth)
         {
 
             if (list.Count < depth)
@@ -30,8 +31,6 @@ namespace TreeProblems
             if (root.Left != null)
                 findMaxDepthElements(list, root.Left, depth + 1);
 
-          //  depth--;
-            return list;
         }
     }
 }

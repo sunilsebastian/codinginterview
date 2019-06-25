@@ -52,6 +52,7 @@
     <Compile Include="MaxRectSubmatrixWithOne.cs" />
     <Compile Include="MeetingPoint.cs" />
     <Compile Include="MinimumSumPath.cs" />
+    <Compile Include="NQueen.cs" />
     <Compile Include="NumberOfIslandscs.cs" />
     <Compile Include="PaintHouse.cs" />
     <Compile Include="PrintMatrixDiagonally.cs" />

@@ -44,9 +44,9 @@ namespace MatrixProblems
             var mat1 = new int[,] {
                 { 11, 12, 13, 14 },
                 { 15, 16, 17, 18 },
-                { 19, 20, 21, 22 }
-                //{ 23, 24, 25, 26 }
-                //{ 27, 28, 29, 30 }
+                { 19, 20, 21, 22 },
+                { 23, 24, 25, 26 },
+                { 27, 28, 29, 30 }
             };
 
             MatrixSpirall.PrintMatrixSpiral(mat1);
@@ -84,6 +84,22 @@ namespace MatrixProblems
                 { 0, 0, 0, 0, 0 },
                 { 0, 0, 1, 0, 0 } };
           var dist=  MeetingPoint.MinTotalDistance(meet);
+            int[,] minMat = new int[,] {
+                {1,3,1},
+                { 1,5,1},
+                {4,2,1} };
+            var minSum=MinimumSumPath.MinPathSum(minMat);
+
+           
+            Position[] positions = NQueen.SolveNQueenOneSolution(4);
+            var mx = Int32.MaxValue;
+            int[,] wallGate = new int[,] {
+                {mx,-1,0,mx},
+                {mx,mx,mx,-1},
+                {mx,-1,mx,-1} ,
+                {0,-1,mx,mx}};
+
+             WallandGate.GetWallsAndGates(wallGate);
 
             Console.ReadLine();
         }
