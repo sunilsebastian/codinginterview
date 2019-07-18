@@ -17,9 +17,11 @@ namespace DynamicPrograming
 
             var maxPrd=MaxProduct.GetMaxProduct(new int[] { -2,2,-3,4});
 
-            var mincuts=  MinimumPalindrumParition.MinPalPartion("abcbm");
+            var mincuts=  MinimumPalindrumParition.MinPalPartion("agbdba");
 
             var res= HouseRobber.Rob(new int[] { 1, 2, 3, 1 });
+
+            var canj = JumpGame.CanJump(new int[] { 2, 3, 1, 1, 4 });
 
             var numberofJumps=JumpGame.Jump(new int[] { 2, 3, 1, 1, 4 });
 
@@ -39,9 +41,12 @@ namespace DynamicPrograming
             arr2 = new int[] { 2, 5, 7,  8};
             var maxprice=CuttingRod.GetmaxValue(arr2, 5);
 
-           var isThereSum= SubsetSum.IsSubsetSum(new int[] { 3, 34, 4, 12, 5, 2 }, 9);
+           var isThereSum= SubsetSum.IsSubsetSum1(new int[] { 2,3,7,8,10 }, 11);
 
            var profit= Knapsack.MaximizeProfit(new int[] { 1, 4, 5, 7 }, new int[] { 1, 3, 4, 5 }, 7);
+
+           var res1= WildCardMatching.StringMatch("abc", "*bc",3,3);
+            var res2= RegExMatching.StringMatch("abc", "*bc", 3, 3);
 
 
 

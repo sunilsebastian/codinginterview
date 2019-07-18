@@ -12,10 +12,6 @@ namespace GraphProblems
         public static void Main(string[] args)
         {
 
-
-            int[,] T = { { 1, 2, 5 }, { 1, 3, 10 },{1,6,2} };
-
-
             DirectedGraph graph = null;
 
             graph =GetGraph();
@@ -43,8 +39,11 @@ namespace GraphProblems
             Console.WriteLine();
 
 
-           
+            //var g3 = GetGraph3();
+            //result = FindCyclesUndirectedDFS.IsCycle(g3) ? "Yes" : "No";
+
             result = FindCyclesUndirectedDFS.IsCycle(graph1) ? "Yes" : "No";
+           
             Console.Write($"Check Is there Cycle in Undirected Graph DFS: {result}");
             Console.WriteLine();
 
@@ -84,6 +83,23 @@ namespace GraphProblems
 
         }
 
+        private static DirectedGraph GetGraph3(DirectedGraph graph = null)
+        {
+            if (graph == null)
+                graph = new DirectedGraph();
+            Vertex v0 = new Vertex(0, "A");
+            Vertex v1 = new Vertex(1, "B");
+            Vertex v2 = new Vertex(2, "C");
+
+            Vertex[] vertices = new Vertex[] { v0, v1, v2};
+            graph.AddVertices(vertices);
+            graph.AddEdge(v0, v1);
+            graph.AddEdge(v1, v2);
+            graph.AddEdge(v0, v2);
+            return graph;
+
+        }
+
         private static DirectedGraph GetGraph(DirectedGraph graph=null)
         {
             if (graph == null)
@@ -93,7 +109,7 @@ namespace GraphProblems
             Vertex v2 = new Vertex(2, "C");
             Vertex v3 = new Vertex(3, "D");
             Vertex v4 = new Vertex(4, "E");
-            Vertex v5 = new Vertex(5, "E");
+            Vertex v5 = new Vertex(5, "F");
 
             Vertex[] vertices = new Vertex[] { v0, v1, v2, v3, v4, v5 };
             graph.AddVertices(vertices);
@@ -145,7 +161,7 @@ namespace GraphProblems
             matGraph.AddUnDirectedEdge(v1, v3, 3);
             matGraph.AddUnDirectedEdge(v2, v3, 1);
             matGraph.AddUnDirectedEdge(v2, v5, 4);
-            matGraph.AddUnDirectedEdge(v2, v4,1);
+            matGraph.AddUnDirectedEdge(v2, v4,5);
             matGraph.AddUnDirectedEdge(v3, v4, 6);
             matGraph.AddUnDirectedEdge(v4, v5, 2);
            

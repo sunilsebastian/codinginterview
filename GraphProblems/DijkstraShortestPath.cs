@@ -46,33 +46,25 @@ namespace GraphProblems
             PrintPath(g, Dist, Parent,src);
         }
 
-        private static void PrintPath(GraphMatrix g, int[] Dist, int[] Parent,int src)
+        private static void PrintPath(GraphMatrix g, int[] Dist, int[] Parent, int src)
         {
-            for( int i=0;i<g.Vertices.Length;i++)
+            for (int i = 0; i < g.Vertices.Length; i++)
             {
                 Console.Write($"shortest path from  {src} to {i} is {Dist[i]} ");
-
-               int p = Parent[i];
-            
-               if (p!=-1)
-                {
-                    if (g.AdjMatrix[p, i] == Int32.MaxValue)
-                    {
-                        Console.WriteLine();
-                        continue;
-                    }
-                    Console.Write($"{p} -> {i}({g.AdjMatrix[p, i]})");
-                }
-                while (p!=-1)
-                {
-                    if (Parent[p] != -1)
-                    {
-                        Console.Write($"{Parent[p]} -> {p}({g.AdjMatrix[Parent[p], p]})");
-                    }
-                    p = Parent[p];
-                } 
+                int p = Parent[i];
+                PrintHelper(i, p, Parent, g);
                 Console.WriteLine();
             }
+        }
+
+        private static void PrintHelper(int vertex, int p, int[] parent, GraphMatrix g)
+        {
+            if (p == -1)
+                return;
+          
+            Console.Write($"{p} -> {vertex}({g.AdjMatrix[p, vertex]})");
+
+            PrintHelper(p, parent[p], parent, g);
         }
 
         private static int FindMin(GraphMatrix g, int[] Dist)
