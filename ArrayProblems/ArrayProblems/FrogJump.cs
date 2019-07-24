@@ -20,7 +20,7 @@ namespace ArrayProblems
             }
 
 
-            int lastpostion = stones.Length - 1;
+            int lastpostion = stones[stones.Length - 1];
             positions.Push(0);
             jumps.Push(0);
             while(positions.Count>0)

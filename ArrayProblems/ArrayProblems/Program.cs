@@ -124,8 +124,8 @@ namespace ArrayProblems
             Console.WriteLine();
 
             //Even Occuring First Element..
-            input = new int[] { 1, 2, 2, 3, 3 };
-            Console.Write("Even Occuring First Element in { 1,2, 2 ,3,3} is :");
+            input = new int[] { 1, 2, 2, 3, 3, 4, 5, 4, 4, 6, 4 };
+            Console.Write("Even Occuring First Element in { 1,2,2,3,3,4,5,4,4,6,4} is :");
             NumberRepeatingEvenTimes.FindNumberRepeatingEvenTimes(input);
             Console.WriteLine();
 
