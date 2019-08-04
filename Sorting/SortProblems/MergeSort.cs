@@ -12,13 +12,16 @@ namespace SortProblems
         {
             int mid;
 
-            if (endIndex > startIndex)
-            {
+            if (startIndex >= endIndex)
+                return;
+
+            //if (endIndex > startIndex)
+            //{
                 mid = (endIndex + startIndex) / 2;
                 Sort(input, startIndex, mid);
                 Sort(input, (mid + 1), endIndex);
                 Merge(input, startIndex, (mid + 1), endIndex);
-            }
+            //}
         }
 
         private static void Merge(int[] input, int left, int mid, int right)

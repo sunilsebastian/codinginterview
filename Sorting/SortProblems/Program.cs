@@ -10,6 +10,17 @@ namespace SortProblems
     {
         public static void Main(string[] args)
         {
+
+            PriorityQueue pq = new PriorityQueue();
+            pq.Enqueue(10);
+            pq.Enqueue(8);
+            pq.Enqueue(5);
+            pq.Enqueue(4);
+            pq.Enqueue(9);
+
+            var x= pq.Dequeue();
+            x = pq.Dequeue();
+
             string s = "ab cd e j asd ljffg df";
             var result=SortBasedOnsize.Sort(s);
             Console.WriteLine();
@@ -18,6 +29,10 @@ namespace SortProblems
             {
                 1, 5, 4, 11, 20, 8, 2, 98, 90, 16
             };
+
+            SelectionSort.Sort(new int[] { 1, 7, 2, 4, 5 });
+
+            BubbleSort.Sort1(new int[] { 1, 7, 2, 4, 5 });
 
             QuickSort obj = new QuickSort();
             obj.Sort(arr, 0, arr.Length - 1);
@@ -65,14 +80,7 @@ namespace SortProblems
             Console.WriteLine();
 
 
-            Console.WriteLine("Priority Queue Values:");
-            var pq = new PriorityQueue();
-            pq.Enqueue(7,7/2);
-            pq.Enqueue(4,4/2);
-            pq.Enqueue(5,5/2);
-            pq.Enqueue(8,8/2);
-            pq.Enqueue(2,2/2);
-            pq.Enqueue(6,6/2);
+           
 
 
            

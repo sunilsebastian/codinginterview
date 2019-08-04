@@ -11,13 +11,13 @@ namespace SortProblems
         public void Sort(int[] arr, int start, int end)
         {
             int i;
-            if (start < end)
-            {
-                i = Partition(arr, start, end);
+            if (start >= end) return;
 
-                Sort(arr, start, i - 1);
-                Sort(arr, i + 1, end);
-            }
+            i = Partition(arr, start, end);
+
+            Sort(arr, start, i - 1);
+            Sort(arr, i + 1, end);
+
         }
 
         private int Partition(int[] arr, int start, int end)

@@ -22,10 +22,12 @@ namespace SortProblems
 
                     }
                 }
-
-                var temp = arr[i];
-                arr[i] = arr[min];
-                arr[min] = temp;
+                if (arr[min] < arr[i])
+                {
+                    var temp = arr[i];
+                    arr[i] = arr[min];
+                    arr[min] = temp;
+                }
 
             }
             return arr;
