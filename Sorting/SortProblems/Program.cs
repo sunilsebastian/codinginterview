@@ -11,15 +11,13 @@ namespace SortProblems
         public static void Main(string[] args)
         {
 
-            PriorityQueue pq = new PriorityQueue();
-            pq.Enqueue(10);
-            pq.Enqueue(8);
-            pq.Enqueue(5);
-            pq.Enqueue(4);
-            pq.Enqueue(9);
+            KthLargestNumberInStream kstream = new KthLargestNumberInStream(3, new int[] { 4, 5, 8, 2 });
+            var val=kstream.Add(3);   // returns 4
+            val=kstream.Add(5);      // returns 5
+            val = kstream.Add(10);  // returns 5
+            val = kstream.Add(9);   // returns 8
+            val = kstream.Add(4);   // returns 8
 
-            var x= pq.Dequeue();
-            x = pq.Dequeue();
 
             string s = "ab cd e j asd ljffg df";
             var result=SortBasedOnsize.Sort(s);
@@ -78,13 +76,6 @@ namespace SortProblems
                 Console.Write(arr[i] + " ");
 
             Console.WriteLine();
-
-
-           
-
-
-           
-
 
             Console.ReadLine();
         }
