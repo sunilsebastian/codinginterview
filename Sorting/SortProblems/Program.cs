@@ -12,12 +12,29 @@ namespace SortProblems
         
         public static void Main(string[] args)
         {
+            int[] res=KLargestElementsInStream.TopK(new int[] { 4, 8, 9, 6, 6, 2, 10, 2, 8, 1, 2 }, 9);
+             MergeKSortedArrays mergeArrays = new MergeKSortedArrays();
+            var mergeResult=mergeArrays.MergeArrays(new int[,] { { 1, 3, 5, 7 }, { 2, 4, 6, 8 }, { 0, 9, 10, 11 } });
+
+
             KthLargestNumberInStream kstream = new KthLargestNumberInStream(3, new int[] { 4, 5, 8, 2 });
             var val=kstream.Add(3);   // returns 4
             val=kstream.Add(5);      // returns 5
             val = kstream.Add(10);  // returns 5
             val = kstream.Add(9);   // returns 8
             val = kstream.Add(4);   // returns 8
+
+            PriorityQueue<int> heap = new PriorityQueue<int>(false);
+            heap.Enqueue(4, 4);
+            heap.Enqueue(5, 5);
+            heap.Enqueue(8, 8);
+            heap.Enqueue(2, 2);
+            Console.Write("PQ:");
+            for (int i = 0; i < heap.Count(); i++)
+                Console.Write($"{ heap.Dequeue()} ");
+
+            Console.WriteLine();
+
 
 
             string s = "ab cd e j asd ljffg df";

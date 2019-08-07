@@ -10,6 +10,7 @@ namespace ArrayProblems
     {
         public static void Main(string[] args)
         {
+            Sumupto3numbers.ThreeSum(new int[] { })
             //Fibonacci series
             Console.Write($"Fib(8):");
             int val1 = Fibonacci.FibReCurrsionWithMemoiszation(8);
