@@ -12,8 +12,12 @@ namespace SortProblems
         
         public static void Main(string[] args)
         {
+
+            string[] output=LexicographicalOrder.Solve(new string[] { "key1 abcd", "key2 zzz", "key1 hello","key3 world", "key1 hello" });
             int[] res=KLargestElementsInStream.TopK(new int[] { 4, 8, 9, 6, 6, 2, 10, 2, 8, 1, 2 }, 9);
-             MergeKSortedArrays mergeArrays = new MergeKSortedArrays();
+
+
+            MergeKSortedArrays mergeArrays = new MergeKSortedArrays();
             var mergeResult=mergeArrays.MergeArrays(new int[,] { { 1, 3, 5, 7 }, { 2, 4, 6, 8 }, { 0, 9, 10, 11 } });
 
 

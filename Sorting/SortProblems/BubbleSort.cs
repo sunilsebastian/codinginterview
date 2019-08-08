@@ -40,7 +40,7 @@ namespace SortProblems
             {
 
                 freePass = true;
-                for (int j = arr.Length-1; j >0; j--)
+                for (int j = arr.Length-1; j >i; j--)
                 {
                     if (arr[j-1] > arr[j])
                     {

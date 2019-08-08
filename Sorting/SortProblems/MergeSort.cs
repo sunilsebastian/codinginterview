@@ -26,39 +26,38 @@ namespace SortProblems
 
         private static void Merge(int[] input, int left, int mid, int right)
         {
-          
+         
+            var leftEnd = mid - 1;
+            var resultIndex = left;
+            var resultSize = right - left + 1;
             int[] temp = new int[input.Length];
-            int i, leftEnd, lengthOfInput, tmpPos;
-            leftEnd = mid - 1;
-            tmpPos = left;
-            lengthOfInput = right - left + 1;
-          
+
             while ((left <= leftEnd) && (mid <= right))
             {
                 //mid is the first element of the second compartment
                 if (input[left] <= input[mid])
                 {
-                    temp[tmpPos++] = input[left++];
+                    temp[resultIndex++] = input[left++];
                 }
                 else
                 {
-                    temp[tmpPos++] = input[mid++];
+                    temp[resultIndex++] = input[mid++];
                 }
             }
             //placing remaining element in temp from left sorted array
             while (left <= leftEnd)
             {
-                temp[tmpPos++] = input[left++];
+                temp[resultIndex++] = input[left++];
             }
 
             //placing remaining element in temp from right sorted array
             while (mid <= right)
             {
-                temp[tmpPos++] = input[mid++];
+                temp[resultIndex++] = input[mid++];
             }
 
             //placing temp array to input
-            for (i = 0; i < lengthOfInput; i++)
+            for (int i = 0; i < resultSize; i++)
             {
                 input[right] = temp[right];
                 right--;
