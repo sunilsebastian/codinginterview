@@ -7,19 +7,15 @@ using TreeProblems.Common;
 
 namespace TreeProblems
 {
-    public class Mtest
-    {
-        public string name { get; set; }
-    }
     class Program
     {
         public static void Main(string[] args)
         {
-            Mtest ttt = null;
-            if(string.IsNullOrWhiteSpace(ttt?.name))
+            for (int i = 1; i <20; i++)
             {
-                Console.WriteLine("Hello");
+                Console.Write($"{UniqueBSTCount.GetUniqueBSTCount(i)} ");
             }
+
             //Insert to a binary Tree
             BST bst = new BST();
             bst.Insert(20);

@@ -10,6 +10,8 @@ namespace DynamicPrograming
     {
         public static void Main(string[] args)
         {
+           
+            var palindromes = NumberofPalindromes.GetCount(3);
 
             var distictOccurrenceCount=DistinctSubSequenceCount.FindSubsequenceCount("banana", "ban");
 

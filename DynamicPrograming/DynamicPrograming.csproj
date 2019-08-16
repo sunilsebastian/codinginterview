@@ -57,6 +57,7 @@
     <Compile Include="MaxProduct.cs" />
     <Compile Include="MinimumEdits.cs" />
     <Compile Include="MinimumPalindrumParition.cs" />
+    <Compile Include="NumberofPalindromes.cs" />
     <Compile Include="PerfectSquare.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

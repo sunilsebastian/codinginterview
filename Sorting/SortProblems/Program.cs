@@ -9,15 +9,27 @@ namespace SortProblems
    
     public class Program
     {
-        
+
         public static void Main(string[] args)
         {
-            //
+
+
+            SumToTargetValue.check_if_sum_possible(new long[]{-1,-8,7,3,9,-6,4,8}, 116);
+            AllPossibleNQueen.GetNQueenPositions(4);
+
+           var resultArray = GenerateAllExpression.Generate("222",24);
+            PalindrumDecomposition.PalPartitions("aab");
+
+            BSTCount.PrintBST(4);
+
+            SubsetOfSet.GeneratSubset("ab");
+
+
 
             int[] list1 = new int[2] { 3, 3 };
             int[] list2 = new int[2] {5,-1};
             int[] list3 = new int[2] {-2, 4 };
-        var closetPoints= KClosestPoints.KClosest(new int[][] {list1,list2,list3 },2);
+            var closetPoints= KClosestPoints.KClosest(new int[][] {list1,list2,list3 },2);
 
             string[] output=LexicographicalOrder.Solve(new string[] { "key1 abcd", "key2 zzz", "key1 hello","key3 world", "key1 hello" });
             int[] res=KLargestElementsInStream.TopK(new int[] { 4, 8, 9, 6, 6, 2, 10, 2, 8, 1, 2 }, 9);

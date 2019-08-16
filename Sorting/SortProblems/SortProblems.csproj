@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllPossibleNQueen.cs" />
+    <Compile Include="BSTCount.cs" />
     <Compile Include="BubbleSort.cs" />
+    <Compile Include="GenerateAllExpression.cs" />
+    <Compile Include="GenerateExp.cs" />
     <Compile Include="HeapSort.cs" />
     <Compile Include="InsertionSort.cs" />
     <Compile Include="KClosestPoints.cs" />
@@ -52,6 +56,7 @@
     <Compile Include="LexicographicalOrder.cs" />
     <Compile Include="MergeKSortedArrays.cs" />
     <Compile Include="MergeSort.cs" />
+    <Compile Include="PalindrumDecomposition.cs" />
     <Compile Include="PriorityQueue.cs" />
     <Compile Include="PQ.cs" />
     <Compile Include="Program.cs" />
@@ -59,6 +64,8 @@
     <Compile Include="QuickSort.cs" />
     <Compile Include="SelectionSort.cs" />
     <Compile Include="SortBasedOnsize.cs" />
+    <Compile Include="SubsetOfSet.cs" />
+    <Compile Include="SumToTargetValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

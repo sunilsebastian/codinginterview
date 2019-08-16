@@ -26,7 +26,19 @@ namespace TreeProblems
 
     public class UniqueBSTCount
     {
-        public static int GetUniqueBSTCount(int n)
+        public static long GetUniqueBSTCount(int n)
+        {
+            long x = Factorial(2 * n);
+            long y= Factorial(n + 1) * Factorial(n);
+            return x / y;
+         }
+
+        public static int  Factorial(int n)
+        {
+            if (n == 0) return 1;
+            return n * Factorial(n-1);
+        }
+            public static int GetUniqueBSTCount1(int n)
         {
             int[] bstCountArray = new int[n + 1];
 
