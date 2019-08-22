@@ -66,6 +66,7 @@
     <Compile Include="SortBasedOnsize.cs" />
     <Compile Include="SubsetOfSet.cs" />
     <Compile Include="SumToTargetValue.cs" />
+    <Compile Include="WellFormedBrackets.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

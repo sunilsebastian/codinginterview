@@ -12,35 +12,11 @@ namespace SortProblems
         {
 
            // var result=  CheckSumHelper(arr, 0, 0, k, 0);
-           var result= CheckSumHelper(arr, k, 0, 0);
+           var result= CheckSumHelper(arr, k, 0, 0,0);
             return result;
 
         }
 
-        //Inclusion Exclusion
-        public static bool  CheckSumHelper(long[] arr, long k,long sum, int trackPointer)
-        {
-            if (trackPointer == arr.Length)
-            {
-                if (sum == k)
-                    return true;
-                return false;
-
-            }
-            //Exclude
-            if(CheckSumHelper(arr, k, sum, trackPointer+1))
-            {
-                return true;
-            }
-            long val = arr[trackPointer];
-
-            //Include
-            if (CheckSumHelper(arr, k, sum+val, trackPointer+1))
-            {
-                return true;
-            }
-            return false;
-        }
 
         private static bool CheckSumHelper(long[] arr, long currval, long prevval, long k, int trackPointer)
         {

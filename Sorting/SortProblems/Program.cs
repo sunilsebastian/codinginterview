@@ -12,9 +12,9 @@ namespace SortProblems
 
         public static void Main(string[] args)
         {
+            WellFormedBrackets.GetWellFormedBrackets(3);
 
-
-            SumToTargetValue.check_if_sum_possible(new long[]{-1,-8,7,3,9,-6,4,8}, 116);
+            SumToTargetValue.check_if_sum_possible(new long[]{10,20}, 0);
             AllPossibleNQueen.GetNQueenPositions(4);
 
            var resultArray = GenerateAllExpression.Generate("222",24);
