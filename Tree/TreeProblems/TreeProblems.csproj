@@ -45,7 +45,9 @@
     <Compile Include="AncestersOfAGivenNode.cs" />
     <Compile Include="ArrayMaxRootTree.cs" />
     <Compile Include="BinaryTreeSerialization.cs" />
+    <Compile Include="Common\NAryTree.cs" />
     <Compile Include="CountNodes.cs" />
+    <Compile Include="HeightOfNaryTree.cs" />
     <Compile Include="InorderSuccessor.cs" />
     <Compile Include="NearestTargetInBST.cs" />
     <Compile Include="SortedArrayToBST.cs" />

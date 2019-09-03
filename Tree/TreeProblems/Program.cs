@@ -11,6 +11,10 @@ namespace TreeProblems
     {
         public static void Main(string[] args)
         {
+
+            NAryTreeNode nAryNode = HeightOfNaryTree.Create();
+            var nAryTreeHeight=HeightOfNaryTree.GetHeight(nAryNode);
+
             for (int i = 1; i <20; i++)
             {
                 Console.Write($"{UniqueBSTCount.GetUniqueBSTCount(i)} ");

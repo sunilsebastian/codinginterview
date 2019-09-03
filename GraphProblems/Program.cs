@@ -11,6 +11,14 @@ namespace GraphProblems
     {
         public static void Main(string[] args)
         {
+            //"baa", "abcd", "abca", "cab", "cad"
+
+           var stronglyConnected= TransposeConnectedGraph.MakeGraph();
+           var transpose= TransposeConnectedGraph.build_other_graph(stronglyConnected);
+
+            var res = AlienLanguage.find_order(new string[] { "baa", "abcd", "abca", "cab", "cad" });
+
+
 
             DirectedGraph graph = null;
 

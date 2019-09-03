@@ -58,6 +58,7 @@
     <Compile Include="PrintMatrixDiagonally.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomWithKeys.cs" />
     <Compile Include="RotateMatrix.cs" />
     <Compile Include="SearchForStringInMatrix.cs" />
     <Compile Include="SearchSorted2DMatrix.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="ValidSudoku.cs" />
     <Compile Include="ValidTicTacToe.cs" />
     <Compile Include="WallandGate.cs" />
+    <Compile Include="ZombiesCluster.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
