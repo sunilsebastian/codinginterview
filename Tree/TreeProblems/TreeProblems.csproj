@@ -47,6 +47,7 @@
     <Compile Include="BinaryTreeSerialization.cs" />
     <Compile Include="Common\NAryTree.cs" />
     <Compile Include="CountNodes.cs" />
+    <Compile Include="FlipTreeUpDown.cs" />
     <Compile Include="HeightOfNaryTree.cs" />
     <Compile Include="InorderSuccessor.cs" />
     <Compile Include="NearestTargetInBST.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="SpiralOrderTraversal.cs" />
     <Compile Include="SymmetricTree.cs" />
     <Compile Include="TreeTo2DMatrix.cs" />
+    <Compile Include="TreeToDoubleList.cs" />
     <Compile Include="TrimNodesOutisideBoundary.cs" />
     <Compile Include="UniqueBSTCount.cs" />
     <Compile Include="UnivalTree.cs" />

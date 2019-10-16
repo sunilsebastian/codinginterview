@@ -12,14 +12,6 @@ namespace TreeProblems
         public static void Main(string[] args)
         {
 
-            NAryTreeNode nAryNode = HeightOfNaryTree.Create();
-            var nAryTreeHeight=HeightOfNaryTree.GetHeight(nAryNode);
-
-            for (int i = 1; i <20; i++)
-            {
-                Console.Write($"{UniqueBSTCount.GetUniqueBSTCount(i)} ");
-            }
-
             //Insert to a binary Tree
             BST bst = new BST();
             bst.Insert(20);
@@ -28,6 +20,33 @@ namespace TreeProblems
             bst.Insert(15);
             Console.WriteLine(bst.Root.ToString());
 
+            //remove nodes out of boundary
+            NonBST nonBst = new NonBST();
+            var testArr = new int[] {4,2,5,1,3 };
+            nonBst.InsertAll(testArr);
+            var dlist=TreeToDoubleList.BTtoLL(nonBst.Root);
+
+            Node tnode = new Node(1);
+            tnode.Left = new Node(2);
+            tnode.Right = new Node(3);
+            tnode.Left.Left = new Node(4);
+            tnode.Left.Right = new Node(5);
+            tnode.Left.Left.Left = new Node(6);
+            tnode.Left.Left.Right = new Node(7);
+
+            FlipTreeUpDown.FlipUpsideDown(tnode);
+
+          
+
+            NAryTreeNode nAryNode = HeightOfNaryTree.Create();
+            var nAryTreeHeight=HeightOfNaryTree.GetHeight(nAryNode);
+
+            for (int i = 1; i <20; i++)
+            {
+                Console.Write($"{UniqueBSTCount.GetUniqueBSTCount(i)} ");
+            }
+
+            
             //remove nodes out of boundary
             bst.ClearAll();
             int[] arr = new int[]{ 3, 0, 4, 2, 1 };
@@ -124,7 +143,7 @@ namespace TreeProblems
             Console.WriteLine();
 
             //Spiral order Traversal  Reverse
-            NonBST nonBst = new NonBST();
+             nonBst = new NonBST();
             arr = new int[] { 10, 16, 5, 2, 3, 6, 11 };
             nonBst.InsertAll(arr);
             Console.Write("Spiral Order Traversal Reverse:");

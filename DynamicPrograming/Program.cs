@@ -10,7 +10,12 @@ namespace DynamicPrograming
     {
         public static void Main(string[] args)
         {
-           
+            bool perfectShuffle=StringInterLeaving.IsPerfectShuffle("AB", "D", "ADBECF");
+            //bool perfectShuffle=StringInterLeaving.IsPerfectShuffle("bcc", "bbca", "bbcbcac");
+            int cost = MatrixChainMultiplication.Multply(new int[] { 2, 3, 6, 4, 5 });
+            WordBreakCount.GetWordBreakCount(new List<string> { "i", "am", "ace" ,"iam"}, "iamace");
+            int player1Max= Gold2Player.MaximizeFirstPlayerGain(new int[] { 3, 9, 1, 2 });
+
             var palindromes = NumberofPalindromes.GetCount(3);
 
             var distictOccurrenceCount=DistinctSubSequenceCount.FindSubsequenceCount("banana", "ban");

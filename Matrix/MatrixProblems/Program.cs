@@ -10,18 +10,7 @@ namespace MatrixProblems
     {
         public static void Main(string[] args)
         {
-            //List<string> zombie=new List<string>();
-            //int counter = 0;
-            //string line;
-            //System.IO.StreamReader file =    new System.IO.StreamReader(@"C:\Compare\Test1.txt");
-            //while ((line = file.ReadLine()) != null)
-            //{
-            //    zombie.Add(line);
-            //    //if (counter == 2)
-            //    //    break;
-            //    counter++;
-            
-            //}
+           
             var zombie = new List<string> { "101", "110", "001" };
             ZombiesCluster.zombieCluster(zombie);
             //string[] grid1 = new string[] { "...B", ".b#.", "@#+." };
