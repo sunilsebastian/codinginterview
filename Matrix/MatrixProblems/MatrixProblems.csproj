@@ -50,6 +50,7 @@
     <Compile Include="MaxAreaOfIsland.cs" />
     <Compile Include="MaximumSizeSubSquareMatrix .cs" />
     <Compile Include="MaxRectSubmatrixWithOne.cs" />
+    <Compile Include="MaxSumRectangle.cs" />
     <Compile Include="MeetingPoint.cs" />
     <Compile Include="MinimumSumPath.cs" />
     <Compile Include="NQueen.cs" />

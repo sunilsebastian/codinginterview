@@ -47,6 +47,7 @@
     <Compile Include="CuttingRod.cs" />
     <Compile Include="DecodeWays.cs" />
     <Compile Include="DistinctSubSequenceCount.cs" />
+    <Compile Include="EqualSumPartition.cs" />
     <Compile Include="Gold2Player.cs" />
     <Compile Include="HouseRobber.cs" />
     <Compile Include="JumpGame.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="RegExMatching.cs" />
     <Compile Include="StringInterLeaving.cs" />
     <Compile Include="SubsetSum.cs" />
+    <Compile Include="TextJustification.cs" />
     <Compile Include="WildCardMatching.cs" />
     <Compile Include="WordBreakCount.cs" />
   </ItemGroup>

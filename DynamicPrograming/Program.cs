@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace DynamicPrograming
 {
+
+
     class Program
     {
         public static void Main(string[] args)
         {
+
+           EqualSumPartition.EqualSubSetSumPartition(new List<int> {2,1,3,7,-3,10 });
+           long ans1 =  TestJustificationWithoutLastLineCost.solveBalancedLineBreaks(new List<string> { "omg", "very", "are", "extreme" }, 10);
+
+           // int ans = TextJustification.Justify(new string[] { "qjeJnFkqq", "JlRjenW", "jg", "badsha","JK","PK" }, 13);
+            int ans = TextJustification.Justify(new string[] { "omg", "very", "are", "extreme"}, 10);
+            //int ans = TextJustification.Justify(new string[] { "abc", "d", "efgh"}, 50);
             bool perfectShuffle=StringInterLeaving.IsPerfectShuffle("AB", "D", "ADBECF");
             //bool perfectShuffle=StringInterLeaving.IsPerfectShuffle("bcc", "bbca", "bbcbcac");
             int cost = MatrixChainMultiplication.Multply(new int[] { 2, 3, 6, 4, 5 });
