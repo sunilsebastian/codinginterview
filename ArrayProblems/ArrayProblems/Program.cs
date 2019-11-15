@@ -299,7 +299,7 @@ namespace ArrayProblems
 
             //var minwindowStr= MinimumWindowString.findSubString("azjskfzts", "zs");
 
-            var minwindowStr = MinimumWindowString.findSubString("jkzbspq", "zs");
+            var minwindowStr = MinimumWindowString.findSubString("helloworld", "lwr");
             minwindowStr = MinimumWindowString.findSubString("aaaaabz", "ab");
 
             //element repeated more than n/2 times
