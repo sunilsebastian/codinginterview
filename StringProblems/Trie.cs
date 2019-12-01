@@ -8,7 +8,7 @@ namespace StringProblems
 {
     public class Trie
     {
-        private static TrieNode root;
+        public  static TrieNode root;
         private static readonly char endOfWord = '$';
         static Trie()
         {
@@ -32,17 +32,21 @@ namespace StringProblems
                     node = new TrieNode(c, current.Depth+1);
                     current.Children.Add(c,node);
                 }
+
+                //This is to track shortest unique prefix.
+                node.Count++;
                 current = node;
             }
-            current.Children.Add(endOfWord,new TrieNode(endOfWord, current.Depth + 1));
+            if(!current.Children.ContainsKey(endOfWord))
+                current.Children.Add(endOfWord,new TrieNode(endOfWord, current.Depth + 1));
         }
 
-        public void Delete(string s)
+        public static  void Delete(string s)
         {
             DeleteHelper(s, root,0);
         }
 
-        public bool DeleteHelper(string s, TrieNode current,int index)
+        public static bool DeleteHelper(string s, TrieNode current,int index)
         {
             if(current.Depth == s.Length)
             {
@@ -58,8 +62,12 @@ namespace StringProblems
 
             char c = s[index];
             TrieNode node = current.FindChildNode(c);
-            
-            var res = DeleteHelper(s, current, index + 1);
+            if (node == null)
+            {
+                return false;
+            }
+
+            var res = DeleteHelper(s, node, index + 1);
 
             if(res==true)
             {

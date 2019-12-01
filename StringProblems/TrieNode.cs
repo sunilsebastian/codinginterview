@@ -11,6 +11,7 @@ namespace StringProblems
         public char Value { get; set; }
         public Dictionary<char, TrieNode> Children { get; set; }
         public int Depth { get; set; }
+        public int Count { get; set; }
 
         public TrieNode(char value, int depth)
         {
