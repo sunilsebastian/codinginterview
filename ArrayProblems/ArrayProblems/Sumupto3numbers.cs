@@ -26,6 +26,40 @@ namespace ArrayProblems
             }
         }
 
+        //static List<IList<int>> lst1 = new List<IList<int>>();
+        //static Dictionary<int, int> dict = new Dictionary<int, int>();
+        //public static IList<IList<int>> ThreeSum1(int[] nums)
+        //{
+        //    for (int j = 0; j < nums.Length - 2; j++)
+        //    {
+        //        TwoSum1(nums, j + 1, nums[j]);
+
+        //    }
+        //    return lst1;
+        //}
+
+        //private static void TwoSum1(int[] nums, int sourceIndex, int val)
+        //{
+        //    int target = 0;
+        //    for (int i = sourceIndex; i < nums.Length; i++)
+        //    {
+        //        int sum = val + nums[i];
+        //        if (dict.ContainsKey(target - sum))
+        //        {
+        //            var lst = new List<int> { val, nums[i], target - sum };
+        //            lst1.Add(lst);
+
+        //        }
+        //        else
+        //        {
+        //            if (!dict.ContainsKey(nums[i]))
+        //            {
+        //                dict.Add(nums[i], i);
+        //            }
+        //        }
+        //    }
+        //}
+
 
         public static string[] ThreeSum(int[] arr)
         {
