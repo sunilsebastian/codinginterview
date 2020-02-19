@@ -255,8 +255,11 @@ namespace TreeProblems
             arr = new int[] {1,2,4,3,9,5,6};
             nonBst.InsertAll(arr);
             var mxCount= BSTLongestConsecutiveSequence.LongestConsecutive(nonBst.Root);
+            var mmxCount = BSTLongestConsecutiveSequence.LongestConsecutive1(nonBst.Root);
 
-           var serializedString =  BinaryTreeSerialization.Serialize(nonBst.Root);
+            KDistancefromTarget.DistanceK(nonBst.Root,3,2);
+
+            var serializedString =  BinaryTreeSerialization.Serialize(nonBst.Root);
 
             var rviewList=RightView.RightSideView(nonBst.Root);
 

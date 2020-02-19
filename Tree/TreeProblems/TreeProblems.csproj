@@ -50,6 +50,7 @@
     <Compile Include="FlipTreeUpDown.cs" />
     <Compile Include="HeightOfNaryTree.cs" />
     <Compile Include="InorderSuccessor.cs" />
+    <Compile Include="KDistancefromTarget.cs" />
     <Compile Include="NearestTargetInBST.cs" />
     <Compile Include="SortedArrayToBST.cs" />
     <Compile Include="BinaryTreeFromPreOrderInOrder.cs" />

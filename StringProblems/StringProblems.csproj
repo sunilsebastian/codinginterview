@@ -43,18 +43,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTwoLargeNumber.cs" />
+    <Compile Include="Anagram.cs" />
     <Compile Include="Autocomplete.cs" />
+    <Compile Include="BackspaceStringCompare.cs" />
+    <Compile Include="FirstNonDupChar.cs" />
+    <Compile Include="IntToString.cs" />
+    <Compile Include="IsoMorphic.cs" />
+    <Compile Include="KMPSubstring.cs" />
+    <Compile Include="LengthOfLongestSubstringKDistinct.cs" />
     <Compile Include="LexicoGraphicSort.cs" />
     <Compile Include="LongestCommonPrefix.cs" />
+    <Compile Include="LongestLengthSubstring.cs" />
+    <Compile Include="MaxConsecutiveRepatingChar.cs" />
     <Compile Include="MinimumOccuringWord.cs" />
+    <Compile Include="MinimumWindowString.cs" />
+    <Compile Include="MultiplyTwoLargeNumber.cs" />
+    <Compile Include="ParanthesisInOrder.cs" />
+    <Compile Include="Permutation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RabinKarpSubstringSearch.cs" />
+    <Compile Include="ReverseWordsInString.cs" />
     <Compile Include="ShortestUniquePrefixToRepWord.cs" />
     <Compile Include="SmallestNumberRemoveKDigits.cs" />
+    <Compile Include="StringOrderCheck.cs" />
+    <Compile Include="StringToInt.cs" />
+    <Compile Include="StringUnique.cs" />
     <Compile Include="Trie.cs" />
     <Compile Include="TrieNode.cs" />
-    <Compile Include="WordBreakTrie.cs" />
+    <Compile Include="ValidSubstringCount.cs" />
+    <Compile Include="WordBreak.cs" />
+    <Compile Include="WordCountInASentence.cs" />
+    <Compile Include="WordLadder.cs" />
+    <Compile Include="ZigZagConversion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -9,7 +9,7 @@ namespace TreeProblems
 {
     public class BSTLongestConsecutiveSequence
     {
-        public static  int LongestConsecutive(Node root)
+        public static int LongestConsecutive(Node root)
         {
             if (root == null)
                 return 0;
@@ -21,7 +21,7 @@ namespace TreeProblems
             sizeQueue.Enqueue(1);
             int max = 1;
 
-            while (nodeQueue.Count>0)
+            while (nodeQueue.Count > 0)
             {
                 Node head = nodeQueue.Dequeue();
                 int size = sizeQueue.Dequeue();
@@ -63,6 +63,22 @@ namespace TreeProblems
             }
 
             return max;
+        }
+
+        public static int LongestConsecutive1(Node root)
+        {
+            return LongestConsecutiveHelper(root, null, 0);
+        }
+
+        public static int LongestConsecutiveHelper(Node root, Node Prev, int max)
+        {
+            if (root == null) return max;
+
+            int maxVal = (Prev == null || root.Data - Prev.Data != 1) ? 1 : max + 1;
+
+            var left = LongestConsecutiveHelper(root.Left, root, maxVal);
+            var right = LongestConsecutiveHelper(root.Right, root, maxVal);
+            return Math.Max(Math.Max(left, right),max);
         }
     }
 }

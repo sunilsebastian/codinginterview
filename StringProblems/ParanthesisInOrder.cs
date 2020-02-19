@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ArrayProblems
+namespace StringProblems
 {
     public class ParanthesisInOrder
     {
