@@ -49,9 +49,11 @@
     <Compile Include="CountNodes.cs" />
     <Compile Include="FlipTreeUpDown.cs" />
     <Compile Include="HeightOfNaryTree.cs" />
+    <Compile Include="InOrderPredecessor.cs" />
     <Compile Include="InorderSuccessor.cs" />
     <Compile Include="KDistancefromTarget.cs" />
     <Compile Include="NearestTargetInBST.cs" />
+    <Compile Include="PerimeterOfNaryTree.cs" />
     <Compile Include="SortedArrayToBST.cs" />
     <Compile Include="BinaryTreeFromPreOrderInOrder.cs" />
     <Compile Include="BSTLongestConsecutiveSequence.cs" />

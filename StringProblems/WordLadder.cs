@@ -13,49 +13,84 @@ namespace StringProblems
         //start = "hit"
         //end = "cog"
         //dict = ["hot","dot","dog","lot","log"]
-        public static  int LadderLength(String beginWord, String endWord, List<String> wordDict)
+        //public static  int LadderLength(String beginWord, String endWord, List<String> wordDict)
+        //{
+        //    Queue<WordNode> queue = new Queue<WordNode>();
+        //    queue.Enqueue(new WordNode(beginWord, 1));
+
+        //    wordDict.Add(endWord);
+
+        //    while (queue.Count!=0)
+        //    {
+        //        WordNode top = queue.Dequeue();
+        //        String word = top.word;
+
+        //        if (word.Equals(endWord))
+        //        {
+        //            return top.numSteps;
+        //        }
+
+        //        char[] arr = word.ToCharArray();
+        //        for (int i = 0; i < arr.Length; i++)
+        //        {
+        //            for (char c = 'a'; c <= 'z'; c++)
+        //            {
+        //                char temp = arr[i];
+        //                if (arr[i] != c)
+        //                {
+        //                    arr[i] = c;
+        //                }
+
+        //                String newWord = new String(arr);
+        //                if (wordDict.Contains(newWord))
+        //                {
+        //                    queue.Enqueue(new WordNode(newWord, top.numSteps + 1));
+        //                    wordDict.Remove(newWord);
+        //                }
+
+        //                arr[i] = temp;
+        //            }
+        //        }
+        //    }
+
+        //    return 0;
+        //}
+
+
+        public int LadderLength(String beginWord, String endWord, List<String> wordList)
         {
-            Queue<WordNode> queue = new Queue<WordNode>();
-            queue.Enqueue(new WordNode(beginWord, 1));
-
-            wordDict.Add(endWord);
-
-            while (queue.Count!=0)
+            Queue<String> q = new Queue<string>();
+            q.Enqueue(beginWord);
+            HashSet<String> wordSet = new HashSet<String>(wordList);
+            wordSet.Remove(beginWord);
+            int step = 0;
+            while (q.Count!=0)
             {
-                WordNode top = queue.Dequeue();
-                String word = top.word;
-
-                if (word.Equals(endWord))
+                int size = q.Count; step++;
+                while (size-- > 0)
                 {
-                    return top.numSteps;
-                }
-
-                char[] arr = word.ToCharArray();
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    for (char c = 'a'; c <= 'z'; c++)
+                    String str = q.Dequeue();
+                    if (str.Equals(endWord)) return step;
+                    for (int i = 0; i < str.Length; i++)
                     {
-                        char temp = arr[i];
-                        if (arr[i] != c)
+                        char[] chars = str.ToCharArray();
+                        for (char c = 'a'; c <= 'z'; c++)
                         {
-                            arr[i] = c;
+                            chars[i] = c;
+                            String newStr = new String(chars);
+                            if (wordSet.Contains(newStr))
+                            {
+                                q.Enqueue(newStr);
+                                wordSet.Remove(newStr);
+                            }
                         }
-
-                        String newWord = new String(arr);
-                        if (wordDict.Contains(newWord))
-                        {
-                            queue.Enqueue(new WordNode(newWord, top.numSteps + 1));
-                            wordDict.Remove(newWord);
-                        }
-
-                        arr[i] = temp;
                     }
                 }
             }
-
             return 0;
         }
-        public static string[] string_transformation(string[] words, string start, string stop)
+    
+    public static string[] string_transformation(string[] words, string start, string stop)
         {
             Dictionary<string, string> parent = new Dictionary<string, string>();
             Stack<string> st = new Stack<string>();

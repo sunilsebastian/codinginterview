@@ -9,6 +9,8 @@ namespace TreeProblems
 {
     public class PerimeterOfBinaryTree
     {
+        //Till the point Right child and left child  is not null we do not need to repeat  any nodes
+        //while traversing right.
         public static void PrintPerimeterOfaTree(Node root)
         {
 

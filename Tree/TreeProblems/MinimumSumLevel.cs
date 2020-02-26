@@ -27,9 +27,7 @@ namespace TreeProblems
 
                 }
             }
-
             return LevelIndex+1;
-
         }
 
         public static void GetSum(Node root, int[] levelSum, int level)
@@ -43,67 +41,45 @@ namespace TreeProblems
 
         }
 
-
-        public static int FindMinimumSumLevel_1(Node root)
+        //Can be used for minimum sum level too
+        public int MaxLevelSum(Node root)
         {
-            if (root == null) return 0;
-          
-
-
-            Queue<Node> q1 = new Queue<Node>();
-            Queue<Node> q2 = new Queue<Node>();
-            int sum = 0;
+            Queue<Node> q = new Queue<Node>();
+            q.Enqueue(root);
             int level = 0;
-            int currentsum = 0;
-
-            q1.Enqueue(root);
-            sum = root.Data;
-            level++;
-            while (q1.Count != 0 || q2.Count!=0)
+            int max = Int32.MinValue;
+            int maxLevel = -1;
+            while (q.Count != 0)
             {
-                while (q1.Count != 0)
+                int currentMax = 0;
+                int count = q.Count;
+                // if(count==0) break;
+                level++;
+
+                while (count > 0)
                 {
-                    var node = q1.Dequeue();
-                    //Console.Write(node.Data + " ");
+                    Node node = q.Dequeue();
+
+                    currentMax = currentMax + node.Data;
                     if (node.Left != null)
                     {
-                        currentsum += node.Left.Data;
-                        q2.Enqueue(node.Left);
+                        q.Enqueue(node.Left);
                     }
-
                     if (node.Right != null)
                     {
-                        currentsum += node.Left.Data;
-                        q2.Enqueue(node.Right);
+                        q.Enqueue(node.Right);
                     }
+                    count--;
                 }
-                if (currentsum < sum)
-                    sum = currentsum;
-                level++;
-                currentsum = 0;
-                while (q2.Count != 0)
+
+                if (currentMax > max)
                 {
-                    var node = q2.Dequeue();
-                    Console.Write(node.Data + " ");
-                    if (node.Left != null)
-                    {
-                        currentsum += node.Left.Data;
-                        q1.Enqueue(node.Left);
-                    }
+                    max = currentMax;
+                    maxLevel = level;
 
-                    if (node.Right != null)
-                    {
-                        currentsum += node.Left.Data;
-                        q1.Enqueue(node.Right);
-                    }
                 }
-                if (currentsum < sum)
-                    sum = currentsum;
-                level++;
-                currentsum = 0;
             }
-
-            return level;
+            return maxLevel;
         }
 
     }

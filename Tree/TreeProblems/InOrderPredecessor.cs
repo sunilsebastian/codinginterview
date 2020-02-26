@@ -7,9 +7,9 @@ using TreeProblems.Common;
 
 namespace TreeProblems
 {
-    public class InorderSuccessor
+    public class InOrderPredecessor
     {
-        public static Node GetInorderSuccessorBST(Node root, Node p)
+        public static Node GetInorderPredecessorBST(Node root, Node p)
         {
             if (root == null)
                 return null;
@@ -18,15 +18,17 @@ namespace TreeProblems
             Node current = root;
             while (current != null && current.Data != p.Data)
             {
-                
+
                 if (current.Data > p.Data)
                 {
-                    //next node will be the last node we take left turn
-                    next = current;
+                   
+                  
                     current = current.Left;
                 }
                 else
                 {
+                    //next node will be the last node we take right turn
+                    next = current;
                     current = current.Right;
                 }
             }
@@ -34,26 +36,19 @@ namespace TreeProblems
             if (current == null)
                 return null;
 
-            if (current.Right == null)
+            if (current.Left == null)
                 return next;
-            //when the node has a right subtree, should take the minimum of the subtree which is the left most.
-            current = current.Right;
-            while (current.Left != null)
-                current = current.Left;
+            //when the node has a left subtree, should take the maximum of the subtree which is the right most.
+            current = current.Left;
+            while (current.Right != null)
+                current = current.Right;
 
             return current;
         }
 
+        
 
-        //also you can use recurive way for BT
-        //left=go left 
-        //set flag=true when you find target
-        //if flag is true return
-        //right=go right
-        //if left !=null return left
-        //if right!=null return right
-
-        public static int InOrderSuccessorOfBinaryTree(Node root,int target)
+        public static int GetInorderPredecessorBT(Node root, int target)
         {
             bool flag = false;
             int inorderSuccessor = 0; ;
@@ -63,28 +58,28 @@ namespace TreeProblems
                 if (root != null)
                 {
                     stk.Push(root);
-                    root = root.Left;
+                    root = root.Right;
                 }
                 else
                 {
                     if (stk.Count() == 0)
                         break;
                     root = stk.Pop();
-                    if(flag==true)
+                    if (flag == true)
                     {
-                        inorderSuccessor= root.Data;
+                        inorderSuccessor = root.Data;
                         break;
                     }
 
-                    if(root.Data==target)
+                    if (root.Data == target)
                     {
                         flag = true;
                     }
                     Console.Write(root.Data + " ");
-                    root = root.Right;
+                    root = root.Left;
                 }
             }
             return inorderSuccessor;
         }
-    } 
+    }
 }

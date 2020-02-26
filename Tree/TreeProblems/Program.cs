@@ -207,6 +207,11 @@ namespace TreeProblems
             Console.Write($"Lowest Common ancester of [15,3] in BT [25,18,50,19,20,35,60] is :{n.Data}");
             Console.WriteLine();
 
+            nonBst = new NonBST();
+            arr = new int[] { 10,20, 30,40, 50, 60, 70 };
+            nonBst.InsertAll(arr);
+            InorderSuccessor.InOrderSuccessorOfBinaryTree(nonBst.Root, 50);
+
             bst.ClearAll();
             arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
             bst.InsertAll(arr);

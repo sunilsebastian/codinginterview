@@ -41,5 +41,32 @@ namespace TreeProblems
                 }
             }
         }
+
+        //Better  solution no need of null
+        static void PrintLevelOrder(Node root)
+        {
+            if (root == null)
+                return;
+            Queue<Node> q = new Queue<Node>();
+            q.Enqueue(root);
+            while (true)
+            {
+                int nodeCount = q.Count;
+                if (nodeCount == 0)
+                    break;
+                while (nodeCount > 0)
+                {
+                    Node node = q.Peek();
+                    Console.Write(node.Data + " ");
+                    q.Dequeue();
+                    if (node.Left != null)
+                        q.Enqueue(node.Left);
+                    if (node.Right != null)
+                        q.Enqueue(node.Right);
+                    nodeCount--;
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
