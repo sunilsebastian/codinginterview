@@ -8,7 +8,7 @@ namespace StringProblems
 {
     //logest substring without repeating characters
     //sliding window
-    public class LongestLengthSubstring
+    public class LongestLengthSubstringWithoutRepeatingChar
     {
         public static int LengthOfLongestSubstring(string s)
         {
@@ -18,33 +18,25 @@ namespace StringProblems
             }
 
             HashSet<Char> set = new HashSet<Char>();
-            int result = 1;
+            int max = 0;
             int i = 0;
-            for (int j = 0; j < s.Length; j++)
+            int j = 0;
+            while(j<s.Length)
             {
-                char c = s[j];
-                if (!set.Contains(c))
+                if (!set.Contains(s[j]))
                 {
-                    set.Add(c);
-                    result = Math.Max(result, set.Count);
+                    set.Add(s[j]);
+                    j++;
+                    max = Math.Max(max, set.Count);
                 }
                 else
                 {
-                    while (i < j)
-                    {
-                        if (s[i] == c)
-                        {
-                            i++;
-                            break;
-                        }
-
-                        set.Remove(s[i]);
-                        i++;
-                    }
+                    set.Remove(s[i]);
+                    i++;
                 }
             }
 
-            return result;
+            return max;
         }
     }
 }

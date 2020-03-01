@@ -54,7 +54,7 @@
     <Compile Include="LengthOfLongestSubstringKDistinct.cs" />
     <Compile Include="LexicoGraphicSort.cs" />
     <Compile Include="LongestCommonPrefix.cs" />
-    <Compile Include="LongestLengthSubstring.cs" />
+    <Compile Include="LongestLengthSubstringWithoutRepeatingChar.cs" />
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
     <Compile Include="MinimumOccuringWord.cs" />
     <Compile Include="MinimumWindowString.cs" />

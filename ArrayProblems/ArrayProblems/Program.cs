@@ -200,6 +200,13 @@ namespace ArrayProblems
 
             Console.WriteLine("After Merging Intervals:");
             MergeIntervals.Merge(new int[,] { { 1, 4 }, { 2, 4 }, { 5, 7 }, { 6, 8 } });
+
+
+            //int[][] varArray = new int[2][] { new int[] { 1, 3 }, new int[] { 6, 9} };
+            //  MergeIntervals.Insert(varArray,new int[] { 2, 5 });
+            int[][] varArray = new int[5][] { new int[] { 1, 2 }, new int[] {3,5 }, new int[] {6,7}, new int[] { 8,10} , new int[] { 12, 16 } };
+            MergeIntervals.Insert(varArray,new int[] { 4,9});
+
             Console.WriteLine();
 
 

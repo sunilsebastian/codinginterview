@@ -8,20 +8,20 @@ namespace StringProblems
 {
     public class Trie
     {
-        public  static TrieNode root;
-        private static readonly char endOfWord = '$';
-        static Trie()
+        public   TrieNode root;
+        private  readonly char endOfWord = '$';
+        public  Trie()
         {
             root = new TrieNode('^', 0);
         }
-        public static void InsertRange(string[] strings)
+        public  void InsertRange(string[] strings)
         {
             for(int i=0;i<strings.Length;i++)
             {
                 Insert(strings[i]);
             }
         }
-        public static void Insert(string s)
+        public  void Insert(string s)
         {
             TrieNode current = root;
             foreach( char c in s)
@@ -41,12 +41,12 @@ namespace StringProblems
                 current.Children.Add(endOfWord,new TrieNode(endOfWord, current.Depth + 1));
         }
 
-        public static  void Delete(string s)
+        public   void Delete(string s)
         {
             DeleteHelper(s, root,0);
         }
 
-        public static bool DeleteHelper(string s, TrieNode current,int index)
+        public  bool DeleteHelper(string s, TrieNode current,int index)
         {
             if(current.Depth == s.Length)
             {
@@ -79,7 +79,7 @@ namespace StringProblems
             return false;
         }
 
-        public static bool Search(string s)
+        public  bool Search(string s)
         {
             TrieNode current = root;
             foreach(char c in s)

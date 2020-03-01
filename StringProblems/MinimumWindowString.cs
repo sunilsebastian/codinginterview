@@ -73,77 +73,40 @@ namespace StringProblems
 
         // Function to find smallest window containing 
         // all characters of 'pat' 
-        public static String findSubString(String str, String pat)
+        public static String findSubString(String s, String t)
         {
-            int len1 = str.Length;
-            int len2 = pat.Length;
+            string res = string.Empty;
+            if (t.Length > s.Length) return res;
+            if (t.Equals(s)) return s;
 
-            // check if string's length is less than pattern's 
-            // length. If yes then no such window can exist 
-            if (len1 < len2)
+            var dict = new Dictionary<char, int>();
+            for (var i = 0; i < t.Length; i++)
             {
-                return "";
+                if (dict.ContainsKey(t[i]))
+                    dict[t[i]]++;
+                else
+                    dict.Add(t[i], 1);
             }
 
-            int[] hash_pat = new int[128];
-            int[] hash_str = new int[128];
-
-            // store occurrence ofs characters of pattern 
-            for (int i = 0; i < len2; i++)
-                hash_pat[pat[i]]++;
-
-            int start = 0, start_index = -1, min_len = Int32.MaxValue;
-
-            // start traversing the string 
-            int count = 0; // count of characters 
-            for (int j = 0; j < len1; j++)
+            int left = 0, shortestWindowLength = s.Length, count = 0;
+            for (int right = 0; right < s.Length; right++)
             {
-                // count occurrence of characters of string 
-                hash_str[str[j]]++;
-
-                // If string's char matches with pattern's char 
-                // then increment count 
-                if (hash_pat[str[j]] != 0 &&
-                    hash_str[str[j]] <= hash_pat[str[j]])
+                if (dict.ContainsKey(s[right]) && --dict[s[right]] >= 0)
                     count++;
 
-                // if all the characters are matched 
-                if (count == len2)
+                while (count == t.Length)
                 {
-                    // Try to minimize the window i.e., check if 
-                    // any character is occurring more no. of times 
-                    // than its occurrence in pattern, if yes 
-                    // then remove it from starting and also remove 
-                    // the useless characters. 
-                    while (hash_str[str[start]] > hash_pat[str[start]]
-                        || hash_pat[str[start]] == 0)
+                    if (shortestWindowLength > right - left)
                     {
-
-                        if (hash_str[str[start]] > hash_pat[str[start]])
-                            hash_str[str[start]]--;
-                        start++;
+                        shortestWindowLength = right - left;
+                        res = s.Substring(left, shortestWindowLength + 1);
                     }
-
-                    // update window size 
-                    int len_window = j - start + 1;
-                    if (min_len > len_window)
-                    {
-                        min_len = len_window;
-                        start_index = start;
-                    }
+                    if (dict.ContainsKey(s[left]) && ++dict[s[left]] > 0)
+                        count--;
+                    left++;
                 }
             }
-
-            // If no window found 
-            if (start_index == -1)
-            {
-               
-                return "";
-            }
-
-            // Return substring starting from start_index 
-            // and length min_len 
-            return str.Substring(start_index,min_len);
+            return res;
         }
 
     }

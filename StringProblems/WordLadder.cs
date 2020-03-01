@@ -13,67 +13,27 @@ namespace StringProblems
         //start = "hit"
         //end = "cog"
         //dict = ["hot","dot","dog","lot","log"]
-        //public static  int LadderLength(String beginWord, String endWord, List<String> wordDict)
-        //{
-        //    Queue<WordNode> queue = new Queue<WordNode>();
-        //    queue.Enqueue(new WordNode(beginWord, 1));
 
-        //    wordDict.Add(endWord);
-
-        //    while (queue.Count!=0)
-        //    {
-        //        WordNode top = queue.Dequeue();
-        //        String word = top.word;
-
-        //        if (word.Equals(endWord))
-        //        {
-        //            return top.numSteps;
-        //        }
-
-        //        char[] arr = word.ToCharArray();
-        //        for (int i = 0; i < arr.Length; i++)
-        //        {
-        //            for (char c = 'a'; c <= 'z'; c++)
-        //            {
-        //                char temp = arr[i];
-        //                if (arr[i] != c)
-        //                {
-        //                    arr[i] = c;
-        //                }
-
-        //                String newWord = new String(arr);
-        //                if (wordDict.Contains(newWord))
-        //                {
-        //                    queue.Enqueue(new WordNode(newWord, top.numSteps + 1));
-        //                    wordDict.Remove(newWord);
-        //                }
-
-        //                arr[i] = temp;
-        //            }
-        //        }
-        //    }
-
-        //    return 0;
-        //}
-
-
-        public int LadderLength(String beginWord, String endWord, List<String> wordList)
+        public static int LadderLength(String beginWord, String endWord, List<String> wordList)
         {
             Queue<String> q = new Queue<string>();
             q.Enqueue(beginWord);
             HashSet<String> wordSet = new HashSet<String>(wordList);
             wordSet.Remove(beginWord);
             int step = 0;
-            while (q.Count!=0)
+            while (q.Count != 0)
             {
-                int size = q.Count; step++;
+                int size = q.Count;
+                step++;
                 while (size-- > 0)
                 {
                     String str = q.Dequeue();
                     if (str.Equals(endWord)) return step;
+
+                    char[] chars = str.ToCharArray();
                     for (int i = 0; i < str.Length; i++)
                     {
-                        char[] chars = str.ToCharArray();
+                        char temp = chars[i];
                         for (char c = 'a'; c <= 'z'; c++)
                         {
                             chars[i] = c;
@@ -84,13 +44,15 @@ namespace StringProblems
                                 wordSet.Remove(newStr);
                             }
                         }
+                        chars[i] = temp;
                     }
                 }
             }
             return 0;
+
         }
-    
-    public static string[] string_transformation(string[] words, string start, string stop)
+
+        public static string[] string_transformation(string[] words, string start, string stop)
         {
             Dictionary<string, string> parent = new Dictionary<string, string>();
             Stack<string> st = new Stack<string>();
@@ -175,18 +137,5 @@ namespace StringProblems
             return diff;
         }
     }
-
-    public class WordNode
-    {
-        public String word { get; set; }
-        public int numSteps { get; set; }
-
-        public WordNode(String word, int numSteps)
-        {
-            this.word = word;
-            this.numSteps = numSteps;
-        }
-    }
-
 
 }

@@ -48,6 +48,36 @@ namespace ArrayProblems
             }
         }
 
+        public static  int[][] Insert(int[][] intervals, int[] newInterval)
+        {
+
+            List<int[]> result = new List<int[]>();
+            Array.Sort(intervals, Comparer<int[]>.Create((a, b) => (a[0] < b[0]) ? -1 : (a[0] > b[0]) ? 1 : 0));
+
+
+            for (int i = 0; i < intervals.Length; i++)
+            {
+                var currValue = intervals[i];
+                if (currValue[1] < newInterval[0])
+                {
+                    result.Add(currValue);
+                }
+                else if (currValue[0] > newInterval[1])
+                {
+                    result.Add(newInterval);
+                    newInterval = currValue;
+                }
+                else if (currValue[0] <= newInterval[1])
+                {
+                    newInterval[0] = Math.Min(currValue[0], newInterval[0]);
+                    newInterval[1] = Math.Max(currValue[1], newInterval[1]);
+                }
+            
+            }
+            result.Add(newInterval);
+            return result.ToArray();
+        }
+
         public static void Insert(int[,] intervals, int[,] newInterval)
         {
             var list = new List<Tuple<int, int>>

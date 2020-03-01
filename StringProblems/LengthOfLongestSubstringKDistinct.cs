@@ -9,93 +9,45 @@ namespace StringProblems
     public class LengthOfLongestSubstringKDistinct
     {
 
-        public static int GetLengthOfLongestSubstringKDistinct1(int[] s, int k)
+        public static int GetLengthOfLongestSubstringKDistinct(String s, int k)
         {
-            int result = 0;
-            int i = 0;
-            Dictionary<int, int> dict = new Dictionary<int, int>();
-            for (int j = 0; j < s.Length; j++)
-            {
-                var c = s[j];
-                if (dict.ContainsKey(c))
-                {
-                    dict[c]++;
-                }
-                else
-                {
-                    dict.Add(c, 1);
-                }
-
-                if (dict.Count <= k)
-                {
-                    result = Math.Max(result, j - i + 1);
-                }
-                else
-                {
-                    while (dict.Count > k)
-                    {
-                        var l = s[i];
-                        int count = dict[l];
-                        if (count == 1)
-                        {
-                            dict.Remove(l);
-                        }
-                        else
-                        {
-                            dict[l]--;
-                        }
-                        i++;
-                    }
-                }
-
-            }
-            return result;
-        }
-
-        //abcbbbbcccbdddadacb
-        //bcbbbbcccb
-        public static  int GetLengthOfLongestSubstringKDistinct(String s, int k)
-        {
-            int result = 0;
-            int i = 0;
             Dictionary<char, int> dict = new Dictionary<char, int>();
-            for (int j = 0; j < s.Length; j++)
+            int maxLen = 0;
+            int currLen = 0;
+            for (int i = 0; i < s.Length; i++)
             {
-                char c = s[j];
-                if (dict.ContainsKey(c))
+
+                if (dict.ContainsKey(s[i]))
                 {
-                    dict[c]++;
+                    dict[s[i]]++;
                 }
                 else
                 {
-                    dict.Add(c, 1);
+                    dict.Add(s[i], 1);
                 }
 
-                if (dict.Count <= k)
+
+                if (dict.Count > k)
                 {
-                    result = Math.Max(result, j - i + 1);
+
+                    char charToRemove = s[i - currLen];
+                    int charToRemoveCount = dict[charToRemove];
+                    if (charToRemoveCount == 1)
+                        dict.Remove(charToRemove);
+                    else
+                        dict[charToRemove]--;
+                       
                 }
                 else
                 {
-                    while (dict.Count > k)
-                    {
-                        char l = s[i];
-                        int count = dict[l];
-                        if (count == 1)
-                        {
-                            dict.Remove(l);
-                        }
-                        else
-                        {
-                            dict[l]--;
-                        }
-                        i++;
-                    }
+                    currLen++;
+                    maxLen = Math.Max(currLen, maxLen);
                 }
-
             }
-            return result;
+            return maxLen;
         }
+
+      
 
     }
 }
