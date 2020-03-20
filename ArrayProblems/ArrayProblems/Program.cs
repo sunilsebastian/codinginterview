@@ -66,6 +66,8 @@ namespace ArrayProblems
             Console.Write($"Largest continous sum of (-2, 1, -3, 4, -1, 2, 1, -5, 4 ): {val}");
             Console.WriteLine();
 
+            CircularArrayLargestSum.MaxSubarraySumCircular(new int[] { 2, 3, -6, -7, 4, 5 });
+
             Console.Write($"Print Paiirs Difference Up To:");
             DifferenceUptoK.PrintPaiirsDifferenceUpToK(new int[] {3,1, 4,1,5}, 2);
             Console.WriteLine();

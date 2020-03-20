@@ -66,6 +66,8 @@ namespace StringProblems
             //Reverse words in a string
             string sentenceToreverse = "hello how are you";
             Console.Write($"Reverse of sentence '{sentenceToreverse}' is:{ReverseWordsInString.GetReversedWordsInsentence("hello how are you")}");
+
+            var revString=ReverseWordsInString.ReverseSentence("  Hellow  How are you  ");
             Console.WriteLine();
 
             //give 3 strings check string 3 order of char are same as of string1 and string 2
@@ -111,6 +113,14 @@ namespace StringProblems
             minwindowStr = MinimumWindowString.findSubString("helloworld", "lwr");
             minwindowStr = MinimumWindowString.findSubString("aaaaabz", "ab");
 
+           var minMemWriteString= MinimumMemoryWrite.MoveLettersMinimizingMmemoryWrites("0a193zbr");
+
+            LongestRepeatedSubstring.LongestCommonSubstring("ABRACADABRA");
+            LongestRepeatedSubstring.LongestCommonSubstringTrie("abcdefghi");
+
+            PalindrumPairs.PalindromePairs(new string [] { "abcd", "dcba" });
+            var pair=PalindrumPairs.join_words_to_make_a_palindrome(new string[] { "abcd", "dcba" });
+
             Trie trie = new Trie();
             trie.InsertRange(new string[] { "car", "cars", "cap", "clap", "bot"});
             Autocomplete.GetAutoCompleteText(trie.root, "clap");
@@ -127,7 +137,8 @@ namespace StringProblems
             LexicoGraphicSort.ExcecuteLexoGraphicSort(trie.root);
             trie.root = null;
 
-            var result = SmallestNumberRemoveKDigits.RemoveKdigits("12345", 2);
+             var result = SmallestNumberRemoveKDigits.RemoveKdigits("123456", 4);
+           // var result = SmallestNumberRemoveKDigits.RemoveKdigits("10200", 1);
 
             trie = new Trie();
             trie.InsertRange(new string[] { "tree", "trie", "assoc", "all", "also" });

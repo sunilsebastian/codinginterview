@@ -55,10 +55,14 @@
     <Compile Include="LexicoGraphicSort.cs" />
     <Compile Include="LongestCommonPrefix.cs" />
     <Compile Include="LongestLengthSubstringWithoutRepeatingChar.cs" />
+    <Compile Include="LongestPalindrumSubstring.cs" />
+    <Compile Include="LongestRepeatedSubstring.cs" />
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
+    <Compile Include="MinimumMemoryWrite.cs" />
     <Compile Include="MinimumOccuringWord.cs" />
     <Compile Include="MinimumWindowString.cs" />
     <Compile Include="MultiplyTwoLargeNumber.cs" />
+    <Compile Include="PalindrumPairs.cs" />
     <Compile Include="ParanthesisInOrder.cs" />
     <Compile Include="Permutation.cs" />
     <Compile Include="Program.cs" />

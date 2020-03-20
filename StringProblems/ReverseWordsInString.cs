@@ -18,12 +18,12 @@ namespace StringProblems
             int i;
             StringBuilder resultString = new StringBuilder();
 
-            for (i= sentence.Length-1; i>=1;i--)
+            for (i = sentence.Length - 1; i >= 1; i--)
             {
-            
-                if(sentence[i]!=' ' && sentence[i-1] == ' ')
+
+                if (sentence[i] != ' ' && sentence[i - 1] == ' ')
                 {
-                    resultString.Append(sentence.Substring(i, count + 1) + " ");                   
+                    resultString.Append(sentence.Substring(i, count + 1) + " ");
                     count = 0;
                 }
                 else
@@ -39,5 +39,36 @@ namespace StringProblems
             return resultString.ToString().Trim();
 
         }
+
+        public static string ReverseSentence(string s)
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            int i;
+            int count = 0;
+            for (i = s.Length - 1; i >= 1; i--)
+            {
+                if (s[i] != ' ' && s[i - 1] == ' ')
+                {
+                    sb.Append(s.Substring(i, count + 1));
+                    count = 0;
+                }
+                else
+                {
+                    if (s[i] == ' ' && s[i - 1] != ' ')
+                    {
+                        sb.Append(s.Substring(i, count + 1));
+                        count = 0;
+                    }
+                    else
+                    {
+                        count++;
+                    }
+
+                }
+            }
+            return sb.Append(s.Substring(i, count + 1)).ToString();
+        }
     }
+
+
 }

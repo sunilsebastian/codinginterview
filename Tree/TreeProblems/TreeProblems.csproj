@@ -52,6 +52,7 @@
     <Compile Include="InOrderPredecessor.cs" />
     <Compile Include="InorderSuccessor.cs" />
     <Compile Include="KDistancefromTarget.cs" />
+    <Compile Include="MergeBST.cs" />
     <Compile Include="NearestTargetInBST.cs" />
     <Compile Include="PerimeterOfNaryTree.cs" />
     <Compile Include="SortedArrayToBST.cs" />

@@ -16,17 +16,21 @@ namespace StringProblems
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < num.Length; i++)
             {
-
+      
                 while (k > 0 && sb.Length > 0 && sb[sb.Length - 1] > num[i])
                 {
                     sb.Remove(sb.Length - 1, 1);
                     k--;
                 }
 
-                if (sb.Length != 0 ||num[i] != '0')
-                {
+                //when first character is zero or repeated zeros ignore
+                //or cases like 10200 k=1
+
+                if (sb.Length == 0 && num[i] == '0')
+                    continue;
+                else
                     sb.Append(num[i]);
-                }
+
             }
 
             return sb.Length - k > 0 ? sb.ToString(0, sb.Length - k) : "0";

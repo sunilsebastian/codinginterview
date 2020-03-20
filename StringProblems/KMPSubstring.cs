@@ -55,6 +55,13 @@ namespace StringProblems
                 {
                     j++;
                     i++;
+
+                    //To find start index of all occurance of string  say xxxabcxxxabc  Ans:[3,9]
+                    //if (i == p.Length)
+                    //{
+                    //    lst.Add(j - i);
+                    //    i = temp[i - 1];
+                    //}
                 }
                 else
                 {
@@ -69,6 +76,10 @@ namespace StringProblems
                     }
                 }
             }
+
+            //To find start index of all occurance of string
+            //if (lst.Count == 0)
+            //    lst.Add(-1);
             if (i == pattern.Length)
                 return true;
             return false;

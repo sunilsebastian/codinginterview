@@ -61,7 +61,8 @@ namespace DynamicPrograming
            var profit= Knapsack.MaximizeProfit(new int[] { 1, 4, 5, 7 }, new int[] { 1, 3, 4, 5 }, 7);
 
            var res1= WildCardMatching.StringMatch("abc", "*bc",3,3);
-            var res2= RegExMatching.StringMatch("abc", "*bc", 3, 3);
+          // var res2= RegExMatching.StringMatch("abc", "*bc", 3, 3);
+           var res3 = RegExMatching.StringMatch("aab", "a*b*", 3, 3);
 
 
 

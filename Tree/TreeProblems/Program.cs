@@ -279,9 +279,22 @@ namespace TreeProblems
 
             Console.Write("vertical print of  in BT {1,2,4,3,9,5,6 }:");
             VerticalOrder.PrintVerticalOrder(nonBst.Root);
+          
+
+
+            var bstOne = new BST();
+            var arrOne = new int[] {2,1,3 };
+            bstOne.InsertAll(arrOne);
+
+            var bstTwo = new BST();
+            var arrTwo = new int[] {7,6,8 };
+            bstTwo.InsertAll(arrTwo);
+            MergeBST.mergeTwoBSTs(bstOne.Root, bstTwo.Root);
+
             Console.ReadLine();
 
-           
+
+
 
 
         }
