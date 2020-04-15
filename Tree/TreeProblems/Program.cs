@@ -244,6 +244,11 @@ namespace TreeProblems
             MinimumSumLevel.FindMinimumSumLevel(nonBst.Root);
             Console.WriteLine();
 
+            nonBst = new NonBST();
+            arr = new int[] { 1,2,3,4,5 };
+            nonBst.InsertAll(arr);
+            DiameterOfBinaryTree.GetDiameterOfBinaryTree(nonBst.Root);
+
 
             nonBst = new NonBST();
             arr = new int[] {10,20,30,40,6 };

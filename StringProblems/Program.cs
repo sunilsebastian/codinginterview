@@ -58,6 +58,8 @@ namespace StringProblems
 
             var zigzagResult = ZigZagConversion.ZigZagConvert("PAYPALISHIRING", 3);
 
+            var shiftString = StringShift.GetStringShift("abcdefg",new int[4][] { new int[] { 1, 1 }, new int[] { 1, 1 }, new int[] { 0, 2 }, new int[] { 1,3 } });
+
             //No of words in a string
             string sentence = "Hello How are you   ";
             Console.Write($"Word count in '{sentence}' is: { WordCountInASentence.GetWordCount(sentence)}");
@@ -122,8 +124,8 @@ namespace StringProblems
             var pair=PalindrumPairs.join_words_to_make_a_palindrome(new string[] { "abcd", "dcba" });
 
             Trie trie = new Trie();
-            trie.InsertRange(new string[] { "car", "cars", "cap", "clap", "bot"});
-            Autocomplete.GetAutoCompleteText(trie.root, "clap");
+            trie.InsertRange(new string[] { "car", "cars", "cap", "clap", "bot","c"});
+            Autocomplete.GetAutoCompleteText(trie.root, "ca");
             trie.root = null;
 
             trie = new Trie();
@@ -137,7 +139,7 @@ namespace StringProblems
             LexicoGraphicSort.ExcecuteLexoGraphicSort(trie.root);
             trie.root = null;
 
-             var result = SmallestNumberRemoveKDigits.RemoveKdigits("123456", 4);
+             var result = SmallestNumberRemoveKDigits.RemoveKdigits("1432219", 4);
            // var result = SmallestNumberRemoveKDigits.RemoveKdigits("10200", 1);
 
             trie = new Trie();

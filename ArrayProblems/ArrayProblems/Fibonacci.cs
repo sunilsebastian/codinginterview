@@ -51,10 +51,27 @@ namespace ArrayProblems
 
         public static void ReverseFibonacciSeries(int n)
         {
-            for(int i=n;i>=0; i--)
+            int[] fibArr = new int[n + 1];
+            fibArr[0] = 0;
+            fibArr[1] = 1;
+            int i;
+         
+            for (i = 2; i <= n; i++)
             {
-                Console.Write(FibReCurrsionWithMemoiszation(i) + " ");
+              
+                fibArr[i] = fibArr[i - 1] + fibArr[i - 2];
+
             }
+
+            for (i = n; i >= 0; i--)
+            {
+                Console.Write(fibArr[i] + " ");
+            }
+
+            //for(int i=n;i>=0; i--)
+            //{
+            //    Console.Write(FibReCurrsionWithMemoiszation(i) + " ");
+            //}
         }
 
         public static int FibReCurrsion(int n)

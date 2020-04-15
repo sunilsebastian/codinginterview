@@ -8,7 +8,7 @@ namespace StringProblems
 {
     public class PalindrumPairs
     {
-
+        //https://www.youtube.com/watch?v=-vdScGc8ebI&t=322s
         public static string[] join_words_to_make_a_palindrome(string[] words) {
 
              TrNode root = new TrNode('^');

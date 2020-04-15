@@ -52,10 +52,13 @@ namespace ArrayProblems
             SunmUptoK.SortedSumUpToK(arr, k);
             Console.WriteLine();
 
-          
 
 
-          
+            var row=PascalTraiangleKRow.GetRow(3);
+
+           var waveArray= ArrayInWaveForm.GetWaveForm(new int[] { 20, 10, 8, 6, 4, 2 });
+
+
             Console.Write("Pushing negative numbers { 4, -3, 2, -5, 5, -1, 3 } to the left:");
             PushNegativeNumbersToLeft.PushNegativeNumbers(new int[] { 4, -3, 2, -5, 5, -1, 3 });
                      
@@ -156,16 +159,7 @@ namespace ArrayProblems
             k = 8; //Values in array should be 0 to k
             int maxrepeat = MaxRepeatingElementInArray.FindMaxRepeatingElementInAnArray(input, k);
             Console.WriteLine($"max repeating element in [2,3,3,5,3,4,1,7,7] :{maxrepeat}");
-
-
-
-
-           
-
-         
-
-         
-
+             
 
             UnionOfTwoSortedArrays.PrintUnion(new int[] { 1, 2, 3 }, new int[] { 4, 5, 5 });
             Console.WriteLine();
@@ -248,7 +242,7 @@ namespace ArrayProblems
          
 
             //element repeated more than n/2 times
-            var majElement=MajorityVote.FindMajorityElement(new int[] { 2, 2, 3, 4, 1});
+            var majElement=MajorityVote.FindMajorityElement(new int[] {7,2,7,2,7,2,7,7});
             var majElement1 = MajorityVote.FindMajorityElement(new int[] { 1,2,3,2,2});
 
             MissingPositiveNumber.FindFirstMissingPositiveNumber(new int[] { 3,4,-1,1 });

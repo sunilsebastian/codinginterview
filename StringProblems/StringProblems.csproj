@@ -57,6 +57,7 @@
     <Compile Include="LongestLengthSubstringWithoutRepeatingChar.cs" />
     <Compile Include="LongestPalindrumSubstring.cs" />
     <Compile Include="LongestRepeatedSubstring.cs" />
+    <Compile Include="LongestRepeatedSubstring1.cs" />
     <Compile Include="MaxConsecutiveRepatingChar.cs" />
     <Compile Include="MinimumMemoryWrite.cs" />
     <Compile Include="MinimumOccuringWord.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="ShortestUniquePrefixToRepWord.cs" />
     <Compile Include="SmallestNumberRemoveKDigits.cs" />
     <Compile Include="StringOrderCheck.cs" />
+    <Compile Include="StringShift.cs" />
     <Compile Include="StringToInt.cs" />
     <Compile Include="StringUnique.cs" />
     <Compile Include="Trie.cs" />

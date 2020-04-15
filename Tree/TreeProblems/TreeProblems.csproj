@@ -47,6 +47,7 @@
     <Compile Include="BinaryTreeSerialization.cs" />
     <Compile Include="Common\NAryTree.cs" />
     <Compile Include="CountNodes.cs" />
+    <Compile Include="DiameterOfBinaryTree.cs" />
     <Compile Include="FlipTreeUpDown.cs" />
     <Compile Include="HeightOfNaryTree.cs" />
     <Compile Include="InOrderPredecessor.cs" />
