@@ -11,15 +11,9 @@ namespace TreeProblems
     {
         public static Node FlipUpsideDown(Node root)
         {
-            var current = root;
-            while (current.Left != null)
-            {
-                current = current.Left;
-            }
 
-            flipUpsideDownHelper(root);
+            return flipUpsideDownHelper(root);
 
-            return current;
         }
 
         public static Node flipUpsideDownHelper(Node root)
@@ -32,14 +26,14 @@ namespace TreeProblems
                 return root;
             }
 
-            var temp = root.Right;
             var result = flipUpsideDownHelper(root.Left);
-            result.Right = root;
-            result.Left = temp;
+            root.Left.Right = root;
+            root.Left.Left = root.Right;
             root.Right = null;
-            root.Right = null;
+            root.Left = null;
 
-            return root;
+            //always bubbles up the extreme left node
+            return result;
         }
 
     }

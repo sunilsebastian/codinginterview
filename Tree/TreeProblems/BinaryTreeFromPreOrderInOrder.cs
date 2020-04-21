@@ -7,6 +7,7 @@ using TreeProblems.Common;
 
 namespace TreeProblems
 {
+    //Time Complexity: O(n^2). Worst case occurs when tree is left skewed
     public class BinaryTreeFromPreOrderInOrder
     {
         public Node Root { get; set; }

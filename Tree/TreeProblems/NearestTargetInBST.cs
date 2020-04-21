@@ -7,6 +7,14 @@ using TreeProblems.Common;
 
 namespace TreeProblems
 {
+
+    //Input: root = [4,2,5,1,3], target = 3.714286
+
+    //    4
+    //   / \
+    //  2   5
+    // / \
+    //1   3
     public class NearestTargetInBST
     {
         public class Solution

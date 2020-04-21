@@ -186,6 +186,11 @@ namespace TreeProblems
             BinaryTreeFromPreOrderInOrder bld = new BinaryTreeFromPreOrderInOrder();
             bld.BuildTree(new int[] { 1, 2, 3, 4, 5 }, new int[] { 2,1,4,3,5});
 
+            Node tree= BinaryTreeFromPostOrderInOrder.BuildTree(new int[] { 4, 2, 7, 8, 5, 6, 3, 1 }, new int[] { 4, 2, 1, 7, 5, 8, 3, 6 });
+            PreOrderTraversal.Traverse(tree);
+            Console.WriteLine();
+
+
             nonBst = new NonBST();
             arr = new int[] { 25,18,50,19,20,35,60 };
             nonBst.InsertAll(arr);

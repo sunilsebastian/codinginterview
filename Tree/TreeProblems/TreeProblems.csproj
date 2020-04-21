@@ -44,7 +44,10 @@
   <ItemGroup>
     <Compile Include="AncestersOfAGivenNode.cs" />
     <Compile Include="ArrayMaxRootTree.cs" />
+    <Compile Include="BinaryTreeFromPostOrderInOrder.cs" />
     <Compile Include="BinaryTreeSerialization.cs" />
+    <Compile Include="BstFromPostOrder.cs" />
+    <Compile Include="BstFromPreOrder.cs" />
     <Compile Include="Common\NAryTree.cs" />
     <Compile Include="CountNodes.cs" />
     <Compile Include="DiameterOfBinaryTree.cs" />

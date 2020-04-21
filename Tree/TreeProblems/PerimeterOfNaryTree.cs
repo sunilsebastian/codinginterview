@@ -49,7 +49,7 @@ namespace TreeProblems
             if (root.children.Count > 0)
             {
 
-                PrintLeftBoundaryNodes(root.children[0]);
+                PrintLeftBoundaryNodes(root.children[root.children.Count - 1]);
             }
             Console.Write(root.Data + " ");
 

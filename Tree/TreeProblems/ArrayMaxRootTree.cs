@@ -9,6 +9,7 @@ namespace TreeProblems
 {
     public class ArrayMaxRootTree
     {
+        //Worst Case O(n2}  
         public static Node BuildTree(int[] arr)
         {
             return BuildTreeHelper(arr, 0, arr.Length - 1);

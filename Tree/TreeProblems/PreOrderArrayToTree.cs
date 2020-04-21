@@ -27,8 +27,8 @@ namespace TreeProblems
         //top down
         public Node BuildTree(int[] pre, char[] preLN, int n)
         {
-            //if (index == n)
-            //    return null;
+            if (index == n)
+                return null;
 
             Node temp = new Node(pre[index++]);
             if (preLN[index - 1] == 'N')

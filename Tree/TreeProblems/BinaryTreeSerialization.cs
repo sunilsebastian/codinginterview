@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TreeProblems.Common;
 
+//Time Complexity - O(n)， Space Compleixty - O(n)
+
 namespace TreeProblems
 {
     public class BinaryTreeSerialization

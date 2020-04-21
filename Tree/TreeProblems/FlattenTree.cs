@@ -7,6 +7,12 @@ using TreeProblems.Common;
 
 namespace TreeProblems
 {
+
+     //     1
+     //   /   \
+     //  2     5
+     // / \     \
+     //3   4     6
     public class FlattenTree
     {
         private static Node prev = null;
