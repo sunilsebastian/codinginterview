@@ -50,12 +50,14 @@
     <Compile Include="BstFromPreOrder.cs" />
     <Compile Include="Common\NAryTree.cs" />
     <Compile Include="CountNodes.cs" />
+    <Compile Include="CousinsBT.cs" />
     <Compile Include="DiameterOfBinaryTree.cs" />
     <Compile Include="FlipTreeUpDown.cs" />
     <Compile Include="HeightOfNaryTree.cs" />
     <Compile Include="InOrderPredecessor.cs" />
     <Compile Include="InorderSuccessor.cs" />
     <Compile Include="KDistancefromTarget.cs" />
+    <Compile Include="MaxPathSum.cs" />
     <Compile Include="MergeBST.cs" />
     <Compile Include="NearestTargetInBST.cs" />
     <Compile Include="PerimeterOfNaryTree.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="TrimNodesOutisideBoundary.cs" />
     <Compile Include="UniqueBSTCount.cs" />
     <Compile Include="UnivalTree.cs" />
+    <Compile Include="ValidSequenceRootLeavesPath.cs" />
     <Compile Include="VerticalOrder.cs" />
   </ItemGroup>
   <ItemGroup>

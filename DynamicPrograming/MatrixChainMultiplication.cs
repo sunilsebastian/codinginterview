@@ -15,11 +15,11 @@ namespace DynamicPrograming
             int[,] result = new int[arr.Length, arr.Length];
             int val = 0;
 
-            for (int l = 2; l < arr.Length; l++)
+            for (int l = 3; l <= arr.Length; l++)
             {
-                for (int i = 0; i < arr.Length - l; i++)
+                for (int i = 0; i < arr.Length - l+1; i++)
                 {
-                    int j = i + l;
+                    int j = i + l-1;
                     result[i, j] = Int32.MaxValue;
                     for (int k = i + 1; k < j; k++)
                     {
@@ -31,6 +31,23 @@ namespace DynamicPrograming
                     }
                 }
             }
+
+            //for (int l = 2; l < arr.Length; l++)
+            //{
+            //    for (int i = 0; i < arr.Length - l; i++)
+            //    {
+            //        int j = i + l;
+            //        result[i, j] = Int32.MaxValue;
+            //        for (int k = i + 1; k < j; k++)
+            //        {
+            //            val = result[i, k] + result[k, j] + arr[i] * arr[k] * arr[j];
+            //            if (val < result[i, j])
+            //            {
+            //                result[i, j] = val;
+            //            }
+            //        }
+            //    }
+            //}
             return result[0, arr.Length - 1];
 
         }

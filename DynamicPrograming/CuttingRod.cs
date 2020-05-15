@@ -11,13 +11,13 @@ namespace DynamicPrograming
         public static int GetmaxValue(int[] prices,int len)
         {
             int[] max = new int[len + 1];
-            for (int i = 1; i <= len; i++)
+            for (int rodLen = 1; rodLen <= len; rodLen++)
             {
-                for(int j=1;j<=prices.Length;j++)
+                for(int size=1;size<=prices.Length;size++)
                 {
-                    if (i < j)
+                    if (rodLen < size)
                         continue;
-                    max[i] = Math.Max(max[i], max[i-j] + prices[j-1]);
+                    max[rodLen] = Math.Max(max[rodLen], max[rodLen - size] + prices[size-1]);
                 }
             }
             return max[len];

@@ -37,15 +37,22 @@ namespace DynamicPrograming
             var res= HouseRobber.Rob(new int[] { 1, 2, 3, 1 });
 
             var canj = JumpGame.CanJump(new int[] { 2, 3, 1, 1, 4 });
+            var can1= JumpGame.CanReach(new int[] { 4, 2, 3, 0, 3, 1, 2 },0);
+            var can = JumpGame.Jump(new int[] { 2, 3, 1, 1, 4 });
 
-            var numberofJumps=JumpGame.Jump(new int[] { 2, 3, 1, 1, 4 });
-
-            var numDecodeways=DecodeWays.NumDecodings("2266");
+            //var numberofJumps=JumpGame.Jump(new int[] { 2, 3, 1, 1, 4 });
+            int numDecodeways = DecodeWays.NumDecodings1("226");
+             numDecodeways=DecodeWays.NumDecodings("12"); //2266
 
             var longestSubstringCount= LongestCommonSubstring.GetLongestCommonSubstring("abc", "abcd");
 
+            LongestCommonSubstring.GetLongestCommonSubstringRecur("cdab", "cdx");
+
+            var incSequence= LongestIncreasingSubsequencecs.LongestIncreasingSubsequenceRecursive(new int[] { 3,4,-1,0,6,2,3 });
+
             var longestSubSequenceCount= LongestCommonSubsequence.GetLongestCommonSubsequence("ABCDF", "AEBDF");
 
+            CoinChange.GetMinimumCoinChangeRecursion(new int[] { 7, 3, 2, 6 }, 13);
             var coinCount=CoinChange.GetMinimumCoinChangeForTargetAmt(new int[] { 7, 3, 2, 6 }, 13);
 
            var perfectSquareCount= PerfectSquare.GetPenumSquares(12);

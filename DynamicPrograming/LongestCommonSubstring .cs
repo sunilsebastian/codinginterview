@@ -1,4 +1,6 @@
-﻿namespace DynamicPrograming
+﻿using System;
+
+namespace DynamicPrograming
 {
     public class LongestCommonSubstring
     {
@@ -23,5 +25,33 @@
             }
             return max;
         }
+
+        public static int max = Int32.MinValue;
+        public static int GetLongestCommonSubstringRecur(string str1, string str2)
+        {
+            GetLongestCommonSubstringRecurHelper(str1, str2, str1.Length-1, str2.Length - 1);
+            return max;
+        }
+
+        public static int GetLongestCommonSubstringRecurHelper(string str1, string str2, int m, int n)
+        {
+            if (m == -1|| n == -1)
+                return 0;
+
+            if (str1[m] == str2[n])
+            {
+                var res = 1 + GetLongestCommonSubstringRecurHelper(str1, str2, m -1, n- 1);
+                max = Math.Max(res, max);
+                return res;
+            }
+            else
+            {
+                var res =Math.Max(GetLongestCommonSubstringRecurHelper(str1, str2, m, n - 1), GetLongestCommonSubstringRecurHelper(str1, str2, m-1, n));
+                max = Math.Max(res, max);
+                return 0;
+            }
+        }
     }
-}
+    }
+
+   

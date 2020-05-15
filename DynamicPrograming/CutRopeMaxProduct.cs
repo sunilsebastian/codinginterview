@@ -10,48 +10,21 @@ namespace DynamicPrograming
     {
         public static long GetCutRopMaxProduct(int n)
         {
+            int[] dp = new int[n + 1];
 
-            //long[] dp = new long[n + 1];
-
-            //if (n <= 1)
-            //    return 1;
-
-
-            //dp[1] = 1;
-
-            //for (int i = 2; i <= n; i++)
-            //{
-
-            //    for (int j = 1; j < i; j++)
-            //    {
-            //        var val = Math.Max(dp[i - j] * j, (i - j) * j);
-            //        dp[i] = Math.Max(dp[i], val);
-            //    }
-            //}
-
-            //return dp[n];
-
-            long[] MP = new long[n + 1];
-
-            MP[0] = 0;
-            MP[1] = 1;
-            MP[2] = 2;
-
-            for (int i = 2; i <= n; i++)
+            dp[0] = 0;
+          
+            for (int i=1;i<=n;i++)
             {
-                long max = -1;
-                if (i != n)
+                //assign this because say rodlen=3  , now 3*dp[3-3] become zero because dp[0] is zero
+                dp[i] = i;
+                for (int j=1;j<=i;j++)
                 {
-                    max = i;
+                    dp[i] = Math.Max(dp[i], j * dp[i - j]);
                 }
-                for (int j = 1; j < i; j++)
-                {
-
-                    max = Math.Max(max, j * MP[i - j]);
-                }
-                MP[i] = max;
             }
-            return MP[n];
+
+            return dp[n];
 
         }
     }

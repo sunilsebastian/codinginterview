@@ -301,6 +301,18 @@ namespace TreeProblems
             bstTwo.InsertAll(arrTwo);
             MergeBST.mergeTwoBSTs(bstOne.Root, bstTwo.Root);
 
+        
+
+            nonBst = new NonBST();
+            arr = new int[] {-10,5,8,2,12};
+            nonBst.InsertAll(arr);
+            MaxPathSum.GetMaxPathSum(nonBst.Root);
+
+            nonBst = new NonBST();
+            arr = new int[] { 1, 2, };
+            nonBst.InsertAll(arr);
+            CousinsBT.IsCousins(nonBst.Root, 1,3);
+
             Console.ReadLine();
 
 

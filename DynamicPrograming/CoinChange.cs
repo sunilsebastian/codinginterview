@@ -20,6 +20,12 @@ namespace DynamicPrograming
             {
                 foreach (int coin in coins)
                 {
+                    //my idea and it works
+                    //if (i - coin < 0 || dp[i - coin] == Int32.MaxValue)
+                    //    continue;
+                    //else
+                    //    dp[i] = Math.Min(dp[i - coin] + 1, dp[i]);
+
                     if (i == coin)
                     {
                         dp[i] = 1;
@@ -43,5 +49,26 @@ namespace DynamicPrograming
             return dp[amount];
         }
 
+        public static int GetMinimumCoinChangeRecursion(int[] coins, int amount)
+        {
+            int max = Int32.MaxValue;
+            GetMinimumCoinChangeRecursionHelper(coins, amount, 0, ref max);
+            return max;
+        }
+        public static void GetMinimumCoinChangeRecursionHelper(int[] coins, int amount, int count, ref int max)
+        {
+            if (amount <=0)
+            {
+                if(amount==0)
+                   max = Math.Min(max, count);
+                return;
+            }
+            
+
+            for (int i = 0; i < coins.Length; i++)
+            {
+                GetMinimumCoinChangeRecursionHelper(coins, amount - coins[i], count + 1, ref max);
+            }
+        }
     }
 }

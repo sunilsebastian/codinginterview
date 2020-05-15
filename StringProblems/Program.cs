@@ -123,6 +123,8 @@ namespace StringProblems
             PalindrumPairs.PalindromePairs(new string [] { "abcd", "dcba" });
             var pair=PalindrumPairs.join_words_to_make_a_palindrome(new string[] { "abcd", "dcba" });
 
+            var palLength=LongestPalindrumSubstring.GetLongestPalindromeSubstring("agbdba");
+
             Trie trie = new Trie();
             trie.InsertRange(new string[] { "car", "cars", "cap", "clap", "bot","c"});
             Autocomplete.GetAutoCompleteText(trie.root, "ca");

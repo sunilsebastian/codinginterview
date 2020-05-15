@@ -12,6 +12,8 @@ namespace SortProblems
 
         public static void Main(string[] args)
         {
+
+           var repeatCount= NumberOfOccurancesInSortedArray.GetNumberOfOccurancesInSortedArray(new int[] { 1, 2, 3, 3, 3, 3, 4, 5, 6, 7 }, 3);
             WellFormedBrackets.GetWellFormedBrackets(3);
 
             SumToTargetValue.check_if_sum_possible(new long[]{10,20}, 0);
@@ -92,9 +94,10 @@ namespace SortProblems
             Console.WriteLine();
 
             //Merge Sort
-            arr = new int[7]
+            arr = new int[5]
             {
-                7,4,5,31,8,2,6
+                //7,4,5,31,8,2,6
+                7,1,2,5,4
             };
             MergeSort.Sort(arr, 0, arr.Length - 1);
             Console.WriteLine("Merge Sorted Values:");

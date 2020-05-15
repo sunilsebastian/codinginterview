@@ -8,7 +8,7 @@ namespace StringProblems
 {
     public  class LongestPalindrumSubstring
     {
-        public string GetLongestPalindromeSubstring(string s)
+        public static  string GetLongestPalindromeSubstring(string s)
         {
             if (string.IsNullOrEmpty(s)) return String.Empty;
             var res = string.Empty;
@@ -34,7 +34,7 @@ namespace StringProblems
             return res;
         }
 
-        private string expandAroundCenter(string s, int i, int j)
+        private static string expandAroundCenter(string s, int i, int j)
         {
             while (i >= 0 && j < s.Length && s[i] == s[j])
             {
