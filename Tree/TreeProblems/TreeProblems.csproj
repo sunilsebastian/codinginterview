@@ -48,6 +48,8 @@
     <Compile Include="BinaryTreeSerialization.cs" />
     <Compile Include="BstFromPostOrder.cs" />
     <Compile Include="BstFromPreOrder.cs" />
+    <Compile Include="BSTKthSmallest.cs" />
+    <Compile Include="CloneTreeWithRandomPointers.cs" />
     <Compile Include="Common\NAryTree.cs" />
     <Compile Include="CountNodes.cs" />
     <Compile Include="CousinsBT.cs" />
@@ -87,7 +89,6 @@
     <Compile Include="MinimumSumLevel.cs" />
     <Compile Include="MirrorOfBinaryTree.cs" />
     <Compile Include="MirrorOfItself.cs" />
-    <Compile Include="MorrisInorderTraversal.cs" />
     <Compile Include="PerimeterOfBinaryTree.cs" />
     <Compile Include="PostOrderTraversal.cs" />
     <Compile Include="PreOrderArrayToTree.cs" />

@@ -12,21 +12,15 @@ namespace SortProblems
 
         public static void Main(string[] args)
         {
+            List<int> lst1 = new List<int> { 1, 2, 3, 4 };
+            List<int> lst2 = new List<int> { 2,5,6 };
+            List<int> lst3= new List<int> { 2, 5, 7 };
+            MergeKSortedStreams mg = new MergeKSortedStreams(new List<List<int>> { lst1,lst2,lst3});
+            var mergeRes = mg.MergeResult();
 
            var repeatCount= NumberOfOccurancesInSortedArray.GetNumberOfOccurancesInSortedArray(new int[] { 1, 2, 3, 3, 3, 3, 4, 5, 6, 7 }, 3);
-            WellFormedBrackets.GetWellFormedBrackets(3);
-
-            SumToTargetValue.check_if_sum_possible(new long[]{10,20}, 0);
-            AllPossibleNQueen.GetNQueenPositions(4);
-
-           var resultArray = GenerateAllExpression.Generate("222",24);
-            PalindrumDecomposition.PalPartitions("aab");
-
+      
             BSTCount.PrintBST(4);
-
-            SubsetOfSet.GeneratSubset("ab");
-
-
 
             int[] list1 = new int[2] { 3, 3 };
             int[] list2 = new int[2] {5,-1};

@@ -22,6 +22,8 @@ namespace DynamicPrograming
             //bool perfectShuffle=StringInterLeaving.IsPerfectShuffle("bcc", "bbca", "bbcbcac");
             int cost = MatrixChainMultiplication.Multply(new int[] { 2, 3, 6, 4, 5 });
             WordBreakCount.GetWordBreakCount(new List<string> { "i", "am", "ace" ,"iam"}, "iamace");
+
+            WordBreakCount.GetWordBreakCount(new List<string> { "i", "like", "you", "ilike","likeyou" }, "ilikeyou");
             int player1Max= Gold2Player.MaximizeFirstPlayerGain(new int[] { 3, 9, 1, 2 });
 
             var palindromes = NumberofPalindromes.GetCount(3);
@@ -29,6 +31,8 @@ namespace DynamicPrograming
             var distictOccurrenceCount=DistinctSubSequenceCount.FindSubsequenceCount("banana", "ban");
 
             LongestPalindrumSequence.GetLongestPalindrumSequenceCount("agbdba");
+
+            LongestPalindrumSequence.GetLongestPalindrumSubstringCount("agbdba");
 
             var maxPrd=MaxProduct.GetMaxProduct(new int[] { -2,2,-3,4});
 

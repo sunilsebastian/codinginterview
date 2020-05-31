@@ -35,5 +35,33 @@ namespace DynamicPrograming
             }
             return T[0, str.Length - 1];
         }
+
+
+        public static int GetLongestPalindrumSubstringCount(string str)
+        {
+            int[,] T = new int[str.Length, str.Length];
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                T[i, i] = 1;
+            }
+            int max = 0;
+            for (int l = 2; l <= str.Length; l++)
+            {
+                for (int i = 0; i < str.Length - l + 1; i++)
+                {
+                    int j = i + l - 1; // take two chars,then 3 chars,4 char..take all chars
+
+                   if (str[i] == str[j])
+                    {
+                        //diagonaly down left
+                        T[i, j] = T[i + 1, j - 1] + 2;
+                        max = Math.Max(max, T[i, j]);
+                    }
+                  
+                }
+            }
+            return max;
+        }
     }
 }

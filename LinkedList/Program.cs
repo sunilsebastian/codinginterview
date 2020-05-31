@@ -7,6 +7,8 @@ namespace LinkedList
     {
         public static void Main(string[] args)
         {
+
+           
             //create Stack
             var stk = StackHelper.Create(new int[] { 10, 11, 12, 13, 14, 15 });
             Console.Write("Create list(10, 11, 12, 13, 14, 15) as Stack :");
@@ -18,6 +20,9 @@ namespace LinkedList
             Console.Write("Create list(10, 11, 12, 13, 14, 15, 16 ) as Queue :");
             QueueHelper.PrintAll(q);
             Console.WriteLine("\n");
+
+            q = QueueHelper.Create(new int[] {1,2,3,4 });
+            ReorderList.GetReorderList(q.Head);
 
             //Check list is circular.
             bool isCircular = CheckListIsCircular.Check(q.Head);

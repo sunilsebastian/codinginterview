@@ -68,6 +68,7 @@
     <Compile Include="ReverseInteger.cs" />
     <Compile Include="RotateArray.cs" />
     <Compile Include="SlidingWindowMaximum.cs" />
+    <Compile Include="StockSpanner.cs" />
     <Compile Include="Sumupto3numbers.cs" />
     <Compile Include="Triangle.cs" />
     <Compile Include="UnionOfTwoSortedArrays.cs" />

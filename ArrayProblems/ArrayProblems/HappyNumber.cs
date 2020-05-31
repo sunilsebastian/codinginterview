@@ -11,10 +11,11 @@ namespace ArrayProblems
 
         //19 True
         //20 False
-        public bool IsHappy(int n)
+        public static  bool IsHappy(int n)
         {
             List<int> list = new List<int>();
 
+            //if list contains the sum and its number 1 then it is a happy number.
             while (!list.Contains(n))
             {
                 list.Add(n);
@@ -25,7 +26,7 @@ namespace ArrayProblems
 
         }
 
-        public int GetSquareSum(int n, int sum)
+        public static  int GetSquareSum(int n, int sum)
         {
             if (n == 0)
                 return sum;

@@ -16,22 +16,24 @@ namespace ArrayProblems
 
         private static int FirstBadVersionHelper(int start, int end)
         {
-
-            //int mid = (start + end) / 2;
-
-            if (start >= end)
-                return end;
+            if (start > end)
+                return -1;
 
             int mid = start + (end - start) / 2;
 
-
-            if (IsBadVersion(mid))
+            var isBad = IsBadVersion(mid);
+            if (isBad)
             {
+                if (IsBadVersion(mid - 1) == false)
+                    return mid;
 
-                return FirstBadVersionHelper(start, mid);
+                return FirstBadVersionHelper(start, mid - 1);
+
             }
             else
             {
+                if (IsBadVersion(mid + 1) == true)
+                    return mid + 1;
                 return FirstBadVersionHelper(mid + 1, end);
             }
         }

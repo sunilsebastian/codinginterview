@@ -47,6 +47,7 @@
     <Compile Include="Anagram.cs" />
     <Compile Include="Autocomplete.cs" />
     <Compile Include="BackspaceStringCompare.cs" />
+    <Compile Include="TemplateEngine.cs" />
     <Compile Include="FirstNonDupChar.cs" />
     <Compile Include="IntToString.cs" />
     <Compile Include="IsoMorphic.cs" />

@@ -36,7 +36,8 @@ namespace TreeProblems
 
             FlipTreeUpDown.FlipUpsideDown(tnode);
 
-          
+
+            BstFromPostOrder.BstFrmPostOrder(new int[] { 8, 6, 12, 9 });
 
             NAryTreeNode nAryNode = HeightOfNaryTree.Create();
             var nAryTreeHeight=HeightOfNaryTree.GetHeight(nAryNode);

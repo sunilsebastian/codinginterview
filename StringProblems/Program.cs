@@ -10,6 +10,25 @@ namespace StringProblems
     {
         static void Main(string[] args)
         {
+
+            var map = new Dictionary<string, string>();
+            map.Add("first", "Jon");
+            map.Add("last", "Kaufman");
+            map.Add("extra", "Field");
+
+            var template = "Hello, I'm <%first%> <%last%>, and I <3 being a <%occupation%>, again my first name is <%first%>!";
+            var engine = new TemplateEngine(template);
+            Console.WriteLine(engine.Compile(map));
+            //    // "Hello, I'm Jon Kaufman, and I <3 being a "
+
+            //    var map2 = new Dictionary<string, string>();
+            //map2.Add("first", "Brian");
+            //    map2.Add("last", "Smith");
+            //    map2.Add("occupation", "Software Engineer");
+            //    Console.WriteLine(engine.compile(map2));
+
+
+
             //Check chars in string unique
             String testString = "abcdefg";
             Console.Write($"'{testString}' is unique:{   StringUnique.isStringUniqueue(testString)}");

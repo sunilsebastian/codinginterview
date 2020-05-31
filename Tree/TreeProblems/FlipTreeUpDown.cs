@@ -19,7 +19,8 @@ namespace TreeProblems
         public static Node flipUpsideDownHelper(Node root)
         {
 
-            if (root == null) return null;
+            if (root == null)
+                return null;
 
             if (root.Left == null)
             {

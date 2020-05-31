@@ -10,7 +10,7 @@ namespace ArrayProblems
     {
         public static void Main(string[] args)
         {
-          
+            bool happy=HappyNumber.IsHappy(19);
             //Fibonacci series
             Console.Write($"Fib(8):");
             int val1 = Fibonacci.FibReCurrsionWithMemoiszation(8);

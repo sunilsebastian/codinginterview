@@ -8,6 +8,8 @@ namespace ArrayProblems
 {
     public class ArrayInWaveForm
     {
+
+        //arrange the elements into a sequence such that a1 >= a2 <= a3 >= a4 <= a5.....
         public static  int[] GetWaveForm(int[] arr)
         {
             Array.Sort(arr);

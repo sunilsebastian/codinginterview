@@ -19,10 +19,8 @@ namespace TreeProblems
                 return false;
             }
 
-           var leftBst= IsBsT(root.Left, min, root.Data);
-           var rightBst = IsBsT(root.Right, root.Data,max);
-
-            return leftBst && rightBst;
+           return  IsBsT(root.Left, min, root.Data)  && IsBsT(root.Right, root.Data, max); 
+           
         }
     }
 }
