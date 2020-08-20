@@ -46,6 +46,7 @@
     <Compile Include="BadVersionFinder.cs" />
     <Compile Include="BitwiseOddorEven.cs" />
     <Compile Include="CircularArrayLargestSum.cs" />
+    <Compile Include="ConvertToExcelTitle.cs" />
     <Compile Include="DifferenceUptoK.cs" />
     <Compile Include="DuplicatesInArray.cs" />
     <Compile Include="DutchNationalFlag.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="RemoveDuplicatesInArray.cs" />
     <Compile Include="SumUptoK.cs" />
     <Compile Include="TransformArrayValue.cs" />
+    <Compile Include="ValidPalindrome.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

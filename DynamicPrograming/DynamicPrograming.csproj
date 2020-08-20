@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BSTCount.cs" />
     <Compile Include="CoinChange.cs" />
+    <Compile Include="CoinChange2.cs" />
     <Compile Include="CutRopeMaxProduct.cs" />
     <Compile Include="CuttingRod.cs" />
     <Compile Include="DecodeWays.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="StringInterLeaving.cs" />
     <Compile Include="SubsetSum.cs" />
     <Compile Include="TextJustification.cs" />
+    <Compile Include="UncrossedLines.cs" />
     <Compile Include="WildCardMatching.cs" />
     <Compile Include="WordBreakCount.cs" />
   </ItemGroup>

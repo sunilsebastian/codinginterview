@@ -54,6 +54,7 @@
     <Compile Include="DeleteNode.cs" />
     <Compile Include="DeleteNodeInTheMiddle.cs" />
     <Compile Include="DoubleList.cs" />
+    <Compile Include="FlatternDoubleList.cs" />
     <Compile Include="IntersectionOfLinkedList.cs" />
     <Compile Include="ListIterator.cs" />
     <Compile Include="LRUCache.cs" />

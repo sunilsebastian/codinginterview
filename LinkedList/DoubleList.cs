@@ -15,15 +15,17 @@ namespace LinkedList
         public void InsertNode(int val)
         {
             DoubleNode n = new DoubleNode(val);
-            n.Next = Head;
-            n.Prev = null;
 
-            if (Head != null)
+            if (Head == null)
+                  Head = n;
+            else
             {
+                n.Next = Head;
+                //only diff from single list
                 Head.Prev = n;
-            }
 
-            Head = n;
+                Head = n;
+            }
         }
 
         public void PrintList()

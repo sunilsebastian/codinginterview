@@ -8,6 +8,8 @@
 
         public DoubleNode Prev { get; set; }
 
+        public DoubleNode Child { get; set; }
+
         public DoubleNode(int val)
         {
             this.Val = val;

@@ -8,7 +8,7 @@ namespace DynamicPrograming
 {
     public class WordBreakCount
     {
-        
+        //How many ways we can break
         public static int GetWordBreakCount(List<string> dictionary, string txt)
         {
             var hashSet = new HashSet<string>(dictionary);
@@ -31,6 +31,55 @@ namespace DynamicPrograming
             }
 
             return dp[txt.Length];
+        }
+
+
+        // Input:
+        //s = "catsanddog"
+        //wordDict = ["cat", "cats", "and", "sand", "dog"]
+        //        Output:
+        //[
+        //  "cats and dog",
+        //  "cat sand dog"
+        //]
+
+        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        public IList<string> WordBreakII(string s, IList<string> wordDict)
+        {
+
+            var res = WordBreakHelper(s, wordDict);
+            return res;
+
+        }
+
+        public List<string> WordBreakHelper(string s, IList<string> wordDict)
+        {
+
+            if (dict.ContainsKey(s))
+                return dict[s];
+
+            List<string> result = new List<string>();
+
+            foreach (var word in wordDict)
+            {
+                if (s.IndexOf(word) == 0)
+                {
+                    if (word.Length == s.Length)
+                        result.Add(word);
+                    else
+                    {
+                        var list = WordBreakHelper(s.Substring(word.Length), wordDict);
+                        foreach (var item in list)
+                        {
+                            result.Add(item.Length == 0 ? word : word + " " + item);
+                        }
+
+                    }
+
+                }
+            }
+            dict.Add(s, result);
+            return result;
         }
 
     }

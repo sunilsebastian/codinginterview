@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BSTCount.cs" />
     <Compile Include="BubbleSort.cs" />
     <Compile Include="HeapSort.cs" />
     <Compile Include="InsertionSort.cs" />

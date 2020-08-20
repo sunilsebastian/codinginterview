@@ -6,6 +6,8 @@ namespace ArrayProblems
     {
         // Sort the input array, the array is assumed to
         // have values in {0, 1, 2}
+
+        //the [1,0,2]  mid should be <= hi  else this scenario will fail
         public static void Sort(int[] arr)
         {
             int lo = 0;

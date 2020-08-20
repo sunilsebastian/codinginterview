@@ -22,9 +22,10 @@ namespace GraphProblems
         }
         private bool isCyclicUtil(int i, bool[] visited, bool[] recStack)
         {
+            //this has to be first always
             if (recStack[i])
                 return true;
-
+            //this has to be second
             if (visited[i])
                 return false;
 

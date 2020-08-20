@@ -38,6 +38,49 @@ namespace DynamicPrograming
             return result;
         }
 
+        //https://leetcode.com/explore/challenge/card/june-leetcoding-challenge/540/week-2-june-8th-june-14th/3359/
+        public IList<int> LargestDivisibleSubset(int[] nums)
+        {
+
+            if (nums.Length == 1) return new List<int> { nums[0] };
+            List<int> result = new List<int>();
+            int[] dp = new int[nums.Length];
+
+            int max = 1;
+            Array.Sort(nums);
+            for (int i = 0; i < nums.Length; i++)
+            {
+                dp[i] = 1;
+
+                for (int j = 0; j < i; j++)
+                {
+                    if (nums[j] > nums[i] || (nums[i] % nums[j]) != 0) continue;
+
+                    dp[i] = Math.Max(dp[i], dp[j] + 1);
+
+                    max = Math.Max(max, dp[i]);
+                }
+
+            }
+            //idx 0 1 2 3
+            //arr 1 2 3 6
+            //dp  1 2 2 3
+            int prev = -1;
+            for (int i = nums.Length - 1; i >= 0; i--)
+            {
+                if (dp[i] == max)
+                {
+                    if (prev == -1 || prev % nums[i] == 0)
+                    {
+                        result.Add(nums[i]);
+                        max = max - 1; //going back
+                        prev = nums[i];
+                    }
+                }
+            }
+            return result;
+        }
+
         public static  int LongestIncreasingSubsequenceRecursive(int[] arr)
         {
             int maxLen = 0;

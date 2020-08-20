@@ -43,35 +43,37 @@ namespace TreeProblems
         public static int WidthOfBinaryTreewithNull(Node root)
         {
             if (root == null) { return 0; }
+
             int max = 1;
-            Queue<Node> treeList = new Queue<Node>();
-            Queue<int> intList = new Queue<int>();
-            treeList.Enqueue(root);
-            intList.Enqueue(1);
-            while (treeList.Count > 0)
+            Queue<(Node,int)> q = new Queue<(Node,int)>();
+         
+            //inserting node and currentHeapIndex of BT
+            q.Enqueue((root,1));
+          
+            while (q.Count > 0)
             {
-                int size = treeList.Count;
-                int l = intList.Peek();
+                int size = q.Count;
+                int startHeapIndex = q.Peek().Item2;
+                int heapCurrentIndex = 0;
                 for (int i = 0; i < size; i++)
                 {
-
-                    Node r = treeList.Dequeue();
-                    int depth = intList.Dequeue();
-                    if (r.Left != null)
+                    var qItem = q.Dequeue();
+                    //end of the loop/level it will be last index at the current level
+                    heapCurrentIndex = qItem.Item2;
+                    Node n = qItem.Item1;
+                    if (n.Left != null)
                     {
-                        treeList.Enqueue(r.Left);
-                        intList.Enqueue(2 * depth);
+                        q.Enqueue((n.Left, 2 * heapCurrentIndex));
+                     
                     }
-                    if (r.Right != null)
+                    if (n.Right != null)
                     {
-                        treeList.Enqueue(r.Right);
-                        intList.Enqueue(2 * depth + 1);
+                        q.Enqueue((n.Right, 2 * heapCurrentIndex+1));
+                     
                     }
-                    max = Math.Max(max, depth - l + 1);
                 }
-
+                max = Math.Max(max, heapCurrentIndex - startHeapIndex + 1);
             }
-
 
             return max;
         }

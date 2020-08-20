@@ -21,9 +21,11 @@ namespace DynamicPrograming
             bool perfectShuffle=StringInterLeaving.IsPerfectShuffle("AB", "D", "ADBECF");
             //bool perfectShuffle=StringInterLeaving.IsPerfectShuffle("bcc", "bbca", "bbcbcac");
             int cost = MatrixChainMultiplication.Multply(new int[] { 2, 3, 6, 4, 5 });
-            WordBreakCount.GetWordBreakCount(new List<string> { "i", "am", "ace" ,"iam"}, "iamace");
+            WordBreakCount.GetWordBreakCount(new List<string> { "i", "am", "ace" }, "iamace");
 
-            WordBreakCount.GetWordBreakCount(new List<string> { "i", "like", "you", "ilike","likeyou" }, "ilikeyou");
+            WordBreakCount.GetWordBreakCount(new List<string> { "c", "od", "e", "x" }, "code");
+
+            WordBreakCount.GetWordBreakCount(new List<string> { "i", "like", "you", "ilike", "likeyou" }, "code");
             int player1Max= Gold2Player.MaximizeFirstPlayerGain(new int[] { 3, 9, 1, 2 });
 
             var palindromes = NumberofPalindromes.GetCount(3);
@@ -59,7 +61,7 @@ namespace DynamicPrograming
             CoinChange.GetMinimumCoinChangeRecursion(new int[] { 7, 3, 2, 6 }, 13);
             var coinCount=CoinChange.GetMinimumCoinChangeForTargetAmt(new int[] { 7, 3, 2, 6 }, 13);
 
-           var perfectSquareCount= PerfectSquare.GetPenumSquares(12);
+           var perfectSquareCount= PerfectSquare.NumSquares(12);
 
             //new int[] { 2, 5, 3, 4 }  //5 best way to cut is 
             int[] arr2 = new int[] { 1, 5, 8, 9, 10, 17, 17, 20 }; //8

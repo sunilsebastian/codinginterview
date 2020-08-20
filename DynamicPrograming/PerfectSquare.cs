@@ -6,30 +6,21 @@ using System.Threading.Tasks;
 
 namespace DynamicPrograming
 {
+    //Refer book
     public class PerfectSquare
     {
-        public static int GetPenumSquares(int n)
+        public static int NumSquares(int n)
         {
-            int max = (int)Math.Sqrt(n);
-
             int[] dp = new int[n + 1];
-            dp=dp.Select(i => Int32.MaxValue).ToArray();
+
+            dp[0] = 0;
 
             for (int i = 1; i <= n; i++)
             {
-                for (int j = 1; j <= max; j++)
-                {
-                    if (i == j * j)
-                    {
-                        dp[i] = 1;
-                    }
-                    else if (i > j * j)
-                    {
-                        dp[i] = Math.Min(dp[i], dp[i - j * j] + 1);
-                    }
-                }
+                dp[i] = i;
+                for (int j = 1; j * j <= i; j++)
+                    dp[i] = Math.Min(dp[i], dp[i - (j * j)] + 1);
             }
-
             return dp[n];
         }
     }

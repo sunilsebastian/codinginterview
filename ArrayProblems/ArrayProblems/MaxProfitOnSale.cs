@@ -12,7 +12,7 @@ namespace ArrayProblems
         {
             int maxProfit = 0;
             int currentMin = arr[0];
-            for(int i = 1;i<arr.Length;i++)
+            for (int i = 1; i < arr.Length; i++)
             {
                 maxProfit = Math.Max(maxProfit, arr[i] - currentMin);
 
@@ -42,7 +42,30 @@ namespace ArrayProblems
             }
             return profit;
         }
-    }
 
-   
+
+        //Refer book
+        //buy sell with cooling period
+        // https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/548/week-5-july-29th-july-31st/3405/
+        public int MaxProfitIII(int[] prices)
+        {
+            if (prices.Length <= 1) return 0;
+
+            int A = 0;
+            int B = -prices[0];
+            int C = 0;
+
+            for (int i = 1; i < prices.Length; i++)
+            {
+                int temp = A;
+                A = Math.Max(A, C);
+                C = B + prices[i];
+                B = Math.Max(B, temp - prices[i]);
+
+            }
+
+            return Math.Max(A, C);
+        }
+
+    }
 }

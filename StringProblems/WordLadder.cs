@@ -25,7 +25,7 @@ namespace StringProblems
             {
                 int size = q.Count;
                 step++;
-                while (size-- > 0)
+                while (size > 0)
                 {
                     String str = q.Dequeue();
                     if (str.Equals(endWord)) return step;
@@ -46,6 +46,7 @@ namespace StringProblems
                         }
                         chars[i] = temp;
                     }
+                    size--;
                 }
             }
             return 0;

@@ -77,8 +77,7 @@ namespace TreeProblems
             //arr = new int[] { 30, 40, 35,10,12};
             arr = new int[] { 10, 20, 30,5,8};
             bst.InsertAll(arr);
-            maxwidth =MaxWidthofTree.WidthOfBinaryTreewithNull(bst.Root);
-            Console.WriteLine($"Max width of Binary tree with null:{maxwidth}");
+          
 
             //check tree is Bst
 
@@ -313,6 +312,17 @@ namespace TreeProblems
             arr = new int[] { 1, 2, };
             nonBst.InsertAll(arr);
             CousinsBT.IsCousins(nonBst.Root, 1,3);
+
+            nonBst = new NonBST();
+            nonBst.Root = new Node(1);
+            nonBst.Root.Left = new Node(3);
+            nonBst.Root.Right = new Node(2);
+            nonBst.Root.Left.Left = new Node(5);
+            nonBst.Root.Right.Right = new Node(9);
+
+
+            maxwidth = MaxWidthofTree.WidthOfBinaryTreewithNull(nonBst.Root);
+            Console.WriteLine($"Max width of Binary tree with null:{maxwidth}");
 
             Console.ReadLine();
 
