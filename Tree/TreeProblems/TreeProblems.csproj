@@ -66,6 +66,7 @@
     <Compile Include="MaxPathSum.cs" />
     <Compile Include="MergeBST.cs" />
     <Compile Include="NearestTargetInBST.cs" />
+    <Compile Include="PathSum-III.cs" />
     <Compile Include="PerimeterOfNaryTree.cs" />
     <Compile Include="SortedArrayToBST.cs" />
     <Compile Include="BinaryTreeFromPreOrderInOrder.cs" />

@@ -17,7 +17,7 @@ namespace DynamicPrograming
             int[] dp = new int[n + 1];
             dp[0] = 1;
             dp[1] = 1;
-
+            //less than equal outer loop
             for (int i = 2; i <= n; i++)
             {
                 for (int k = 0; k < i; k++)

@@ -13,26 +13,29 @@ namespace MatrixProblems
             int rowmax = a.GetLength(0);
             int colmax= a.GetLength(1); 
             int i, rowmin = 0, colmin = 0;
-          
+
+            int dir = 0;
 
             while (rowmin < rowmax && colmin < colmax)
             {
-                
-                for (i = colmin; i < colmax; ++i)
+                if (dir == 0)
                 {
-                    Console.Write(a[rowmin, i] + " ");
+                    for (i = colmin; i < colmax; ++i)
+                    {
+                        Console.Write(a[rowmin, i] + " ");
+                    }
+                    rowmin++;
                 }
-                rowmin++;
 
-             
-                for (i = rowmin; i < rowmax; ++i)
+                else if (dir == 1)
                 {
-                    Console.Write(a[i, colmax - 1] + " ");
+                    for (i = rowmin; i < rowmax; ++i)
+                    {
+                        Console.Write(a[i, colmax - 1] + " ");
+                    }
+                    colmax--;
                 }
-                colmax--;
-
-
-                if (rowmin < rowmax)
+                else if (dir == 2)
                 {
                     for (i = colmax - 1; i >= colmin; --i)
                     {
@@ -40,9 +43,7 @@ namespace MatrixProblems
                     }
                     rowmax--;
                 }
-
-
-                if (colmin < colmax)
+                else if (dir == 3)
                 {
                     for (i = rowmax - 1; i >= rowmin; --i)
                     {
@@ -50,6 +51,8 @@ namespace MatrixProblems
                     }
                     colmin++;
                 }
+
+                dir = (dir + 1) % 4;
             }
         }
           

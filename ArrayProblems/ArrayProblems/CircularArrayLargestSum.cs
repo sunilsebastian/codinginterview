@@ -21,8 +21,8 @@ namespace ArrayProblems
                 arr[i] = -arr[i];
             }
 
-            // kadane(reversign arr) is longest continous minimum
-            //  max_wrap + kadane(arr)  removing the minimum from  array 
+            // kadane(reversign arr) is longest continous minimum ie 13 (its actually -13)
+            //  total array sum  + kadane(reversign arr) => removing the minimum contigous sum  from  array 
             //if its better than postive kadane take it.
             max_wrap = max_wrap + kadane(arr);
             if (max_wrap == 0) return max_kadane;

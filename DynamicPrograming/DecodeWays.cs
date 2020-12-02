@@ -15,8 +15,15 @@ namespace DynamicPrograming
             dp[1] = s[0] == '0' ? 0 : 1;
             for (int i = 2; i <= s.Length; i++)
             {
+
+
                 int oneDigit = Int32.Parse(s.Substring(i - 1, 1));
                 int twoDigit = Int32.Parse(s.Substring(i - 2, 2));
+
+                //below also fine
+                //int oneDigit = Int32.Parse(s.Substring(i - 2, 1));
+                //int twoDigit = Int32.Parse(s.Substring(i - 2, 2));
+
                 if (oneDigit >= 1)
                 {
                     dp[i] += dp[i - 1];

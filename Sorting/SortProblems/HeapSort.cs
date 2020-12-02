@@ -8,6 +8,13 @@ namespace SortProblems
 {
     public class HeapSort
     {
+
+        //Its first build max heap
+        
+        //in loop 
+        // now  swap n-1 item and 0
+        //now build again build max heap execet n-1
+
         public static  void Sort(int[] arr)
         {
             int n = arr.Length;
@@ -17,6 +24,8 @@ namespace SortProblems
                 heapify(arr, n, i);
 
             // One by one extract an element from heap
+            //n-1 because after swap the last element is already sorted.
+            //we are pushing largest to last one by one
             for (int i = n - 1; i >0; i--)
             {
                 // Move current root to end

@@ -20,13 +20,14 @@ namespace SortProblems
 
            var repeatCount= NumberOfOccurancesInSortedArray.GetNumberOfOccurancesInSortedArray(new int[] { 1, 2, 3, 3, 3, 3, 4, 5, 6, 7 }, 3);
       
-            BSTCount.PrintBST(4);
+           // BSTCount.PrintBST(4);
 
             int[] list1 = new int[2] { 3, 3 };
             int[] list2 = new int[2] {5,-1};
             int[] list3 = new int[2] {-2, 4 };
             var closetPoints= KClosestPoints.KClosest(new int[][] {list1,list2,list3 },2);
 
+            //Ans: key1: 3,hello  key2:1,zzz key3;1,world
             string[] output=LexicographicalOrder.Solve(new string[] { "key1 abcd", "key2 zzz", "key1 hello","key3 world", "key1 hello" });
             int[] res=KLargestElementsInStream.TopK(new int[] { 4, 8, 9, 6, 6, 2, 10, 2, 8, 1, 2 }, 9);
 
@@ -48,12 +49,22 @@ namespace SortProblems
             heap.Enqueue(8, 8);
             heap.Enqueue(2, 2);
             Console.Write("PQ:");
-            for (int i = 0; i < heap.Count(); i++)
+            int cnt = heap.Count();
+            for (int i = 0; i < cnt; i++)
                 Console.Write($"{ heap.Dequeue()} ");
 
             Console.WriteLine();
 
+            PQ<int> h = new PQ<int>(Comparer<int>.Create((a,b)=>b.CompareTo(a)));
+            h.Enqueue(5);
+            h.Enqueue(2);
+            h.Enqueue(8);
+            h.Enqueue(9);
 
+            Console.Write("PQ-New:");
+            cnt = h.Count();
+            for (int i = 0; i <cnt; i++)
+                Console.Write($"{ h.Dequeue()} ");
 
             string s = "ab cd e j asd ljffg df";
             var result=SortBasedOnsize.Sort(s);

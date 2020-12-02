@@ -48,7 +48,7 @@ namespace DynamicPrograming
 
             //var numberofJumps=JumpGame.Jump(new int[] { 2, 3, 1, 1, 4 });
             int numDecodeways = DecodeWays.NumDecodings1("226");
-             numDecodeways=DecodeWays.NumDecodings("12"); //2266
+             numDecodeways=DecodeWays.NumDecodings("126"); //2266
 
             var longestSubstringCount= LongestCommonSubstring.GetLongestCommonSubstring("abc", "abcd");
 

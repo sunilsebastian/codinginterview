@@ -20,8 +20,11 @@ namespace DynamicPrograming
 
             foreach (var coin in coins)
             {
+                //start from coin because e.g amounts less than coin:2 are not impacted by the presence of 2 cent coins
                 for (int amt = coin; amt < dp.Length; amt++)
                 {
+                    //dp[amt] is without considering coin (exclude) or current value 
+                    //dp[amt - coin] include coin
                     dp[amt] = dp[amt] + dp[amt - coin];
                 }
             }

@@ -16,6 +16,7 @@ namespace SortProblems
     //kthLargest.add(4);   // returns 8
     public class KthLargestNumberInStream
     {
+        //MinHeap
         public int K { get; set; }
         PQ<int> pq;
         int[] arr;
