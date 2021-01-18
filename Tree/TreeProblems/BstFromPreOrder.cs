@@ -9,14 +9,18 @@ namespace TreeProblems
 {
     public class BstFromPreOrder
     {
-        public Node BstFromPreorder(int[] preorder)
+
+        //Same logic as check bst
+        // but here global index increments and go over the arry
+        //insted of return true or false here returns null when array out of boun and fails bst scenario.
+        public static  Node BstFromPreorder(int[] preorder)
         {
             PreOrderIndex preOrderIndex = new PreOrderIndex();
             preOrderIndex.Index = 0;
             return BstFromPreorder(preorder, Int32.MinValue, Int32.MaxValue, preOrderIndex);
         }
 
-        public Node BstFromPreorder(int[] preorder, int min, int max, PreOrderIndex preOrderIndex)
+        public static Node BstFromPreorder(int[] preorder, int min, int max, PreOrderIndex preOrderIndex)
         {
             if (preOrderIndex.Index == preorder.Length)
                 return null;

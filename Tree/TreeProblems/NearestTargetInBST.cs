@@ -19,13 +19,13 @@ namespace TreeProblems
     {
         public class Solution
         {
-            int goal;
+            int result;
             double min = Double.MaxValue;
 
             public int closestValue(Node root, double target)
             {
                 helper(root, target);
-                return goal;
+                return result;
             }
 
             public void helper(Node root, double target)
@@ -36,7 +36,7 @@ namespace TreeProblems
                 if (Math.Abs(root.Data - target) < min)
                 {
                     min = Math.Abs(root.Data - target);
-                    goal = root.Data;
+                    result = root.Data;
                 }
 
                 if (target < root.Data)

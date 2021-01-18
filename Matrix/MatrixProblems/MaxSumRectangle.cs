@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatrixProblems
 {
+    //https://www.youtube.com/watch?v=-FgseNO-6Gk
     public class Result
     {
         public int MaxSum { get; set; }

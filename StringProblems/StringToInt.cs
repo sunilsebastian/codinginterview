@@ -8,16 +8,37 @@ namespace StringProblems
 {
     public class StringToInt
     {
-        public static int Convert(string s)
+        public static int Convert(string str)
         {
             int index = 0;
-            int num = 0;
-            while(index < s.Length)
+            double sum = 0;
+            bool isNegative = false;
+            str = str.Trim();
+            if (str == null || str == string.Empty)
             {
-                num = num * 10;
-                num = num + (s[index++]-'0');
+                return 0;
             }
-            return num;
+            int sign = 1;
+            if (str[0] == '-')
+            {
+                isNegative = true;
+                sign = -1;
+                index = 1;
+
+            }
+            if (str[0] == '+')
+            {
+                index = 1;
+            }
+            while (index < str.Length)
+            {
+                if (!Char.IsDigit(str[index])) break;
+                sum = sum * 10 + str[index] - '0';
+                if (isNegative == false && sum > int.MaxValue)
+                    return int.MaxValue;
+                index++;
+            }
+            return (int)sum * sign;
         }
     }
 }

@@ -35,7 +35,7 @@ namespace StringProblems
             Console.WriteLine();
 
             //Convert string to number
-            string num = "1234";
+            string num = "-91283472332";
             Console.Write($"'{num}' is Converted to Num:{StringToInt.Convert(num)}");
             Console.WriteLine();
 

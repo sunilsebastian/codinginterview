@@ -16,10 +16,10 @@ namespace TreeProblems
         
             int[] d1= GetDepth(root, prev, 0, x);
             int[] d2 = GetDepth(root, prev, 0, y);
-
+            // given value is root or not found
             if (d1[0] == -1 || d2[0] == -1)
                 return false;
-
+            //same depth and different parent
             if (d1[0] == d2[0] && d1[1]!=d2[1])
                 return true;
             return false;

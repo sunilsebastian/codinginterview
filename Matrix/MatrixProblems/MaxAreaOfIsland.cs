@@ -44,6 +44,9 @@ namespace MatrixProblems
                 return 0;
 
             grid[i, j] = 'X';
+            //if you find 1 you can count as there is at least one with area 1
+            //if there is no neighbour in fianl dfs depth item it returns 1+0+0+0+0;
+            //now this will buble up to higher levels
             int count = 1;
 
            count += merge(grid, i - 1, j);

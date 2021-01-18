@@ -7,8 +7,14 @@ using TreeProblems.Common;
 
 namespace TreeProblems
 {
-  //The logic is simple.While finding the depth of each node , find the diameter of that node as well.
-  //If the diameter of current node is larger than the global diameter.then set current diameter as the global diameter;
+    //https://leetcode.com/problems/diameter-of-binary-tree/
+    //The logic is simple.While finding the depth of each node , find the diameter of that node as well.
+    //If the diameter of current node is larger than the global diameter.then set current diameter as the global diameter;
+
+    // height=Math.Max(left_height, right_height) + 1;
+    //diameter=left_height + right_height;  update global diameter always
+
+    //refer this problem too : https://leetcode.com/problems/binary-tree-maximum-path-sum/
 
     public class DiameterOfBinaryTree
     {

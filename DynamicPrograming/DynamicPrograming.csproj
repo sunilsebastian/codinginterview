@@ -44,12 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BSTCount.cs" />
+    <Compile Include="CanBreakWord.cs" />
     <Compile Include="CoinChange.cs" />
     <Compile Include="CoinChange2.cs" />
     <Compile Include="CutRopeMaxProduct.cs" />
     <Compile Include="CuttingRod.cs" />
     <Compile Include="DecodeWays.cs" />
     <Compile Include="DistinctSubSequenceCount.cs" />
+    <Compile Include="DungeonGame.cs" />
     <Compile Include="EqualSumPartition.cs" />
     <Compile Include="Gold2Player.cs" />
     <Compile Include="HouseRobber.cs" />

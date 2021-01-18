@@ -19,11 +19,12 @@ namespace LinkedList
             Node nextPtr = head.Next;
             Node connectNode = head.Next;
 
-            while (current != null && nextPtr != null)
+            while (nextPtr != null && nextPtr.Next != null)
+            //while (current != null && nextPtr != null)
             {
-                Node t = nextPtr.Next;
-                if (t == null)
-                    break;
+                //Node t = nextPtr.Next;
+                //if (t == null)
+                //    break;
 
                 current.Next = nextPtr.Next;
                 current = current.Next;

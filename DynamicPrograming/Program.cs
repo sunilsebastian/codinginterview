@@ -26,6 +26,9 @@ namespace DynamicPrograming
             WordBreakCount.GetWordBreakCount(new List<string> { "c", "od", "e", "x" }, "code");
 
             WordBreakCount.GetWordBreakCount(new List<string> { "i", "like", "you", "ilike", "likeyou" }, "code");
+
+            WordBreakCount.WordBreakII("abc", new List<string> { "a", "b", "c", "ab" });
+
             int player1Max= Gold2Player.MaximizeFirstPlayerGain(new int[] { 3, 9, 1, 2 });
 
             var palindromes = NumberofPalindromes.GetCount(3);
@@ -76,6 +79,8 @@ namespace DynamicPrograming
            var res1= WildCardMatching.StringMatch("abc", "*bc",3,3);
           // var res2= RegExMatching.StringMatch("abc", "*bc", 3, 3);
            var res3 = RegExMatching.StringMatch("aab", "a*b*", 3, 3);
+
+         var wresult=   CanBreakWord.WordBreak("applepenapple", new List<string> { "apple", "pen" });
 
 
 

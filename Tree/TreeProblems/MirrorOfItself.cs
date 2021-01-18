@@ -8,6 +8,7 @@ namespace TreeProblems
 {
     public class MirrorOfItself
     {
+        //same tree logic
         public static bool IsMirrorOfItself(Node oRoot,Node mRoot)
         {
             if(oRoot==null && mRoot==null)

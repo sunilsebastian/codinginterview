@@ -182,11 +182,21 @@ namespace LinkedList
             r2.random = r2;
             var clone = CloneListWithRandomPtr.CopyRandomList(r1);
 
-            q = QueueHelper.Create(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
+            q = QueueHelper.Create(new int[] { 1, 2, 3, 4, 5, 6, 7 });
            var oddEvenList= OddEvenLinkedList.GetOddEvenList(q.Head);
 
-
+            LRUCache lru = new LRUCache(4);
+            lru.put(1, 1);
+            lru.put(2, 2);
+            lru.put(3, 3);
+            lru.put(4, 4);
+            lru.put(4, 5);
+            var s1 = q = QueueHelper.Create(new int[] {1,3,5 });
+            var s2 = q = QueueHelper.Create(new int[] { 2, 4 });
+            var merged=MergeKSortedLists.Merge(s1.Head,s2.Head);
             Console.ReadLine();
+
+           
         }
     }
 }

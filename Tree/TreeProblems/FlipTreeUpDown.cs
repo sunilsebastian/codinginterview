@@ -37,5 +37,27 @@ namespace TreeProblems
             return result;
         }
 
+
+        public static Node flipUpsideDownHelper1(Node root, Node prev)
+        {
+            if (root == null)
+                return prev;
+
+
+            //result/extreme left node  stay same
+            var result = flipUpsideDownHelper1(root.Left, root);
+            if (prev != null)
+            {
+                prev.Left.Right = prev;
+                prev.Left.Left = prev.Right;
+                prev.Left = null;
+                prev.Right = null;
+              
+            }
+
+
+            //always bubbles up the extreme left node
+            return result;
+        }
     }
 }

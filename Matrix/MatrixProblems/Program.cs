@@ -17,7 +17,7 @@ namespace MatrixProblems
             string[] grid1 = new string[] { "#@...", "#.##.", "####.", "##A#.", "..a..", ".b##B", "..##.", "#.##+" };
             var shortPath = RoomWithKeys.find_shortest_path(grid1);
 
-
+          int paths=  UniquePathObstacle.UniquePathsWithObstacles(new int[,] { {0,1,0,0 }, {0,0,1,0}, {1,0,0,0 } });
 
             int[,] mat = new int[,] {
                 { 0, 1, 2, 3 },
@@ -105,7 +105,15 @@ namespace MatrixProblems
                 {mx,-1,mx,-1} ,
                 {0,-1,mx,mx}};
 
-             WallandGate.GetWallsAndGates(wallGate);
+
+            WallandGate.GetWallsAndGates(wallGate);
+
+            int[,] paintCost = new int[,] {
+                {17,2,17},
+                { 16,16,5},
+                {14,3,19} };
+
+            int mincost = PaintHouse.GetMinCost(paintCost);
 
             Console.ReadLine();
         }

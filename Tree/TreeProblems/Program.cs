@@ -34,11 +34,11 @@ namespace TreeProblems
             tnode.Left.Left.Left = new Node(6);
             tnode.Left.Left.Right = new Node(7);
 
-            FlipTreeUpDown.FlipUpsideDown(tnode);
+           var flipped= FlipTreeUpDown.FlipUpsideDown(tnode);
 
 
             BstFromPostOrder.BstFrmPostOrder(new int[] { 8, 6, 12, 9 });
-
+            BstFromPreOrder.BstFromPreorder(new int[] { 30, 20, 10, 25, 40, 35, 50 });
             NAryTreeNode nAryNode = HeightOfNaryTree.Create();
             var nAryTreeHeight=HeightOfNaryTree.GetHeight(nAryNode);
 
@@ -309,9 +309,9 @@ namespace TreeProblems
             MaxPathSum.GetMaxPathSum(nonBst.Root);
 
             nonBst = new NonBST();
-            arr = new int[] { 1, 2, };
+            arr = new int[] { 1, 2, 3,4,5,6,7};
             nonBst.InsertAll(arr);
-            CousinsBT.IsCousins(nonBst.Root, 1,3);
+            CousinsBT.IsCousins(nonBst.Root,4,6);
 
             nonBst = new NonBST();
             nonBst.Root = new Node(1);

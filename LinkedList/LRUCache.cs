@@ -96,21 +96,36 @@ namespace LinkedList
         }
 
         //set a node to be head
-        private void setHead(DNode t)
+        private void setHead(DNode n)
         {
-            if (head != null)
+
+            if (head == null)
             {
-                head.Prev = t;
+                head = n;
+                tail = n;
+            }
+            else
+            {
+                n.Next = head;
+                head.Prev = n;
+                head = n;
+
             }
 
-            t.Next = head;
-            t.Prev = null;
-            head = t;
 
-            if (tail == null)
-            {
-                tail = head;
-            }
+            //if (head != null)
+            //{
+            //    head.Prev = t;
+            //}
+
+            //t.Next = head;
+            //t.Prev = null;
+            //head = t;
+
+            //if (tail == null)
+            //{
+            //    tail = head;
+            //}
         }
     }
 }

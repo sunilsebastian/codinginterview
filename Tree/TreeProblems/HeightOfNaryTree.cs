@@ -31,19 +31,19 @@ namespace TreeProblems
         }
         public static int GetHeight(NAryTreeNode root)
         {
-            if (root.children.Count == 0)
+            if (root == null)
                 return 0;
 
-            int maxHeight = 0;
-            foreach(var node in root.children)
+            int max = 0;
+            foreach (var child in root.children)
             {
-               var  height= GetHeight(node);
-                if(height> maxHeight)
-                {
-                    maxHeight = height;
-                }
+                var height = GetHeight(child);
+                if (height > max)
+                    max = height;
+
             }
-            return maxHeight + 1;
+
+            return max + 1;
 
         }
 

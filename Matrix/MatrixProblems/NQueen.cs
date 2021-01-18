@@ -36,8 +36,9 @@ namespace MatrixProblems
                 //check if this row and col is not under attack from any previous queen.
                 for (int queen = 0; queen < row; queen++)
                 {
-                    if (positions[queen].col == col || positions[queen].row - positions[queen].col == row - col ||
-                            positions[queen].row + positions[queen].col == row + col)
+                    if (positions[queen].col == col || // new queen is in same column of previous queen
+                        positions[queen].row - positions[queen].col == row - col || //diagonal path
+                        positions[queen].row + positions[queen].col == row + col) ////diagonal path
                     {
                         foundSafe = false;
                         break;

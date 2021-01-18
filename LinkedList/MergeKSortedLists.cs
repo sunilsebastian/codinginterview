@@ -31,22 +31,19 @@ namespace LinkedList
 
         public static Node MergeRecursive(Node n1, Node n2)
         {
-            Node prev = null;
-
             if (n1 == null) return n2;
             if (n2 == null) return n1;
 
             if (n1.Val <= n2.Val)
             {
-                prev = n1;
-                prev.Next = MergeRecursive(n1.Next, n2);
+                n1.Next = MergeRecursive(n1.Next, n2);
+                return n1;
             }
-            if (n1.Val > n2.Val)
+            else
             {
-                prev = n2;
-                prev.Next = MergeRecursive(n1, n2.Next);
+                n2.Next = MergeRecursive(n1, n2.Next);
+                return n2;
             }
-            return prev;
         }
     }
 }

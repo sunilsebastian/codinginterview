@@ -73,11 +73,13 @@ namespace TreeProblems
         public static int LongestConsecutiveHelper(Node root, Node Prev, int max)
         {
             if (root == null) return max;
-
+            // at very first root.Data - Prev.Data != 1(no sequence) resets the count 1
+            //else incremnet and pass down
             int maxVal = (Prev == null || root.Data - Prev.Data != 1) ? 1 : max + 1;
 
             var left = LongestConsecutiveHelper(root.Left, root, maxVal);
             var right = LongestConsecutiveHelper(root.Right, root, maxVal);
+            //take max ( curmax, letmax and rightmax)
             return Math.Max(Math.Max(left, right),max);
         }
     }

@@ -14,7 +14,7 @@ namespace MatrixProblems
         //[0,0,0]
         // one is an obstacle
 
-        public int UniquePathsWithObstacles(int[,] obstacleGrid)
+        public static int UniquePathsWithObstacles(int[,] obstacleGrid)
         {
             if (obstacleGrid == null || obstacleGrid.Length == 0)
                 return 0;

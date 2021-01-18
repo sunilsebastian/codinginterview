@@ -32,7 +32,7 @@ namespace GraphProblems
             Queue<int> nodes = new Queue<int>();
             nodes.Enqueue(0);
             colors.Add(0, Colors.Blue);
-
+           //not a must while true applicable if there is a disconnected graph
             while (true)
             {
                 while (nodes.Count > 0)
@@ -59,12 +59,14 @@ namespace GraphProblems
                     }
                 }
 
+                //there is no disconnected graph
                 if (colors.Keys.Count == graph.Count)
                 {
                     break;
                 }
                 else
                 {
+                    //add the other disconnected graphs to 
                     for (int i = 0; i < graph.Count; i++)
                     {
                         if (!colors.ContainsKey(i))
