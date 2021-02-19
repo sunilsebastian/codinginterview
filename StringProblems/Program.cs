@@ -142,7 +142,8 @@ namespace StringProblems
             PalindrumPairs.PalindromePairs(new string [] { "abcd", "dcba" });
             var pair=PalindrumPairs.join_words_to_make_a_palindrome(new string[] { "abcd", "dcba" });
 
-            var palLength=LongestPalindrumSubstring.GetLongestPalindromeSubstring("agbdba");
+            var palLength = LongestPalindrumSubstring.GetLongestPalindromeSubstring("babad");
+             palLength=LongestPalindrumSubstring.GetLongestPalindromeSubstring("agbdba");
 
             Trie trie = new Trie();
             trie.InsertRange(new string[] { "car", "cars", "cap", "clap", "bot","c"});
@@ -160,7 +161,7 @@ namespace StringProblems
             LexicoGraphicSort.ExcecuteLexoGraphicSort(trie.root);
             trie.root = null;
 
-             var result = SmallestNumberRemoveKDigits.RemoveKdigits("1432219", 4);
+             var result = SmallestNumberRemoveKDigits.RemoveKdigits("1432219", 3);
            // var result = SmallestNumberRemoveKDigits.RemoveKdigits("10200", 1);
 
             trie = new Trie();

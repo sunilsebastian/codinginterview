@@ -62,7 +62,7 @@ namespace TreeProblems
                         //since its a leaf node pop and print
                         temp = stk.Pop();
                         Console.Write(temp.Data);
-                        //check the poped node is right child, if right child pop and print 
+                        //check the poped node is right child of root, if right child pop and print 
                         while(stk.Count!=0 && temp == stk.Peek().Right)
                         {
                             temp = stk.Pop();

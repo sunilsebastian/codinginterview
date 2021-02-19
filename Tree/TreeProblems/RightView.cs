@@ -42,5 +42,38 @@ namespace TreeProblems
                 findMaxDepthElements(list, root.Left, depth + 1);
 
         }
+
+        public IList<int> RightSideView1(Node root)
+        {
+
+            List<int> lst = new List<int>();
+            if (root == null)
+                return lst;
+
+            Queue<Node> q = new Queue<Node>();
+            q.Enqueue(root);
+
+            while (q.Count() != 0)
+            {
+                int size = q.Count();
+
+                for (int i = 0; i < size; i++)
+                {
+                    var n = q.Dequeue();
+
+                    if (i == size - 1)
+                        lst.Add(n.Data);
+
+                    if (n.Left != null)
+                        q.Enqueue(n.Left);
+                    if (n.Right != null)
+                        q.Enqueue(n.Right);
+                }
+
+            }
+
+            return lst;
+
+        }
     }
 }

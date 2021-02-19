@@ -125,6 +125,9 @@ namespace SortProblems
 
             Console.WriteLine();
 
+
+            InsertionSort.Sort(new int[] { 1, 6, 2, 4, 3 });
+
             Console.ReadLine();
         }
     }

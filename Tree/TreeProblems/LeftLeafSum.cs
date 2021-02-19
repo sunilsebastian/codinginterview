@@ -47,7 +47,7 @@ namespace TreeProblems
                 if (node.Right != null)
                 {
                     if (node.Right.Left != null || node.Right.Right != null)
-                        stack.Push(node.Right);
+                        stack.Push(node.Right); 
                 }
             }
             return ans;

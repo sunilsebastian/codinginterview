@@ -31,7 +31,7 @@ namespace StringProblems
                 for (int j = num2.Length - 1; j >= 0; j--)
                 {
                     int resval = 0;
-                    if(result[tail]!=0)
+                    if(result[tail]!=0) //it is 0 '/0' at first. if its filled that char needs to be converted to number
                     {
                         resval = result[tail] - '0';
                     }

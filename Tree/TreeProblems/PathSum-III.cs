@@ -41,15 +41,11 @@ namespace TreeProblems
             // process right subtree
             preorder(node.Right, sum);
 
-
-            if (dict.ContainsKey(sum))
-            {
-                dict[sum]--;
-            }
-            else
-            {
+            //backtrack and remove the items
+            if (dict[sum] == 1)
                 dict.Remove(sum);
-            }
+            else
+                dict[sum]--;
         }
 
         public int PathSum(Node root, int sum)

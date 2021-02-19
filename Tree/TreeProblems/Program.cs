@@ -18,7 +18,7 @@ namespace TreeProblems
             bst.Insert(10);
             bst.Insert(8);
             bst.Insert(15);
-            Console.WriteLine(bst.Root.ToString());
+          //  Console.WriteLine(bst.Root.ToString());
 
             //remove nodes out of boundary
             NonBST nonBst = new NonBST();
@@ -50,9 +50,11 @@ namespace TreeProblems
             
             //remove nodes out of boundary
             bst.ClearAll();
-            int[] arr = new int[]{ 3, 0, 4, 2, 1 };
+            //int[] arr = new int[]{ 3, 0, 4, 2, 1 };
+            int[] arr = new int[]{ 3, 0, 7, 2, 1 };
             bst.InsertAll(arr);
-            TrimNodesOutisideBoundary.TrimBoundary(bst.Root, 1, 3);
+            //TrimNodesOutisideBoundary.TrimBoundary(bst.Root, 1, 3);
+            TrimNodesOutisideBoundary.TrimBoundary(bst.Root, 3, 6);
             Console.WriteLine(bst.Root.ToString());
 
             //Remove minimum
@@ -94,13 +96,13 @@ namespace TreeProblems
             Console.Write("InOredr Traversal Iterative:");
             InOrderTraversal.Traverse(bst.Root);
             Console.WriteLine();
-            
+
             //Post order
-            bst.ClearAll();
-            arr = new int[] { 30, 40, 50, 20, 10, 8, 15, 25 };
-            bst.InsertAll(arr);
+             nonBst = new NonBST();
+            testArr = new int[] {10,20,30,40,50,60,70};
+            nonBst.InsertAll(testArr);
             Console.Write("PostOrder Traversal Iterative:");
-            PostOrderTraversal.Traverse(bst.Root);
+            PostOrderTraversal.PostOrderTraversal_method2(bst.Root);
             Console.WriteLine();
 
             //Pre order

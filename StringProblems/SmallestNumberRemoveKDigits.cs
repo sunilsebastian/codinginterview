@@ -32,7 +32,7 @@ namespace StringProblems
                     sb.Append(num[i]);
 
             }
-
+            //case 123456  k=1  nothing will be removed so do this
             return sb.Length - k > 0 ? sb.ToString(0, sb.Length - k) : "0";
         }
 

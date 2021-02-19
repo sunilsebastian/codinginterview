@@ -14,6 +14,7 @@ namespace DynamicPrograming
             }
             for (int l = 2; l <= str.Length; l++)
             {
+                //j=l;j<=str.Length;
                 for (int i = 0; i < str.Length - l + 1; i++)
                 {
                     int j = i + l - 1; // take two chars,then 3 chars,4 char..take all chars

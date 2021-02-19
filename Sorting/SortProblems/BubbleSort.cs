@@ -12,7 +12,7 @@ namespace SortProblems
         {
             bool freePass = false;
 
-            for (int i = 0; i < arr.Length && !freePass; i++)
+            for (int i = 0; i < arr.Length-1 && !freePass; i++)
             {
                 freePass = true;
                 for (int j = 0; j < (arr.Length - 1) - i; j++)

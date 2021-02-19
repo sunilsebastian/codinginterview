@@ -50,9 +50,9 @@ namespace TreeProblems
 
             // Traverse the map and print nodes at every horizontal 
             // distance (hd) 
-            foreach( var lst in dict.Values)
+            foreach( var lst in dict.OrderBy(_=>_.Key))
             {
-                Console.WriteLine(string.Join(", ", lst));
+                Console.WriteLine(string.Join(", ", lst.Value));
             }
 
         }

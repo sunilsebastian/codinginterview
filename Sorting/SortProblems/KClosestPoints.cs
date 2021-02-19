@@ -15,8 +15,7 @@ namespace SortProblems
            // PriorityQueue<Tuple<int,int>> pq1 = new PriorityQueue<Tuple<int,int>>(false);
 
             int rows = points.Length;
-            int[] distance = new int[rows];
-
+            
             for (int i = 0; i < rows; i++)
             {
                 // distance[i] = (points[i][0] * points[i][0]) + (points[i][1] * points[i][1]);

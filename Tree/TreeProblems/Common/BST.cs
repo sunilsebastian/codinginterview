@@ -142,15 +142,21 @@ namespace TreeProblems.Common
 
         public static Node RemoveMinRecursive(Node root)
         {
-            if (root.Left != null)
-            {
-                root.Left = RemoveMinRecursive(root.Left);
-            }
+            //if (root.Left != null)
+            //{
+            //    root.Left = RemoveMinRecursive(root.Left);
+            //}
 
-            else
-            {
-                root = root.Right;
-            }
+            //else
+            //{
+            //    root = root.Right;
+            //}
+            //return root;
+
+            if (root == null) return root;
+            if (root.Left == null) return root.Right;
+
+            root.Left = RemoveMinRecursive(root.Left);
             return root;
         }
 

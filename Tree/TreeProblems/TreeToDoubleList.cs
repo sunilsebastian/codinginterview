@@ -16,6 +16,8 @@ namespace TreeProblems
             if (root == null)
                 return null;
             BTtoLLHelper(root, ref prev, ref head);
+
+            //this is to make circular;
             head.Left = prev;
             prev.Right = head;
             return head;

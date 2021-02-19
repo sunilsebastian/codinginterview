@@ -7,6 +7,20 @@ using TreeProblems.Common;
 
 namespace TreeProblems
 {
+
+    //https://leetcode.com/problems/sum-root-to-leaf-numbers/
+    //Input: [4,9,0,5,1]
+    //    4
+    //   / \
+    //  9   0
+    // / \
+    //5   1
+    //Output: 1026
+    //Explanation:
+    //The root-to-leaf path 4->9->5 represents the number 495.
+    //The root-to-leaf path 4->9->1 represents the number 491.
+    //The root-to-leaf path 4->0 represents the number 40.
+    //Therefore, sum = 495 + 491 + 40 = 1026.
     public class SumRootToLeafALL
     {
       
@@ -21,6 +35,9 @@ namespace TreeProblems
             if (r == null)
                 return;
 
+            //this check is very important because if we update the global value in r==null
+            //same value at the leaf will be added twice
+
             // if it's a leaf, update root-to-leaf sum
             if (r.Left == null && r.Right == null)
             {
@@ -32,34 +49,6 @@ namespace TreeProblems
             currNumber = currNumber * 10 + r.Data;
             preorder(r.Left, currNumber, counter);
             preorder(r.Right, currNumber, counter);
-        }
-
-        public int SumNumbers1(Node root)
-        {
-            if (root == null) return 0;
-
-            StringBuilder sb = new StringBuilder();
-            Counter counter = new Counter();
-            SumNumberHelper(root, sb, counter);
-            return counter.val;
-        }
-
-        public void SumNumberHelper(Node root, StringBuilder sb, Counter counter)
-        {
-            if (root == null) return;
-            if (root.Left == null && root.Right == null)
-            {
-                sb.Append(root.Data);
-                counter.val = counter.val + Int32.Parse(sb.ToString());
-                sb.Remove(sb.Length - 1, 1);
-                return;
-            }
-
-            sb.Append(root.Data);
-            SumNumberHelper(root.Left, sb, counter);
-
-            SumNumberHelper(root.Right, sb, counter);
-            sb.Remove(sb.Length - 1, 1);
         }
 
     }

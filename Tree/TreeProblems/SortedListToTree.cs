@@ -9,47 +9,38 @@ namespace TreeProblems
 {
     public  class SortedListToTree
     {
-        private static  LNode node;
-
         public static  Node SortedListToBST(LNode head)
         {
             if (head == null)
-            {
                 return null;
-            }
+            LNode mid = GetMid(head);
+            Node root = new Node(mid.Val);
+            if (head == mid)
+                return root;
 
-            int size = 0;
-            LNode runner = head;
-            node = head;
-
-            while (runner != null)
-            {
-                runner = runner.Next;
-                size++;
-            }
-
-            return inorderHelper(0, size - 1);
+            root.Left = SortedListToBST(head);
+            root.Right = SortedListToBST(mid.Next);
+            return root;
         }
 
-        public static  Node inorderHelper(int start, int end)
+        public static  LNode GetMid(LNode head)
         {
-            if (start > end)
+            LNode fast = head;
+            LNode slow = head;
+            LNode prev = head;
+            while(fast!=null && fast.Next!=null)
             {
-                return null;
+                prev = slow;
+                fast = fast.Next.Next;
+                slow = slow.Next;
             }
 
-            int mid = start + (end - start) / 2;
-            Node left = inorderHelper(start, mid - 1);
-
-            Node treenode = new Node(node.Val);
-            treenode.Left = left;
-            node = node.Next;
-
-            Node right = inorderHelper(mid + 1, end);
-            treenode.Right = right;
-
-            return treenode;
+            if (prev != null)
+                prev.Next = null;
+            return slow;
         }
+
+      
     }
 
     public class LNode

@@ -8,7 +8,30 @@ namespace SortProblems
 {
     public static class SortBasedOnsize
     {
+
         public static string Sort(string input)
+        {
+            string[] arr = input.Split(' ');
+            Dictionary<int, List<string>> dict = new Dictionary<int, List<string>>();
+
+            foreach(var item in arr)
+            {
+                if(!dict.ContainsKey(item.Length))
+                {
+                    dict.Add(item.Length, new List<string>());
+                }
+                dict[item.Length].Add(item);
+            }
+            StringBuilder result = new StringBuilder();
+            foreach(var item in dict.OrderBy(_=>_.Key))
+            {
+               result.Append(string.Join(" ",item.Value)).Append(" ");
+
+            }
+
+            return result.ToString().TrimEnd(' '); ;
+        }
+        public static string Sort1(string input)
         {
             string[] arr = input.Split(' ');
             int[] countArr = new int[arr.Length];

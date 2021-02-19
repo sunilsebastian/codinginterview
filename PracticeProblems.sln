@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27102.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArrayProblems", "ArrayProblems", "{C259AA07-B124-4A62-B227-B39DAC674F6B}"
 EndProject
@@ -34,6 +34,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "String", "String", "{8732A2B8-2B0B-4747-98BE-CA4DB1469A5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringProblems", "StringProblems\StringProblems.csproj", "{F379B1E0-9967-46A4-BBFC-CE5452B013B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Amazon", "Amazon", "{C62F4A41-AD52-41BE-9C48-E467D6EBDC97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonProblems", "AmazonProblems\AmazonProblems.csproj", "{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,10 @@ Global
 		{F379B1E0-9967-46A4-BBFC-CE5452B013B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F379B1E0-9967-46A4-BBFC-CE5452B013B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F379B1E0-9967-46A4-BBFC-CE5452B013B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +94,7 @@ Global
 		{1A0622DA-A1C6-490D-8809-D8B8AE63D5FE} = {4CBB5B1C-8339-4626-B1F2-0AB3ED36B570}
 		{D9A4B29E-2F0A-44C7-8E45-246E9F8D0048} = {DB0AD713-F8C9-4524-89AD-877C1448725D}
 		{F379B1E0-9967-46A4-BBFC-CE5452B013B8} = {8732A2B8-2B0B-4747-98BE-CA4DB1469A5B}
+		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1} = {C62F4A41-AD52-41BE-9C48-E467D6EBDC97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BB8526D9-54BD-4C3C-95BC-915B51238ADD}

@@ -19,29 +19,29 @@ namespace TreeProblems.Common
             this.Data = data;
         }
 
-        public override string ToString()
-        {
-            string  nodeval = this.Data.ToString();
+        //public override string ToString()
+        //{
+        //    string  nodeval = this.Data.ToString();
 
-            if(this.Left!=null)
-            {
-                nodeval= "[" + nodeval + ":" + this.Left.ToString();
-            }
-            else
-            {
-                nodeval = "[" + nodeval + ":" + "NULL";
-            }
+        //    if(this.Left!=null)
+        //    {
+        //        nodeval= "[" + nodeval + ":" + this.Left.ToString();
+        //    }
+        //    else
+        //    {
+        //        nodeval = "[" + nodeval + ":" + "NULL";
+        //    }
 
-            if (this.Right != null)
-            {
-                nodeval = nodeval + ":" + this.Right.ToString() + "]";
-            }
-            else
-            {
-                nodeval = nodeval + ":" + "NULL" + "]";
-            }
+        //    if (this.Right != null)
+        //    {
+        //        nodeval = nodeval + ":" + this.Right.ToString() + "]";
+        //    }
+        //    else
+        //    {
+        //        nodeval = nodeval + ":" + "NULL" + "]";
+        //    }
 
-            return nodeval.ToString();
-        }
+        //    return nodeval.ToString();
+        //}
     }
 }
