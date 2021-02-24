@@ -8,6 +8,39 @@ namespace AmazonProblems
 {
     public class RobotReturnToOrgin
     {
+
+        public bool isRobotBounded(String instructions)
+        {
+            // north = 0, east = 1, south = 2, west = 3
+            int[][] directions = new int[4][] { new int[]{ 0, 1 }, 
+                                                new int[]{ 1, 0 }, 
+                                                new int[]{ 0, -1 }, 
+                                                new int[]{ -1, 0 } };
+            // Initial position is in the center
+            int x = 0, y = 0;
+            // facing north
+            int dir = 0;
+
+            foreach (var i in  instructions.ToCharArray())
+            {
+                if (i == 'L')
+                    dir = (dir + 3) % 4;
+                else if (i == 'R')
+                    dir = (dir + 1) % 4;
+                else
+                {
+                    x += directions[dir][0];
+                    y += directions[dir][1];
+                }
+            }
+
+            // after one cycle:
+            // robot returns into initial position
+            // or robot doesn't face north
+            return (x == 0 && y == 0) || (dir != 0);
+        }
+
+
         public bool IsRobotBounded(string instructions)
         {
             int N = 0;

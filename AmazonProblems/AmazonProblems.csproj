@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="AllDistinctSubstringSizeK.cs" />
     <Compile Include="CloudFrontCache.cs" />
+    <Compile Include="CriticalRouters.cs" />
     <Compile Include="DifficultyOfJobSchedule.cs" />
+    <Compile Include="EarliestTimeToCompleteDeliveries.cs" />
     <Compile Include="FillTheTruck.cs" />
     <Compile Include="FiveStarRating.cs" />
     <Compile Include="FreshPromotion.cs" />
@@ -56,16 +58,21 @@
     <Compile Include="NearestCity.cs" />
     <Compile Include="OptimalUtilization.cs" />
     <Compile Include="OptimizeBoxweight.cs" />
+    <Compile Include="OptimizeMemoryUsage.cs" />
     <Compile Include="PairsDivisibleByK.cs" />
     <Compile Include="PQ.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RobotReturnToOrgin.cs" />
     <Compile Include="ShoppingOption.cs" />
+    <Compile Include="ShoppingPatternGraph.cs" />
     <Compile Include="StorageOptimization.cs" />
     <Compile Include="SubstringEqualNumAndChar.cs" />
     <Compile Include="TopFrequentWordInSentence.cs" />
+    <Compile Include="TransactionLogs.cs" />
     <Compile Include="Turnstile.cs" />
+    <Compile Include="UtilizationChecks.cs" />
+    <Compile Include="ZombieMatrix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

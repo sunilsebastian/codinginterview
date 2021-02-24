@@ -9,7 +9,6 @@ namespace AmazonProblems
 
     public class Point:IComparable<Point>
     {
-
         public int X1 { get; set; }
         public int Y1 { get; set; }
         public int X2 { get; set; }
@@ -32,48 +31,35 @@ namespace AmazonProblems
 
             int d2 = (p.X1 - p.X2) * (p.X1 - p.X2) + (p.Y1 - p.Y2) * (p.Y1 - p.Y2);
 
-            return d1 - d2;
-
-
+            return (d1==d2)?this.City.CompareTo(p.City):d1-d2;
 
         }
     }
     public class NearestCity
     {
-        // Input:
-
-        //numOfPoints = 3
-
-        //points = ["p1","p2","p3"]
-
-        //        xCoordinates = [30, 20, 10]
-
-        //        yCoordinates = [30, 20, 30]
-
-        //        numOfQueriedPoints = 3
-
-        //queriedPoints = ["p3", "p2", "p1"]
-
-        //        Output:
-
-        //["p1", NONE, "p3"]
-
-
+    
         public static string[] findNearestCities()
         {
+            int numOfCities = 4;
+            string[] cities = new String[] { "c1", "c2", "c3", "c4" };
+            int[] xCoordinates = new int[] { 1, 1, 1, 1 };
+            int[] yCoordinates = new int[] { 1, 2, 3, 4 };
+            string[] queries = new string[] { "c1", "c2", "c3", "c4" };
 
-            int numOfCities = 3;
-            string[] cities= new String[] { "c1", "c2", "c3" };
+            //int numOfCities = 3;
+            //string[] cities = { "p1", "p2", "p3" };
+            //int[] xCoordinates = { 3, 2, 1 };
+            //int[] yCoordinates = { 3, 2, 3 };
+            //string[] queries = new string[] { "p1", "p2", "p3" };
+
             Dictionary<string, int> cityDict = new Dictionary<string, int>();
 
             Dictionary<int, List<string>> xDict = new Dictionary<int, List<string>>();
             Dictionary<int, List<string>> yDict = new Dictionary<int, List<string>>();
 
-            int[] xCoordinates = new int[] { 3, 2, 1  };
-            int[] yCoordinates = new int[] { 3, 2, 3 };
-            string[] queries = new string[] { "c1", "c2", "c3" };
+           
 
-            string[] result = new string[3];
+            string[] result = new string[queries.Length];
 
             for(int i=0;i< numOfCities;i++)
             {
@@ -135,7 +121,7 @@ namespace AmazonProblems
                         point = p;
              
                 }
-                result[i] = point.City;
+                result[i] = point?.City;
             }
 
             return result;

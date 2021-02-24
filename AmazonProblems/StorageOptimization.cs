@@ -9,7 +9,7 @@ namespace AmazonProblems
     public class StorageOptimization
     {
 
-        private int getMax(int dim, HashSet<int> set)
+        private static int getMax(int dim, HashSet<int> set)
         {
             int maxHere = 0, maxTotal = 0;
             for (int i = 0; i <= dim; i++)
@@ -23,7 +23,7 @@ namespace AmazonProblems
             }
             return maxTotal;
         }
-        private int findMaxVolume(int n, int m, int[] h, int[] v)
+        public static   int findMaxVolume(int n, int m, int[] h, int[] v)
         {
             //n row
             //m column
