@@ -43,7 +43,10 @@ namespace AmazonProblems
                     int newInstance = instances;
                     if (avg < 25)
                     {
+                        //one instance no action
                         if (instances == 1) continue;
+                        
+                        //divide and    Math.Ceiling
                         newInstance = (instances / 2) + (instances % 2);
                     }
                     else if (avg > 60)
@@ -51,6 +54,7 @@ namespace AmazonProblems
                         long doubled = instances * 2L;
                         newInstance = doubled > 2_0000_0000 ? instances : 2 * instances;
                     }
+                    //if there is a change in new instance skip 10 cycles
                     if (newInstance != instances)
                     {
                         instances = newInstance;
@@ -60,5 +64,7 @@ namespace AmazonProblems
             }
             return instances;
         }
+
+
     }
 }

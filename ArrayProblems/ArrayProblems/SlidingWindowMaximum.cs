@@ -26,29 +26,32 @@ namespace ArrayProblems
             }
         }
 
-        public static int[] PrintSlidingWindowMaximum(int[] arr, int k)
-        {
-            if (arr == null || arr.Length == 0) return new int[0];
-            int start = 0;
-            int count = 0;
-            int len = 0;
-            if (arr.Length - k < 0)
-                len = 1;
-            else
-                len = (arr.Length - k) + 1;
-            int[] maxArr = new int[len];
+        public int[] MaxSlidingWindow(int[] nums, int k) {
+        
+        var queue=new LinkedList<int>();
+        var ans=new int[nums.Length-k+1];//len-k+1
+        
+        for(int i=0; i<nums.Length;i++){
+                // 1 remove first item from DL  when index fall out of window size
+                if (queue.Count > 0 && queue.First.Value + k  <= i)
+                    queue.RemoveFirst();
+                
+                // 2 remove elemnets lower than current value from end
+                while (queue.Count>0 && nums[queue.Last.Value]<=nums[i])
+                queue.RemoveLast();
+            
+                // 3 add max values at end
+                queue.AddLast(i);
 
-            while ((start + k) <= arr.Length)
-            {
-                int maxx = Int32.MinValue;
-                for (int i = start; i < (start + k); i++)
-                {
-                    maxx = Math.Max(maxx, arr[i]);
-                }
-                maxArr[count++] = maxx;
-                start++;
+                // 4 calculate result index and add to ans array
+                //include maz of current window
+                var index = i - k + 1;
+                if (index >= 0)
+                    ans[index] = nums[queue.First.Value];
+
             }
-            return maxArr;
-        }
+        
+        return ans;
+    }
     }
 }

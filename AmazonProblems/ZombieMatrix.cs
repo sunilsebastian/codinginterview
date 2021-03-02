@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AmazonProblems
 {
+	//time to rotten all potatos.
     public class ZombieMatrix
     {
 		public  static int minDaysToInfectAll(int[][] grid)

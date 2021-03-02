@@ -15,7 +15,6 @@ namespace AmazonProblems
 
                 int[]  visited = new int[numNodes];
                 HashSet<int> result = new HashSet<int>();
-
                 Dictionary<int, HashSet<int>> adjList = new Dictionary<int, HashSet<int>>();
 
         
@@ -32,14 +31,14 @@ namespace AmazonProblems
             }
         
 
-              dfsGrouping(0, -1, adjList, 1,visited,result);
+              Dfs(0, -1, adjList, 1,visited,result);
 
                  
                 return new List<int>(result);
             }
 
 
-            private static  int dfsGrouping(int node, int prev, Dictionary<int, HashSet<int>> adjList, int marker,int[] visited, HashSet<int> result)
+            private static  int Dfs(int node, int prev, Dictionary<int, HashSet<int>> adjList, int marker,int[] visited, HashSet<int> result)
             {
                 if (visited[node] == 0)
                 {
@@ -48,7 +47,7 @@ namespace AmazonProblems
                     foreach (var child in  children)
                     {
                         if (prev == child) continue;
-                        int res = dfsGrouping(child, node, adjList, marker + 1,visited,result);
+                        int res = Dfs(child, node, adjList, marker + 1,visited,result);
                         if (res > marker)
                         {
                             if (children.Count > 1)

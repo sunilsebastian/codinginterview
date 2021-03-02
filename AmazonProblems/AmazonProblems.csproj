@@ -54,10 +54,12 @@
     <Compile Include="GroupProductIdPairCategories.cs" />
     <Compile Include="ItemsInContainers .cs" />
     <Compile Include="KnightMoves.cs" />
+    <Compile Include="MinimumCostToConstructNewRoad.cs" />
     <Compile Include="MinSwapToSort.cs" />
+    <Compile Include="MostCommonWord.cs" />
     <Compile Include="NearestCity.cs" />
     <Compile Include="OptimalUtilization.cs" />
-    <Compile Include="OptimizeBoxweight.cs" />
+    <Compile Include="OptimizeBoxWeight.cs" />
     <Compile Include="OptimizeMemoryUsage.cs" />
     <Compile Include="PairsDivisibleByK.cs" />
     <Compile Include="PQ.cs" />

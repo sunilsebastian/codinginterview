@@ -44,7 +44,7 @@ namespace AmazonProblems
                 }
             }
             //no body entered or exit. no previous state
-            int prev = -1;
+            int prev = 1;
 
             //At first time=0;
             int time = 0;
@@ -54,7 +54,7 @@ namespace AmazonProblems
                 bool hasOut = (exit.Count() != 0) && exit.Peek().Item1 <= time;
                 if (hasIn && hasOut)
                 {
-                    if (prev == 1|| prev==-1)
+                    if (prev == 1)
                         result[exit.Dequeue().Item2] = time;
                     else
                         result[enter.Dequeue().Item2] = time;
@@ -70,7 +70,7 @@ namespace AmazonProblems
                     result[exit.Dequeue().Item2] = time;
                     prev = 1;
                 }
-                //no body there in que at this particular time
+                //no body there in que at this particular time. nobody there/prev exit considered as 1
                 else
                 {
                     prev = 1;

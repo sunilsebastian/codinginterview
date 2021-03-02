@@ -11,7 +11,10 @@ namespace AmazonProblems
         //sliding window
         public static List<String> substrings(String s, int k)
         {
-
+            if (string.IsNullOrWhiteSpace(s) || s.Length == 0)
+            {
+                return null;
+            }
             int left = 0;
             int right = 0;
             HashSet<char> window = new HashSet<char>();
@@ -31,7 +34,8 @@ namespace AmazonProblems
                 if (window.Count()==k)
                 {
                   var windowString = s.Substring(left, right - left + 1);
-                    result.Add(windowString);
+                    if(!result.Contains(windowString))
+                        result.Add(windowString);
 
                 }
 
@@ -39,36 +43,8 @@ namespace AmazonProblems
             }
 
             return result;
-            //HashSet<string> hs = new HashSet<string>();
-
-            //for(int i=0;i<=s.Length-k;i++)
-            //{
-            //    var substring = s.Substring(i, k);
-            //    if (IsUnique(substring))
-            //            hs.Add(s.Substring(i, k));
-            //}
-
-            //return hs.ToList();
-
+         
         }
 
-        public static  bool IsUnique(string s)
-        {
-            int[] arr = new int[128];
-
-            char[] chars = s.ToCharArray();
-
-            foreach( var c in chars)
-            {
-                if (arr[c] > 0)
-                    return false;
-                arr[c]++;
-
-            }
-
-            return true;
-
-
-        }
     }
 }

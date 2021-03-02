@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BubbleSort.cs" />
+    <Compile Include="CountNumbersSmallerThanSelf.cs" />
     <Compile Include="HeapSort.cs" />
     <Compile Include="InsertionSort.cs" />
     <Compile Include="KClosestPoints.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickSort.cs" />
+    <Compile Include="ReversePairs.cs" />
     <Compile Include="SelectionSort.cs" />
     <Compile Include="SortBasedOnsize.cs" />
   </ItemGroup>

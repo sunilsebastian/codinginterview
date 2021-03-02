@@ -15,53 +15,48 @@ namespace SortProblems
             if (startIndex >= endIndex)
                 return;
 
-            //if (endIndex > startIndex)
-            //{
                 mid = (endIndex + startIndex) / 2;
                 Sort(input, startIndex, mid);
                 Sort(input, (mid + 1), endIndex);
-                Merge(input, startIndex, (mid + 1), endIndex);
-            //}
+                Merge(input, startIndex, mid, endIndex);
         }
 
         private static void Merge(int[] input, int left, int mid, int right)
         {
-         
-            var leftEnd = mid - 1;
-            var resultIndex = left;
-            var resultSize = right - left + 1;
-            int[] temp = new int[input.Length];
+            int rightIndex = mid + 1;
+            int leftIndex = left;
+            int resultIndex = 0;
 
-            while ((left <= leftEnd) && (mid <= right))
+            int[] temp = new int[right - left + 1];
+
+            while ((leftIndex <= mid) && (rightIndex <= right))
             {
-                //mid is the first element of the second compartment
-                if (input[left] <= input[mid])
+                if (input[leftIndex] <= input[rightIndex])
                 {
-                    temp[resultIndex++] = input[left++];
+                    temp[resultIndex++] = input[leftIndex++];
                 }
                 else
                 {
-                    temp[resultIndex++] = input[mid++];
+                    temp[resultIndex++] = input[rightIndex++];
                 }
             }
-            //placing remaining element in temp from left sorted array
-            while (left <= leftEnd)
+            while (leftIndex <= mid)
             {
-                temp[resultIndex++] = input[left++];
+                temp[resultIndex++] = input[leftIndex++];
             }
-
-            //placing remaining element in temp from right sorted array
-            while (mid <= right)
+            while (rightIndex <= right)
             {
-                temp[resultIndex++] = input[mid++];
+                temp[resultIndex++] = input[rightIndex++];
             }
 
             //placing temp array to input
-            for (int i = 0; i < resultSize; i++)
+            int index = 0;
+            for (int i = left; i <= right; i++)
             {
-                input[right] = temp[right];
-                right--;
+                input[i] = temp[index++];
             }
         }
     }
+
 }
+

@@ -44,65 +44,36 @@ namespace AmazonProblems
     //[2,2,4,5,5,11]
 
     //[5,5,5,10,10,10,11] --test it
-    public class OptimizeBoxweight
+    public class OptimizeBoxWeight
     {
 
-        #region greedy
+        //For input of size n and output of size m, this approach takes O(n + m log n)
         public static List<int> GetBoxWeight(List<int> weights)
         {
-            int n = weights.Count();
-            weights.Sort();
-            Dictionary<int,int> dict = new Dictionary<int, int>();
-            int sum = 0;
-            foreach (var weight in weights)
+            //[3,7,5,6,2] sum=23
+            // 23/2 = 11
+
+            //Heap
+            //   7
+            //  6  5
+            //3  2
+            int target = weights.Sum() / 2;
+
+            PQ<int> pq = new PQ<int>(false);
+
+            pq.AddAll(weights.ToArray());
+            int curSum = 0;
+            List<int> res = new List<int>();
+            while (curSum <= target)
             {
-                sum += weight;
-
-                if (!dict.ContainsKey(weight))
-                    dict.Add(weight, 1);
-                else
-                    dict[weight]++;
+                int val = pq.Dequeue();
+                curSum += val;
+                res.Insert(0, val);
             }
-
-
-            List<int> result = new List<int>();
-           
-            int sumSetA = 0;
-            int countSetA = 0;
-            HashSet<int> visited = new HashSet<int>();
-            int limit = n % 2 == 0 ? n / 2 - 1 : n / 2;
-
-            for (int i = n - 1; i >= 0; i--)
-            {
-
-                if (visited.Contains(weights[i])) continue;
-               
-                //repeat count of current weight
-                int count = dict[weights[i]];
-               
-                //mark current value as visited
-                visited.Add(weights[i]);
-
-                if (countSetA + count <= limit)
-                {
-                    sum -= (count * weights[i]);
-                     sumSetA += count * weights[i];
-                    for (int j = 0; j < count; j++)
-                    {
-                        result.Add(weights[i]);
-                    }
-                    countSetA += count;
-                }
-            }
-            result.Sort();
-
-            if (sumSetA > sum) return result;
-            return null;
-
-            //if (sumSetA <= (sum- sumSetA)) return null;
-            //return result;
+            return res;
         }
-        #endregion
+
+
 
 
         public static List<int> optimizingBoxWeights(int[] weights)
@@ -132,12 +103,28 @@ namespace AmazonProblems
             }
             int maxItemCount = (weights.Length % 2 == 0) ? (weights.Length / 2) - 1 : (weights.Length / 2);
             return Knapsack(maxItemCount, arr.Count, arr, sum);
+
+            //4, 5, 2, 3, 1, 2
+            //(4,1)(5,1)(2*2,2)(3,1)(1,1)
+            // maxItemCount=6/2-1= 2, int arrSize=5
+
+            // Minimize  maxItemCount and maximize the itemWeight
         }
 
         public static List<int> Knapsack(int maxItemCount, int arrSize, List<(int, int)> arr,int sum)
         {
             //maxItemCount is the maximum size of the targeted subarray 
             // arrSize is the number of non repeating elements;
+
+                //0 1 2 
+             //0  0 0 0
+             //1  0 4 4
+             //2  0 5 9
+             //3  0 5 9
+             //4  0 5 9
+             //5  0 5 9
+
+
             List<int> result = new List<int>();
 
             int[,] dp = new int[arrSize + 1, maxItemCount + 1];

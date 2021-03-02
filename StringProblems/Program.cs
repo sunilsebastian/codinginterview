@@ -123,8 +123,8 @@ namespace StringProblems
             bool ismatch = KMPSubstring.KMPSubstringExists("abxabcabcaby", "abcaby");
             Console.WriteLine($"sunil exists in blaasunilTest : {ismatch}");
 
-            LongestLengthSubstringWithoutRepeatingChar.LengthOfLongestSubstring("abcabcbb");
-            LongestLengthSubstringWithoutRepeatingChar.LengthOfLongestSubstring("abcaxyz");
+            LongestLengthSubstringWithoutRepeatingChar.LengthOfLongestSubstring1("abcabcbb");
+            LongestLengthSubstringWithoutRepeatingChar.LengthOfLongestSubstring1("abcaxyz");
 
           //  LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct("abcbbbbcccbdddadacb", 2);
             LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct("eceba", 2);

@@ -33,6 +33,21 @@ namespace AmazonProblems
                 this.data = new List<T>();
                 _comparer = comparer;
             }
+
+            public void AddAll(T[] arr)
+            {
+                foreach (var item in arr)
+                {
+                    data.Add(item);
+                }
+                 int n = data.Count();
+                for (int i = n / 2 - 1; i >= 0; i--)
+                {
+                    heapify(data, n, i);
+                }
+            }
+
+            
             public void Enqueue(T item)
             {
                 data.Add(item);

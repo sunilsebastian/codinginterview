@@ -35,6 +35,7 @@ namespace AmazonProblems
     public class OptimalUtilization
     {
 
+        //With duplicate case. may not be needed
         public static  List<int[]> getTargetSumIds(List<int[]> a, List<int[]> b, int target)
         {
             a.Sort(Comparer<int[]>.Create((x, y) => x[1] - y[1]));
@@ -80,66 +81,42 @@ namespace AmazonProblems
             return result;
         }
 
-        //    public static List<List<int>> getTargetSumIds1(int[][] a, int[][] b, int target)
-        //    {
+        //another problem similar:https://leetcode.com/discuss/interview-question/938809/Amazon-OA-or-Amazon-Music-Runtime
+        //  Algo monster solution. not handling duplicates. may not be needed
+        public static List<List<int>> getPairs(List<List<int>> a, List<List<int>> b, int target)
+        {
+            a.Sort(Comparer<List<int>>.Create((x, y) => x[1] - y[1]));
+            b.Sort(Comparer<List<int>>.Create((x, y) => x[1] - y[1]));
 
-        //        List<List<int>> lst = new List<List<int>>();
-        //        Array.Sort(a, (x, y)=>x[1] - y[1]);
+            int maxSum = Int32.MinValue;
+            List<List<int>> maxPairs = new List<List<int>>();
+            int i = 0;int j = b.Count-1;
+            while(i<a.Count && j>=0)
+            {
+                List<int> x = a[i];
+                List<int> y = b[j];
+                int curSum = x[1] + y[1];
+                if (curSum > target)
+                {
+                    j--;
+                    continue;
+                }
+                //we need to get a pair closest to target(scurSum<=target) and less than target
+                //aftre previous if we got that cuSumm is less than Target good.
+                //check the current sum is more close to target than previous
+                //if so mark current as maxSum.
+                if (curSum > maxSum)
+                {
+                    maxSum = curSum;
+                    maxPairs.Clear();
+                }
+                //this will add closest pair to list
+                maxPairs.Add(new List<int> { x[0], y[0] });
+                i++;
+            }
+            return maxPairs;
+        }
 
-        //        Array.Sort(b, (x, y)=>x[1] - y[1]);
-
-        //        int lowIndex = 0;
-        //        int highIndex = a.Length - 1;
-        //        PQ<Pair> q = new PQ<Pair>(false);
-        //        while (lowIndex < b.Length && highIndex >= 0)
-        //        {
-        //            int sum = b[lowIndex][1] + a[highIndex][1];
-        //            if (sum <= target)
-        //            {
-        //                q.Enqueue(new Pair(a[highIndex][0], b[lowIndex][0], sum));
-        //                lowIndex++;
-        //            }
-        //            else
-        //            {
-        //                highIndex--;
-        //            }
-        //        }
-        //        //Pq is used if there is morethan one value match the target;
-        //        int largetSumValue = q.Peek().value;
-        //        while (q.Count()!=0)
-        //        {
-        //            int curValue = q.Peek().value;
-        //            if (curValue < largetSumValue)
-        //                break;
-        //            List<int> l = new List<int>();
-        //            l.Add(q.Peek().id1);
-        //            l.Add(q.Peek().id2);
-        //            q.Dequeue();
-        //            lst.Add(l);
-        //        }
-        //        return lst;
-        //    }
-
-        //}
-
-        //class Pair:IComparable<Pair>
-        //{
-        //    public int id1 { get; set; }
-        //    public int id2 { get; set; }
-        //    public int value { get; set; }
-
-        //    public Pair(int i, int j, int v)
-        //    {
-        //        this.id1 = i;
-        //        this.id2 = j;
-        //        this.value = v;
-        //    }
-
-        //    public int CompareTo(Pair other)
-        //    {
-        //        return this.value - other.value;
-        //    }
-        //}
 
     }
 }

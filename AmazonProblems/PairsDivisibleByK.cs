@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace AmazonProblems
 {
+
+    //Music Pairs
     public class PairsDivisibleByK
     {
 
@@ -49,6 +51,7 @@ namespace AmazonProblems
                 int rem = A[i] % K;
 
                 // Count number of ( A[i], (K - rem)%K ) pairs
+           
                 ans += freq[(K - rem) % K];
 
                 // Increment count of remainder in hash map
@@ -56,6 +59,35 @@ namespace AmazonProblems
             }
 
             return ans;
+        }
+
+        public static int CountKdivPairs1(int[] A, int K)
+        {
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+          //  List<(int, int)> pairs = new List<(int, int)>();
+
+            int count = 0;
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                int rem = A[i] % K;
+
+                var diff= (K - rem) % K;
+                if (dict.ContainsKey(diff))
+                {
+                    count += dict[diff];
+                 //   pairs.Add((A[i], diff));
+                }
+
+                if (!dict.ContainsKey(rem))
+                {
+                    dict.Add(rem, 1);
+                }
+                else
+                    dict[rem]++;
+            }
+
+            return count;
         }
     }
 }

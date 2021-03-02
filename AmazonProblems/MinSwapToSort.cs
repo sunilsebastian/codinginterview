@@ -8,40 +8,8 @@ namespace AmazonProblems
 {
     public class MinSwapToSort
     {
-        //0  1 2 3
-        // 5 4 1 2
 
-        //after sort
-        //0 1 2  3
-        //1  2 4 5
-
-        //loop through sorted
-        //if not maching loop dict to find index of actual
-        //swap
-        private static int minSwaps(int[] elems)
-        {
-            int counter = 0;
-            var map = BuildMap(elems);
-            var copy = map.Keys.ToArray();
-
-            Array.Sort(elems);
-
-            for (int i = 0; i < map.Keys.Count; i++)
-            {
-                if (copy[i] != elems[i])
-                {
-                    //Swap(copy, i, );
-                    int j = map[elems[i]];
-                    int temp = copy[j];
-                    copy[j] = copy[i];
-                    copy[i] = temp;
-                    counter++;
-                }
-            }
-
-            return counter;
-        }
-
+      #region solution1
         private static Dictionary<int, int> BuildMap(int[] elems)
         {
             Dictionary<int, int> map = new Dictionary<int, int>();
@@ -53,88 +21,174 @@ namespace AmazonProblems
             return map;
         }
 
-        //private static void Swap(int[] elems, int i, int j)
-        //{
-        //	int temp = elems[j];
-        //	elems[j] = elems[i];
-        //	elems[i] = temp;
-        //}
         public static int NumberOfSwapsToSort(int[] elems)
         {
             return Sort(elems, 0, elems.Length - 1);
         }
-            //-------------------------------------------------------
+      
         private static int Sort(int[] input, int startIndex, int endIndex)
         {
             int mid;
-
             int count = 0;
 
             if (endIndex > startIndex)
             {
-                //if (endIndex > startIndex)
-                //{
+                
                 mid = (endIndex + startIndex) / 2;
                 count += Sort(input, startIndex, mid);
                 count += Sort(input, (mid + 1), endIndex);
-                count += Merge(input, startIndex, (mid + 1), endIndex);
+                count += Merge(input, startIndex, mid, endIndex);
             }
 
             return count;
-            //}
         }
 
         private static int Merge(int[] input, int left, int mid, int right)
         {
+            int rightIndex = mid+1;
+            int leftIndex= left;
+            int resultIndex = 0;
 
-            var leftEnd = mid - 1;
-            var rightStart = mid;
-            var resultIndex = left;
-            var resultSize = right - left + 1;
-            int[] temp = new int[input.Length];
+            int[] temp = new int[right - left + 1];
+
             int count = 0;
 
-            while ((left <= leftEnd) && (rightStart <= right))
+            while ((leftIndex <= mid) && (rightIndex <= right))
             {
                 //mid is the first element of the second compartment
-                if (input[left] <= input[mid])
+                if (input[leftIndex] <= input[rightIndex])
                 {
-                    temp[resultIndex++] = input[left++];
+                    temp[resultIndex++] = input[leftIndex++];
                 }
                 else
                 {
-                   
-                    temp[resultIndex++] = input[rightStart++];
+                    temp[resultIndex++] = input[rightIndex++];
 
-                    //here mid is rightStart
-                    count += (mid - left);
+                    //here mid+1 is rightStart
+                    count += (mid+1) - leftIndex;
+                  
                     //as both compartments are sorted
                     //all the elements  in left partion is greater than mid
-                    //so there will mid-left  swaps needed
-
+                    //so there will rightStart-leftIndex  swaps needed
                 }
             }
-            //placing remaining element in temp from left sorted array
-            while (left <= leftEnd)
+            while (leftIndex <= mid)
             {
-                temp[resultIndex++] = input[left++];
+                temp[resultIndex++] = input[leftIndex++];
             }
-
-            //placing remaining element in temp from right sorted array
-            while (rightStart <= right)
+            while (rightIndex <= right)
             {
-                temp[resultIndex++] = input[rightStart++];
+                temp[resultIndex++] = input[rightIndex++];
             }
 
             //placing temp array to input
-            for (int i = 0; i < resultSize; i++)
+            int index = 0;
+            for(int i=left;i<=right;i++)
             {
-                input[right] = temp[right];
-                right--;
+                input[i] = temp[index++];
             }
             return count;
         }
+
+        #endregion
+
+
+        #region solution2
+
+        private static int[] res;
+
+        class Pair
+        {
+            public int val;
+            public int idx;
+
+            public Pair(int val, int idx)
+            {
+                this.val = val;
+                this.idx = idx;
+            }
+        }
+
+        public static  int  GetSwapCount(int[] nums)
+        {
+            res = new int[nums.Length];
+            Pair[] pair = new Pair[nums.Length];
+
+            for (int i = 0; i < pair.Length; i++)
+            {
+                pair[i] = new Pair(nums[i], i);
+            }
+
+            MergeSort(pair, 0, nums.Length - 1);
+            return res.Sum();
+        }
+        private static void MergeSort(Pair[] nums, int left, int right)
+        {
+            if (left >= right)
+                return;
+            int mid = left + (right - left) / 2;
+
+            MergeSort(nums, left, mid);
+            MergeSort(nums, mid + 1, right);
+
+            int count = 0;
+
+            int leftStart = left;
+            int rightStart = mid + 1;
+
+
+            while (leftStart <= mid)
+            {
+                if (rightStart <= right && nums[leftStart].val > nums[rightStart].val)
+                {
+                    count++;
+                    rightStart++;
+                }
+                else
+                {
+                    res[nums[leftStart].idx] += count;
+                    leftStart++;
+                }
+            }
+
+            // merge
+
+            int rightIndex = mid + 1;
+            int leftIndex = left;
+            int resultIndex = 0;
+            Pair[] temp = new Pair[right - left + 1];
+            while ((leftIndex <= mid) && (rightIndex <= right))
+            {
+                //mid is the first element of the second compartment
+                if (nums[leftIndex].val <= nums[rightIndex].val)
+                {
+                    temp[resultIndex++] = nums[leftIndex++];
+                }
+                else
+                {
+                    temp[resultIndex++] = nums[rightIndex++];
+
+                }
+            }
+            while (leftIndex <= mid)
+            {
+                temp[resultIndex++] = nums[leftIndex++];
+            }
+            while (rightIndex <= right)
+            {
+                temp[resultIndex++] = nums[rightIndex++];
+            }
+
+            //placing temp array to input
+            int index = 0;
+            for (int i = left; i <= right; i++)
+            {
+                nums[i] = temp[index++];
+            }
+
+        }
+        #endregion
     }
 
-   
+
 }

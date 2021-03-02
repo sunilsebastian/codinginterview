@@ -38,5 +38,40 @@ namespace StringProblems
 
             return max;
         }
+
+        public static int LengthOfLongestSubstring1(string s)
+        {
+            if (s == null || s.Length == 0)
+            {
+                return 0;
+            }
+
+            HashSet<Char> set = new HashSet<Char>();
+            int max = 0;
+            int left = 0;
+            int right = 0;
+            string longest = string.Empty;
+            while (right < s.Length)
+            {
+                if (set.Contains(s[right]))
+                {
+                    set.Remove(s[left]);
+                    left++;
+                }
+
+                set.Add(s[right]);
+                string str = s.Substring(left, right - left + 1);
+                if(str.Length>max)
+                {
+                    max = str.Length;
+                    longest = str;
+                }
+
+                right++;
+               
+            }
+
+            return max;
+        }
     }
 }

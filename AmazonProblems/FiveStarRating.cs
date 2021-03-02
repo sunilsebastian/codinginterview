@@ -26,7 +26,28 @@ namespace AmazonProblems
 
             }));
 
-            double percentage = (double)Threshold * productRatings.Length / 100;
+            //[[4,4],[1,2],[3,6]
+
+            // [5/5-4/4, [2/3-1/2], [4/7-3/6] => [0,0.16,0.07] => Max Heap
+
+            //Heap
+            //      [1,2]
+            //   [4,4]   [3,6]
+            //
+
+
+            // currentPercent=(4/4) + (1/2) + (3/6)=2
+            //requiredPercentage= 77% of number of products = 2.31
+
+
+            //steps
+
+            // currentPercent=(4/4) + (2/3) + (3/6)=2.16 (removed 1/2 and added 2/3)
+            // currentPercent=(4/4) + (3/4) + (3/6)=2.25 (removed 2/3 and added 3/4)
+            // currentPercent=(4/4) + (3/4) + (4/7)=2.321 (removed 3/6 and added 4/7)
+
+
+            double requiredPercentage = (double)Threshold * productRatings.Length / 100;
             double curPercent = 0;
             foreach (var rating in productRatings)
             {
@@ -34,17 +55,23 @@ namespace AmazonProblems
                 curPercent += (double)rating[0] / rating[1];
             }
             int count = 0;
-            while (curPercent < percentage && pq.Count()!=0)
+            while (curPercent < requiredPercentage && pq.Count()!=0)
             {
                 var r = pq.Dequeue();
+
+                //remove the percentage from  current percentage
                 curPercent -= (double)r.Item1 / r.Item2;
+
                 int fivestarReqviews = r.Item1+1;
                 int totalReviews = r.Item2+1;
+               
+                //Add the percenatge after increasing the 5start rating and total rating by 1
                 curPercent += (double)fivestarReqviews / totalReviews;
+
                 pq.Enqueue((fivestarReqviews,totalReviews));
                 count++;
             }
-            return curPercent < percentage ? -1 : count;
+            return curPercent < requiredPercentage ? -1 : count;
 
 
         }

@@ -8,61 +8,58 @@ namespace AmazonProblems
 {
     public class ItemsInContainers
     {
-        public  static int[] NumberOfItems(String str, int[] starts, int[] ends)
+         //          0123456
+        //Input: s = |**|*|*, ranges = [[0, 4], [1, 6]]
+        public static List<int> numberOfItems(String s, List<List<int>> ranges)
         {
-            int len = str.Length;
-            int[] sTree = new int[4 * len];
-            buildSTree(str, 0, len - 1, sTree, 0);
-            int[] result = new int[starts.Length], left = new int[len], right = new int[len];
-            //        Left array will have the index of close\open located on the left side.
-            //        Right array will have the index of close\open located on the right side.
-            int closeIdx = Int32.MaxValue;
-            for (int i = len - 1; i >= 0; i--)
+            
+            int n = s.Length;
+
+            //add  (index,number of "*" ) when there is a "|"
+            Dictionary<int, int> prefixSums = new Dictionary<int, int>();
+            int curSum = 0;
+            for (int i = 0; i < n; i++)
             {
-                if (str[i] == '|') 
-                    closeIdx = i;
-                right[i] = closeIdx;
+                if (s[i] == '|')
+                    prefixSums.Add(i, curSum);
+                else
+                    curSum++;
             }
-            closeIdx = Int32.MaxValue;
-            for (int i = 0; i < len; i++)
+
+            //go forwrard and copy the "|" index till find another
+            int[] leftBounds = new int[n];
+            int last = -1;
+            for (int i = 0; i < n; i++)
             {
-                if (str[i] == '|') closeIdx = i;
-                left[i] = closeIdx;
+                if (s[i]== '|')
+                    last = i;
+                leftBounds[i] = last;
             }
-            for (int i = 0; i < starts.Length; i++)
+
+            //go backward and copy the "|" index till find another.
+            int[] rightBounds = new int[n];
+            last = -1;
+            for (int i = n - 1; i >= 0; i--)
             {
-                int start = starts[i], end = ends[i];
-                int startIdx = right[start - 1], endIdx = left[end - 1];
-                result[i] = getCount(startIdx, endIdx, str, sTree);
+                if (s[i] == '|')
+                    last = i;
+                rightBounds[i] = last;
             }
-            return result;
+
+            //find dif and get value from dict
+            List<int> res = new List<int>();
+            for (int i = 0; i < ranges.Count; i++)
+            {
+                int start = rightBounds[ranges[i][0]];
+                int end = leftBounds[ranges[i][1]];
+                 if (start != -1 && end != -1 && start < end)
+                    res.Add(prefixSums[end] - prefixSums[start]);
+                else
+                    res.Add(0);
+            }
+            return res;
         }
 
-        private static void buildSTree(String str, int s, int e, int[] sTree, int i)
-        {
-            if (s == e)
-            {
-                sTree[i] = str[s] == '*' ? 1 : 0;
-            }
-            else
-            {
-                int m = (s + e) / 2, left = 2 * i + 1, right = 2 * i + 2;
-                buildSTree(str, s, m, sTree, left);
-                buildSTree(str, m + 1, e, sTree, right);
-                sTree[i] = sTree[left] + sTree[right];
-            }
-        }
-
-        private static int getCount(int startIdx, int endIdx, String str, int[] sTree)
-        {
-            if (startIdx == Int32.MaxValue || endIdx == Int32.MaxValue || startIdx >= endIdx) return 0;
-            int count = 0;
-            for (int i = startIdx + 1; i < endIdx; i++)
-            {
-                count += str[i] == '*' ? 1 : 0;
-            }
-            return count;
-            //        return query(startIdx, endIdx, 0, str.length() - 1, sTree, 0);
-        }
+      
     }
 }

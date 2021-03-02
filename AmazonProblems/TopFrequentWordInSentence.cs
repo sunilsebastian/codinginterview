@@ -9,45 +9,49 @@ namespace AmazonProblems
 {
     public class TopFrequentWordInSentence
     {
-
-        public static List<String> PopMentioned(int k, List<String> keywords, List<String> reviews)
+        public static List<String> topMentioned(int k, List<String> keywords, List<String> reviews)
         {
-            Dictionary<string, int> dict = new Dictionary<string, int>();
             List<string> result = new List<string>();
 
-            foreach(var sentence in reviews)
+           //:? non capturing expression
+           //\\b \\b  match a block of word not word part of other string or punctuation;
+
+           string s = "\\b(:?" + String.Join("|", keywords) + ")\\b";
+            Regex r = new Regex(s, RegexOptions.IgnoreCase);
+
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            foreach (string review in reviews)
             {
-                var sentence1=Regex.Replace(sentence, @"[^a-zA-Z\s]", string.Empty);
+                MatchCollection matches = r.Matches(review);
 
-                string[] words = sentence1.Split(' ');
-
-                foreach(var word in words)
+                HashSet<string> words = new HashSet<string>();
+                foreach (Match m in   matches)
                 {
-                    string word1 = word.ToLower();
-                    if (!keywords.Contains(word1)) continue;
-                    if(!dict.ContainsKey(word1))
+                    words.Add(m.Value.ToLower());
+                }
+                foreach(string w in words)
+                {
+                    if (!dict.ContainsKey(w))
                     {
-                        dict.Add(word1, 1);
+                        dict.Add(w, 1);
                     }
                     else
-                    {
-                        dict[word1]++;
-                    }
-
+                        dict[w]++;
                 }
+
             }
 
-            PQ<string> pq = new PQ<string>(Comparer<string>.Create((a, b) => dict[a] - dict[b]));
+            PQ<string> pq = new PQ<string>(Comparer<string>.Create((a, b) =>(dict[a] == dict[b])? a.CompareTo(b): dict[a] - dict[b]));
 
-            foreach(var item in dict)
+            foreach (var item in dict)
             {
-                if(pq.Count()<k)
+                if (pq.Count() < k)
                 {
                     pq.Enqueue(item.Key);
                 }
                 else
                 {
-                    if(item.Value>dict[pq.Peek()])
+                    if (item.Value > dict[pq.Peek()])
                     {
                         pq.Dequeue();
                         pq.Enqueue(item.Key);
@@ -55,14 +59,14 @@ namespace AmazonProblems
                 }
             }
 
-            while(pq.Count()!=0)
+            while (pq.Count() != 0)
             {
-                result.Add(pq.Dequeue());
+                result.Insert(0,pq.Dequeue());
 
             }
 
             return result;
-
         }
     }
 }
+
