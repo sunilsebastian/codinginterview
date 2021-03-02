@@ -81,7 +81,7 @@ namespace AmazonProblems
             return result;
         }
 
-        //another problem similar:https://leetcode.com/discuss/interview-question/938809/Amazon-OA-or-Amazon-Music-Runtime
+     
         //  Algo monster solution. not handling duplicates. may not be needed
         public static List<List<int>> getPairs(List<List<int>> a, List<List<int>> b, int target)
         {

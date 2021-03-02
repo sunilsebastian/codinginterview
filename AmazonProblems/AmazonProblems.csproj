@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllDistinctSubstringSizeK.cs" />
+    <Compile Include="AmazonPrimeAirRoute.cs" />
     <Compile Include="CloudFrontCache.cs" />
     <Compile Include="CriticalRouters.cs" />
     <Compile Include="DifficultyOfJobSchedule.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="MinimumCostToConstructNewRoad.cs" />
     <Compile Include="MinSwapToSort.cs" />
     <Compile Include="MostCommonWord.cs" />
+    <Compile Include="MoviesOnFlight.cs" />
     <Compile Include="NearestCity.cs" />
     <Compile Include="OptimalUtilization.cs" />
     <Compile Include="OptimizeBoxWeight.cs" />

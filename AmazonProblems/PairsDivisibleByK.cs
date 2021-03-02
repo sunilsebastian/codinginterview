@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AmazonProblems
 {
 
-    //Music Pairs
+ //Your music player allows you to choose songs to play, but only in pairs of songs with duration that add up to whole minute(60s)
     public class PairsDivisibleByK
     {
 

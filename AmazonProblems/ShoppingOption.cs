@@ -40,14 +40,17 @@ namespace AmazonProblems
 
             list1.Sort();
             list2.Sort();
-            foreach (long count1 in  list1)
+            foreach (long count1 in list1)
             {
-                res += countSmaller(dollars - count1, list2);
+                res += CountSmaller(dollars - count1, list2);
             }
+
+
             return res;
         }
 
-        public static int  countSmaller(long k, List<long> list)
+
+        public static int CountSmaller(long k, List<long> list)
         { // find how many numbers equal or smaller than k in sorted list
             int left = 0, right = list.Count - 1;
             while (left <= right)
@@ -55,11 +58,13 @@ namespace AmazonProblems
                 int mid = left + (right - left) / 2;
                 if (list[mid] == k)
                 {
-                    while (list[mid] == k)
+                    //if matches keep looking right for duplicates
+                    while (mid<=right && list[mid] == k)
                     {
                         mid++;
                     }
                     left = mid;
+                    //mid will be equal to number of elements less thatn or equal k
                     break;
                 }
                 if (list[mid] < k)
@@ -71,10 +76,11 @@ namespace AmazonProblems
                     right = mid - 1;
                 }
             }
+            //left will allways conatin number of elements less than k
             return left;
         }
 
-        
+
     }
 }
 

@@ -10,16 +10,7 @@ namespace AmazonProblems
     {
 
       #region solution1
-        private static Dictionary<int, int> BuildMap(int[] elems)
-        {
-            Dictionary<int, int> map = new Dictionary<int, int>();
-
-            for (int i = 0; i < elems.Length; i++)
-            {
-                map[elems[i]] = i;
-            }
-            return map;
-        }
+       
 
         public static int NumberOfSwapsToSort(int[] elems)
         {
@@ -93,7 +84,7 @@ namespace AmazonProblems
         #endregion
 
 
-        #region solution2
+      #region solution2
 
         private static int[] res;
 

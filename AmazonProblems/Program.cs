@@ -75,11 +75,24 @@ namespace AmazonProblems
             FillTheTruck.fillTheTruck(3, new List<int> { 1, 2, 3 }, 3, new List<int> { 3, 2, 1 }, 4);
 
             var priceOfJeans = new List<int> { 2, 3 };
-            var priceOfShoes = new List<int> { 4};
+            var priceOfShoes = new List<int> { 4 };
             var priceOfSkirts = new List<int> { 2, 3 };
-            var priceOfTops = new List<int> { 1,2};
+            var priceOfTops = new List<int> { 1, 2 };
+            // var dollars = 10,9
+            //Ans:4, 1
 
-            long noofwaystopurchase=ShoppingOption.soltuion4(priceOfJeans, priceOfShoes, priceOfSkirts, priceOfTops, 10);
+
+
+            //        assert solution.get_options([2, 3], [4], [2, 3], [1, 2], 10) == 4
+            //assert solution.get_options([2, 3], [4], [2, 3], [1, 2], 9) == 1
+            //assert solution.get_options([6], [1, 1, 1, 1], [4, 5, 6], [1], 12) == 4
+            //assert solution.get_options([6], [1, 1, 1, 1], [4, 5, 6], [1], 13) == 8
+            //assert solution.get_options([6], [1, 1, 1, 1], [4, 5, 6], [1], 14) == 12
+            //assert solution.get_options([100], [1, 1, 1, 1], [4, 5, 6], [1], 99) == 0
+            //assert solution.get_options([1], [1], [1], [1], 4) == 1
+            //assert solution.get_options([1], [1], [1], [1], 3) == 0
+
+            long noofwaystopurchase=ShoppingOption.soltuion4(priceOfJeans, priceOfShoes, priceOfSkirts, priceOfTops,10);
 
 
 
@@ -195,8 +208,14 @@ namespace AmazonProblems
             string input = "*|*|*****|*|**";
             var ranges = new List<List<int>> { new List<int> { 1,3 }, new List<int> { 2,12 } };
             ItemsInContainers.numberOfItems(input, ranges);
+            //90, 85, 75, 60, 100,100, 150, 130
+            //231
 
-          
+            //(new int[] { 90, 85, 75, 60, 120, 150, 125 }, 250)
+            var movies =MoviesOnFlight.findPair(new int[] { 90, 85, 75, 60, 100, 100, 150, 130 }, 231);
+
+
+
 
         }
     }
