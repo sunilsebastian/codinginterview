@@ -96,10 +96,29 @@ namespace AmazonProblems
 
 
 
+        //Input: codeList = [[apple, apple], [banana, anything, banana]] 
+        //shoppingCart = [orange, apple, apple, banana, orange, banana]
+        //Output: 1
+
+        //Input: codeList = [[apple, apple], [banana, anything, banana]]
+        //shoppingCart = [banana, orange, banana, apple, apple]
+        //Output: 0
+
+        //Input: codeList = [[apple, apple], [banana, anything, banana]] 
+        //shoppingCart = [apple, banana, apple, banana, orange, banana]
+        //Output: 0
+
+        //Input: codeList = [[apple, apple], [apple, apple, banana]] 
+        //shoppingCart = [apple, apple, apple, banana]
+        //Output: 0
+
+
+
             List<List<string>> codelist = new List<List<string>> { new List<string> { "apple", "apple" }, new List<string> { "banana", "anything", "banana" } };
-            //  var shoppingCart = new List<string> { "banana", "orange", "banana", "apple", "apple" };
-            var shoppingCart = new List<string> { "orange", "apple", "apple", "banana", "orange", "banana" };
+            var shoppingCart = new List<string> { "apple", "apple", "orange","banana", "grape","banana" };        
             bool isEligibile=FreshPromotion.isWinner(codelist, shoppingCart);
+
+
 
             var orderTunsile=Turnstile.GetTimes(5, new int[] {0,1,1,3,3}, new int[] { 0, 1, 0, 0,1 });
 
@@ -213,6 +232,8 @@ namespace AmazonProblems
 
             //(new int[] { 90, 85, 75, 60, 120, 150, 125 }, 250)
             var movies =MoviesOnFlight.findPair(new int[] { 90, 85, 75, 60, 100, 100, 150, 130 }, 231);
+
+            ChooseAFlask.chooseAFlask();
 
 
 

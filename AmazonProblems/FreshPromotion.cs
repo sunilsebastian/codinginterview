@@ -57,37 +57,37 @@ namespace AmazonProblems
             return true;
         }
 
-        public static bool isWinner1(List<List<String>> proList, List<String> order)
-        {
-            int ordInd = 0, proLsInd = 0;
+        //public static bool isWinner1(List<List<String>> proList, List<String> order)
+        //{
+        //    int ordInd = 0, proLsInd = 0;
 
-            while (ordInd < order.Count())
-            {
+        //    while (ordInd < order.Count())
+        //    {
 
-                List<String> pListItem = proList[proLsInd];
-                int proLsItemind = 0;
-                while (proLsItemind < pListItem.Count && ordInd < order.Count)
-                {
-                    if (pListItem[proLsItemind].Equals(order[ordInd]) || pListItem[proLsItemind].Equals("anything"))
-                    {
-                        proLsItemind++;
-                    }
-                    else
-                    {
-                        proLsItemind = 0;
-                    }
-                    ordInd++;
-                }
-                if (proLsItemind != pListItem.Count)
-                    return false;
+        //        List<String> pListItem = proList[proLsInd];
+        //        int proLsItemind = 0;
+        //        while (proLsItemind < pListItem.Count && ordInd < order.Count)
+        //        {
+        //            if (pListItem[proLsItemind].Equals(order[ordInd]) || pListItem[proLsItemind].Equals("anything"))
+        //            {
+        //                proLsItemind++;
+        //            }
+        //            else
+        //            {
+        //                proLsItemind = 0;
+        //            }
+        //            ordInd++;
+        //        }
+        //        if (proLsItemind != pListItem.Count)
+        //            return false;
 
-                proLsInd++;
-            }
+        //        proLsInd++;
+        //    }
 
-            if (proLsInd < proList.Count)
-                return false;
+        //    if (proLsInd < proList.Count)
+        //        return false;
 
-            return true;
-        }
+        //    return true;
+        //}
     }
 }

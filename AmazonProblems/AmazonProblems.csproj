@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AllDistinctSubstringSizeK.cs" />
     <Compile Include="AmazonPrimeAirRoute.cs" />
+    <Compile Include="ChooseAFlask.cs" />
     <Compile Include="CloudFrontCache.cs" />
     <Compile Include="CriticalRouters.cs" />
     <Compile Include="DifficultyOfJobSchedule.cs" />

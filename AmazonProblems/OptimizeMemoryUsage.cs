@@ -28,10 +28,14 @@ namespace AmazonProblems
                 backgroundTaskList.Add(new int[] { i, backgroundTasks[i] });
             }
 
-            foregroundTaskList.Sort((p1, p2)=>p1[1] - p2[1]);
-            backgroundTaskList.Sort((p1, p2)=>p1[1] - p2[1]);
+            if(foregroundTaskList.Count>1)
+                    foregroundTaskList.Sort((p1, p2)=>p1[1] - p2[1]);
+            if (backgroundTaskList.Count>1)
+                    backgroundTaskList.Sort((p1, p2)=>p1[1] - p2[1]);
 
             int max = Int32.MinValue;
+
+            //already target from one list ther list value will be -1
             for ( i = 0; i < foregroundTasks.Length; i++)
             {
                 if (foregroundTaskList[i][1] == K)
@@ -40,7 +44,7 @@ namespace AmazonProblems
                     max = foregroundTaskList[i][1];
                 }
             }
-
+            //already target from one list ther list value will be -1
             for ( i = backgroundTasks.Length - 1; i >= 0; i--)
             {
                 if (backgroundTaskList[i][1] == K)
@@ -50,6 +54,7 @@ namespace AmazonProblems
                 }
             }
 
+            //other array is empty
             if (foregroundTasks.Length > 0 && backgroundTasks.Length == 0)
             {
                 for ( i = 0; i < foregroundTasks.Length; i++)
@@ -63,6 +68,7 @@ namespace AmazonProblems
                 return result.ToArray();
             }
 
+            //other array is empty
             if (backgroundTasks.Length > 0 && foregroundTasks.Length == 0)
             {
                 for ( i = backgroundTasks.Length - 1; i >= 0; i--)
