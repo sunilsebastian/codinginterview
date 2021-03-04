@@ -81,7 +81,8 @@ namespace AmazonProblems
             return result;
         }
 
-     
+        // O(max(nlogn, mlogm)) or  O(nlogn) + O(mlogm) 
+        //Space O(n) n is the number of pairs in result;
         //  Algo monster solution. not handling duplicates. may not be needed
         public static List<List<int>> getPairs(List<List<int>> a, List<List<int>> b, int target)
         {

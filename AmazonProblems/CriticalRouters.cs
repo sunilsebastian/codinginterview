@@ -8,8 +8,9 @@ namespace AmazonProblems
 {
     public class CriticalRouters
     {
-
-            public static List<int> findCriticalConnections(int numNodes, int numEdges, List<int[]> edges)
+        //, DFS takes O(V+E) 
+        //Space O(V)
+        public static List<int> findCriticalConnections(int numNodes, int numEdges, List<int[]> edges)
             {
                 if (edges == null || edges.Count==0) return new List<int>();
 

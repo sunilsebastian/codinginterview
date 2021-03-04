@@ -48,6 +48,7 @@ namespace AmazonProblems
     {
 
         //For input of size n and output of size m, this approach takes O(n + m log n)
+        //Space complexity O(m)
         public static List<int> GetBoxWeight(List<int> weights)
         {
             //[3,7,5,6,2] sum=23
@@ -75,7 +76,9 @@ namespace AmazonProblems
 
 
 
-
+        //Time Complexity (n*m) n is the is the number of non repeating elements;
+        //m is the  maximum size of the targeted subarray 
+        //Space complexity O(n*m)
         public static List<int> optimizingBoxWeights(int[] weights)
         {
             List<(int, int)> arr = new List<(int, int)>();

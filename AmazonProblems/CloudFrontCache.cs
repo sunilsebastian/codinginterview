@@ -8,6 +8,9 @@ namespace AmazonProblems
 {
     public class CloudFrontCache
     {
+        // G(V, E) with |V| vertices and |E| edges using DFS or BFS has O(|V|+|E|) complexity.
+
+       // Space compexity O(V)
         //DFS and connected components
         public static int ConnectedSum(int n, List<string> edges)
         {
@@ -42,59 +45,14 @@ namespace AmazonProblems
                 {
                    int count= Dfs(dict, i, visited);
                     sum += (int)Math.Ceiling(Math.Sqrt(count));
-                   //disconnected.Add(lst);
+                  
                 }
             }
 
-            // List<List<int>> disconnected = new List<List<int>>();
-
-
-            //foreach (int i in dict.Keys)
-            //{
-            //    List<int> lst = new List<int>();
-            //    if (!visited[i - 1])
-            //    {
-            //        Dfs(dict, i, visited, lst);
-            //        disconnected.Add(lst);
-            //    }
-            //}
-
-            //for (int i = 1; i <= n; i++)
-            //{
-            //    List<int> lst = new List<int>();
-            //    if (!visited[i - 1])
-            //    {
-            //        Dfs(dict, i, visited, lst);
-            //        disconnected.Add(lst);
-            //    }
-            //}
-
-            //int sum = 0;
-            //foreach (var l in disconnected)
-            //{
-            //    int count = l.Count;
-            //    sum += (int)Math.Ceiling(Math.Sqrt(count));
-            //}
-            //return sum + (n - dict.Keys.Count);
 
             return sum ;
         }
 
-        //private static void Dfs(Dictionary<int, List<int>> dict, int index, bool[] visited, List<int> lst)
-        //{
-        //    visited[index - 1] = true;
-        //    lst.Add(index);
-
-        //    //if (!dict.ContainsKey(index)) return;
-        //    foreach (var ne in dict[index])
-        //    {
-        //        if (!visited[ne - 1])
-        //        {
-        //            Dfs(dict, ne, visited, lst);
-        //        }
-        //    }
-
-        //}
 
         private static int Dfs(Dictionary<int, List<int>> dict, int index, bool[] visited)
         {

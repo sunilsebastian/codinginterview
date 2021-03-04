@@ -8,7 +8,6 @@ namespace AmazonProblems
 {
     public class FreshPromotion
     {
-        //Run time: O(n*m). Where "n" is the length of shopping cart and m is the largest group of the codeList.
 
         //Input: codeList = [[apple, apple], [banana, anything, banana]] shoppingCart = [orange, apple, apple, banana, orange, banana]
         //        Output: 1
@@ -19,6 +18,9 @@ namespace AmazonProblems
         //added fruits in the order of fruits in the groups and the order
         //of groups in the codeList is also maintained in the shoppingCart.
 
+
+        //Run time: O(n* m). Where "n" is the length of shopping cart order and m is the largest group of the codeList/proList.
+        //Space O(m) m is the largest group of the codeList/proList.
         public static  bool isWinner(List<List<string>> proList, List<String> order)
         {
             int orderIndex = 0, groupIndex = 0;

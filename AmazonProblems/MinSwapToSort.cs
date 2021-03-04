@@ -11,7 +11,8 @@ namespace AmazonProblems
 
       #region solution1
        
-
+        //O(nlogn)
+        // Space complexity O(n)
         public static int NumberOfSwapsToSort(int[] elems)
         {
             return Sort(elems, 0, elems.Length - 1);

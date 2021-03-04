@@ -8,7 +8,8 @@ namespace AmazonProblems
 {
     public class KnightMoves
     {
-
+        //time complexity O(NK)  nis row or column and K is the number of jumps
+        //O(n * k)
         public static int getNumberOfValidMoves(int k, int r, int c)
         {
             int[][] dirs = new int[][]

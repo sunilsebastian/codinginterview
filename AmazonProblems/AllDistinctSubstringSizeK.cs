@@ -9,6 +9,9 @@ namespace AmazonProblems
     public class AllDistinctSubstringSizeK
     {
         //sliding window
+
+       //Time O(n + k)
+       //Space O(n-k+1)
         public static List<String> substrings(String s, int k)
         {
             if (string.IsNullOrWhiteSpace(s) || s.Length == 0)

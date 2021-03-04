@@ -8,8 +8,16 @@ namespace AmazonProblems
 {
     public class RobotReturnToOrgin
     {
+        //Time complexity O(N)
+        //Space complexity O(1)
 
-        public bool isRobotBounded(String instructions)
+
+        //1041. Robot Bounded In Circle
+
+        //GGLLGG
+        //GG
+        //GL
+        public static bool isRobotBounded(String instructions)
         {
             // north = 0, east = 1, south = 2, west = 3
             int[][] directions = new int[4][] { new int[]{ 0, 1 }, 
@@ -80,6 +88,55 @@ namespace AmazonProblems
 
             return false;
         }
+
+        public static int roverMove(String[] cmnds, int n)
+        {
+            //0  1  2   3
+            //4  5  6   7
+            //8  9  10  11
+            //12 13 14  15
+
+
+            int row = 0;
+            int col = 0;
+            foreach (var  cmnd in cmnds)
+            {
+                if (cmnd == "RIGHT")
+                {
+                    if (col < n - 1) col = col + 1;
+                }
+                else if (cmnd == "LEFT")
+                {
+                    if (col > 0) col = col - 1;
+                }
+                else if (cmnd == "UP")
+                {
+                    if (row > 0) row = row - 1;
+                }
+                else
+                {
+                    if (row < n - 1) row = row + 1;
+                }
+            }
+            return (row * n) + col;
+        }
+
+
+        //UU LL RR DD  LDRRLRUULR
+        //public bool JudgeCircle(string moves)
+        //{
+
+        //    int x = 0, y = 0;
+        //    foreach (var move in moves.ToCharArray())
+        //    {
+        //        if (move == 'U') y++;
+        //        else if (move == 'D') y--;
+        //        else if (move == 'L') x--;
+        //        else if (move == 'R') x++;
+        //    }
+        //    return x == 0 && y == 0;
+
+        //}
 
     }
 }

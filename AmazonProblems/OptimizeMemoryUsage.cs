@@ -95,6 +95,7 @@ namespace AmazonProblems
                 }
                 else
                 {
+                    //this check is needes because max is not int32.min now
                     if (max <= sum)
                     {
                         if (max < sum)
@@ -103,16 +104,20 @@ namespace AmazonProblems
                             result.Clear();
                         }
                         result.Add(new int[] { foregroundTaskList[i][0], backgroundTaskList[j][0] });
+                        
+                        //--not a must remove and check--
                         int index = j - 1;
                         while (index >= 0 && backgroundTaskList[index][1] == backgroundTaskList[index + 1][1])
                         {
                             result.Add(new int[] { foregroundTaskList[i][0], backgroundTaskList[index][0] });
                             index--;
                         }
+                        //------
                     }
                     ++i;
                 }
             }
+            //check case is passed without sorting. or you can insert to list instead of add
             return result.ToArray();
 
         }

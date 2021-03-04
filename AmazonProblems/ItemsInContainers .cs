@@ -10,6 +10,10 @@ namespace AmazonProblems
     {
          //          0123456
         //Input: s = |**|*|*, ranges = [[0, 4], [1, 6]]
+
+        //Time Complexity O(n + m) n is the length of string. m is the length of range set;
+        //Space: O(m) where m is the number of ranges.
+
         public static List<int> numberOfItems(String s, List<List<int>> ranges)
         {
             

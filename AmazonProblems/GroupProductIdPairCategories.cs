@@ -23,7 +23,11 @@ namespace AmazonProblems
 
         //Output: ((1,2,5,7,3,4,6,8))
 
+        
+        // G(V, E) with |V| vertices and |E| edges using DFS or BFS has O(|V|+|E|) complexity.
 
+        // Space compexity O(V)
+        //DFS and connected components
         public static List<List<int>> groupProductIdPairCategories(List<List<int>> pairs)
         {
             Dictionary<int, List<int>> adjList = new Dictionary<int, List<int>>();
@@ -40,12 +44,13 @@ namespace AmazonProblems
             }
 
             List<List<int>> disconnected = new List<List<int>>();
-            bool[] visited = new bool[adjList.Keys.Count];
+         
+            HashSet<int> visited = new HashSet<int>();
 
             foreach (int i in adjList.Keys)
             {
                 List<int> lst = new List<int>();
-                if (!visited[i - 1])
+                if(!visited.Contains(i))
                 {
                     Dfs(adjList, i, visited, lst);
                     disconnected.Add(lst);
@@ -54,15 +59,16 @@ namespace AmazonProblems
             return disconnected;
         }
 
-        private static void Dfs(Dictionary<int, List<int>> dict, int index, bool[] visited, List<int> lst)
+        private static void Dfs(Dictionary<int, List<int>> dict, int index, HashSet<int> visited, List<int> lst)
         {
-            visited[index - 1] = true;
+            
+            visited.Add(index);
             lst.Add(index);
 
-            //if (!dict.ContainsKey(index)) return;
+         
             foreach (var ne in dict[index])
             {
-                if (!visited[ne - 1])
+                if (!visited.Contains(ne))
                 {
                     Dfs(dict, ne, visited, lst);
                 }

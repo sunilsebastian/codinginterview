@@ -8,6 +8,8 @@ namespace AmazonProblems
 {
     public class FillTheTruck
     {
+        //Time Complexity :O(nlogn), where n is the number of elements in array boxes.
+        //space complexity O(n) is the number of boxes
         public static int fillTheTruck(int num, List<int> boxes, int unitSize, List<int> unitsPerBox, int truckSize)
         {
 

@@ -39,36 +39,30 @@ namespace AmazonProblems
 {
     public class EarliestTimeToCompleteDeliveries
     {
-
-        public  static int EarliestTime(int numOfBuildings, int[] buildingOpenTime, int[] offloadTime)
+     
+        //algomonster
+        // Time complexity (nlogn)
+        //Space :O(1)
+        public static int EarliestTime(int numOfBuildings, List<int> buildingOpenTime, List<int> offloadTime)
         {
-            PQ<int> loads = new PQ<int>(false);
-            PQ<int> docks = new PQ<int>(true);
-
-            foreach(var l in offloadTime)
+           
+            offloadTime.Sort((a, b) => b - a);
+            buildingOpenTime.Sort();
+           
+            int index = 0;
+            int ans = 0;
+            foreach (int openTime in buildingOpenTime)
             {
-                loads.Enqueue(l);
-            }
-
-            foreach (var d  in buildingOpenTime)
-            {
-                docks.Enqueue(d);
-            }
-
-
-            int max = 0;
-            while (docks.Count()!=0)
-            {
-                //            Starting time of each building
-                int poll = docks.Dequeue();
-                for (int i = 0; i < 4 && loads.Count()!=0; i++)
+                for (int i = 0; i < 4; i++)
                 {
-
-                    //Unload the 4 loads, and get the max time to finish all the loads to the building.
-                    max = Math.Max(max, poll + loads.Dequeue());
+                    ans = Math.Max(ans, openTime + offloadTime[index]);
+                    index++;
                 }
             }
-            return max;
+            return ans;
         }
+
+
+
     }
 }

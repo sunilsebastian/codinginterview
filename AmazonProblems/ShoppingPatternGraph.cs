@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AmazonProblems
 {
+
+    //Time O(V+E)
+
+    //Space O(V)
     public class ShoppingPatternGraph
     {
         static int min;
@@ -66,7 +70,7 @@ namespace AmazonProblems
         }
 
 
-        #region algomonster
+        #region algomonster solution
 
         public static int shoppingPatterns(int productsNodes, List<int> productsFrom, List<int> productsTo)
         {

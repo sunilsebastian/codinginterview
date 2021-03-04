@@ -8,6 +8,7 @@ namespace AmazonProblems
 {
     public class AmazonPrimeAirRoute
     {
+        // O(max(nlogn, mlogm)) or O(nlogn) + O(mlogm)
         //Refer optimal utilization
 
         // maxTravelDist= 10000

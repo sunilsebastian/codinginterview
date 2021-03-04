@@ -5,3 +5,10 @@ C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList.csproj.CoreCompileInputs.cache
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList.exe
 C:\personal\PracticeProblems\Git\codinginterview\LinkedList\obj\Debug\LinkedList.pdb
+C:\Git\codinginterview\LinkedList\bin\Debug\LinkedList.exe.config
+C:\Git\codinginterview\LinkedList\bin\Debug\LinkedList.exe
+C:\Git\codinginterview\LinkedList\bin\Debug\LinkedList.pdb
+C:\Git\codinginterview\LinkedList\obj\Debug\LinkedList.csprojAssemblyReference.cache
+C:\Git\codinginterview\LinkedList\obj\Debug\LinkedList.csproj.CoreCompileInputs.cache
+C:\Git\codinginterview\LinkedList\obj\Debug\LinkedList.exe
+C:\Git\codinginterview\LinkedList\obj\Debug\LinkedList.pdb

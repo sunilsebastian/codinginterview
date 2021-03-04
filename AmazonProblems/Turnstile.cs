@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace AmazonProblems
 {
 
+    //Time :O(n) n is number of customers
+    //Space: O(n) 
+
 //numCustomers = 4
 
 //arrTime = [0, 0, 1,5]

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AmazonProblems
 {
+
+    //Time Complexity O(nlog(K)) K is the sixe of heap
+    //Space complexity O(n)  number of keyword matching review
     public class TopFrequentWordInSentence
     {
         public static List<String> topMentioned(int k, List<String> keywords, List<String> reviews)

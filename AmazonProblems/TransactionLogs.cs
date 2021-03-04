@@ -26,6 +26,13 @@ using System.Threading.Tasks;
 //345366: 4 times , 38239: 5 times, 029323: 3 times, 89921: 1 time
 namespace AmazonProblems
 {
+
+    //Time Complexity : mlog(m)  m is the number of userids
+    // O(n) : n is  number of logs
+    //O(n)+mlog(m)
+
+    //Space O(m) number of user ids
+
     public class TransactionLogs
     {
         public static List<String> getFraudIds(List<String> logData, int threshold)

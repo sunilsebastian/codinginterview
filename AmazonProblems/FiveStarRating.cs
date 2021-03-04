@@ -13,6 +13,11 @@ namespace AmazonProblems
         //(a,b)=> a-b  ascending
         //(a,b)=> a.ComparedTo(b)  ascending
         //(a,b)=>{if(a<b) return -1; else 0}
+
+        //O(logn) time to enqueue and dequeue
+        // O(k logn + nlog(n))  n is number of productRatings or heap size. K is the mazimum number of adjustment to product rating to match the threshold
+
+        //Space complexity O(n) n is number of productRatings.
         public static int MinimumNumberOfAdditionalFiveStar(int[][] productRatings, double Threshold)
         {
             PQ<(int, int)> pq = new PQ<(int, int)>(Comparer<(int, int)>.Create((o1, o2) => {

@@ -25,6 +25,9 @@ namespace AmazonProblems
     //90min + 125min = 215 is the maximum number within 220 (250min - 30min)
 
     //another problem similar:https://leetcode.com/discuss/interview-question/938809/Amazon-OA-or-Amazon-Music-Runtime
+
+   // Time Complexity: O(nlogn), 
+    //Extra Space Complexity: O(n)
     public class MoviesOnFlight
     {
         public  static List<int> findPair(int[] durations, int d)

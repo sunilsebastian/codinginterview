@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AmazonProblems
 {
+    //O(n*m)  nis the number of query  cities and m is the neighbouring cities
 
+    //Space complexity : O(n) is the number of cities
     public class Point:IComparable<Point>
     {
         public int X1 { get; set; }

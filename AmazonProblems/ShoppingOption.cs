@@ -8,6 +8,8 @@ namespace AmazonProblems
 {
 
     // O(i * j * k * l) to O(i * j * k * log l)  where n, m , i, j are the lengths of the respective lists.
+
+    //Space :O(priceOfJeans*priceOfShoes)+ O(priceOfSkirts* priceOfTops)
     public class ShoppingOption
     {
         public static long soltuion4(List<int> priceOfJeans, List<int> priceOfShoes, List<int> priceOfSkirts,

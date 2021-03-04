@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 
 //At averageUtil[11] = 76, 76 > 60 so the number of instances is doubled.There are no more readings to consider and 2 is the final answer.
 
+//Time: O(n) where n is averageUtilization
 
 namespace AmazonProblems
 {

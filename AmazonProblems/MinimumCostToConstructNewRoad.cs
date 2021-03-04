@@ -116,6 +116,8 @@ namespace AmazonProblems
 
 
     #region algomonster solution
+    //time complexity is O(E log V),
+    //space complexity O(V)
     public class MinCostToConstructNewRoad
     {
         public static int minCostToConnectNodes(int n, List<List<int>> edges, List<List<int>> newEdges)

@@ -65,8 +65,8 @@ namespace AmazonProblems
             //--------------------------------------------------------------------
 
 
-
-            var optiomalPairs=OptimizeMemoryUsage.findPairs(new int[] { 1, 7, 2, 4, 5, 6 }, new int[] { 3, 1, 2 }, 6);
+            //new int[] { 1, 7, 2, 4, 5, 6 }, new int[] { 3, 1, 2 }, 6
+            var optiomalPairs =OptimizeMemoryUsage.findPairs(new int[] { 1, 7, 2, 4, 5, 6 }, new int[] { 1, 1, 2 }, 10);
 
 
             var pairs= OptimizeBoxWeight.GetBoxWeight(new List<int> { 4, 5, 2, 3, 1, 2 });
@@ -118,9 +118,9 @@ namespace AmazonProblems
             var shoppingCart = new List<string> { "apple", "apple", "orange","banana", "grape","banana" };        
             bool isEligibile=FreshPromotion.isWinner(codelist, shoppingCart);
 
-
-
-            var orderTunsile=Turnstile.GetTimes(5, new int[] {0,1,1,3,3}, new int[] { 0, 1, 0, 0,1 });
+            //5, new int[] {0,1,1,3,3}, new int[] { 0, 1, 0, 0,1 }
+            //4, new int[] {0, 0 ,1 ,5}, new int[] {0, 1 ,1 ,0}
+            var orderTunsile =Turnstile.GetTimes(4, new int[] { 0, 0, 1, 5 }, new int[] { 0, 1, 1, 0 });
 
             var inputNums = new int[] { 6, 3, 7, 1, 5, 8, 2, 4 };
             //var inputNums = new int[] { 5, 4, 1, 2 };
@@ -133,7 +133,9 @@ namespace AmazonProblems
            // int swaps = MinSwapToSort.GetSwapCount(inputNums);
             KnightMoves.getNumberOfValidMoves(2, 0, 0);
 
-            int count=CloudFrontCache.ConnectedSum(8, new List<string> { "8 1", "5 8", "7 3", "8 6" });
+            //8, new List<string> { "8 1", "5 8", "7 3", "8 6" }
+            //10, new List<string> { "1 2", "1 3", "2 4", "3 5","7 8" }
+            int count =CloudFrontCache.ConnectedSum(6, new List<string> { "1 2", "2 3","3 1","4 4" });
 
 
             // 6, 6, new int[] { 1, 2, 2, 3, 4, 5 }, new int[] { 2, 4, 5, 5,5, 6 }
@@ -144,8 +146,10 @@ namespace AmazonProblems
             int minScore1 = ShoppingPatternGraph.shoppingPatterns(2,  new List<int>{1}, new List<int> {2 });
 
             //(1,2), (2,5), (3,4), (4,6), (6,8), (5,7), (5,2), (5,2)
-            var pars = new List<List<int>>() { new List<int> {1,2 } , new List<int> { 2,5 } , new List<int> {3,4} , 
-                new List<int> {4,6} , new List<int> {6,8 }, new List<int> { 5,7}, new List<int> {5,2 }, new List<int> { 5,2}};
+            //var pars = new List<List<int>>() { new List<int> {1,2 } , new List<int> { 2,5 } , new List<int> {3,4} , 
+            //    new List<int> {4,6} , new List<int> {6,8 }, new List<int> { 5,7}, new List<int> {5,2 }, new List<int> { 5,2}};
+
+            var pars = new List<List<int>>() { new List<int> {1,2 } , new List<int> { 2,3 } , new List<int> {3,1}, new List<int> { 5,6 } };
             GroupProductIdPairCategories.groupProductIdPairCategories(pars);
 
             //new int[] { 6, 5, 4, 3, 2, 1 }, 2);
@@ -203,7 +207,8 @@ namespace AmazonProblems
             TransactionLogs.getFraudIds(new List<string> {"123456 123456 10","987657 918231 6",
                 "123456 01 10","123456 10293 9","0 1 5","0 2 5"}, 3);
 
-            var erliestTime=EarliestTimeToCompleteDeliveries.EarliestTime(2, new int[] { 8, 10 }, new int[] { 2, 2, 3, 1, 8, 7, 4, 5 });
+            //2, new List<int> { 8, 10 }, new List<int>{ 2, 2, 3, 1, 8, 7, 4, 5 }
+            var erliestTime =EarliestTimeToCompleteDeliveries.EarliestTime(2, new List<int> {7,9}, new List<int>{ 7, 6, 3, 4 ,1 ,1 ,2 ,0 });
 
             int[][] grid = new int[4][]{ new int[]{ 0, 1, 1, 0, 1 }, new int[]{ 0, 1, 0, 1, 0 }, new int[]{ 0, 0, 0, 0, 1 },new int[]{ 0, 1, 0, 0, 0 } };
             var minDaysToInfectAll=ZombieMatrix.minDaysToInfectAll(grid);
@@ -227,6 +232,8 @@ namespace AmazonProblems
             string input = "*|*|*****|*|**";
             var ranges = new List<List<int>> { new List<int> { 1,3 }, new List<int> { 2,12 } };
             ItemsInContainers.numberOfItems(input, ranges);
+            
+            
             //90, 85, 75, 60, 100,100, 150, 130
             //231
 
@@ -236,6 +243,9 @@ namespace AmazonProblems
             ChooseAFlask.chooseAFlask();
 
 
+            string[] arr = new string[8] { "RIGHT", "LEFT", "RIGHT", "LEFT", "DOWN", "RIGHT", "RIGHT", "UP" };
+            var roverPos= RobotReturnToOrgin.roverMove(arr, 8);
+           var isOrgin= RobotReturnToOrgin.isRobotBounded("GL");
 
 
         }
