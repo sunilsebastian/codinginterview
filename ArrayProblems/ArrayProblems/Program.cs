@@ -166,6 +166,7 @@ namespace ArrayProblems
 
 
             var median = MedianOfTwoSortedArrays.getMedian(new int[] { 1, 2, 9 }, new int[] { 4, 5, 10 }, 3);
+            var median1 = MedianOfTwoSortedArrays.getMedian1(new int[] { 1, 3, 5 }, new int[] { 8,9,10 });
             Console.WriteLine();
 
             InterSectionOfSortedArray.PrintIntersection(new int[] { 1, 2, 9 }, new int[] { 2, 4, 9 }, 3, 3);
@@ -247,8 +248,8 @@ namespace ArrayProblems
 
             MissingPositiveNumber.FindFirstMissingPositiveNumber(new int[] { 3,4,-1,1 });
 
-            var maxValues= SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3, 1, 2, 0, 5,9,10 }, 3);
-            maxValues = SlidingWindowMaximum.PrintSlidingWindowMaximum(new int[] { 1, 3 }, 5);
+            var maxValues= SlidingWindowMaximum.MaxSlidingWindow(new int[] { 1, 3, 1, 2, 0, 5,9,10 }, 3);
+          //  maxValues = SlidingWindowMaximum.MaxSlidingWindow(new int[] { 1, 3 }, 5);
 
            
 
@@ -260,15 +261,17 @@ namespace ArrayProblems
 
 
             MovingAverage mv = new MovingAverage(3);
-            var mv1= mv.Next(1);
-            var mv2=mv.Next(10);
-            var mv3= mv.Next(3);
-            var mv4= mv.Next(5);
-            var mv5 = mv.Next(7);
-            var mv6 = mv.Next(3);
+            var mv1= mv.Next1(1);
+            var mv2=mv.Next1(10);
+            var mv3= mv.Next1(3);
+            var mv4= mv.Next1(5);
+            var mv5 = mv.Next1(7);
+            var mv6 = mv.Next1(3);
 
 
             FrogJump.CanReachLastStone(new int[] { 0, 1, 3, 5, 6, 8, 12, 17 });
+
+           var board= BingoBoard.GetUKBingoBoard(3, 9);
 
             Console.ReadLine();
         }

@@ -21,7 +21,7 @@ namespace ArrayProblems
             fibArr[1] = 1;
             int i;
             Console.Write($"{fibArr[0]} {fibArr[1]} ");
-            for (i = 2; i < n + 1; i++)
+            for (i = 2; i <= n; i++)
             {
                // Console.WriteLine(string.Format("i={0}   {1}={2}+{3}", i, fibArr[i], fibArr[i - 1], fibArr[i - 2]));
                 fibArr[i] = fibArr[i - 1] + fibArr[i - 2];
@@ -29,7 +29,7 @@ namespace ArrayProblems
                 Console.Write(fibArr[i] +" ");
             }
 
-            return fibArr[i - 1];
+            return fibArr[n];
         }
 
         public static int FibonacciSimple(int n)

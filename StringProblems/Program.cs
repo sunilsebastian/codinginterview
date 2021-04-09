@@ -128,6 +128,7 @@ namespace StringProblems
 
           //  LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct("abcbbbbcccbdddadacb", 2);
             LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct("eceba", 2);
+            LengthOfLongestSubstringKDistinct.GetLengthOfLongestSubstringKDistinct("abcbbbbcccdd", 2);
 
             var minwindowStr= MinimumWindowString.GetMinWindow("azjskfzts", "zs");
 

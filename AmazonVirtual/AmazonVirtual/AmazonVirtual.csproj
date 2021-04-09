@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F37CB2ED-738E-4CF7-A9F1-36FBAB1FC358}</ProjectGuid>
+    <ProjectGuid>{AAA1FB18-8310-4223-B699-00D0AAD306D0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LinkedList</RootNamespace>
-    <AssemblyName>LinkedList</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>AmazonVirtual</RootNamespace>
+    <AssemblyName>AmazonVirtual</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,9 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,44 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckListIsCircular.cs" />
-    <Compile Include="CircularList.cs" />
-    <Compile Include="CloneListWithRandomPtr.cs" />
-    <Compile Include="Common\DoubleNode.cs" />
-    <Compile Include="Common\LQueue.cs" />
-    <Compile Include="Common\LStack.cs" />
-    <Compile Include="Common\Node.cs" />
-    <Compile Include="Common\RandomNode.cs" />
-    <Compile Include="ConvertListToDecimal.cs" />
-    <Compile Include="DeleteNode.cs" />
-    <Compile Include="DeleteNodeInTheMiddle.cs" />
-    <Compile Include="DoubleList.cs" />
-    <Compile Include="FlatternDoubleList.cs" />
-    <Compile Include="IntersectionOfLinkedList.cs" />
-    <Compile Include="ListIterator.cs" />
-    <Compile Include="LRUCache.cs" />
-    <Compile Include="MergeKSortedLists.cs" />
-    <Compile Include="NthElementFromLast.cs" />
-    <Compile Include="NumberListAddition.cs" />
-    <Compile Include="OddEvenLinkedList.cs" />
-    <Compile Include="Palindrum.cs" />
-    <Compile Include="PartitionBasedOnPivot.cs" />
+    <Compile Include="AllDistinctSubstringSizeK.cs" />
+    <Compile Include="AllwordsWithPrefix.cs" />
+    <Compile Include="Common\PQ.cs" />
+    <Compile Include="MedianOfStream.cs" />
+    <Compile Include="Patterns\Backtracking.cs" />
+    <Compile Include="Patterns\BFS.cs" />
+    <Compile Include="Patterns\BinarySearch.cs" />
+    <Compile Include="ChessMoves.cs" />
+    <Compile Include="Patterns\DFS.cs" />
+    <Compile Include="FindAllAnagramsInaString.cs" />
+    <Compile Include="LetterCombinationOfPhoneNumber.cs" />
+    <Compile Include="Patterns\SlidingWindow.cs" />
+    <Compile Include="PrintBoundary.cs" />
+    <Compile Include="PrintBSTInRange.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Common\QueueHelper.cs" />
-    <Compile Include="RemoveDuplicate.cs" />
-    <Compile Include="ReorderList.cs" />
-    <Compile Include="ReverseList.cs" />
-    <Compile Include="ReverseRecursively.cs" />
-    <Compile Include="SortBasedOnAbsoluteValue.cs" />
-    <Compile Include="AlternativeKNodes.cs" />
-    <Compile Include="Common\StackHelper.cs" />
-    <Compile Include="SwapPairs.cs" />
+    <Compile Include="RomanToDecimal.cs" />
+    <Compile Include="SnakeGame.cs" />
+    <Compile Include="SubstringEqualNumAndChar.cs" />
+    <Compile Include="TaskSchedulingIdleTime.cs" />
+    <Compile Include="Common\TreeNode.cs" />
+    <Compile Include="TwoSumBST.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -61,6 +61,9 @@ namespace AmazonProblems
             return ans;
         }
 
+
+        //this is a Two sum problem. take mode of num and and diff
+        //remoinder is added to dict
         public static int CountKdivPairs1(int[] A, int K)
         {
             Dictionary<int, int> dict = new Dictionary<int, int>();

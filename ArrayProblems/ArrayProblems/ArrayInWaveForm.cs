@@ -10,6 +10,7 @@ namespace ArrayProblems
     {
 
         //arrange the elements into a sequence such that a1 >= a2 <= a3 >= a4 <= a5.....
+        //swap each pairs 1 2 3 4 5 6  swap(12) swap(34) swap(56)
         public static  int[] GetWaveForm(int[] arr)
         {
             Array.Sort(arr);

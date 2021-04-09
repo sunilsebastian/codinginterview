@@ -4,8 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SortProblems
+namespace AmazonVirtual
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
     //Enqueue() and Dequeue() has O(log(n)) time complexity.
     //Peek hs O(1) time complexity.
@@ -14,10 +19,10 @@ namespace SortProblems
         private List<T> data;
         IComparer<T> _comparer;
 
-        public PQ(bool isMinHeap=true)
+        public PQ(bool isMinHeap = true)
         {
             this.data = new List<T>();
-            if(isMinHeap)
+            if (isMinHeap)
                 _comparer = Comparer<T>.Create((a, b) => a.CompareTo(b));
             else
                 _comparer = Comparer<T>.Create((a, b) => b.CompareTo(a));
@@ -28,6 +33,21 @@ namespace SortProblems
             this.data = new List<T>();
             _comparer = comparer;
         }
+
+        public void AddAll(T[] arr)
+        {
+            foreach (var item in arr)
+            {
+                data.Add(item);
+            }
+            int n = data.Count();
+            for (int i = n / 2 - 1; i >= 0; i--)
+            {
+                heapify(data, n, i);
+            }
+        }
+
+
         public void Enqueue(T item)
         {
             data.Add(item);
@@ -62,8 +82,6 @@ namespace SortProblems
 
             return frontItem;
         }
-
-        //MinHe
         private void heapify(List<T> arr, int n, int i)
         {
             int lowest = i;  // Initialize largest as root
@@ -100,3 +118,5 @@ namespace SortProblems
         }
     }
 }
+
+

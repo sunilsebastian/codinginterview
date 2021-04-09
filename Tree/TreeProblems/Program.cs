@@ -274,7 +274,7 @@ namespace TreeProblems
             var mxCount= BSTLongestConsecutiveSequence.LongestConsecutive(nonBst.Root);
             var mmxCount = BSTLongestConsecutiveSequence.LongestConsecutive1(nonBst.Root);
 
-            KDistancefromTarget.DistanceK(nonBst.Root,3,2);
+           // KDistancefromTarget.DistanceK(nonBst.Root,3,2);
 
             var serializedString =  BinaryTreeSerialization.Serialize(nonBst.Root);
 

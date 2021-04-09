@@ -67,7 +67,10 @@ namespace TreeProblems
 
         public static int LongestConsecutive1(Node root)
         {
-            return LongestConsecutiveHelper(root, null, 0);
+            //return LongestConsecutiveHelper(root, null, 0);
+
+           var longest= LongestConsecutiveHelper1(root);
+            return longest;
         }
 
         public static int LongestConsecutiveHelper(Node root, Node Prev, int max)
@@ -80,7 +83,32 @@ namespace TreeProblems
             var left = LongestConsecutiveHelper(root.Left, root, maxVal);
             var right = LongestConsecutiveHelper(root.Right, root, maxVal);
             //take max ( curmax, letmax and rightmax)
-            return Math.Max(Math.Max(left, right),max);
+            return Math.Max(Math.Max(left, right), maxVal);
+        }
+
+
+        private static  int maxLength = 0;
+        public static int LongestConsecutiveHelper1(Node root)
+        {
+            if (root== null) 
+                return 0;
+
+            int left = LongestConsecutiveHelper1(root.Left) + 1;
+
+            int right = LongestConsecutiveHelper1(root.Right) + 1;
+
+            if (root.Left != null && root.Data + 1 != root.Left.Data)
+            {
+                left = 1;
+            }
+            if (root.Right != null && root.Data + 1 != root.Right.Data)
+            {
+                right = 1;
+            }
+            int length = Math.Max(left, right);
+            maxLength = Math.Max(maxLength, length);
+            return length;
+
         }
     }
 }

@@ -26,7 +26,7 @@ namespace ArrayProblems
             }
         }
 
-        public int[] MaxSlidingWindow(int[] nums, int k) {
+        public static  int[] MaxSlidingWindow(int[] nums, int k) {
         
         var queue=new LinkedList<int>();
         var ans=new int[nums.Length-k+1];//len-k+1

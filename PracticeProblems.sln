@@ -39,6 +39,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Amazon", "Amazon", "{C62F4A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonProblems", "AmazonProblems\AmazonProblems.csproj", "{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Virtual Interview", "Virtual Interview", "{7CF0439B-D808-4E71-A875-7808F2B4DCB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonVirtual", "AmazonVirtual\AmazonVirtual\AmazonVirtual.csproj", "{AAA1FB18-8310-4223-B699-00D0AAD306D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,10 @@ Global
 		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA1FB18-8310-4223-B699-00D0AAD306D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA1FB18-8310-4223-B699-00D0AAD306D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA1FB18-8310-4223-B699-00D0AAD306D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA1FB18-8310-4223-B699-00D0AAD306D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +103,8 @@ Global
 		{D9A4B29E-2F0A-44C7-8E45-246E9F8D0048} = {DB0AD713-F8C9-4524-89AD-877C1448725D}
 		{F379B1E0-9967-46A4-BBFC-CE5452B013B8} = {8732A2B8-2B0B-4747-98BE-CA4DB1469A5B}
 		{0D794EA4-C504-4BE5-A250-A9C34FF5FCC1} = {C62F4A41-AD52-41BE-9C48-E467D6EBDC97}
+		{7CF0439B-D808-4E71-A875-7808F2B4DCB2} = {C62F4A41-AD52-41BE-9C48-E467D6EBDC97}
+		{AAA1FB18-8310-4223-B699-00D0AAD306D0} = {7CF0439B-D808-4E71-A875-7808F2B4DCB2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BB8526D9-54BD-4C3C-95BC-915B51238ADD}

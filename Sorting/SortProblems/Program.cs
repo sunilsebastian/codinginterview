@@ -18,6 +18,8 @@ namespace SortProblems
             MergeKSortedStreams mg = new MergeKSortedStreams(new List<List<int>> { lst1,lst2,lst3});
             var mergeRes = mg.MergeResult();
 
+            CountNumbersSmallerThanSelf.CountSmaller(new int[] { 5, 2, 6, 1 });
+
            var repeatCount= NumberOfOccurancesInSortedArray.GetNumberOfOccurancesInSortedArray(new int[] { 1, 2, 3, 3, 3, 3, 4, 5, 6, 7 }, 3);
       
            // BSTCount.PrintBST(4);

@@ -9,62 +9,62 @@ namespace TreeProblems
 {
     public class KDistancefromTarget
     {
-        public static List<int> res;
-        public static  List<int> DistanceK(Node root, int target, int K)
+        Dictionary<Node, Node> parent;
+        public List<int> DistanceK(Node root, Node target, int K)
         {
-            res = new List<int>();
-            GetNodesDistK(root, target, K);
-            return res;
+            parent = new Dictionary<Node, Node>();
+            setParent(root, null);
+
+            //Set to store visited node
+            HashSet<Node> seen = new HashSet<Node>();
+            seen.Add(target);
+            seen.Add(null);
+
+            //Starting point of BFS is target node
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(target);
+
+            while (queue.Count()!=0 && K-- > 0)
+            {
+                int currSize = queue.Count();
+                for (int i = 0; i < currSize; i++)
+                {
+                    Node node = queue.Dequeue();
+                    if (!seen.Contains(node.Left))
+                    {
+                        seen.Add(node.Left);
+                        queue.Enqueue(node.Left);
+                    }
+                    if (!seen.Contains(node.Right))
+                    {
+                        seen.Add(node.Right);
+                        queue.Enqueue(node.Right);
+                    }
+                    Node par = parent[node];
+                    if (!seen.Contains(par))
+                    {
+                        seen.Add(par);
+                        queue.Enqueue(par);
+                    }
+                }
+            }
+            List<int> ans = new List<int>();
+            while(queue.Count()!=0)
+            {
+                ans.Add(queue.Dequeue().Data);
+            }
+         
+            return ans;
         }
 
-        private static int GetNodesDistK(Node root, int target, int K)
+        public void setParent(Node node, Node par)
         {
-            if (root == null)
+            if (node != null)
             {
-                // no target node found
-                return -1;
+                parent.Add(node, par);
+                setParent(node.Left, node);
+                setParent(node.Right, node);
             }
-            if (root.Data == target)//.Data)
-            {
-                FindChild(root, K);
-                //when go to the root distance reduces by 1;
-                return K - 1;
-            }
-            int left = GetNodesDistK(root.Left, target, K);
-            if (left > 0)
-            {
-                //there can be nodes at k distance at right.
-                FindChild(root.Right, left - 1);
-                return left - 1;
-            }
-            int right = GetNodesDistK(root.Right, target, K);
-            if (right > 0)
-            {
-                //there can be nodes at k distance at left.
-                FindChild(root.Left, right - 1);
-                return right - 1;
-            }
-            if (left == 0 || right == 0)
-            {
-                res.Add(root.Data);
-            }
-            return -1;
-        }
-
-        //Find all child of target node with K distance
-        private static void FindChild(Node root, int K)
-        {
-            if (root == null || K < 0)
-            {
-                return;
-            }
-            if (K == 0)
-            {
-                res.Add(root.Data);
-                return;
-            }
-            FindChild(root.Left, K - 1);
-            FindChild(root.Right, K - 1);
         }
     }
 }

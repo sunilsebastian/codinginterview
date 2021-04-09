@@ -8,7 +8,7 @@ namespace SortProblems
 {
     public class KClosestPoints
     {
-        //Max Heap
+        //smallest or nearest=>Max Heap
         public static int[][] KClosest(int[][] points, int K)
         {
             PQ<Point> pq = new PQ<Point>(false);

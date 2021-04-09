@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace StringProblems
 {
+
+    //insert one word
+
+    //find other words in trie. return string so far match string
+    // return the one with minimum length
     public class LongestCommonPrefix
     {
        public static string  GetLongestCommonPrefix(TrieNode root,string[] words)

@@ -23,7 +23,7 @@ namespace SortProblems
             }
         }
 
-        public IList<int> CountSmaller(int[] nums)
+        public static IList<int> CountSmaller(int[] nums)
         {
             res = new int[nums.Length];
             Pair[] pair = new Pair[nums.Length];

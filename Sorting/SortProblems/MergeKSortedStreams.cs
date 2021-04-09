@@ -6,16 +6,7 @@ using System.Threading.Tasks;
 
 namespace SortProblems
 {
-    public class Num
-    {
-        public int val;
-        public Stream stream;
-        public Num(Stream s, int val)
-        {
-            this.stream = s;
-            this.val = val;
-        }
-    }
+ 
     public class Stream
     {
         IEnumerator<int> iterator;
@@ -35,7 +26,7 @@ namespace SortProblems
     }
     public class MergeKSortedStreams
     {
-        PriorityQueue<Num> pq = new PriorityQueue<Num>(true);
+        PQ<(Stream, int)> pq = new PQ<(Stream, int)>(Comparer<(Stream,int)>.Create((a,b)=>a.Item2-b.Item2));
         public MergeKSortedStreams(List<List<int>> vals)
         {
             foreach (var l in vals)
@@ -44,7 +35,7 @@ namespace SortProblems
                 var item = s.GetNext();
                 if (item != -1)
                 {
-                    pq.Enqueue(item, new Num(s, item));
+                    pq.Enqueue((s, item));
                 }
             }
         }
@@ -53,15 +44,15 @@ namespace SortProblems
         {
             List<int> result = new List<int>();
 
-            while (pq.map.Count > 0)
+            while (pq.Count() > 0)
             {
-                Num cur = pq.Dequeue();
-                Stream s = cur.stream;
-                result.Add(cur.val);
+                var cur = pq.Dequeue();
+                Stream s = cur.Item1;
+                result.Add(cur.Item2);
                 var item = s.GetNext();
                 if (item != -1)
                 {
-                    pq.Enqueue(item, new Num(s, item));
+                    pq.Enqueue((s, item));
                 }
 
             }

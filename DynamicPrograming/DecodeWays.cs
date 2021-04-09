@@ -42,22 +42,25 @@ namespace DynamicPrograming
         public static  int NumDecodings1(string s)
         {
             // return recursiveWithMemo(0,s);
-            return NumDecodingsHelper(s, 0);
+            //  return NumDecodingsHelper(s, 0);
+
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            return dfs(s, 0, dict);
 
         }
-        public static int NumDecodingsHelper(string s, int trackIndex)
+        public int NumDecodingsHelper(string s, int trackIndex)
         {
+
             if (trackIndex == s.Length - 1 || trackIndex == s.Length)
                 return 1;
 
             if (s[trackIndex] == '0')
                 return 0;
-          
+
 
             if (dict.ContainsKey(trackIndex))
                 return dict[trackIndex];
             int count = 0;
-            //from trackindex we need to take 1 char and then 2 chars so loop run twice.
             for (int i = trackIndex; i <= trackIndex + 1; i++)
             {
                 var val = Int32.Parse(s.Substring(trackIndex, (i - trackIndex) + 1));
@@ -72,43 +75,40 @@ namespace DynamicPrograming
 
         }
 
-        private static int recursiveWithMemo(int index, String str)
+        public int numDecodings(String s)
         {
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            return dfs(s, 0, dict);
+        }
 
-            // If you reach the end of the string
-            // Return 1 for success.
-            if (index == str.Length)
-            {
-                return 1;
-            }
-
-            // If the string starts with a zero, it can't be decoded
-            if (str[index] == '0')
-            {
-                return 0;
-            }
-
-            if (index == str.Length - 1)
-            {
-                return 1;
-            }
-
-            // Memoization is needed since we might encounter the same sub-string.
+        public static int dfs(String s, int index, Dictionary<int, int> dict)
+        {
             if (dict.ContainsKey(index))
             {
                 return dict[index];
             }
-
-            int ans = recursiveWithMemo(index + 1, str);
-            if (Int32.Parse(str.Substring(index,2)) <= 26)
+            if (index == s.Length)
             {
-                ans += recursiveWithMemo(index + 2, str);
+                return 1;
+            }
+            if (s[index] == '0')
+            {
+                return 0;
             }
 
-            // Save for memoization
-            dict.Add(index, ans);
-
-            return ans;
+            if (index == s.Length - 1)
+            {
+                return 1;
+            }
+            int result = 0;
+            
+            result += dfs(s, index + 1, dict);
+            if (Int32.Parse(s.Substring(index, 2)) <= 26)
+            {
+                result += dfs(s, index + 2, dict);
+            }
+            dict.Add(index, result);
+            return result;
         }
     }
 }

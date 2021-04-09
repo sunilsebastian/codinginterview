@@ -10,7 +10,7 @@ namespace SortProblems
     {
         public static int FindKthLargest(int[] arr,int start, int end,int k)
         {
-          
+                //partition is the exact position in a sorted array
                 int p = Partition(arr, start, end);
               
                 if (k<p)

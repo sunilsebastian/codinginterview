@@ -16,20 +16,11 @@ namespace TreeProblems
             if (root == null)
                 return;
 
-            //vertList the vector list at 'hd' 
-            List<int> vertList = dict.ContainsKey(hd)?dict[hd]:null;
-
-            // Store current node in map 'dict' 
-            if (vertList == null)
-            {
-                vertList = new List<int>();
-                vertList.Add(root.Data);
-            }
-            else
-                vertList.Add(root.Data);
-
             if(!dict.ContainsKey(hd))
-               dict.Add(hd, vertList);
+            {
+                dict.Add(hd, new List<int>());
+            }
+            dict[hd].Add(root.Data);
 
             // Store nodes in left subtree 
             GetVerticalOrder(root.Left, hd - 1, dict);
