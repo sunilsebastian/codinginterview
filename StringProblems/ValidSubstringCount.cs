@@ -8,6 +8,7 @@ namespace StringProblems
 {
     public class ValidSubstringCount
     {
+        //LC 32
         public static int FindMaxLen(String str)
         {
             int n = str.Length;
