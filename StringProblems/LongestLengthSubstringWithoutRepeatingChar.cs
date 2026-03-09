@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace StringProblems
 {
+    //3
     //logest substring without repeating characters
     //sliding window
     public class LongestLengthSubstringWithoutRepeatingChar
