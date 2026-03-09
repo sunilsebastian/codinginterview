@@ -8,7 +8,7 @@ namespace StringProblems
 {
     public class LengthOfLongestSubstringKDistinct
     {
-
+//340
         public static int GetLengthOfLongestSubstringKDistinct(String s, int k)
         {
             Dictionary<char, int> dict = new Dictionary<char, int>();
