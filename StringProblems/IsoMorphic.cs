@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ArrayProblems
 {
     public class IsoMorphic
-    {
+    {//LC:205
         public bool isIsomorphic(String s, String t)
         {
             if (s == null || t == null)
